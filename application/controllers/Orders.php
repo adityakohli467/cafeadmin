@@ -508,15 +508,17 @@ Thank you so much for your support and understanding';
 				
 				// 2) Queue CC supplier email
 				if(!empty($supplier_cc)){
-					$supplier_to = implode(',', $supplier_cc);
-					$data['order_id'] = $order_id;
-					$data['order_number'] = '000'.$order_number;
-					$data['branch_details'] = $branch_budget[0];
-					$data['supplier_details'] = $supplier_details[0];
-					$data['cc_mail'] = 'cc';
-					$body = $this->load->view('orders/order_email', $data, TRUE);
-					
-					$this->orders_model->queue_email($supplier_to, '', $email_subject, $body);
+					$supplier_to = trim(implode(',', $supplier_cc), ', ');
+					if($supplier_to != '') {
+						$data['order_id'] = $order_id;
+						$data['order_number'] = '000'.$order_number;
+						$data['branch_details'] = $branch_budget[0];
+						$data['supplier_details'] = $supplier_details[0];
+						$data['cc_mail'] = 'cc';
+						$body = $this->load->view('orders/order_email', $data, TRUE);
+						
+						$this->orders_model->queue_email($supplier_to, '', $email_subject, $body);
+					}
 				}
 
 				// 3) Queue manager notification email
@@ -608,6 +610,7 @@ Thank you so much for your support and understanding';
 			redirect('general/index');
 		}else {
 		    $filterData =array();
+		    $data['filterstatus'] = array();
 		    if(isset($_POST['from-date']) && $_POST['to-date']){
 		        $filterData['fromDate']=$_POST['from-date'];
 		        $filterData['toDate']=$_POST['to-date'];
@@ -615,10 +618,6 @@ Thank you so much for your support and understanding';
 				$data['toDate'] = $filterData['toDate'];
 		    }
 		    
-		  //  if(isset($_POST['order_status']) && $_POST['order_status'] != ''){
-		  //      $filterData['order_status']=$_POST['order_status'];
-		  //      $data['order_status'] = $filterData['order_status'];
-		  //  }
 		    if(isset($_POST['filterstatus']) && $_POST['filterstatus'] != ''){
 		        $filterData['filterstatus']=$_POST['filterstatus'];
 		        $data['filterstatus'] = $filterData['filterstatus'];
