@@ -3069,6 +3069,7 @@ Please login to the HR portal to view the update. Responses to the request can b
 	}
 	
 	public function submit_roster(){
+	   ob_start();
 	   
 		if (!$this->ion_auth->logged_in()) {
             redirect('auth/login');
@@ -3141,6 +3142,7 @@ Please login to the HR portal to view the update. Responses to the request can b
 			}
 			
 			if(($start_date =='') || ($end_date =='') || ($roster_name =='')){
+			    if (ob_get_length()) ob_end_clean();
 			    echo "validation";
 			    exit;
 			}
@@ -3399,9 +3401,11 @@ Please login to the HR portal to view the update. Responses to the request can b
 		    
 		if($roster_id){
 		 $this->session->unset_userdata('rostergroup_id');
+		 if (ob_get_length()) ob_end_clean();
 		 echo "Sucess"; exit;
 	     }else{
 		$this->session->set_flashdata('error_msg', 'Unable to add Roster');
+		if (ob_get_length()) ob_end_clean();
 		echo "error_"; exit; 
 		}
 		  //  redirect('admin/get_roster_weeks');					
@@ -3410,6 +3414,7 @@ Please login to the HR portal to view the update. Responses to the request can b
 	
 	
 	public function update_complete_roster(){
+	   ob_start();
 	   
 	    $return_data = array();
 		if (!$this->ion_auth->logged_in()) {
@@ -3761,7 +3766,10 @@ Please login to the HR portal to view the update. Responses to the request can b
 				$return_data['result'] = 'result';
 			}
 	
+			if (ob_get_length()) ob_end_clean();
+			header('Content-Type: application/json');
 			echo json_encode($return_data);
+			exit;
 		   					
        }
 	}
