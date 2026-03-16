@@ -1,5 +1,3 @@
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script type="text/javascript" src="clear-default-text.js"></script>
 <div class="container ct-timesheet mt-5" ><div class="row">
 <input type="hidden" id="logoutLink" data-href="<?php echo base_url();?>index.php/auth/logout">
 <div class="col-5 ct-top mb-3 mt-3">
@@ -597,16 +595,16 @@
 		method:"POST",
 		data:{in_time:time,type:type,emp_id:emp_id,roster_group_id:roster_group_id,outletname:outletname,roster_id:roster_id},
 	    success:function(response){
-	        if(response =='Early'){
-	            console.log(response);
+	        if(response =='sessionexpired'){
+	            swal({ text: "Your session has expired. Please login again.", icon: "error" }).then(function(){ window.location.href = "<?php echo base_url();?>index.php/auth/homepage"; });
+	            return;
+	        }else if(response =='Early'){
 	             swal({
           text: "Login time not must not exceed 15 mins as per your rosterd time.Please Try again in some time.",
           icon: "warning",
            timer: 3300
           });
-          
-	        }else{
-	   
+	        }else if(response =='saved'){
 	         $class_to_enable = $("#current_in_time").val();
 	         $("."+$class_to_enable).html('');
 	         $("."+$class_to_enable).removeAttr('data-toggle');
@@ -618,15 +616,17 @@
 	         }
 	         
 		  swal({
-          text: "Time Recorded",
+          text: "Time Recorded Successfully",
           icon: "success",
            timer: 1300
           });
+	        }else{
+	            swal({ text: "Failed to save time. Please try again.", icon: "error" });
 	        }
-          
-          
-          
-			}
+			},
+		error:function(){
+		    swal({ text: "Network error. Time was NOT saved. Please check your connection and try again.", icon: "error" });
+		}
 	});
   }
   
@@ -655,20 +655,30 @@
     //         $("."+$class_to_enable).html(break_time);
     //         $("."+$class_to_enable).removeAttr('data-toggle');
     //   }
-      $("."+$class_to_enable).html(break_time);
-            $("."+$class_to_enable).removeAttr('data-toggle');
+      var $el_to_update = $("."+ $class_to_enable);
       $.ajax({
 		url:"<?php echo base_url();?>index.php/Employeedetails/save_break_record",
 		method:"POST",
 		data:{break_time:break_time,break_type:break_type,roster_group_id:roster_group_id,roster_id:roster_id},
 	    success:function(data){
-		swal({
-          text: "Break Time Recorded",
-          icon: "success",
-          timer: 1300
-          });
-			}
-			
+	        if(data =='sessionexpired'){
+	            swal({ text: "Your session has expired. Please login again.", icon: "error" }).then(function(){ window.location.href = "<?php echo base_url();?>index.php/auth/homepage"; });
+	            return;
+	        }else if(data =='saved'){
+	            $el_to_update.html(break_time);
+	            $el_to_update.removeAttr('data-toggle');
+			swal({
+              text: "Break Time Recorded Successfully",
+              icon: "success",
+              timer: 1300
+              });
+	        }else{
+	            swal({ text: "Failed to save break time. Please try again.", icon: "error" });
+	        }
+			},
+		error:function(){
+		    swal({ text: "Network error. Break time was NOT saved. Please check your connection and try again.", icon: "error" });
+		}
 	});
   }
   
@@ -726,13 +736,7 @@ function breaksetTime_in_time(obj) {
   
     
     window.onload = function() {
-        
-        var formSubmitted = localStorage.getItem("formSubmitted");
         reloadAfterTenHrs();
-        if (!formSubmitted) {
-            document.getElementById("roster_list").form.submit();
-            localStorage.setItem("formSubmitted", true);
-        }
     };
     
     function reloadAfterTenHrs() {

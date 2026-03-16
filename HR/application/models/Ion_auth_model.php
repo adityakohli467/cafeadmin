@@ -316,7 +316,7 @@ class Ion_auth_model extends CI_Model
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->hash_password_db($id, $password,$tablename, $use_sha1_override=FALSE,$i);
 		}else{
 			
@@ -422,7 +422,7 @@ class Ion_auth_model extends CI_Model
 				if($i == 5){
 					show_error('error '+$i);
 				}
-				sleep(5);
+				log_message('error', 'DB error in model');
 				$this->activate($id, $code = false, $i);
 			}else{
 				$result = $query->row();
@@ -457,7 +457,7 @@ class Ion_auth_model extends CI_Model
 					if($i == 5){
 						show_error('error '+$i);
 					}
-					sleep(5);
+					log_message('error', 'DB error in model');
 					$this->activate($id, $code = false, $i);
 				}
 			}
@@ -486,7 +486,7 @@ class Ion_auth_model extends CI_Model
 					if($i == 5){
 						show_error('error '+$i);
 					}
-					sleep(5);
+					log_message('error', 'DB error in model');
 					$this->activate($id, $code = false, $i);
 				}
 		}
@@ -547,7 +547,7 @@ class Ion_auth_model extends CI_Model
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->deactivate($id,$i);
 		}else{
 			if ($return)
@@ -588,7 +588,7 @@ class Ion_auth_model extends CI_Model
 				if($i == 5){
 					show_error('error '+$i);
 				}
-				sleep(5);
+				log_message('error', 'DB error in model');
 				$this->clear_forgotten_password_code($code,$i);
 			}
 
@@ -642,7 +642,7 @@ class Ion_auth_model extends CI_Model
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->reset_password($identity, $new, $i);
 		}else{
 		
@@ -692,7 +692,7 @@ class Ion_auth_model extends CI_Model
 				if($i == 5){
 					show_error('error '+$i);
 				}
-				sleep(5);
+				log_message('error', 'DB error in model');
 				$this->reset_password($identity, $new, $i);
 			}else{
 				$return = $this->db->affected_rows() == 1;
@@ -2640,7 +2640,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_edit($id,$i);
 		}else{
 			$result = $query->result();
@@ -2670,7 +2670,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getModuleClrLevel($module,$i);
 		}else{
 			$result = $query->result();
@@ -2695,7 +2695,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getGroupUrl($groupId,$i);
 		}else{
 			$result = $query->result();
@@ -2727,7 +2727,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getMenus($i);
 		}else{
 		    
@@ -2763,7 +2763,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getMenusdesc($menuid,$i);
 		}else{
 		    
@@ -2798,7 +2798,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getMenus($i);
 		}else{
 		    
@@ -2829,7 +2829,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getSubMenus($menu_id,$i);
 		}else{
 			$result = $query->result();
@@ -2854,7 +2854,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->checkMenuLevel($controller,$i);
 		}else{
 			$result = $query->result();
@@ -2878,7 +2878,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->checkSubMenuLevel($controller,$i);
 		}else{
 			$result = $query->result();
@@ -2903,7 +2903,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getSubscription($customerId,$i);
 		}else{
 			$result = $query->result();
@@ -2927,7 +2927,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getPackages($i);
 		}else{
 			$result = $query->result();
@@ -2953,7 +2953,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getPackageDetails($package_id, $i);
 		}else{
 			$result = $query->result();
@@ -2979,7 +2979,7 @@ public function emp_register($first_name,$last_name,$username, $password,$user_t
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getAddons($package_id, $i);
 		}else{
 			return $query->result();

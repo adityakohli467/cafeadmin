@@ -89,7 +89,7 @@ class EmployeesDeatils_model extends CI_Model{
 // 			if($i == 5){
 // 				show_error('error '+$i);
 // 			}
-// 			sleep(5);
+// 			log_message('error', 'DB error in model');
 // 			$this->fetch_data($table_name,$branch_id,$limit,$start,$i=null);
 // 		}else{
 		   
@@ -216,7 +216,7 @@ public function fetch_data($params, $i = null) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->fetch_data($table_name,$branch_id,$limit,$start,$i=null);
 		}else{
 		   
@@ -333,7 +333,7 @@ public function fetch_data($params, $i = null) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_approved_timesheet($i=null);
 		}else{
 		   
@@ -367,7 +367,7 @@ public function fetch_data($params, $i = null) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_approved_timesheet_timedifference($roster_id,$i=null);
 		}else{
 		   

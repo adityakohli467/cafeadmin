@@ -21,7 +21,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_employees($i);
 		}else{
 			return $query->result();
@@ -89,7 +89,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_emp_update($id,$i);
 		}else{
 			return $query->result();
@@ -167,7 +167,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_user_status($user_id,$i);
 		}else{
 			return $query->result();
@@ -192,7 +192,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_emp_details($emp_id,$i);
 		}else{
 			return $query->result();
@@ -239,7 +239,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_email($id,$i);
 		}else{
 			return $query->result();
@@ -273,7 +273,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_employee_timesheet($id,$roster_group_id='',$i);
 		}else{
 			return $query->result_array();
@@ -302,7 +302,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 		$this->get_employee_timesheet_from_roster_id($id,$roster_id='',$i);
 		}else{
 			return $query->result_array();
@@ -329,7 +329,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_employee_timesheet($emp_id,$timesheet_id='',$i);
 		}else{
 			return $query->result();
@@ -355,7 +355,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_timesheetfor_multiple_roster($timesheet_id,$i);
 		}else{
 			return $query->result();
@@ -383,7 +383,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_all_employeeid_ofthis_timesheet($timesheet_id,$roster_group_id,$i);
 		}else{
 			return $query->result();
@@ -441,7 +441,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_docs($emp_id,$i);
 		}else{
 			return $query->result();
@@ -464,7 +464,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_docs_name($id,$i);
 		}else{
 			return $query->result();
@@ -529,7 +529,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getleaves($params,$emp_id,$i);
 		}else{
 			return $query->result();
@@ -557,7 +557,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_emp_leave_details($emp_id,$i);
 		}else{
 			return $query->result();
@@ -580,7 +580,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_roster_emp($emp_id,$i);
 		}else{
 			return $query->result();
@@ -604,7 +604,7 @@ class Employees_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_employees($branch_id,$i);
 		}else{
 			return $query->result();

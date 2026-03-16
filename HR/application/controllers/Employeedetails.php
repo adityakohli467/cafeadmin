@@ -31,8 +31,15 @@ class Employeedetails extends CI_Controller {
         $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
         $this->lang->load('auth');
         $this->load->helper('language');
+			  
+    }
+    
+    // Lazy-load email libraries only when needed (not on every page load)
+    protected function _init_email(){
+        if(isset($this->_email_initialized)) return;
+        $this->_email_initialized = true;
         
-         $config = array(
+        $config = array(
               'protocol' => 'smtp', 
               'smtp_host' => 'smtp.gmail.com', 
               'smtp_port' => 587, 
@@ -43,13 +50,8 @@ class Employeedetails extends CI_Controller {
               $this->load->library('email', $config);
               $this->email->initialize($config);
               
-              
-               
-    //===========================================================phpmailer start =================================================
 	$this->phpmailermail = new PHPMailer();
-               
         $this->phpmailermail->isSMTP();
-        // $this->phpmailermail->SMTPDebug = 2;
         $this->phpmailermail->Mailer = "smtp";
         $this->phpmailermail->Host     = $this->config->item('Host');
         $this->phpmailermail->SMTPAuth = $this->config->item('SMTPAuth');
@@ -58,8 +60,6 @@ class Employeedetails extends CI_Controller {
         $this->phpmailermail->Password = $this->config->item('Password');
         $this->phpmailermail->Port     = $this->config->item('Port');
         $this->phpmailermail->setFrom($this->config->item('setFrom'), 'Cafeadmin');
-				
-			  //=========================================================php mailer end ======================================================
     }
     
     public function index(){
@@ -480,6 +480,7 @@ class Employeedetails extends CI_Controller {
     }
     
     public function get_content_and_send_mail($emp_detail=array(),$msg,$from_email=''){
+        $this->_init_email();
         if($from_email==''){
             $from_email = 'admin@cafeadmin.com.au';
         }
@@ -1181,6 +1182,7 @@ $msg = 'Employee ('.$empname.') from location '.$location.' has submitted the in
 		      add_notification('Injury_Report','manager',$emp_id);
 	
                $from_email = 'admin@cafeadmin.com.au';
+               $this->_init_email();
                 
 		       $subject = 'New Injury Reported';
                $this->email->set_newline("\r\n");
@@ -1709,38 +1711,97 @@ $msg = $empname.' has submitted the job keeper request. Please login to the HR p
 		    $role = $this->session->userdata('role');
 		    $all_timesheet = $this->admin_model->get_all_timesheet($branch_id,'future');
             
-		   $roster_id = $this->session->userdata('roster_id');
-		   
-		   $all_emps = $this->admin_model->get_employees_branchwise($branch_id,'admin');
 		   $todays_date = date('Y-m-d', time());
-        
+		   $data['timesheet_id'] = '';
+		   $data['all_emps'] = '';
 		   
-		   if(isset($roster_id) && $roster_id !=''){
-		   foreach($all_emps as $all_emp){
-		       
-		       $timeseet_detail_of_this_employee = $this->admin_model->get_timesheet($all_emp->emp_id,$roster_id,$todays_date);
-		       if(!empty($timeseet_detail_of_this_employee)){
-		       $all_emp->in_time = $timeseet_detail_of_this_employee[0]->in_time;
-		       $all_emp->out_time = $timeseet_detail_of_this_employee[0]->out_time;
-		       $all_emp->break_in_time = $timeseet_detail_of_this_employee[0]->break_in_time;
-		       $all_emp->break_out_time = $timeseet_detail_of_this_employee[0]->break_out_time;
-		       if(isset($timeseet_detail_of_this_employee[0]->timesheet_id) && $timeseet_detail_of_this_employee[0]->timesheet_id !=''){
-		           $data['timesheet_id'] =   $timeseet_detail_of_this_employee[0]->timesheet_id;
-		       }else{
-		           $data['timesheet_id'] =  '';
-		       }
-		       
+		   // Auto-detect current week's timesheet or use the only available one
+		   $auto_timesheet = null;
+		   if(!empty($all_timesheet)){
+		       if(count($all_timesheet) == 1){
+		           $auto_timesheet = $all_timesheet[0];
+		       } else {
+		           $today_str = date("d-m-Y");
+		           foreach($all_timesheet as $ts){
+		               $ts_start = date("d-m-Y", strtotime($ts->start_date));
+		               $ts_end = date("d-m-Y", strtotime($ts->end_date));
+		               if(strtotime($today_str) >= strtotime($ts_start) && strtotime($today_str) <= strtotime($ts_end)){
+		                   $auto_timesheet = $ts;
+		                   break;
+		               }
+		           }
 		       }
 		   }
-		   }else{
-		     $data['timesheet_id'] =  '';  
+		   
+		   if($auto_timesheet != null){
+		       $roster_group_id = $auto_timesheet->roster_group_id;
+		       $timesheet_id = $auto_timesheet->timesheet_id;
+		       $timesheet_type = isset($auto_timesheet->timesheet_type) ? $auto_timesheet->timesheet_type : 's';
+		       $data['timesheet_id'] = $timesheet_id;
+		       $data['timesheet_type'] = $timesheet_type;
+		       
+		       // Fetch employees based on single or multiple roster
+		       if($timesheet_type == "m"){
+		           $seralized = $this->employees_model->get_timesheetfor_multiple_roster($timesheet_id);
+		           $all_roster_ids = unserialize($seralized[0]->multiple_roster_group_id);
+		           $all_emps = $this->admin_model->fetch_employee_for_timsheet_bulk($all_roster_ids);
+		       } else {
+		           $all_emps = $this->admin_model->fetch_employee_for_timsheet($roster_group_id);
+		       }
+		       
+		       if(!empty($all_emps)){
+		           // Get today's day column name for shift check
+		           $dayname = strtolower(date("D"));
+		           if($dayname == "tue"){ $dayname = "tues_start_time"; }
+		           elseif($dayname == "thu"){ $dayname = "thus_start_time"; }
+		           else { $dayname = $dayname."_start_time"; }
+		           
+		           // Bulk fetch: all timesheet records and all shifts in 2 queries instead of N+1
+		           $emp_ids = array();
+		           $roster_ids = array();
+		           foreach($all_emps as $emp){
+		               $emp_ids[] = $emp->emp_id;
+		               $roster_ids[] = $emp->roster_id;
+		           }
+		           $roster_ids = array_unique($roster_ids);
+		           
+		           $timesheet_rows = $this->admin_model->get_timesheet_bulk($emp_ids, $timesheet_id, $todays_date);
+		           $shift_rows = $this->admin_model->get_shifts_bulk($roster_ids, $dayname);
+		           
+		           // Index timesheet data by emp_id+roster_id for fast lookup
+		           $ts_map = array();
+		           foreach($timesheet_rows as $row){
+		               $ts_map[$row->employee_id.'_'.$row->roster_id] = $row;
+		           }
+		           
+		           // Index shift data by roster_id
+		           $shift_map = array();
+		           foreach($shift_rows as $row){
+		               $shift_map[$row->roster_id] = $row->$dayname;
+		           }
+		           
+		           // Assign data to each employee (no DB queries in this loop)
+		           foreach($all_emps as $all_emp){
+		               $key = $all_emp->emp_id.'_'.$all_emp->roster_id;
+		               if(isset($shift_map[$all_emp->roster_id]) && $shift_map[$all_emp->roster_id] == 'null'){
+		                   $all_emp->status = "Disable";
+		               } else {
+		                   $all_emp->status = "Enable";
+		               }
+		               if(isset($ts_map[$key])){
+		                   $all_emp->in_time = $ts_map[$key]->in_time;
+		                   $all_emp->out_time = $ts_map[$key]->out_time;
+		                   $all_emp->break_in_time = $ts_map[$key]->break_in_time;
+		                   $all_emp->break_out_time = $ts_map[$key]->break_out_time;
+		               }
+		           }
+		       }
+		       
+		       $data['all_emps'] = $all_emps;
+		       $this->session->set_userdata('roster_id', $roster_group_id);
 		   }
+		   
 		$data['all_timesheets'] =   $all_timesheet;
-		     
-		   
-		  //   $data['all_emps'] =   $all_emps;
-		  
-		     $data['all_emps'] =   '';
 		     $data['role'] =   $role;
 		     $data['branch_id'] =   $branch_id;
 		    
@@ -3200,46 +3261,12 @@ public function fetch_employee_for_timsheet(){
         //fetch all roster id so that we can find all the employees of those roster to be displayted in timesheet in out page
          $seralized_all_roster_forthis_timesheet = $this->employees_model->get_timesheetfor_multiple_roster($timesheet_id);
          $all_roster_forhtis_timesheets = unserialize($seralized_all_roster_forthis_timesheet[0]->multiple_roster_group_id);
-         $all_emps = array();
-//          if($_SERVER['REMOTE_ADDR'] ==='150.129.199.110') {  
-//                 echo "<pre>";
-//   print_r($seralized_all_roster_forthis_timesheet);
-//   exit;      
-//         } 
-
-         foreach($all_roster_forhtis_timesheets as $all_roster_forhtis_timesheet){
-           
-            $emps = $this->admin_model->fetch_employee_for_timsheet($all_roster_forhtis_timesheet);
-           
-           foreach($emps as $emp){
-                array_push($all_emps,$emp);
-           }
-           }
+         $all_emps = $this->admin_model->fetch_employee_for_timsheet_bulk($all_roster_forhtis_timesheets);
       
     }else{
          $all_emps = $this->admin_model->fetch_employee_for_timsheet($roster_group_id);
-         
-        
-        //   if ($_SERVER['REMOTE_ADDR'] == '2401:4900:1c71:515b:744c:75ad:20a1:383d') {
-    //           echo "RGID= ".$roster_group_id;
-    // echo "<pre>";
-    // print_r($all_emps);
-    // exit;
-//   } 
-        
     }
 
-// sort array based on emploiyee name in asc order
- 
-
-if(!empty($all_emps)){
-       foreach ($all_emps as $key => $row) {
-          $distance[$key] = $row->first_name;
-        }
-
-      array_multisort($distance, SORT_ASC, $all_emps);
-}
-	
 		  	if (!$this->ion_auth->logged_in()) {
 			redirect('auth/homepage');
 		    }else{
@@ -3257,27 +3284,41 @@ if(!empty($all_emps)){
          }else{
              $dayname = $dayname."_start_time";
          }
-		   foreach($all_emps as $all_emp){
-		       
-		     
-		       $timeseet_detail_of_this_employee = $this->admin_model->get_timesheet($all_emp->emp_id,$timesheet_id,$todays_date,$all_emp->roster_id);
-		       
-		       // check if this employee has shift today or not ..pas dayname and roster and find ...
-		       
-		       $shift_for_today = $this->admin_model->check_shift($all_emp->roster_id,$dayname);
-		       
+		   // Bulk load timesheet data and shift data
+		   $emp_ids = array();
+		   $roster_ids = array();
+		   foreach($all_emps as $emp){
+		       $emp_ids[] = $emp->emp_id;
+		       $roster_ids[] = $emp->roster_id;
+		   }
+		   $roster_ids = array_unique($roster_ids);
 		   
-		      
-		       if( $shift_for_today[0]->$dayname == 'null'){
+		   $timesheet_rows = $this->admin_model->get_timesheet_bulk($emp_ids, $timesheet_id, $todays_date);
+		   $shift_rows = $this->admin_model->get_shifts_bulk($roster_ids, $dayname);
+		   
+		   // Index by emp_id+roster_id
+		   $ts_map = array();
+		   foreach($timesheet_rows as $row){
+		       $ts_map[$row->employee_id.'_'.$row->roster_id] = $row;
+		   }
+		   // Index shifts by roster_id
+		   $shift_map = array();
+		   foreach($shift_rows as $row){
+		       $shift_map[$row->roster_id] = $row->$dayname;
+		   }
+		   
+		   foreach($all_emps as $all_emp){
+		       $key = $all_emp->emp_id.'_'.$all_emp->roster_id;
+		       if(isset($shift_map[$all_emp->roster_id]) && $shift_map[$all_emp->roster_id] == 'null'){
 		          $all_emp->status = "Disable";     
 		       }else{
 		          $all_emp->status = "Enable";   
 		       }
-		       if(!empty($timeseet_detail_of_this_employee)){
-		       $all_emp->in_time = $timeseet_detail_of_this_employee[0]->in_time;
-		       $all_emp->out_time = $timeseet_detail_of_this_employee[0]->out_time;
-		       $all_emp->break_in_time = $timeseet_detail_of_this_employee[0]->break_in_time;
-		       $all_emp->break_out_time = $timeseet_detail_of_this_employee[0]->break_out_time;
+		       if(isset($ts_map[$key])){
+		           $all_emp->in_time = $ts_map[$key]->in_time;
+		           $all_emp->out_time = $ts_map[$key]->out_time;
+		           $all_emp->break_in_time = $ts_map[$key]->break_in_time;
+		           $all_emp->break_out_time = $ts_map[$key]->break_out_time;
 		       }
 		   }
 		 
@@ -3943,6 +3984,10 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
 }
     public function save_record(){
      
+    if (!$this->ion_auth->logged_in()) {
+        echo 'sessionexpired';
+        exit;
+    }
     $in_time =  $this->input->post('in_time');
     $type =  $this->input->post('type');
     $roster_id =  $this->input->post('roster_id');
@@ -3974,9 +4019,8 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
         $data['outletname'] = $outletname;
       }
        
-        $this->admin_model->update_employee_timesheet($data,$timesheet_id,$roster_id); 
-        
-    
+        $result = $this->admin_model->update_employee_timesheet($data,$timesheet_id,$roster_id); 
+        echo $result ? 'saved' : 'error';
  }
     public function compare_time_logic($roster_id,$type,$in_time){
      $error = false;
@@ -4082,6 +4126,10 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
  
     public function save_break_record(){
       
+       if (!$this->ion_auth->logged_in()) {
+           echo 'sessionexpired';
+           exit;
+       }
        $break_time =  $this->input->post('break_time');   
        $break_type =  $this->input->post('break_type');
      
@@ -4099,8 +4147,8 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
          'date'=> $date,
         );
         
-        $this->admin_model->update_employee_timesheet($data,$timesheet_id,$roster_id);
-   
+        $result = $this->admin_model->update_employee_timesheet($data,$timesheet_id,$roster_id);
+        echo $result ? 'saved' : 'error';
  }
  
     public function update_timesheet(){

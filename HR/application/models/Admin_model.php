@@ -28,19 +28,17 @@ class Admin_model extends CI_Model{
 	   return $query->result();
    }
     public function get_timesheet_bulk($emp_ids, $timesheet_id, $date) {
-    $this->db->select('*');
+    $this->db->select('employee_id, roster_id, in_time, out_time, break_in_time, break_out_time');
     $this->db->from('employee_timesheet');
     $this->db->where_in('employee_id', $emp_ids);
     $this->db->where('timesheet_id', $timesheet_id);
-    
+    $this->db->where('date', $date);
     return $this->db->get()->result();
-    
-   
    }
    
    public function get_shifts_bulk($roster_ids, $dayname_column) {
    
-        $this->db->select($dayname_column);
+        $this->db->select('roster_id, '.$dayname_column);
 		$this->db->from('roster');
 		$this->db->where_in('roster_id', $roster_ids);
 		$query = $this->db->get();
@@ -66,7 +64,7 @@ class Admin_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_employees($i);
 		}else{
 			return $query->result();
@@ -95,7 +93,7 @@ class Admin_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->getbranch_manager_email($i);
 		}else{
 			return $query->result();
@@ -186,7 +184,7 @@ class Admin_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_public_holidays($i);
 		}else{
 			return $query->result();
@@ -275,7 +273,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->roster_weekly_reports('','',$i);
 		}else{
 			return $query->result();
@@ -340,7 +338,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->week_roster($id,$emp_id,$i);
 		}else{
 			return $query->result();
@@ -419,7 +417,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->fetch_role($branch_id,$i);
 		}else{
 			return $query->result();
@@ -496,7 +494,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->filter_get_employees_branchwise($branch_id,$name,$phone,$email,$i);
 		}else{
 			return $query->result();
@@ -535,7 +533,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->filter_get_disabled_employees_branchwise($branch_id,$name,$phone,$email,$i);
 		}else{
 			return $query->result();
@@ -599,7 +597,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_emp_update($id,$i);
 		}else{
 			return $query->result();
@@ -624,7 +622,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_emp_update($id,$i);
 		}else{
 			return $query->result();
@@ -751,7 +749,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->fetch_users('',$i);
 		}else{
 			return $query->result();
@@ -814,7 +812,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->fetch_roles('',$i);
 		}else{
 			return $query->result();
@@ -843,7 +841,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->fetch_branches('',$i);
 		}else{
 			return $query->result();
@@ -870,7 +868,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->fetch_branches_basedonuser($i);
 		}else{
 			return $query->result();
@@ -894,7 +892,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_user_status($user_id,$i);
 		}else{
 			return $query->result();
@@ -918,7 +916,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_emp_details($emp_id,$i);
 		}else{
 			return $query->result();
@@ -949,7 +947,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_email($id,$i);
 		}else{
 			return $query->result();
@@ -972,7 +970,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_employee_timesheet($id,$i);
 		}else{
 			return $query->result();
@@ -1010,7 +1008,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_timesheet($id,$roster_id,$date,$roster_id,$i);
 		}else{
 			return $query->result();
@@ -1056,7 +1054,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_all_timesheet($branch_id,$i);
 		}else{
 		return $query->result();
@@ -1093,7 +1091,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_timesheet_id($id,$i);
 		}else{
 			return $query->result();
@@ -1189,7 +1187,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->check_insert_or_update($emp_id,$timesheet_id,$date);
 		}else{
 			return "found";
@@ -1246,7 +1244,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->getleaves($params,$i);
 		}else{
 			return $query->result();
@@ -1276,7 +1274,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_leaves($i);
 		}else{
 			return $query->result();
@@ -1305,7 +1303,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_leavesdate_all_emps($emp_id,$start_date,$end_date);
 		}else{
 			return $query->result();
@@ -1329,7 +1327,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_leaves_manager_update($id,$i);
 		}else{
 			return $query->result();
@@ -1383,7 +1381,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_employees_roster($branch_id,$future,$i);
 		}else{
 			return $query->result();
@@ -1412,7 +1410,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_emp_roster($id,$roster_group_id,$i);
 		}else{
 			return $query->result();
@@ -1446,7 +1444,7 @@ public function fetch_employee_notifications(){
 // 			if($i == 5){
 // 				show_error('error '+$i);
 // 			}
-// 			sleep(5);
+// 			log_message('error', 'DB error in Admin_model');
 // 			$this->get_emps_roster_week($emp_id,$start_date,$end_date);
 // 		}else{
 // 			return $query->result();
@@ -1477,7 +1475,7 @@ public function fetch_employee_notifications(){
 // 			if($i == 5){
 // 				show_error('error '+$i);
 // 			}
-// 			sleep(5);
+// 			log_message('error', 'DB error in Admin_model');
 // 			$this->get_emps_roster_week($emp_id,$start_date,$end_date);
 // 		}else{
 // 			return $query->result();
@@ -1549,7 +1547,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->fetch_employee_for_timsheet($roster_group_id);
 		}else{
 		    
@@ -1600,7 +1598,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_roster_weeks($id,$type='',$dash,$i);
 		}else{
 		   
@@ -1796,7 +1794,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->roster_filter($start_date,$end_date,$roster_name,$branch_id,$i);
 		}else{
 			return $query->result();
@@ -1851,7 +1849,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->fetch_reports($i);
 		}else{
 			return $query->result();
@@ -1897,7 +1895,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->fetch_reports($i);
 		}else{
 			return $query->result();
@@ -1924,7 +1922,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->fetch_reports($i);
 		}else{
 		  
@@ -1952,7 +1950,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->emp_roster($date,$branch_id,$i);
 		}else{
 			return $query->result();
@@ -1976,7 +1974,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->fetch_rosterfrom_roster_id($roster_id,$i);
 		}else{
 			return $query->result();
@@ -2008,7 +2006,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_employeesbyrole($role_id,$i);
 		}else{
 			return $query->result();
@@ -2038,7 +2036,7 @@ public function fetch_employee_notifications(){
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in Admin_model');
 			$this->get_employeesbyrole($role_id,$i);
 		}else{
 			return $query->result();

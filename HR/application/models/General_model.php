@@ -22,7 +22,7 @@ class General_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getBranchAccess($user_id, $i);
 		}else{
 				$result = $query->result();
@@ -64,7 +64,7 @@ class General_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getallBranches($user_id, $i);
 		}else{
 				$result = $query->result();
@@ -87,7 +87,7 @@ class General_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->getBranchDetails($branch_id, $i);
 		}else{
 			$result = $query->result();
@@ -119,7 +119,7 @@ class General_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->select_employee_type($email, $i);
 			}else{
 				  $res1=$query->row_array();
@@ -144,7 +144,7 @@ class General_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_modules($v3, $i);
 			}else{
 				  $res9=$query->result();
@@ -166,7 +166,7 @@ class General_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_modules_name($i);
 			}else{
 				  $res10=$query->result();
@@ -202,7 +202,7 @@ class General_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB error in model');
 			$this->get_leaves($id='',$type='',$i);
 		}else{
 			return $query->result();
