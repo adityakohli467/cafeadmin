@@ -243,12 +243,18 @@
  		color:red;
  	}
  	
+ 	/* Scroll wrapper for table overflow */
+ 	.items-scroll-wrapper {
+ 		width: 100%;
+ 		overflow-x: auto;
+ 		-webkit-overflow-scrolling: touch;
+ 	}
+ 
  	/* Order items table */
  	.order-items-table {
  		width: 100%;
  		border-collapse: collapse;
  		border: 1px solid #ccc;
- 		table-layout: fixed;
  	}
  	.order-items-table th {
  		font-weight: bold;
@@ -256,7 +262,6 @@
  		border: 1px solid #ccc;
  		background-color: #f5f5f5;
  		text-align: left;
- 		white-space: nowrap;
  	}
  	.order-items-table td {
  		padding: 10px 8px;
@@ -298,26 +303,38 @@
  			padding-top: 5px;
  		}
  		/* Card layout for items on mobile */
- 		.order-items-table thead { display: none; }
- 		.order-items-table,
- 		.order-items-table tbody,
- 		.order-items-table tr,
- 		.order-items-table td {
- 			display: block;
- 			width: 100%;
+ 		.items-scroll-wrapper {
+ 			overflow-x: visible !important;
+ 		}
+ 		.order-items-table {
+ 			display: block !important;
+ 			border: none !important;
+ 		}
+ 		.order-items-table thead {
+ 			display: none !important;
+ 		}
+ 		.order-items-table tbody {
+ 			display: block !important;
+ 			width: 100% !important;
  		}
  		.order-items-table tr {
+ 			display: block !important;
+ 			width: 100% !important;
  			margin-bottom: 12px;
- 			border: 1px solid #dbdbdb;
- 			border-radius: 4px;
- 			padding: 8px;
+ 			border: 1px solid #ccc !important;
+ 			border-radius: 6px;
+ 			padding: 10px;
  			background: #fafafa;
+ 			box-shadow: 0 1px 3px rgba(0,0,0,0.08);
  		}
  		.order-items-table td {
- 			border: none;
- 			border-bottom: 1px solid #eee;
- 			padding: 6px 8px;
- 			text-align: right;
+ 			display: block !important;
+ 			width: 100% !important;
+ 			border: none !important;
+ 			border-bottom: 1px solid #eee !important;
+ 			padding: 8px 4px !important;
+ 			text-align: right !important;
+ 			overflow: hidden;
  		}
  		.order-items-table td:last-child {
  			border-bottom: none;
@@ -326,18 +343,30 @@
  			content: attr(data-label);
  			float: left;
  			font-weight: bold;
- 			color: #333;
+ 			color: #555;
+ 			margin-right: 10px;
  		}
  		.order-items-table td.col-item {
  			font-weight: bold;
  			font-size: 14px;
+ 			text-align: left !important;
+ 			background: #fff;
+ 			border-bottom: 2px solid #ddd !important;
+ 			padding-bottom: 8px !important;
+ 		}
+ 		.order-items-table td.col-item::before {
+ 			display: none;
  		}
  		.order-items-table td.col-qty,
  		.order-items-table td.col-price,
  		.order-items-table td.col-amount,
  		.order-items-table td.col-code {
- 			width: 100%;
- 			text-align: right;
+ 			width: 100% !important;
+ 			text-align: right !important;
+ 		}
+ 		.order-items-table td.col-amount {
+ 			font-size: 15px;
+ 			color: #222;
  		}
  		/* Address blocks stack */
  		.row > div[class*="col-md-6"][style*="display:inline-block"],
