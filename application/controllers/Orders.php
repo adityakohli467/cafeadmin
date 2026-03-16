@@ -130,9 +130,9 @@ class Orders extends CI_Controller {
             'smtp_pass' => 'Discoverf1y@123!!'
             );
 
-           ini_set('display_errors', 1);
-           ini_set('display_startup_errors', 1);
-           error_reporting(E_ALL);
+           // ini_set('display_errors', 1);
+           // ini_set('display_startup_errors', 1);
+           // error_reporting(E_ALL);
 
 //     $to = 'kaushika@kjcreate.com.au';  
 //     $this->load->library('email', $config);
@@ -2152,7 +2152,7 @@ public function updateOrderDetailsApprovereject($status,$ItemId,$OrderId){
     
      
     public function copy_supp(){
-         ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
+         // ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
           $this->load->model('orders_model');
          $br = $this->orders_model->copy_supp();
          

@@ -386,9 +386,9 @@ class Document extends CI_Controller {
     }
      
     public function view_boh() {
-        ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+        // ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
     	if (!$this->ion_auth->logged_in()) {
 			redirect('auth/login');
 		}else if(!$this->ion_auth->checkUserDetails()){
@@ -623,9 +623,9 @@ error_reporting(E_ALL);
     }
      
     public function view_pest_control_map() {
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
+        // ini_set('display_errors', 1);
+        // ini_set('display_startup_errors', 1);
+        // error_reporting(E_ALL);
     	if (!$this->ion_auth->logged_in()) {
 			redirect('auth/login');
 		}else if(!$this->ion_auth->checkUserDetails()){
@@ -708,9 +708,9 @@ error_reporting(E_ALL);
     }
      
     public function view_product_disclosure() {
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
+        // ini_set('display_errors', 1);
+        // ini_set('display_startup_errors', 1);
+        // error_reporting(E_ALL);
     	if (!$this->ion_auth->logged_in()) {
 			redirect('auth/login');
 		}else if(!$this->ion_auth->checkUserDetails()){
@@ -792,9 +792,9 @@ error_reporting(E_ALL);
     }
      
     public function view_monthly_audit_report() {
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
+        // ini_set('display_errors', 1);
+        // ini_set('display_startup_errors', 1);
+        // error_reporting(E_ALL);
     	if (!$this->ion_auth->logged_in()) {
 			redirect('auth/login');
 		}else if(!$this->ion_auth->checkUserDetails()){

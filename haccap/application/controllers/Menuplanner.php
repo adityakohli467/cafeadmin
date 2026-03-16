@@ -297,9 +297,9 @@ class Menuplanner extends CI_Controller {
       }
 	}
 	public function viewMenuCategory(){
-    	    ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+    	    // ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
  
 		if (!$this->ion_auth->logged_in()) {
 			redirect('auth/login');
@@ -324,9 +324,9 @@ error_reporting(E_ALL);
 		}
 	}
 	public function addMenuCategory(){
-	    ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+	    // ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 		if (!$this->ion_auth->logged_in()) {
 			redirect('auth/login');
 		}else{
