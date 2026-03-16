@@ -1059,7 +1059,11 @@ if(checked_item_count != all_items_count){
         // "myAwesomeDropzone" is the camelized version of the HTML element's ID
 	Dropzone.options.invoice = {
 		maxFiles: 1,
-	    paramName: "file", // The name that will be used to transfer the file
+	    paramName: "file",
+	    resizeWidth: 1920,
+	    resizeHeight: 1920,
+	    resizeQuality: 0.75,
+	    resizeMethod: 'contain',
 	    accept: function(file, done) {
 		    console.log("uploaded");
 		    done();
@@ -1083,7 +1087,11 @@ if(checked_item_count != all_items_count){
 	};
 	Dropzone.options.damaged_invoice = {
 		maxFiles: 1,
-	    paramName: "file", // The name that will be used to transfer the file
+	    paramName: "file",
+	    resizeWidth: 1920,
+	    resizeHeight: 1920,
+	    resizeQuality: 0.75,
+	    resizeMethod: 'contain',
 	    accept: function(file, done) {
 		    console.log("uploaded");
 		    done();

@@ -412,6 +412,10 @@
 	Dropzone.options.invoice = {
 	  maxFiles: 1,
 	  paramName: "file",
+	  resizeWidth: 1920,
+	  resizeHeight: 1920,
+	  resizeQuality: 0.75,
+	  resizeMethod: 'contain',
 	  accept: function(file, done) {
 	    console.log("uploaded");
 	    done();

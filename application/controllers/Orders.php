@@ -28,10 +28,17 @@ class Orders extends CI_Controller {
         $this->lang->load('auth');
         $this->load->helper('language');
          
-        //==========================================================phpmailer start =================================================
+        //PHPMailer is lazy-loaded via _init_email() when needed
+	  
+          
+         
+               
+    }
+    
+    private function _init_email() {
+        if (!empty($this->phpmailermail)) return;
         $this->phpmailermail = new PHPMailer();
         $this->phpmailermail->isSMTP();
-        // $this->phpmailermail->SMTPDebug = 1;
         $this->phpmailermail->Host     = 'smtp.gmail.com';
         $this->phpmailermail->SMTPAuth = TRUE;
         $this->phpmailermail->SMTPSecure = 'tls';
@@ -39,14 +46,57 @@ class Orders extends CI_Controller {
         $this->phpmailermail->Password = 'pahuepfjvhrovoga';
         $this->phpmailermail->Port     = 587;
         $this->phpmailermail->setFrom('cafeorders1@gmail.com', 'Cafeadmin');
-				
-	  //=========================================================php mailer end ======================================================
-	  
-	  
-          
-         
-               
     }
+
+    /**
+     * Compress an uploaded image (JPEG/PNG) to reduce file size.
+     * Resizes to max 1920px on longest side, converts to JPEG at quality 75.
+     * PDFs are left untouched.
+     */
+    private function _compress_image($file_path) {
+        if (!file_exists($file_path)) return;
+        
+        $ext = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));
+        if (!in_array($ext, ['jpg', 'jpeg', 'png'])) return; // skip PDFs
+        
+        $info = getimagesize($file_path);
+        if ($info === false) return;
+        
+        $mime = $info['mime'];
+        $orig_w = $info[0];
+        $orig_h = $info[1];
+        
+        // Create image resource
+        switch ($mime) {
+            case 'image/jpeg': $img = imagecreatefromjpeg($file_path); break;
+            case 'image/png':  $img = imagecreatefrompng($file_path); break;
+            default: return;
+        }
+        if (!$img) return;
+        
+        // Resize if larger than 1920px on any side
+        $max_dim = 1920;
+        $new_w = $orig_w;
+        $new_h = $orig_h;
+        if ($orig_w > $max_dim || $orig_h > $max_dim) {
+            if ($orig_w >= $orig_h) {
+                $new_w = $max_dim;
+                $new_h = (int)round($orig_h * ($max_dim / $orig_w));
+            } else {
+                $new_h = $max_dim;
+                $new_w = (int)round($orig_w * ($max_dim / $orig_h));
+            }
+            $resized = imagecreatetruecolor($new_w, $new_h);
+            imagecopyresampled($resized, $img, 0, 0, 0, 0, $new_w, $new_h, $orig_w, $orig_h);
+            imagedestroy($img);
+            $img = $resized;
+        }
+        
+        // Save as JPEG at quality 75
+        imagejpeg($img, $file_path, 75);
+        imagedestroy($img);
+    }
+
     public function update_category_idfunctiolity(){
         
         $this->db->select('items.itemId,items.category,item_categories.category_id,item_categories.category_name ');
@@ -358,6 +408,9 @@ class Orders extends CI_Controller {
     $updated_at_IP = $_SERVER['REMOTE_ADDR'];
     	
     	if($supplier_balance >= $total){
+    		// Use DB transaction to ensure order + items are atomic
+    		$this->db->trans_start();
+    		
     		$last_order = $this->orders_model->getLastOrder();
     		if(count($last_order)>0){
     			$last_ord_no = $last_order[0]->order_number;
@@ -384,8 +437,6 @@ class Orders extends CI_Controller {
 	    	
 	    	$order_id = $this->orders_model->placeOrder($order);
 	    	
-	    	
-	    		
 	    	if($order_id){
 	    		foreach($items as $key => $item){
 	    			if(is_numeric($item)){
@@ -406,33 +457,33 @@ class Orders extends CI_Controller {
 		    			'amount' => $amount[$key],
 		    			'price' => $price1
 		    		);
-		    		
-		    	
-		    		
 		    		$order_details = $this->orders_model->placeOrderItems($order_details);
 		    	}
 		    
-		   
-		   
+		    	$this->db->trans_complete();
+		    	
+		    	if ($this->db->trans_status() === FALSE) {
+		    		$data['message'] = 'fail';
+		    		echo json_encode($data);
+		    		return;
+		    	}
+		    
+		    	// ======= Queue emails instead of sending synchronously =======
 		    	$supplier_details = $this->orders_model->get_supplier_details($supplier);
 		    	$branch_budget = $this->orders_model->get_branch_budget($branch_id);
 		        $branchId = $this->session->userdata('branch_id');
-                 $branch_email = $this->orders_model->get_branch_email($branch_id);
-		          foreach($branch_email as $email){
-		               
+                $branch_email = $this->orders_model->get_branch_email($branch_id);
+		        foreach($branch_email as $email){
 		               if($supplier == 107 || $supplier == 705 || $supplier == 418 || $supplier == 70 || $supplier == 129|| $supplier == 202|| $supplier == 389|| $supplier == 453|| $supplier == 524 || $supplier == 615){
 		                    $AsahiNo = (!empty($email->AsahiNo) ? $email->AsahiNo : '');
 		               }else{
 		                   $AsahiNo = '';
 		               }
 		               $email_subject = (!empty($email->email_subject) ? $email->email_subject.' '.$AsahiNo.' New Order' : 'New Order');
-		              
 		               $manager_emaill = $email->email;
 				}
 				
-				$from_email = 'cafeadorders@gmail.com';
 			if($branchId == 20){
-				    
 				    $data['branch_id_text'] = 'All the delivery drivers must register with hospital security at the Hospital Main entry before the drop off.
 All the delivery drivers must wear the mask before the café entry.
 All the delivery drivers must sign with Victorian Government QR Code (QR code is on the Kitchen Back door or Front Red Bean Café front Entry). This is separate to hospital registration.
@@ -441,105 +492,57 @@ Our delivery instructions given according to the hospital delivery guidelines.
 Thank you so much for your support and understanding';
 				}
 
+				$suppName = (isset($supplier_details[0]->supplier_name) ? $supplier_details[0]->supplier_name : '');
+
+				// 1) Queue supplier order email
 				if($supplier_email != ''){
-				  $to = $supplier_email;
-				   $supp_cc = implode(',', $supplier_cc);
-			
-				// 	$this->email->set_newline("\r\n");
-				// 	$this->email->from($from_email, $branch_budget[0]->email_subject.' New Order'); 
-				// 	$this->email->to($to);
-				// 	$this->email->reply_to($to);
-				// 	$this->email->subject($email_subject);
-				
-				
 					$data['order_id'] = $order_id;
 					$data['order_number'] = '000'.$order_number;
 					$data['branch_details'] = $branch_budget[0];
 					$data['supplier_details'] = $supplier_details[0];
 					$data['cc_mail'] = 'not_cc';
-					$body = $this->load->view('orders/order_email', $data,TRUE);
-				//  send = $this->email->send();
+					$body = $this->load->view('orders/order_email', $data, TRUE);
 					
-					
-					 $this->phpmailermail->isHTML(true);
-					 $this->phpmailermail->addAddress($to);
-                     $this->phpmailermail->Subject = $email_subject;
-                     $this->phpmailermail->Body = $this->load->view('orders/order_email', $data,TRUE);
-                    
-                     
-                     // for notifying Managers if mail sent to supplier successfull or not 
-                     $suppName =   (isset($supplier_details[0]->supplier_name) ? $supplier_details[0]->supplier_name : '' );
-                     if($this->phpmailermail->send()){
-                 
-                     $this->phpmailermail->ClearAddresses();
-                     $this->phpmailermail->addAddress($branch_budget[0]->email);
-                     if(isset($branch_budget[0]->ccEmail) && $branch_budget[0]->ccEmail !=''){
-                     $this->phpmailermail->addAddress($branch_budget[0]->ccEmail);    
-                     }
-                    // $this->phpmailermail->addAddress('kohliaditya@yahoo.com');
-					 $this->phpmailermail->Subject = $suppName." Email sent Successful";
-					 $this->phpmailermail->Body ="Order Email Sent Succesfully To ".$suppName;
-                     $this->phpmailermail->send();
-                     $orderDataa = array(
-                         'mail_status' => 1
-                         );
-                     $update_order_id = $this->orders_model->updateOrderDetails($orderDataa, $order_id);
-                     
-                     if($_POST['store_force_comment'] !=''){
-                     $this->phpmailermail->ClearAddresses();
-                     $this->phpmailermail->addAddress('kaushika@1800mycatering.com.au');
-					 $this->phpmailermail->Subject = "Supplier,Force Order Placed";
-					 $this->phpmailermail->Body ="Hi Admin, A force order has been placed by ".$manager_emaill;
-                     $this->phpmailermail->send(); 
-                     }
-                     }else{
-                       
-                     $this->phpmailermail->ClearAddresses();
-                     $this->phpmailermail->addAddress($branch_budget[0]->email);
-                    //   $this->phpmailermail->addAddress('adityakohli467@gmail.com');
-					$this->phpmailermail->Subject = $suppName." Email sent Failed";
-					$this->phpmailermail->Body ="Unable To Send Mail To ".$suppName;
-                    $this->phpmailermail->send();    
-                    
-                    $orderDataa = array(
-                         'mail_status' => 2
-                         );
-                     $update_order_id = $this->orders_model->updateOrderDetails($orderDataa, $order_id);
-                         
-                     }
-                    
-					                
+					$this->orders_model->queue_email($supplier_email, '', $email_subject, $body, $order_id);
 				}
 				
-				
-				
-		
-				
+				// 2) Queue CC supplier email
 				if(!empty($supplier_cc)){
-				    
-				     $supplier_to = implode(',', $supplier_cc);
-
-				// 	$this->email->set_newline("\r\n");
-				// 	$this->email->from($from_email, 'Zouki New Order'); 
-				// 	$this->email->to($supplier_to);
-				// 	$this->email->subject($email_subject);
+					$supplier_to = implode(',', $supplier_cc);
 					$data['order_id'] = $order_id;
 					$data['order_number'] = '000'.$order_number;
 					$data['branch_details'] = $branch_budget[0];
 					$data['supplier_details'] = $supplier_details[0];
 					$data['cc_mail'] = 'cc';
-					$body = $this->load->view('orders/order_email', $data,TRUE);
-				// 	$this->email->message($body);
-				// 	$send = $this->email->send();
-				
-					 $this->phpmailermail->ClearAddresses();
-					 $this->phpmailermail->addAddress($supplier_to);
-					 $this->phpmailermail->Subject = $email_subject;
-					 $this->phpmailermail->Body =$body;
-                     $this->phpmailermail->send();
-                     
-                                        
+					$body = $this->load->view('orders/order_email', $data, TRUE);
+					
+					$this->orders_model->queue_email($supplier_to, '', $email_subject, $body);
 				}
+
+				// 3) Queue manager notification email
+				if(isset($branch_budget[0]->email) && $branch_budget[0]->email != ''){
+					$manager_cc = (isset($branch_budget[0]->ccEmail) && $branch_budget[0]->ccEmail != '') ? $branch_budget[0]->ccEmail : '';
+					$this->orders_model->queue_email(
+						$branch_budget[0]->email,
+						$manager_cc,
+						$suppName." Order Placed - Email Queued",
+						"Order #000".$order_number." has been placed for ".$suppName.". Supplier email is queued for delivery."
+					);
+				}
+
+				// 4) Queue force order admin notification
+				if($_POST['store_force_comment'] != ''){
+					$this->orders_model->queue_email(
+						'kaushika@1800mycatering.com.au',
+						'',
+						"Supplier, Force Order Placed",
+						"Hi Admin, A force order has been placed by ".$manager_emaill
+					);
+				}
+				
+				// Mark mail_status = 0 (queued, will be updated by cron after sending)
+				$orderDataa = array('mail_status' => 0);
+				$this->orders_model->updateOrderDetails($orderDataa, $order_id);
 					
 				//get branch budget
 				$today_date = date('Y-m-d');
@@ -563,25 +566,18 @@ Thank you so much for your support and understanding';
 		    		}
 		    	}
 		    	
-		    	
-		    
 		    	$current_branch_id = $this->session->userdata('branch_id');
 				$branch_budget = $this->orders_model->get_branch_budget($current_branch_id);
-				
 				$branch_orders = $this->orders_model->get_branch_orders($start_date,$end_date);
-				
-				
 				
 				$budget = $branch_budget[0]->branch_budget;
 				$order_total = $branch_orders[0]->orderTotal;
 				
 				//get month orders
 				$start_date = date('Y-m-01');
-				$end_date = date('Y-m-t');;
+				$end_date = date('Y-m-t');
 				$total_orders = $this->orders_model->getAllOrders($start_date, $end_date);
 				$orders_count = count($total_orders);
-				
-				
 				
 				$balance = $budget - $order_total;
 				
@@ -590,6 +586,7 @@ Thank you so much for your support and understanding';
 				$data['message'] = 'success';
 				
 	    	}else{
+	    		$this->db->trans_complete();
 	    		$data['message'] = 'fail';
 	    	}
     	}else{
@@ -1210,6 +1207,7 @@ Thank you so much for your support and understanding';
 				// 	$this->email->message($body);
 				// 	$send = $this->email->send();
 					
+					 $this->_init_email();
 					 $this->phpmailermail->isHTML(true);
 					 $this->phpmailermail->addAddress($to);
                      $this->phpmailermail->Subject = 'Update Order Recieved';
@@ -2178,12 +2176,24 @@ public function updateOrderDetailsApprovereject($status,$ItemId,$OrderId){
      public function uploadInvoice(){
     	$invoice_id = $this->uri->segment(3);
     	$orderId = $this->uri->segment(4);
-    	if($invoice_id == "invoice_copy"){
-		$config['upload_path'] = 'assets/docs/invoices/';
+    	
+    	// Map invoice type to upload folder and DB field
+    	$invoice_map = array(
+    	    'invoice_copy'   => 'assets/docs/invoices/',
+    	    'invoice_copy_1' => 'assets/docs/invoices_1/',
+    	    'invoice_copy_2' => 'assets/docs/invoices_2/',
+    	    'invoice_copy_3' => 'assets/docs/invoices_3/'
+    	);
+    	
+    	if (!isset($invoice_map[$invoice_id])) return;
+    	
+    	$upload_path = $invoice_map[$invoice_id];
+    	
+		$config['upload_path'] = $upload_path;
         $config['allowed_types'] = 'jpg|jpeg|png|pdf';
-        $config['max_size']             = 10000;
-        $config['max_width']            = 5000;
-        $config['max_height']           = 5000;
+        $config['max_size']      = 10000;
+        $config['max_width']     = 5000;
+        $config['max_height']    = 5000;
         $config['file_name'] = $_FILES['file']['name'];
 
         $this->load->library('upload',$config);
@@ -2192,84 +2202,17 @@ public function updateOrderDetailsApprovereject($status,$ItemId,$OrderId){
         if($this->upload->do_upload('file')){
             $uploadData = $this->upload->data();
             $picture = $uploadData['file_name'];
+            
+            // Compress uploaded image (skips PDFs)
+            $this->_compress_image($uploadData['full_path']);
         }else{
             $picture = '';
         }
         $filename = str_replace(' ','_',$_FILES['file']['name']);
 
-        	$data = array(
-            'invoice_copy' => $filename,
-            );
-		}
-    	if($invoice_id == "invoice_copy_1"){
-		$config['upload_path'] = 'assets/docs/invoices_1/';
-        $config['allowed_types'] = 'jpg|jpeg|png|pdf';
-        $config['max_size']             = 100000;
-        $config['max_width']            = 5000;
-        $config['max_height']           = 5000;
-        $config['file_name'] = $_FILES['file']['name'];
-
-        $this->load->library('upload',$config);
-        $this->upload->initialize($config);
-        
-        if($this->upload->do_upload('file')){
-            $uploadData = $this->upload->data();
-            $picture = $uploadData['file_name'];
-        }else{
-            $picture = '';
-        }
-        $filename = str_replace(' ','_',$_FILES['file']['name']);
-
-        	$data = array(
-            'invoice_copy_1' => $filename,
-            );
-		}
-		if($invoice_id == "invoice_copy_2"){
-		$config['upload_path'] = 'assets/docs/invoices_2/';
-        $config['allowed_types'] = 'jpg|jpeg|png|pdf';
-        $config['max_size']             = 100000;
-        $config['max_width']            = 5000;
-        $config['max_height']           = 5000;
-        $config['file_name'] = $_FILES['file']['name'];
-
-        $this->load->library('upload',$config);
-        $this->upload->initialize($config);
-        
-        if($this->upload->do_upload('file')){
-            $uploadData = $this->upload->data();
-            $picture = $uploadData['file_name'];
-        }else{
-            $picture = '';
-        }
-        $filename = str_replace(' ','_',$_FILES['file']['name']);
-
-        	$data = array(
-            'invoice_copy_2' => $filename,
-            );
-		}
-		if($invoice_id == "invoice_copy_3"){
-		$config['upload_path'] = 'assets/docs/invoices_3/';
-        $config['allowed_types'] = 'jpg|jpeg|png|pdf';
-        $config['max_size']             = 10000;
-        $config['max_width']            = 5000;
-        $config['max_height']           = 5000;
-        $config['file_name'] = $_FILES['file']['name'];
-
-        $this->load->library('upload',$config);
-        $this->upload->initialize($config);
-        
-        if($this->upload->do_upload('file')){
-            $uploadData = $this->upload->data();
-            $picture = $uploadData['file_name'];
-        }else{
-            $picture = '';
-        }
-        $filename = str_replace(' ','_',$_FILES['file']['name']);
-
-        	$data = array(
-            'invoice_copy_3' => $filename,
-            );
-		}
+        $data = array(
+            $invoice_id => $filename,
+        );
         $res = $this->orders_model->updateInvoice($data, $orderId);
   
     }
@@ -2277,17 +2220,19 @@ public function updateOrderDetailsApprovereject($status,$ItemId,$OrderId){
     public function upload_damaged_file($orderId){
     	$config['upload_path'] = 'assets/docs/damaged_file/';
         $config['allowed_types'] = 'jpg|jpeg|png|pdf';
-        $config['max_size']             = 1024;
+        $config['max_size']             = 10000;
         $config['max_width']            = 5000;
         $config['max_height']           = 5000;
         $config['file_name'] = $_FILES['file']['name'];
-        //echo $config['file_name'];exit;
         $this->load->library('upload',$config);
         $this->upload->initialize($config);
         
         if($this->upload->do_upload('file')){
             $uploadData = $this->upload->data();
             $picture = $uploadData['file_name'];
+            
+            // Compress uploaded image (skips PDFs)
+            $this->_compress_image($uploadData['full_path']);
         }else{
             $picture = '';
         }

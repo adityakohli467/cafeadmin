@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class Orders_model extends CI_Model{
 	function __construct() {
 	parent::__construct();
@@ -69,7 +69,7 @@ class Orders_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getSuppliers($i);
 		}else{
 			return $query->result();
@@ -94,7 +94,7 @@ class Orders_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getSupplierItems($supId,$i);
 		}else{
 			return $query->result();
@@ -119,7 +119,7 @@ class Orders_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getAllSupplierItems($i);
 		}else{
 			return $query->result();
@@ -155,7 +155,7 @@ class Orders_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->get_branch_suppliers($id='',$i);
 		}else{
 			return $query->result();
@@ -192,7 +192,7 @@ class Orders_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->get_branch_suppliers($id='',$i);
 		}else{
 			return $query->result();
@@ -223,7 +223,7 @@ class Orders_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->supplier_items($id,$i);
 		}else{
 			return $query->result();
@@ -252,7 +252,7 @@ class Orders_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->fetch_supplier_items_byname($supplier_id, $search, $i);
 		}else{
 			return $query->result();
@@ -281,7 +281,7 @@ class Orders_model extends CI_Model{
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->supplier_items_cat($id, $catid, $i);
 		}else{
 			return $query->result();
@@ -313,7 +313,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->supplier_items_users($id, $i);
 		}else{
 			return $query->result();
@@ -343,7 +343,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->supplier_items_cat_users($id, $catId, $i);
 		}else{
 			return $query->result();
@@ -366,7 +366,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->placeOrder($data,$i);
 		}else{
 			return $order_id;
@@ -397,7 +397,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->get_supplier_details($supId, $i);
 		}else{
 			return $query->result();
@@ -420,7 +420,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getUserGroupDetails($group_id, $i);
 		}else{
 			return $query->result();
@@ -500,7 +500,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getBranchOrders($i);
 		}else{
 		    
@@ -528,7 +528,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getLastOrder($i);
 		}else{
 			return $query->result();
@@ -552,7 +552,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getSupplierSchedule($supId, $i);
 		}else{
 			return $query->result();
@@ -576,7 +576,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getOrderDetails($orderId, $i);
 		}else{
 			return $query->result();
@@ -601,7 +601,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getOrderItemDetails($id, $i);
 		}else{
 			return $query->result();
@@ -636,7 +636,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getOrderItems($id, $i);
 		}else{
 			$result = $query->result();
@@ -703,7 +703,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getSupplierScheduleByDay($supId, $day, $i);
 		}else{
 			return $query->result();
@@ -730,7 +730,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getWeekOrderTotal($supId, $start, $end, $i);
 		}else{
 			return $query->result();
@@ -757,7 +757,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getWeeklyBudget($supId, $i);
 		}else{
 			return $query->result();
@@ -782,7 +782,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->get_branch_budget($branch_id, $i);
 		}else{
 			return $query->result();
@@ -809,7 +809,7 @@ $this->db->order_by('items.product_sort_order', 'ASC');
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->get_branch_orders($start, $end, $i);
 		}else{
 			return $query->result();
@@ -925,7 +925,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getSubscriptionDetails($i);
 		}else{
 			return $query->result();
@@ -962,7 +962,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->updateOrderDetailsApprovereject($status,$ItemId,$OrderId,$i);
 		}else{
 			return $result;
@@ -986,7 +986,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->updateOrderDetails($details,$orderId,$i);
 		}else{
 			return $result;
@@ -1013,7 +1013,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->deleteOrderItems($orderId,$i);
 		}else{
 			return $result;
@@ -1069,7 +1069,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->update_product_in_order($orderId,$orderitemId='',$type='',$i);
 		}else{
 			return $result;
@@ -1094,7 +1094,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->get_customer_details($customer_id,$i);
 		}else{
 			return $query->result();
@@ -1117,7 +1117,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->updateOrderStatus($order_id,$i);
 		}else{
 			return $result;
@@ -1141,7 +1141,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->modifyOrderStatus($purchaseOrderNo,$OrderStatus,$i);
 		}else{
 			return true;
@@ -1172,7 +1172,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getFavouriteOrders($i);
 		}else{
 			return $query->result();
@@ -1200,7 +1200,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getStandingOrders($i);
 		}else{
 			return $query->result();
@@ -1226,7 +1226,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->fav_order_update($id,$i);
 		}else{
 			return $result;
@@ -1254,7 +1254,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->standing_order_update($id,$i);
 		}else{
 			return $result;
@@ -1277,7 +1277,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->updateInvoice($details, $order_id, $i);
 		}else{
 			return $result;
@@ -1323,7 +1323,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->get_monthly_branch_orders($start, $end, $i);
 		}else{
 			return $query->result();
@@ -1355,7 +1355,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getAllMonthlyOrders($start_date, $end_date, $i);
 		}else{
 			return $query->result();
@@ -1427,7 +1427,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->getBranchOrders($i);
 		}else{
 			return $query->result();
@@ -1450,7 +1450,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->get_branch_email($branch_id, $i);
 		}else{
 			return $query->result();
@@ -1474,7 +1474,7 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'DB retry in Orders_model');
 			$this->get_item_price($item_id,$i);
 		}else{
 			return $query->result();
@@ -1497,11 +1497,49 @@ if (!$query) {
 			if($i == 5){
 				show_error('error '+$i);
 			}
-			sleep(5);
+			log_message('error', 'updateOrderStatus retry #'.$i.' for order '.$order_id);
 			$this->updateOrderStatus($order_id,$item_id,$details,$i);
 		}else{
 			return $result;
 		}
 		
+	}
+
+	// ==================== Email Queue Methods ====================
+
+	public function queue_email($to, $cc, $subject, $body, $order_id = null) {
+		$data = array(
+			'to_email'   => $to,
+			'cc_email'   => $cc,
+			'subject'    => $subject,
+			'body'       => $body,
+			'order_id'   => $order_id,
+			'status'     => 'pending',
+			'attempts'   => 0,
+			'created_at' => date('Y-m-d H:i:s')
+		);
+		$this->db->insert('email_queue', $data);
+		return $this->db->insert_id();
+	}
+
+	public function get_pending_emails($limit = 10) {
+		$this->db->where('status', 'pending');
+		$this->db->where('attempts <', 5);
+		$this->db->order_by('created_at', 'ASC');
+		$this->db->limit($limit);
+		return $this->db->get('email_queue')->result();
+	}
+
+	public function update_email_status($id, $status, $error = null) {
+		$data = array(
+			'status'        => $status,
+			'attempts'      => $this->db->query("SELECT attempts FROM email_queue WHERE id = " . (int)$id)->row()->attempts + 1,
+			'error_message' => $error
+		);
+		if ($status === 'sent') {
+			$data['sent_at'] = date('Y-m-d H:i:s');
+		}
+		$this->db->where('id', $id);
+		$this->db->update('email_queue', $data);
 	}
 }
