@@ -4,7 +4,7 @@
 	<title>Cafe Admin</title>
 	<link rel="shortcut icon" href="<?php echo base_url();?>images/favicon.jpg" />
 	
-	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
         
 	<link rel="stylesheet" href="<?php echo base_url(""); ?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/jquery.dataTables.css">
@@ -133,7 +133,7 @@
 			    	<form action="<?php echo base_url();?>index.php/orders/confirmOrder" method="post" name="supplier_form">
 			    		
 			    		<div style="margin-top:30px;">
-			    			
+			    			<div class="items-scroll-wrapper">
 			    			<div class="item-row">
 			    			    <?php if($items->itemCode !='') { ?>
 			    			    <div class="item-left" style="width:15%;text-align:left;">Item Code</div>	
@@ -161,6 +161,7 @@
 				    		
 	    		
 				    		<?php } } ?>
+				    	</div>
 				    	</div>
 				    	<br>
 				    	
@@ -235,6 +236,94 @@
 	<style>
  	label.error, label>span{
  		color:red;
+ 	}
+ 	
+ 	/* Mobile responsive styles for supplier order details */
+ 	@media (max-width: 768px) {
+ 		.top_title {
+ 			font-size: 14px;
+ 			height: auto;
+ 			padding: 10px 5px;
+ 			line-height: 1.4;
+ 		}
+ 		.panel-heading.ph-dash {
+ 			padding: 8px 5px !important;
+ 		}
+ 		.panel-heading.ph-dash > div[class*="col-md"] {
+ 			width: 100%;
+ 			float: none;
+ 			text-align: center !important;
+ 			line-height: 32px !important;
+ 		}
+ 		.panel-heading.ph-dash > div[class*="col-md"]:last-child {
+ 			border-top: 1px solid rgba(255,255,255,0.2);
+ 			padding-top: 5px;
+ 		}
+ 		/* Item rows - horizontal scroll wrapper */
+ 		.items-scroll-wrapper {
+ 			width: 100%;
+ 			overflow-x: auto;
+ 			-webkit-overflow-scrolling: touch;
+ 		}
+ 		.items-scroll-wrapper .item-row {
+ 			min-width: 480px;
+ 		}
+ 		/* Address blocks stack vertically */
+ 		.row > div[class*="col-md-6"][style*="display:inline-block"],
+ 		.row > div[class*="col-sm-6"][style*="display:inline-block"] {
+ 			width: 100% !important;
+ 			display: block !important;
+ 			margin-bottom: 15px;
+ 		}
+ 		/* Form fields full width */
+ 		.form-group[class*="col-md-6"] {
+ 			width: 100%;
+ 			padding-left: 15px;
+ 			padding-right: 15px;
+ 		}
+ 		/* Button full width */
+ 		.btn.button-width {
+ 			width: 100%;
+ 			margin-bottom: 10px;
+ 		}
+ 		/* Main container padding */
+ 		.main-container {
+ 			padding: 0 5px;
+ 		}
+ 		.main-container > .col-sm-12 {
+ 			padding: 0;
+ 		}
+ 		/* Page heading */
+ 		.page-head h3 {
+ 			font-size: 18px;
+ 		}
+ 		.page-head > div[class*="col-md"] {
+ 			width: 100%;
+ 			text-align: center;
+ 		}
+ 		/* Footer */
+ 		.foot-border .navbar-header,
+ 		.foot-border .foot-nav {
+ 			float: none;
+ 			text-align: center;
+ 		}
+ 		.foot-left, .foot-right {
+ 			float: none;
+ 			text-align: center;
+ 		}
+ 	}
+ 	
+ 	@media (max-width: 480px) {
+ 		.top_title {
+ 			font-size: 12px;
+ 		}
+ 		.panel-heading.ph-dash span,
+ 		.panel-heading.ph-dash div {
+ 			font-size: 16px !important;
+ 		}
+ 		#order_total {
+ 			font-size: 16px;
+ 		}
  	}
     </style>
 </body>

@@ -72,7 +72,8 @@ class Cron extends CI_Controller {
                 $mail->Body    = $email->body;
 
                 if ($mail->send()) {
-                    $this->orders_model->update_email_status($email->id, 'sent');
+                    // Delete sent emails to keep table small
+                    $this->db->where('id', $email->id)->delete('email_queue');
                     // Update order mail_status if this email is linked to an order
                     if (!empty($email->order_id)) {
                         $this->orders_model->updateOrderDetails(array('mail_status' => 1), $email->order_id);
@@ -101,6 +102,10 @@ class Cron extends CI_Controller {
                 $this->orders_model->updateOrderDetails(array('mail_status' => 2), $ex->order_id);
             }
         }
+
+        // Delete failed records older than 3 months
+        $cutoff = date('Y-m-d H:i:s', strtotime('-3 months'));
+        $this->db->where('created_at <', $cutoff)->delete('email_queue');
 
         echo "Done. Sent: {$sent}, Failed: {$failed}\n";
     }
