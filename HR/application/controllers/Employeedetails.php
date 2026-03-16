@@ -3240,7 +3240,19 @@ public function fetch_employee_for_timsheet(){
     $timesheet_id= $data_posted[1];
      $data['timesheet_id'] =  $timesheet_id; 
         }else{
-     $data['timesheet_id'] =  '';
+     // Fallback: get timesheet_id from the matching timesheet for this roster_group_id
+     if(!empty($all_timesheet)){
+         foreach($all_timesheet as $ts){
+             if($ts->roster_group_id == $roster_group_id){
+                 $timesheet_id = $ts->timesheet_id;
+                 break;
+             }
+         }
+         if($timesheet_id == '' && isset($all_timesheet[0])){
+             $timesheet_id = $all_timesheet[0]->timesheet_id;
+         }
+     }
+     $data['timesheet_id'] =  $timesheet_id;
         }    
    }
      

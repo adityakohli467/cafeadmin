@@ -31,6 +31,9 @@ class Admin_model extends CI_Model{
 	   return $query->result();
    }
     public function get_timesheet_bulk($emp_ids, $timesheet_id, $date) {
+    if(empty($emp_ids) || $timesheet_id == ''){
+        return array();
+    }
     $this->db->select('employee_id, roster_id, in_time, out_time, break_in_time, break_out_time');
     $this->db->from('employee_timesheet');
     $this->db->where_in('employee_id', $emp_ids);
@@ -40,7 +43,9 @@ class Admin_model extends CI_Model{
    }
    
    public function get_shifts_bulk($roster_ids, $dayname_column) {
-   
+    if(empty($roster_ids)){
+        return array();
+    }
         $this->db->select('roster_id, '.$dayname_column);
 		$this->db->from('roster');
 		$this->db->where_in('roster_id', $roster_ids);

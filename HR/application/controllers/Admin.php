@@ -4032,9 +4032,10 @@ if(!empty($roster)){
 				         $break_nameofday = $week_days[$i].'_break_time';
 				         
 				         $break_hrs = $ros->$break_nameofday;
+                         if(isset($ros->$start_nameofday) && $ros->$start_nameofday != '' && $ros->$start_nameofday != 'null' && isset($ros->$end_nameofday) && $ros->$end_nameofday != '' && $ros->$end_nameofday != 'null'){
                          $time1 = strtotime($ros->$start_nameofday);
                          $time2 = strtotime($ros->$end_nameofday);
-                         
+                         }else{ $time1 = ''; $time2 = ''; }
                          if($time1 !='' && $time2 !=''){
                               $difference = round(abs(($time2 - $time1)) / 3600,2);
                                if($difference !='') {
@@ -4641,7 +4642,7 @@ if(!empty($roster)){
 				         }
 				         
 				         
-				         if ((isset($start_nameofday) && $start_nameofday != '') && (isset($end_nameofday) && $end_nameofday != '')) {
+				         if ((isset($ros->$start_nameofday) && $ros->$start_nameofday != '' && $ros->$start_nameofday != 'null') && (isset($ros->$end_nameofday) && $ros->$end_nameofday != '' && $ros->$end_nameofday != 'null')) {
     $time1 = strtotime($ros->$start_nameofday);
     $time2 = strtotime($ros->$end_nameofday);
     
@@ -4868,7 +4869,7 @@ if(!empty($roster)){
 				         }
 				         
 				         
-				         if((isset($start_nameofday) && $start_nameofday !='') && (isset($end_nameofday) && $end_nameofday !='')){
+				         if(isset($ros->$start_nameofday) && $ros->$start_nameofday != '' && $ros->$start_nameofday != 'null' && isset($ros->$end_nameofday) && $ros->$end_nameofday != '' && $ros->$end_nameofday != 'null'){
                          $time1 = strtotime($ros->$start_nameofday);
                          $time2 = strtotime($ros->$end_nameofday);
                          
@@ -5201,7 +5202,7 @@ if(!empty($roster)){
 				         $difference = 0;
 				         $break_hrs = $ros->$break_nameofday;
 				         
-				         if((isset($start_nameofday) && $start_nameofday !='') && (isset($end_nameofday) && $end_nameofday !='')){
+				         if(isset($ros->$start_nameofday) && $ros->$start_nameofday != '' && $ros->$start_nameofday != 'null' && isset($ros->$end_nameofday) && $ros->$end_nameofday != '' && $ros->$end_nameofday != 'null'){
                          $time1 = strtotime($ros->$start_nameofday);
                          $time2 = strtotime($ros->$end_nameofday);
 if($time1 !='' && $time2 !=''){
