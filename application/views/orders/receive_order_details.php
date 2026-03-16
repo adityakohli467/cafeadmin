@@ -303,15 +303,15 @@
 	var orders = {};
 	var suppliers = {};
 	<?php if(null !== $this->session->userdata('order_items')){ ?>
-	orders = JSON.parse(<?php echo json_encode($this->session->userdata('order_items')); ?>);
-	suppliers = JSON.parse(<?php echo json_encode($this->session->userdata('suppliers')); ?>);
+	orders = <?php echo $this->session->userdata('order_items'); ?>;
+	suppliers = <?php echo $this->session->userdata('suppliers'); ?>;
 	<?php } ?>
 	
 	loadCartDetails();
 	// console.log(orders);
 	function loadCartDetails(){
 		var supId = '<?php echo $orders->supplier_id;?>';
-		var order_items = JSON.parse(<?php echo json_encode($order_items); ?>);
+		var order_items = <?php echo $order_items; ?>;
 		console.log("Order detailsss",order_items)
 		orders[supId] = {};
 		var items = [];
