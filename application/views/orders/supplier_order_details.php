@@ -247,24 +247,34 @@
  	.order-items-table {
  		width: 100%;
  		border-collapse: collapse;
+ 		border: 1px solid #ccc;
+ 		table-layout: fixed;
  	}
  	.order-items-table th {
  		font-weight: bold;
- 		padding: 8px 6px;
- 		border-bottom: 2px solid #dbdbdb;
+ 		padding: 10px 8px;
+ 		border: 1px solid #ccc;
+ 		background-color: #f5f5f5;
  		text-align: left;
  		white-space: nowrap;
  	}
  	.order-items-table td {
- 		padding: 8px 6px;
- 		border-bottom: 1px solid #dbdbdb;
- 		vertical-align: top;
+ 		padding: 10px 8px;
+ 		border: 1px solid #ccc;
+ 		vertical-align: middle;
+ 		word-wrap: break-word;
  	}
- 	.order-items-table .col-code { width: 15%; }
+ 	.order-items-table tbody tr:nth-child(even) {
+ 		background-color: #f9f9f9;
+ 	}
+ 	.order-items-table tbody tr:hover {
+ 		background-color: #eef5ff;
+ 	}
+ 	.order-items-table .col-code { width: 14%; }
  	.order-items-table .col-item { width: auto; }
- 	.order-items-table .col-qty { width: 10%; text-align: center; }
+ 	.order-items-table .col-qty { width: 8%; text-align: center; }
  	.order-items-table .col-price { width: 12%; text-align: right; }
- 	.order-items-table .col-amount { width: 15%; text-align: right; font-weight: bold; }
+ 	.order-items-table .col-amount { width: 14%; text-align: right; font-weight: bold; }
  	
  	/* Mobile responsive styles */
  	@media (max-width: 768px) {
