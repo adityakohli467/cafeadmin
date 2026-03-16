@@ -1,13 +1,6 @@
     <link href="<?php echo base_url(); ?>res/css/theme.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>res/bootstrap-datatable/css/dataTables.bootstrap.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>res/bootstrap-datatable/css/dataTables.responsive.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>assets/css/select2.min.css" rel="stylesheet">
-    <style>
-    .select2-container--default .select2-selection--single { height: 34px; border: 1px solid #ccc; border-radius: 0; }
-    .select2-container--default .select2-selection--single .select2-selection__rendered { line-height: 34px; padding-left: 8px; }
-    .select2-container--default .select2-selection--single .select2-selection__arrow { height: 32px; }
-    .select2-container { min-width: 200px; }
-    </style>
 
 <body>
     
@@ -71,7 +64,7 @@
                         <div class="place-orders">
                             <div class="row">
                                 <div class="col-lg-12">
-								<select class="table-select app-select ct-app-select select2-searchable" id="select_supplier_id" >
+								<select class="table-select app-select ct-app-select" id="select_supplier_id" onchange="getSupplierItems(this)" >
 										<option value="">Select Supplier</option>
 										<option value="all">All Suppliers</option>
 										<?php 
@@ -81,7 +74,7 @@
 										<option value="<?php echo $supp->supplier_id;?>"><?php echo $supp->supplier_name;?></option>
 										<?php }} ?>
 									</select>
-									<select class="table-select app-select ct-app-select select2-searchable" id="select_category_id" style="margin-left:5px;">
+									<select class="table-select app-select ct-app-select" id="select_category_id" onchange="getSupplierItems(this)" style="margin-left:5px;">
 										<option value="all">All Categories</option>
 										<?php 
 										if(!empty($categories)){
@@ -1024,22 +1017,6 @@ getBranchOrderTotalFromDeliverDate().then(function(balanceThisWeek) {
                 responsive: true
             });
         });
-    </script>
-    <script src="<?php echo base_url(); ?>assets/js/select2.min.js"></script>
-    <script>
-    $(document).ready(function(){
-        $('#select_supplier_id').select2({ placeholder: 'Search Supplier...', allowClear: true, width: 'resolve' });
-        $('#select_category_id').select2({ placeholder: 'Search Category...', allowClear: true, width: 'resolve' });
-        $('#select_supplier_id, #select_category_id').on('change', function(){ getSupplierItems(this); });
-    });
-    </script>
-    <script src="<?php echo base_url(); ?>assets/js/select2.min.js"></script>
-    <script>
-    $(document).ready(function(){
-        $('#select_supplier_id').select2({ placeholder: 'Search Supplier...', allowClear: true, width: 'resolve' });
-        $('#select_category_id').select2({ placeholder: 'Search Category...', allowClear: true, width: 'resolve' });
-        $('#select_supplier_id, #select_category_id').on('change', function(){ getSupplierItems(this); });
-    });
     </script>
 
 </body>
