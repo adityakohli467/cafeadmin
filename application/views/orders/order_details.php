@@ -441,7 +441,7 @@ $(document).ready(function(){
 		var items_loop = orders[supId].item;
 		var items = '';
 		var total = 0;
-		var supp_name = '<?php echo $supplier_name;?>';
+		var supp_name = '<?php echo addcslashes($supplier_name, "'\\"); ?>';
 			
 		$.each( items_loop, function( key, value ) {
 			
@@ -628,7 +628,7 @@ $(document).ready(function(){
 			// var supplier_name =  suppliers[supplierId];//$("option:selected",e).text(); 
 	
 			// $('#supplier_name').html(supplier_name);
-			var supplier_name = '<?php echo $supplier_name;?>';
+			var supplier_name = '<?php echo addcslashes($supplier_name, "'\\"); ?>';
 			var order_items = orders[supplierId];
 			var items_loop = orders[supplierId].item;
 			var items = '';
@@ -848,7 +848,7 @@ $(document).ready(function(){
 		var product_name = $('#product_name').val();
 		var product_quantity = $('#product_quantity').val();
 		var product_price = $('#product_price').val();
-		var supName = '<?php echo $supplier_name;?>';
+		var supName = '<?php echo addcslashes($supplier_name, "'\\"); ?>';
 		
 		if(product_name == ''){
 			var name_error = 1;

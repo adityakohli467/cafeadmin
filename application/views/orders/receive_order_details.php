@@ -376,7 +376,7 @@
 		var items_loop = orders[supId].item;
 		var items = '';
 		var total = 0;
-		var supp_name = '<?php echo $supplier_name;?>';
+		var supp_name = '<?php echo addcslashes($supplier_name, "'\\"); ?>';
 		
 		items+='<div class="item-row">'
 					+'<div class="item-left" style="width:34%;text-align:left;">Item</div>\n'

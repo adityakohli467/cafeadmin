@@ -547,7 +547,7 @@ $(document).ready(function(){
 		var items_loop = orders[supId].item;
 		var items = '';
 		var total = 0;
-		var supp_name = '<?php echo $supplier_name;?>';
+		var supp_name = '<?php echo addcslashes($supplier_name, "'\\"); ?>';
 		
 		items+='<div class="item-row"><div class="item-left-small no-border" style="width:12%">&nbsp;</div>\n'
 					+'<div class="item-left" style="width:22%;text-align:left;">Item</div>\n'
@@ -868,7 +868,7 @@ if(checked_item_count != all_items_count){
 		var product_quantity = $('#product_quantity').val();
 		var product_price = $('#product_price').val();
 		var amount = product_price * product_quantity;
-		var supName = '<?php echo $supplier_name;?>';
+		var supName = '<?php echo addcslashes($supplier_name, "'\\"); ?>';
 		var order_id = '<?php echo $orders->order_id; ?>';
 		if(product_name == ''){
 			var name_error = 1;
@@ -953,7 +953,7 @@ if(checked_item_count != all_items_count){
 		var product_quantity = $('#edit_product_quantity').val();
 		var product_price = $('#edit_product_price').val();
 		var order_item_id = $('#edit_item_id').val();
-		var supName = '<?php echo $supplier_name;?>';
+		var supName = '<?php echo addcslashes($supplier_name, "'\\"); ?>';
 		var order_id = '<?php echo $orders->order_id; ?>';
 		var amount = product_quantity * product_price;
 		  var product_details = [
