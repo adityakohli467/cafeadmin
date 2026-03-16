@@ -360,7 +360,7 @@ class Employeedetails extends CI_Controller {
            $branch_id = $this->session->userdata('branch_id');
          
             $config = array();
-            $config['base_url'] = 'https://www.cafeadmin.com.au/HR/index.php/'.$link;
+            $config['base_url'] = base_url('HR/index.php/').$link;
             $config['total_rows'] = $total_records;
             if($total_records > 10){
               $config["per_page"] = 10;  

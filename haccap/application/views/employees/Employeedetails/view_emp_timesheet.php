@@ -30,7 +30,7 @@
 			<a href="javascript:window.print();" ><i class="material-icons" data-toggle="tooltip" title="Print">&#xe8ad;</i></a>
 		
 			<a class="btn btn-success btn-ph" onclick="download_data(1)" style="position: relative !important;">Download Excel</a>
-			<a class="btn btn-success btn-ph" href="https://www.cafeadmin.com.au/HR/index.php/Employeedetails/download_textfile/<?php echo $timesheet_id; ?>/<?php echo $roster_group_id; ?>" style="position: relative !important;">Download Text</a>
+			<a class="btn btn-success btn-ph" href="<?php echo base_url('HR/index.php/Employeedetails/download_textfile/'); ?><?php echo $timesheet_id; ?>/<?php echo $roster_group_id; ?>" style="position: relative !important;">Download Text</a>
 			</span>
 			<?php } ?>
 		</div>

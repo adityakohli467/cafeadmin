@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="https://www.cafeadmin.com.au/HR/assets/css/onboarding.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/onboarding.css'); ?>">
     
     <div id='loader' style='display: none;'>
   <img src="<?php echo base_url() ?>images/ajax-loader.gif" width='32px' height='32px'>

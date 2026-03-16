@@ -71,12 +71,12 @@ if ($con->query($sql) === TRUE) {
         $mail->Body = $messageBody;
         try {
         if($mail->send()){
-       header("Location: https://www.cafeadmin.com.au/Careers/index.php?success=success2");        
+       header("Location: " . $base_url . "Careers/index.php?success=success2");        
         }else{
-          header("Location: https://www.cafeadmin.com.au/Careers/index.php?success=fail");   
+          header("Location: " . $base_url . "Careers/index.php?success=fail");   
           }
         } catch (Exception $e) {
-            header("Location: https://www.cafeadmin.com.au/Careers/index.php?success=fail");
+            header("Location: " . $base_url . "Careers/index.php?success=fail");
     //   echo "Form cannot be submitted due to mail error";
     //       exit;
          }

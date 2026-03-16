@@ -155,7 +155,7 @@ class Employees extends CI_Controller {
     <p>Hi HR team,</p>
     <p> Employee ('.$empname.') from location '.$location.' no longer works for the company.</p>
     
-    <p><a href="https://www.cafeadmin.com.au/HR/index.php/auth/homepage">Click here to login your portal</a></p>
+    <p><a href="'.base_url('HR/index.php/auth/homepage').'">Click here to login your portal</a></p>
       <p>Kind Regards,<br></br>
       Cafeadmin</p>
 

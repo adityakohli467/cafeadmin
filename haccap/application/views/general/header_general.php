@@ -16,7 +16,7 @@
           url("https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg")
         }
     </style>
-    <script src="https://www.cafeadmin.com.au/haccap/assets/js/jquery-1.9.1.min.js"></script>
+    <script src="<?php echo base_url('haccap/assets/js/jquery-1.9.1.min.js'); ?>"></script>
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
     <!-- script file for fingerprint-->
 	<script src="<?php echo base_url(); ?>assets/js/scripts/CloudABIS-ScanR.js"></script>

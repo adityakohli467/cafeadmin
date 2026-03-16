@@ -54,7 +54,7 @@ body{
 
 			<div class="row ht" id="myscrollspy" style="width:100%">
 				
-			   <div class="col-md-6 col-sm-6 hide-small" style="background-image:url(https://www.cafeadmin.com.au/images/Picture1.jpg);background-size:cover;height:430px">
+			   <div class="col-md-6 col-sm-6 hide-small" style="background-image:url(<?php echo base_url('images/Picture1.jpg'); ?>);background-size:cover;height:430px">
 			       
 			   </div>
 			   <div class="col-md-6 col-sm-6 log" style="height:430px">

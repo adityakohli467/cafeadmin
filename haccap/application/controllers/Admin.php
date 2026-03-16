@@ -159,7 +159,7 @@ foreach($branchempResult as $branchemp) {
         {
             // get current page records
             $config = array();
-            $config['base_url'] = 'https://www.cafeadmin.com.au/HR/index.php/'.$link;
+            $config['base_url'] = base_url('HR/index.php/').$link;
             $config['total_rows'] = $total_records;
             $config['uri_segment'] = 3;
             if($total_records > 20){
@@ -461,12 +461,12 @@ foreach($branchempResult as $branchemp) {
     well as submit any compliance forms required by Zouki.
    <br></br>
       <span>The login information for your employee portal is as follows:</span><br></br><br></br>
-     Link <a href="https://www.cafeadmin.com.au">www.cafeadmin.com.au</a><br></br>
+     Link <a href="'.base_url().'">'.base_url().'</a><br></br>
        <span>=> Select HR Management</span><br></br>
         <span>=> Select Employee Portal</span><br></br>
          <p><span><b>Login Details  </b></span></p>
           <p><span>Username : '.$footscray_user->email.'</span></p>
-           <p><span>Password: <a href="https://www.cafeadmin.com.au/HR/index.php/auth/forgot_password"> Reset your password here</a> </span></p>
+           <p><span>Password: <a href="'.base_url('HR/index.php/auth/forgot_password').'"> Reset your password here</a> </span></p>
            
            <p>Please contact your manager if you have any queries.</p>
         <span>Kind Regards,</span><br></br>

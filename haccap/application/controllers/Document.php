@@ -861,7 +861,7 @@ error_reporting(E_ALL);
         {      
             $branch_id = $this->session->userdata('branch_id');
             $config = array();
-            $config['base_url'] = 'https://www.cafeadmin.com.au/'.$link;
+            $config['base_url'] = base_url().$link;
             $config['total_rows'] = $total_records;
             if($total_records > 10){
               $config["per_page"] = 10;  

@@ -43,7 +43,7 @@
         <!-- auth-page content -->
         
         <div class="auth-page-content overflow-hidden">
-            <div class="mb-5 text-center"><img style="max-width: 270px;width:100%;" src="https://www.cafeadmin.com.au/haccap/images/image1.png"></div>
+            <div class="mb-5 text-center"><img style="max-width: 270px;width:100%;" src="<?php echo base_url('haccap/images/image1.png'); ?>"></div>
             <h1 class="text-dark mt-3 mb-4 text-center">Café Locations</h1>
          
             <div class="container">

@@ -42,7 +42,7 @@ move_uploaded_file($_FILES["resume"]["tmp_name"], $target_file);
 
 
 if ($uploadOk == 0) {
- header("Location: https://www.cafeadmin.com.au/Careers/index.php?success=fileerror");
+ header("Location: " . $base_url . "Careers/index.php?success=fileerror");
 } 
 // file upload code end ====================================================
 ($job_id = isset($_POST['job_id']) ? $_POST['job_id'] : '0');
@@ -104,12 +104,12 @@ if ($con->query($sql) === TRUE) {
         $mail->Body = $messageBody;
         try {
         if($mail->send()){
-       header("Location: https://www.cafeadmin.com.au/Careers/index.php?success=success1");        
+       header("Location: " . $base_url . "Careers/index.php?success=success1");        
         }else{
-         header("Location: https://www.cafeadmin.com.au/Careers/index.php?success=fail"); 
+         header("Location: " . $base_url . "Careers/index.php?success=fail"); 
           }
         } catch (Exception $e) {
-            header("Location: https://www.cafeadmin.com.au/Careers/index.php?success=fail");
+            header("Location: " . $base_url . "Careers/index.php?success=fail");
     //   echo "Form cannot be submitted due to mail error";
         //   exit;
          }

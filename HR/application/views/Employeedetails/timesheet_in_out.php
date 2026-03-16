@@ -557,7 +557,7 @@
         }
         
 	        }else if(data=='sessionexpired'){
-	            window.location='https://www.cafeadmin.com.au/HR/index.php/auth/login/timesheet'
+	            window.location='<?php echo base_url('HR/index.php/auth/login/timesheet'); ?>'
 	            
 	            }else{
 	            

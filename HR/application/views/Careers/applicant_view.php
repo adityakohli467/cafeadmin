@@ -109,9 +109,9 @@
 							<?php } ?>
 						<div class="form-row ">
 						    
-			<a class="btn btn-ph btn-ph-cancel btn-success " href="https://www.cafeadmin.com.au/Careers/<?php echo $details[0]->resume; ?>" target="_blank">View Resume</a>
+			<a class="btn btn-ph btn-ph-cancel btn-success " href="<?php echo base_url('Careers/'); ?><?php echo $details[0]->resume; ?>" target="_blank">View Resume</a>
 			<?php if(isset($details[0]->docs) && $details[0]->docs !='') { ?>
-				<a class="btn btn-ph btn-ph-cancel btn-success " href="https://www.cafeadmin.com.au/Careers/<?php echo $details[0]->docs; ?>" target="_blank">View Additional Docs</a>
+				<a class="btn btn-ph btn-ph-cancel btn-success " href="<?php echo base_url('Careers/'); ?><?php echo $details[0]->docs; ?>" target="_blank">View Additional Docs</a>
 				<?php } ?>
 			<a href="<?php echo base_url(); ?>index.php/admin/manage_applications">
 						<button type="button"  class="btn btn-ph btn-ph-cancel btn-success">CANCEL</button>

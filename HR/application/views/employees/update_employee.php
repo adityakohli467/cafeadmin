@@ -1,5 +1,5 @@
 
-	<link rel="stylesheet" href="https://www.cafeadmin.com.au/HR/assets/css/employee_update.css">
+	<link rel="stylesheet" href="<?php echo base_url('HR/assets/css/employee_update.css'); ?>">
 	 <script type="text/javascript">	
 		$(document).ready(function() {
 			//$('#example').DataTable();
@@ -1119,7 +1119,7 @@
                       
                           <div class="panel-body">
                                  
-                                  	<!--<a style="float:right;" class="btn btn-dark" href="https://www.cafeadmin.com.au/HR/assets/pdf/Superannuation.pdf" target="_blank">View Super Annuation Form</a>-->
+                                  	<!--<a style="float:right;" class="btn btn-dark" href="<?php echo base_url('HR/assets/pdf/Superannuation.pdf'); ?>" target="_blank">View Super Annuation Form</a>-->
             				        <h2>Super Annuation</h2>
             				        	
             				        <div class="section-wrap">

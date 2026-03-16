@@ -58,7 +58,7 @@
                                         <div class="position-relative h-100 d-flex flex-column">
                                             
                                             <div class="p-lg-4 mt-4 mb-4 text-center ">
-                                                <img style="max-width: 300px;width:100%;" src="https://www.cafeadmin.com.au/images/logo-white.png">
+                                                <img style="max-width: 300px;width:100%;" src="<?php echo base_url('images/logo-white.png'); ?>">
                                                 <div class="mb-4 mt-4">
                                                     <?php if($login_type =="manager") { ?>
                                     				    <h3 class="text-white">Manager Portal</h3>

@@ -250,7 +250,7 @@ class General extends CI_Controller {
             // get current page records
             
             $config = array();
-            $config['base_url'] = 'https://www.cafeadmin.com.au/HR/index.php/admin/get_roster_weeks';
+            $config['base_url'] = base_url('HR/index.php/admin/get_roster_weeks');
             $config['total_rows'] = $total_records;
             if($total_records > 10){
               $config["per_page"] = 10;  

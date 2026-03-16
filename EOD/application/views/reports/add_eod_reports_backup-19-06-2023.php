@@ -2,8 +2,8 @@
     $id=$table_name.'_id'; 
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://www.cafeadmin.com.au/assets/css/dropzone.css">
-<script type="text/javascript" src="https://www.cafeadmin.com.au/assets/js/dropzone.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/dropzone.css'); ?>">
+<script type="text/javascript" src="<?php echo base_url('assets/js/dropzone.js'); ?>"></script>
 <style>
     	.dropzone{
     		min-height:70px;

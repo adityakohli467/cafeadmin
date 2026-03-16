@@ -227,7 +227,7 @@
 							<div class="col-lg-8 col-sm-6">
 							    <input type="hidden" name="document_id" value="">
 								<input type="file" class="form-control" name="haccp_certificate" value="" >
-								<?php if($row->haccp_certificate != ''){ ?>  <a style="width:100%;margin-top: 5px;" class="btn btn-success" href="https://www.cafeadmin.com.au/uploaded_files/<?php echo $row->haccp_certificate; ?>" target="_blank">View</a> <?php } ?>
+								<?php if($row->haccp_certificate != ''){ ?>  <a style="width:100%;margin-top: 5px;" class="btn btn-success" href="<?php echo base_url('uploaded_files/'); ?><?php echo $row->haccp_certificate; ?>" target="_blank">View</a> <?php } ?>
 							</div>
 							</div>
 								    	<div class="form-group">

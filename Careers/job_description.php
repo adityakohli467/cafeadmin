@@ -38,7 +38,7 @@ $row = $job_desc->fetch_assoc(); ?>
 <div class="container">
 <div class="row justify-content-between">
 <div class="col-lg-8 col-md-12 col-xs-12">
-    <a href="https://www.cafeadmin.com.au/Careers/"><button type="button" class="btn btn-primary btn-arrow-left">Back</button></a>
+    <a href="<?php echo $base_url; ?>Careers/"><button type="button" class="btn btn-primary btn-arrow-left">Back</button></a>
 <div class="content-area">
     <h5><?php echo $row['job_name']; ?> <span style="float:right"><i class="zmdi zmdi-pin mr-2"></i> <?php echo $row['location_name']; ?></span></h5>
 

@@ -74,7 +74,7 @@
 	</script> 
   
 </head>
-<body background="https://www.cafeadmin.com.au/assets/login/tsc1.jpeg">
+<body background="<?php echo base_url('assets/login/tsc1.jpeg'); ?>">
 	<div class="gradient"></div>
 
 	<!--navigation-bar-->
@@ -120,18 +120,18 @@
       </div>
 	<?php } ?>
 	<div class="ht">
-	    <h3><img style="width:60%;max-width:300px;" src="https://www.cafeadmin.com.au/HR/images/image1.png"></h3>
+	    <h3><img style="width:60%;max-width:300px;" src="<?php echo base_url('HR/images/image1.png'); ?>"></h3>
 	    </div>
 	<div class="modules-box " id="buttons_home" >
 	    
-							 	    <a href="https://www.cafeadmin.com.au/index.php/auth/login2" >
+							 	    <a href="<?php echo base_url('index.php/auth/login2'); ?>" >
 							 	
 							 			<p>SUPPLIER MANAGEMENT</p>
 							 			</a>
 							 	</div>
 							 
 							 	<div class="modules-box" id="buttons_home">
-							 	    <a href="https://www.cafeadmin.com.au/HR" >
+							 	    <a href="<?php echo base_url('HR'); ?>" >
 							 	
 							 			<p>HR MANAGEMENT </p>
 							 			</a>

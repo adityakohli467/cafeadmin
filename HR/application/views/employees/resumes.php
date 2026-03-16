@@ -14,7 +14,7 @@
 		<span class="text-center">
 				<h3>Resumes</h3>
 			</span>
-			<a href="https://www.cafeadmin.com.au/HR/index.php/admin/resume_form">
+			<a href="<?php echo base_url('HR/index.php/admin/resume_form'); ?>">
 			<button type="button" class="btn btn-success btn-ph">Add Resume</button></a>
 		
 			

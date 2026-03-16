@@ -18,21 +18,21 @@
     function p(e) {
         document.getElementById("header-lang-img") &&
             ("en" == e
-                ? (document.getElementById("header-lang-img").src = "https://www.cafeadmin.com.au/haccap/hr-assets/images/flags/us.svg")
+                ? (document.getElementById("header-lang-img").src = ""+BASE_URL+"haccap/hr-assets/images/flags/us.svg")
                 : "sp" == e
-                ? (document.getElementById("header-lang-img").src = "https://www.cafeadmin.com.au/haccap/hr-assets/images/flags/spain.svg")
+                ? (document.getElementById("header-lang-img").src = ""+BASE_URL+"haccap/hr-assets/images/flags/spain.svg")
                 : "gr" == e
-                ? (document.getElementById("header-lang-img").src = "https://www.cafeadmin.com.au/haccap/hr-assets/images/flags/germany.svg")
+                ? (document.getElementById("header-lang-img").src = ""+BASE_URL+"haccap/hr-assets/images/flags/germany.svg")
                 : "it" == e
-                ? (document.getElementById("header-lang-img").src = "https://www.cafeadmin.com.au/haccap/hr-assets/images/flags/italy.svg")
+                ? (document.getElementById("header-lang-img").src = ""+BASE_URL+"haccap/hr-assets/images/flags/italy.svg")
                 : "ru" == e
-                ? (document.getElementById("header-lang-img").src = "https://www.cafeadmin.com.au/haccap/hr-assets/images/flags/russia.svg")
+                ? (document.getElementById("header-lang-img").src = ""+BASE_URL+"haccap/hr-assets/images/flags/russia.svg")
                 : "ch" == e
-                ? (document.getElementById("header-lang-img").src = "https://www.cafeadmin.com.au/haccap/hr-assets/images/flags/china.svg")
-                : "fr" == e && (document.getElementById("header-lang-img").src = "https://www.cafeadmin.com.au/haccap/hr-assets/images/flags/french.svg"),
+                ? (document.getElementById("header-lang-img").src = ""+BASE_URL+"haccap/hr-assets/images/flags/china.svg")
+                : "fr" == e && (document.getElementById("header-lang-img").src = ""+BASE_URL+"haccap/hr-assets/images/flags/french.svg"),
             localStorage.setItem("language", e),
             null == (y = localStorage.getItem("language")) && p(b),
-            (e = new XMLHttpRequest()).open("GET", "https://www.cafeadmin.com.au/haccap/hr-assets/lang/" + y + ".json"),
+            (e = new XMLHttpRequest()).open("GET", ""+BASE_URL+"haccap/hr-assets/lang/" + y + ".json"),
             (e.onreadystatechange = function () {
                 var a;
                 4 === this.readyState &&
@@ -96,7 +96,7 @@
         !t ||
             ("twocolumn" != e && "twocolumn" != t["data-layout"]) || 
             ((document.querySelector(".navbar-menu").innerHTML = u),
-            ((o = document.createElement("ul")).innerHTML = '<a href="#" class="logo"><img src="https://www.cafeadmin.com.au/haccap/hr-assets/images/logo-sm.png" alt="" height="22"></a>'),
+            ((o = document.createElement("ul")).innerHTML = '<a href="#" class="logo"><img src=""+BASE_URL+"haccap/hr-assets/images/logo-sm.png" alt="" height="22"></a>'),
             Array.from(document.getElementById("navbar-nav").querySelectorAll(".menu-link")).forEach(function (e) {
                 o.className = "twocolumn-iconview";
                 var t = document.createElement("li"),

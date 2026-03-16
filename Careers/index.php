@@ -41,7 +41,7 @@
 </div>
 <div class="fluid-container" style="margin-top: 60px;">
          <div class="row">
-              <div><a href="https://www.cafeadmin.com.au/"><button type="button" class="btn btn-primary btn-arrow-left">Back</button>   
+              <div><a href="<?php echo $base_url; ?>"><button type="button" class="btn btn-primary btn-arrow-left">Back</button>   
               </a>
               
               </div>
@@ -347,7 +347,7 @@ $query = "SELECT COUNT(*) FROM careers";
          icon: '<?php echo $icon ?>',
           }).then((value) => {
           
-          window.location = "https://www.cafeadmin.com.au/Careers/";
+          window.location = "<?php echo $base_url; ?>Careers/";
            
     });</script>
 <?php }  ?>

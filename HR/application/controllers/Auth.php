@@ -366,7 +366,7 @@ class Auth extends CI_Controller {
             }
         } else {
             //if the code is invalid then send them back to the forgot password page
-            $this->session->set_flashdata('message', 'This email reset link has been expired. Please request a new reset link by clicking on forgot password? from your employee portal    <a href="https://www.cafeadmin.com.au/HR/index.php/auth/login/employee">login</a>');
+            $this->session->set_flashdata('message', 'This email reset link has been expired. Please request a new reset link by clicking on forgot password? from your employee portal    <a href="'.base_url('HR/index.php/auth/login/employee').'">login</a>');
             redirect("auth/forgot_password", 'refresh');
         }
     }

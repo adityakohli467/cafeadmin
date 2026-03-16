@@ -247,7 +247,7 @@
 							 	   
 							 	    <div class="module-content">
 							 	        <p>Human Resources (HR)</p>
-							 	        <a href="https://www.cafeadmin.com.au/HR">Login</a>
+							 	        <a href="<?php echo base_url('HR'); ?>">Login</a>
 							 			</a>
 							 	    </div>
 							 	    
@@ -257,18 +257,18 @@
 							 	     <div class="module-content">
 							 	         <p>Careers</p>
 							 	         <span>Apply with Us</span>
-							 	        <a href="https://www.cafeadmin.com.au/Careers" >Apply</a>
+							 	        <a href="<?php echo base_url('Careers'); ?>" >Apply</a>
 							 	     </div>
 							 	    
 							 	</div>
 	                            <div class="modules-box sup-module">
 	                               <!--<div class="module-img">-->
-	                               <!--     <img style="width:60%;max-width:300px;" src="https://www.cafeadmin.com.au/images/image1.png">-->
+	                               <!--     <img style="width:60%;max-width:300px;" src="<?php echo base_url('images/image1.png'); ?>">-->
 	                               <!--</div>-->
     	                           
     	                           <div class="module-content">
     	                               <p>Suppliers</p>
-							 	   <a href="https://www.cafeadmin.com.au/index.php/auth/login2" >Login</a>
+							 	   <a href="<?php echo base_url('index.php/auth/login2'); ?>" >Login</a>
     	                           </div>
     	                           
 							 	</div>
@@ -277,7 +277,7 @@
 							 	   
 							 	     <div class="module-content">
 							 	         <p>HACCP</p>
-							 	        <a href="https://www.cafeadmin.com.au/haccap" >Login</a>
+							 	        <a href="<?php echo base_url('haccap'); ?>" >Login</a>
 							 	     </div>
 							 	    
 							 	</div>
@@ -286,7 +286,7 @@
 							 	   
 							 	     <div class="module-content">
 							 	         <p>EOD Reports</p>
-							 	        <a href="https://www.cafeadmin.com.au/EOD/" >Login</a>
+							 	        <a href="<?php echo base_url('EOD/'); ?>" >Login</a>
 							 	     </div>
 							 	    
 							 	</div>
@@ -294,7 +294,7 @@
 							 	   
 							 	     <div class="module-content">
 							 	         <p>Management Corner</p>
-							 	        <a href="https://www.cafeadmin.com.au/management/index.php/auth/login2" >Login</a>
+							 	        <a href="<?php echo base_url('management/index.php/auth/login2'); ?>" >Login</a>
 							 	     </div>
 							 	    
 							 	</div>

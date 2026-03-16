@@ -34,7 +34,7 @@
 </div>
 <div class="fluid-container" style="margin-top: 60px;">
          <div class="row">
-              <a href="https://www.cafeadmin.com.au/"><button type="button" class="btn btn-primary btn-arrow-left">Back</button>   
+              <a href="<?php echo $base_url; ?>"><button type="button" class="btn btn-primary btn-arrow-left">Back</button>   
               
               <button type="button" class="btn btn-primary btn-arrow-left">HR Complaints/Reports</button></a>
               

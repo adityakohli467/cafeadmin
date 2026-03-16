@@ -178,8 +178,8 @@ function ButtonFunctions(){
     });
     var TImeIDS = TimehseetId.join();
      var RGIDS = RosterGroupId.join();
-//   alert("https://www.cafeadmin.com.au/HR/index.php/Employeedetails/download_FortnightTextfile/"+TImeIDS+"/"+RGIDS)
- window.location.href = "https://www.cafeadmin.com.au/HR/index.php/Employeedetails/download_FortnightTextfile?TimehseetIds="+TImeIDS+"&RGId="+RGIDS;
+//   alert("<?php echo base_url('HR/index.php/Employeedetails/download_FortnightTextfile/'); ?>"+TImeIDS+"/"+RGIDS)
+ window.location.href = "<?php echo base_url('HR/index.php/Employeedetails/download_FortnightTextfile'); ?>?TimehseetIds="+TImeIDS+"&RGId="+RGIDS;
 
 }
 function downloadTotalHours(){
@@ -195,8 +195,8 @@ function downloadTotalHours(){
     });
     var TImeIDS = TimehseetId.join();
      var RGIDS = RosterGroupId.join();
-//   alert("https://www.cafeadmin.com.au/HR/index.php/Employeedetails/download_FortnightTextfile/"+TImeIDS+"/"+RGIDS)
- window.location.href = "https://www.cafeadmin.com.au/HR/index.php/Employeedetails/download_total_hours?TimehseetIds="+TImeIDS+"&RGId="+RGIDS;
+//   alert("<?php echo base_url('HR/index.php/Employeedetails/download_FortnightTextfile/'); ?>"+TImeIDS+"/"+RGIDS)
+ window.location.href = "<?php echo base_url('HR/index.php/Employeedetails/download_total_hours'); ?>?TimehseetIds="+TImeIDS+"&RGId="+RGIDS;
 
 }
 

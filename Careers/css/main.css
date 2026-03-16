@@ -236,7 +236,7 @@ ul {
   background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-  background-image: url(https://www.cafeadmin.com.au/Careers/images/hire_banner.jpeg); 
+  background-image: url(../images/hire_banner.jpeg); 
 }
 .centered-form{
 	margin-top: 60px;

@@ -29,6 +29,8 @@
     <!-- Sweet Alerts js -->
     <script src="<?php echo base_url(""); ?>haccp-assets/libs/sweetalert2/sweetalert2.min.js"></script>
     
+    <!-- Base URL for JS -->
+    <script>var BASE_URL = "<?php echo base_url(); ?>";</script>
     <!-- App js -->
     <script src="<?php echo base_url(""); ?>haccp-assets/js/app.js"></script> 
     

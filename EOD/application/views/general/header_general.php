@@ -6,7 +6,7 @@
 	<link rel="shortcut icon" href="<?php echo base_url();?>images/favicon.png" />
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
     
-    <script src="https://www.cafeadmin.com.au/haccap/assets/js/jquery-1.9.1.min.js"></script>
+    <script src="<?php echo base_url('haccap/assets/js/jquery-1.9.1.min.js'); ?>"></script>
     
    
     
