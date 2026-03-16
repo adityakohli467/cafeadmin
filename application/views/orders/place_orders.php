@@ -274,10 +274,10 @@ $(document).ready(function(){
 <script type="text/javascript">
 	var orders = {};
 	var suppliers = {}
-		console.log('<?php echo $this->session->userdata('order_items'); ?>');
+		console.log(<?php echo json_encode($this->session->userdata('order_items')); ?>);
 	<?php if(null !== $this->session->userdata('order_items')){ ?>
-	orders = JSON.parse('<?php echo $this->session->userdata('order_items'); ?>');
-	suppliers = JSON.parse('<?php echo $this->session->userdata('suppliers'); ?>');
+	orders = JSON.parse(<?php echo json_encode($this->session->userdata('order_items')); ?>);
+	suppliers = JSON.parse(<?php echo json_encode($this->session->userdata('suppliers')); ?>);
 	<?php } ?>
 	
 
