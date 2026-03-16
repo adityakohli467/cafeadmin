@@ -1,8 +1,8 @@
-<div class="row item">
-    <div id='loader' style='display: none;'>
-  <img src="<?php echo base_url() ?>images/ajax-loader.gif" width='32px' height='32px'>
+<div id="loader" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.85); z-index:99999; justify-content:center; align-items:center; flex-direction:column;">
+  <div style="width:50px; height:50px; border:5px solid #e0e0e0; border-top:5px solid #3498db; border-radius:50%; animation:rosterSpin 0.8s linear infinite;"></div>
+  <p style="margin-top:15px; font-size:15px; color:#555; font-weight:500;">Processing roster...</p>
 </div>
-			</div>
+<style>@keyframes rosterSpin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }</style>
 	<form class="form-inline" role="form" id="rosterUpdate" method="post" action="<?php echo base_url(); ?>index.php/admin/update_complete_roster" enctype="multipart/form-data">	
 		<input type="hidden" id="leavecontinueApproval" name="leavecontinueApproval" value="">
 	<div  class="col-md-12 page-head border-bottom sticky-title">
@@ -348,13 +348,13 @@ $name = $week_days[$i].'_hours[]';
 		      //   contentType: false,  // Set to false when using FormData
         //         processData: false,
 		        beforeSend: function(){
-                $("#loader").show();
+                $("#loader").css('display','flex');
                  },
-                complete:function(data){
+                complete:function(){
                 $("#loader").hide();
                  },
-		        success: function(data){
-		            var data = JSON.parse(data);
+		        success: function(response){
+		            try { var data = (typeof response === 'object') ? response : JSON.parse(response); } catch(e) { $("#loader").hide(); swal({text:'Unexpected server response', icon:'error'}); return; }
 		            console.log(data.result);
 		        if(data.result=='Sucess'){
 		        $msg = "Roster Updated Succesfully";

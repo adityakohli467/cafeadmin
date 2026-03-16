@@ -1,10 +1,10 @@
 
 
-<div class="row item">
-<div id='loader' style='display: none;'>
-  <img src="<?php echo base_url() ?>images/ajax-loader.gif" width='32px' height='32px'>
+<div id="loader" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.85); z-index:99999; justify-content:center; align-items:center; flex-direction:column;">
+  <div style="width:50px; height:50px; border:5px solid #e0e0e0; border-top:5px solid #3498db; border-radius:50%; animation:rosterSpin 0.8s linear infinite;"></div>
+  <p style="margin-top:15px; font-size:15px; color:#555; font-weight:500;">Processing roster...</p>
 </div>
-			</div>
+<style>@keyframes rosterSpin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }</style>
 <form class="form-inline" role="form" method="post" id="hack_submit" action="<?php echo base_url(); ?>index.php/admin/submit_roster" enctype="multipart/form-data">
 	
 	
@@ -233,9 +233,9 @@ $name = $week_days[$i].'_layout[]';
 		        url: "<?php echo base_url();?>index.php/admin/submit_roster",
 		        data:formdata,
 		        beforeSend: function(){
-                $("#loader").show();
+                $("#loader").css('display','flex');
                  },
-                complete:function(data){
+                complete:function(){
                 $("#loader").hide();
                  },
 		        success: function(data){
