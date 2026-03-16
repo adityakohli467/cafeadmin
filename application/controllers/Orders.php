@@ -1071,7 +1071,7 @@ Thank you so much for your support and understanding';
 			$msg = '';
 			foreach($items as $supplier_item){
 				foreach($supplier_item as $item){
-					$msg.='<tr class="tr">\n'
+					$msg.='<tr class="tr">'
 							.'<td class="text-left">'.$item->itemCode.'</td>'
 							.'<td class="text-left">'.$item->itemName.'<br><small>'.$item->supplier_name.'</small></td>'
 							.'<td class="text-left">'.$item->category_name.'</td>'
@@ -1089,7 +1089,7 @@ Thank you so much for your support and understanding';
 			
 			echo $msg;
 		}else{
-			echo 'No Items available';
+			echo '<tr><td colspan="5" class="text-center">No Items available</td></tr>';
 		}
 		
 		
