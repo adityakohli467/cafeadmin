@@ -134,33 +134,38 @@
 			    		
 			    		<div style="margin-top:30px;">
 			    			<div class="items-scroll-wrapper">
-			    			<div class="item-row">
-			    			    <?php if($items->itemCode !='') { ?>
-			    			    <div class="item-left" style="width:15%;text-align:left;">Item Code</div>	
-			    			    <?php } ?>
-				    			<div class="item-left" style="width:45%;text-align:left;">Item</div>
-				    			<div class="item-left" style="width:10%">Qty</div>	
-				    			<div class="item-left" style="width:10%;text-align:right">Price</div>
-				    			<div class="item-left no-border" style="width:15%;text-align:right">Amount</div>
-				    			<div style="clear:both;"></div>
-				    		</div>
+			    			<table class="order-items-table" cellpadding="0" cellspacing="0" width="100%">
+			    				<thead>
+			    					<tr>
+			    						<?php if($items->itemCode !='') { ?>
+			    						<th class="col-code">Item Code</th>
+			    						<?php } ?>
+			    						<th class="col-item">Item</th>
+			    						<th class="col-qty">Qty</th>
+			    						<th class="col-price">Price</th>
+			    						<th class="col-amount">Amount</th>
+			    					</tr>
+			    				</thead>
+			    				<tbody>
 				    		<?php 
 				    		$total = 0;
+				    		$hasItemCode = (!empty($order_items) && isset($order_items[0]->itemCode) && $order_items[0]->itemCode != '');
 				    		if(!empty($order_items)){
 				    			foreach($order_items as $items){
 				    				$total = $total + $items->amount;
 				    		?>
-				    		
-				    		<div class="item-row">
-				    		 <div class="item-left-small" style="width:15%;text-align:left;"><?php echo $items->itemCode;?></div>
-				    		<div class="item-left2" style="width:45%;text-align:left;"><?php echo $items->item_name;?></div>
-				    		<div class="item-left-small" style="width:10%"><?php echo $items->quantity;?></div>
-				    		<div class="item-left-small" style="width:10%;text-align:right">$<?php echo number_format($items->price,'2','.','');?></div>
-				    		<div class="item-left2 color no-border"style="width:15%;text-align:right"><?php echo '$'.number_format($items->amount, 2, '.', '');?></div>
-				    		<div style="clear:both;"></div></div>
-				    		
-	    		
+				    		<tr>
+				    			<?php if($hasItemCode) { ?>
+				    			<td class="col-code" data-label="Item Code"><?php echo $items->itemCode;?></td>
+				    			<?php } ?>
+				    			<td class="col-item" data-label="Item"><?php echo $items->item_name;?></td>
+				    			<td class="col-qty" data-label="Qty"><?php echo $items->quantity;?></td>
+				    			<td class="col-price" data-label="Price">$<?php echo number_format($items->price,'2','.','');?></td>
+				    			<td class="col-amount" data-label="Amount"><?php echo '$'.number_format($items->amount, 2, '.', '');?></td>
+				    		</tr>
 				    		<?php } } ?>
+				    			</tbody>
+				    		</table>
 				    	</div>
 				    	</div>
 				    	<br>
@@ -238,7 +243,30 @@
  		color:red;
  	}
  	
- 	/* Mobile responsive styles for supplier order details */
+ 	/* Order items table */
+ 	.order-items-table {
+ 		width: 100%;
+ 		border-collapse: collapse;
+ 	}
+ 	.order-items-table th {
+ 		font-weight: bold;
+ 		padding: 8px 6px;
+ 		border-bottom: 2px solid #dbdbdb;
+ 		text-align: left;
+ 		white-space: nowrap;
+ 	}
+ 	.order-items-table td {
+ 		padding: 8px 6px;
+ 		border-bottom: 1px solid #dbdbdb;
+ 		vertical-align: top;
+ 	}
+ 	.order-items-table .col-code { width: 15%; }
+ 	.order-items-table .col-item { width: auto; }
+ 	.order-items-table .col-qty { width: 10%; text-align: center; }
+ 	.order-items-table .col-price { width: 12%; text-align: right; }
+ 	.order-items-table .col-amount { width: 15%; text-align: right; font-weight: bold; }
+ 	
+ 	/* Mobile responsive styles */
  	@media (max-width: 768px) {
  		.top_title {
  			font-size: 14px;
@@ -259,41 +287,70 @@
  			border-top: 1px solid rgba(255,255,255,0.2);
  			padding-top: 5px;
  		}
- 		/* Item rows - horizontal scroll wrapper */
- 		.items-scroll-wrapper {
+ 		/* Card layout for items on mobile */
+ 		.order-items-table thead { display: none; }
+ 		.order-items-table,
+ 		.order-items-table tbody,
+ 		.order-items-table tr,
+ 		.order-items-table td {
+ 			display: block;
  			width: 100%;
- 			overflow-x: auto;
- 			-webkit-overflow-scrolling: touch;
  		}
- 		.items-scroll-wrapper .item-row {
- 			min-width: 480px;
+ 		.order-items-table tr {
+ 			margin-bottom: 12px;
+ 			border: 1px solid #dbdbdb;
+ 			border-radius: 4px;
+ 			padding: 8px;
+ 			background: #fafafa;
  		}
- 		/* Address blocks stack vertically */
+ 		.order-items-table td {
+ 			border: none;
+ 			border-bottom: 1px solid #eee;
+ 			padding: 6px 8px;
+ 			text-align: right;
+ 		}
+ 		.order-items-table td:last-child {
+ 			border-bottom: none;
+ 		}
+ 		.order-items-table td::before {
+ 			content: attr(data-label);
+ 			float: left;
+ 			font-weight: bold;
+ 			color: #333;
+ 		}
+ 		.order-items-table td.col-item {
+ 			font-weight: bold;
+ 			font-size: 14px;
+ 		}
+ 		.order-items-table td.col-qty,
+ 		.order-items-table td.col-price,
+ 		.order-items-table td.col-amount,
+ 		.order-items-table td.col-code {
+ 			width: 100%;
+ 			text-align: right;
+ 		}
+ 		/* Address blocks stack */
  		.row > div[class*="col-md-6"][style*="display:inline-block"],
  		.row > div[class*="col-sm-6"][style*="display:inline-block"] {
  			width: 100% !important;
  			display: block !important;
  			margin-bottom: 15px;
  		}
- 		/* Form fields full width */
  		.form-group[class*="col-md-6"] {
  			width: 100%;
  			padding-left: 15px;
  			padding-right: 15px;
  		}
- 		/* Button full width */
  		.btn.button-width {
  			width: 100%;
  			margin-bottom: 10px;
  		}
- 		/* Main container padding */
  		.main-container {
  			padding: 0 5px;
  		}
  		.main-container > .col-sm-12 {
  			padding: 0;
  		}
- 		/* Page heading */
  		.page-head h3 {
  			font-size: 18px;
  		}
@@ -301,7 +358,6 @@
  			width: 100%;
  			text-align: center;
  		}
- 		/* Footer */
  		.foot-border .navbar-header,
  		.foot-border .foot-nav {
  			float: none;
@@ -320,9 +376,6 @@
  		.panel-heading.ph-dash span,
  		.panel-heading.ph-dash div {
  			font-size: 16px !important;
- 		}
- 		#order_total {
- 			font-size: 16px;
  		}
  	}
     </style>
