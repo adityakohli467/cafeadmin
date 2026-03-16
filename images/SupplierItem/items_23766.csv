@@ -1,0 +1,33 @@
+supplier_id,location_id,supplier_name,account_number,account_name,tax_code
+37,60,Organic Trader,,,
+39,60,Spotted Cow Cookies,5-1220,Cake/Bisc/Slice/Muffin,GST
+45,60,Divino gelato,5-1270,Ice Cream,GST
+54,60,SATO AUSTRALIA,5-2000,Paper & Packaging Products,GST
+59,60,Australian Kebab Factory,5-1150,Meat/Chicken/Seafood,FREE
+61,60,Nican Bros Pty Ltd _ Ginger Chai,5-1140,Coffee/Tea,GST
+70,60,Asahi,5-1210,Soft Drinks/other beverage,GST
+72,60,Nut Shop,5-1170,Grocery/Miscellaneous,GST
+77,60,Eustralis FOOD and WINE NORTHSHORE,,,
+81,60,Schwobs,,,
+85,60,Bega milk,5-1110,Milk/Yoghurt/Cheese,FREE
+88,60,Cleanwash Products,6-2050,Chemicals & cleaning products,GST
+91,60,Coffico Coffee Organic,5-1140,Coffee/Tea,GST
+109,60,Coffico Coffee Diablo,5-1140,Coffee/Tea,GST
+350,60,Better Food Distributors,,,
+353,60,Risefront Quattro Coffee NORTHSHORE,5-1140,Coffee/Tea,GST
+357,60,CUISINECORP_DAILY,,,
+358,60,CUISINECORP_CATERING,,,
+409,60,Foodlink New Northshore,,,
+410,60,Elite Packaging Northshore,5-2000,Paper & Packaging Products,GST
+428,60,TMA New Northshore,5-2000,Paper & Packaging Products,GST
+440,60,Risefront Zammit Small Goods Northshore,5-1170,Grocery/Miscellaneous,GST
+445,60,Risefront Dickstone Meat Northshore,5-1150,Meat/Chicken/Seafood,FREE
+543,60,Risefront Fresh Poultry Northshore,5-1150,Meat/Chicken/Seafood,FREE
+626,60,I Love Sushi Pty. Ltd,5-1150,Meat/Chicken/Seafood,FREE
+627,60,Campos coffee,5-1140,Coffee/Tea,GST
+642,60,Patricks Continental Breads NEW,,,
+646,60,Shaan Foods,5-1170,Grocery/Miscellaneous,GST
+715,60,Freshco,5-1160,Fruit/Vegetables,FREE
+462,60,Sienna Desserts,5-1220,Cake/Bisc/Slice/Muffin,GST
+52,60,Madhouse Bakehouse,5-1220,Cake/Bisc/Slice/Muffin,GST
+733,60,Socrates,5-1210,Soft Drinks/other beverage,GST

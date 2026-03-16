@@ -1,0 +1,22 @@
+supplier_id,location_id,supplier_name,account_number,account_name,tax_code
+118,63,Homestyle Bake,,,
+119,63,Prime Provision,5-1220,Cake/Bisc/Slice/Muffin,GST
+365,63,Baramba Organics,5-1110,Milk/Yoghurt/Cheese,FREE
+368,63,Streets Ice cream,5-1270,Ice Cream,GST
+370,63,Inspired Foods,5-1270,Ice Cream,GST
+372,63,TMA,5-2000,Paper & Packaging Products,GST
+375,63,Coffico,5-1140,Coffee/Tea,GST
+437,63,ELT PACKAGING,5-2000,Paper & Packaging Products,GST
+706,63,Ecolab,6-2050,Chemicals & cleaning products,GST
+707,63,Long Fine Hospitality Supplies Pty LTD,5-2000,Paper & Packaging Products,GST
+708,63,Nippys,5-1210,Soft Drinks/other beverage,GST
+709,63,SATO Australia Pty Ltd,5-2000,Paper & Packaging Products,GST
+710,63,Superior Foods VIC,,,
+725,63,Bega Milk,5-1110,Milk/Yoghurt/Cheese,FREE
+727,63,Ridges Wholesale Foods NEW,5-1170,Grocery/Miscellaneous,GST
+728,63,Distributors NEW,,,
+726,63,Harvest Markets Yamanto,5-1160,Fruit/Vegetables,FREE
+729,63,Spoons NEW,5-1220,Cake/Bisc/Slice/Muffin,GST
+730,63,Asahi New,5-1210,Soft Drinks/other beverage,GST
+731,63,Babemode,5-0230,soft toys,GST
+732,63,Bidfood,5-1170,Grocery/Miscellaneous,GST

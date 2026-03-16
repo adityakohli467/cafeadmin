@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <script src="<?php echo base_url(); ?>assets/js/scripts/CloudABIS-Helper.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IsRegister Form</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .formWrapper{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            flex-flow: column;
+            background-color: #ff9900;
+        }
+        .commonForm{
+            border: 1px solid #f5f5f5;
+            padding: 50px;
+        }
+        .commonForm label{
+            color: #fff;
+        }
+        .headline{
+            text-align: center;
+            margin-top: 0;
+            color: #fff;
+        }
+        .sresponse{
+            background-color: #fff;
+            padding: 15px;
+            text-align: center;
+            width: 28%;
+        }
+        .commonForm input[type="text"]{
+            padding: 14px 12px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .commonForm input[type="submit"],
+        .commonForm input[type="button"]{
+            border-radius: 5px;
+            padding: 12px 10px;
+            cursor: pointer;
+            margin: 5px;
+            width: 90px;
+            color: #ff9900;
+            background-color: #fff;
+            border:1px solid #f5f5f5;
+            transition: all .3s;
+        }
+        .commonForm input[type="submit"]:hover,
+        .commonForm input[type="button"]:hover{
+            background-color: #ff9900;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="formWrapper">
+        <form class="commonForm" action="" method="POST">
+            <h1 class="headline">Checking an ID already exist or not</h1>
+            <label for="ID">ID:</label>
+            <input type="text" name="txtID" id="txtID" value="">
+            <input type="submit" name="submit" value="IsRegister">
+            <a href="<?php echo base_url();?>index.php/Fingerprintapi/RegisterFingerPrint"><input type="button" value="Back" > </a>
+        </form>
+        
+<h3 class="sresponse"> <?php if(isset($msg) && $msg !=''){ echo $msg; }?></h3>
+    
+        
+    </div>
+   
+</body>
+</html>

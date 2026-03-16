@@ -1,0 +1,208 @@
+<style>
+.dataTables_wrapper .dataTables_filter {
+    float: none;
+    text-align: right;
+}
+.dataTables_filter label {
+    color: #6C6E7A;
+    width: 30%;
+}
+</style>	
+	
+	<div style="margin-bottom:0px;" class="col-md-12 page-head border-bottom">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<span class="text-center">
+				<h3>Suppliers</h3>
+			</span>
+		</div>
+		<div class="btn-div col-md-3">
+			<a href="<?php echo base_url(); ?>index.php/suppliers/add_suppliers">
+			<button type="button" class="btn btn-success btn-ph" id="myBtn">Add Supplier</button></a>
+		</div>
+	</div><!--.col-md-12 -->
+			
+<div style="background-color:#fff;" class="container-fluid main-container">
+	<div class="col-md-12">
+		<div style="box-shadow:none;" class="panel panel-default">
+			<div class="gradient"></div>
+			<div class="panel-body">
+				<?php if(null !==$this->session->userdata('sucess_msg')) { ?>  
+				<div class='hideMe'>
+					<p class="alert alert-success"><?php echo $this->session->flashdata('sucess_msg'); ?></p>
+				</div>
+				<?php } ?>
+				<?php if(null !==$this->session->userdata('error_msg')) { ?>  
+				<div class='hideMe'>
+					<p class="alert alert-danger"><?php echo $this->session->flashdata('error_msg'); ?></p>
+				</div>
+				<?php } ?>
+			<?php 
+			$cls = '';
+			if($user_group == 'Super Admin'){
+				$cls = 'table-up';
+			?>
+			<select class="table-select app-select" onchange="getBranchSuppliers(this)" style="width:20%;">
+				<option value="all">All Branches</option>
+				<?php 
+				if(!empty($branches)){
+					foreach($branches as $branch){ ?>
+					<option value="<?php echo $branch->branch_id;?>"><?php echo $branch->branch_name;?></option>
+				<?php }} ?>
+			</select>
+			
+			<?php } ?>
+			<div class="<?php echo $cls;?>">
+			<table id="example" class="row-border table-condensed datatable" cellspacing="0" width="100%" style="table-layout:fixed;">
+				<thead>
+					<tr>
+						<th class="text-left">Supplier Name</th>
+						<th class="text-left">Contact Person Name</th>
+						<th class="text-center">Contact Number</th>
+						<th class="text-left">Email</th>
+						<th class="text-center">Items</th>
+						<th class="text-center">Status</th>
+					</tr>
+				</thead>
+				<tbody id="branch_suppliers">
+				<?php foreach($suppliers as $row){
+				if($user_group != 'Super Admin' && $row->name == 'Super Admin'){
+					//if($row->name == 'Super Admin'){
+						?>
+					<tr class="tr">
+						<td class="text-left"><a  href="<?php echo base_url(); ?>index.php/suppliers/edit_suppliers/<?php echo $row->supplier_id; ?>" ><?php echo $row->supplier_name; ?></a></td>
+						<td class="text-left"><?php echo $row->first_name; ?></td>
+						<td class="text-center"><?php echo $row->mobile; ?></td>
+						<td class="text-left"><?php echo $row->email; ?></td>
+						<td class="text-center"><a href="<?php echo base_url(); ?>index.php/suppliers/supplier_items/<?php echo $row->supplier_id; ?>">items</a></td>
+						<td class="text-center"><button class="btn btn-danger btn-sm ml-1" onclick="delete_order(<?php echo $row->supplier_id; ?>)">Delete</button></td>
+						<th class="text-center"></th>
+					</tr>
+				<?php
+					//}
+				}else{
+				?>
+					<tr class="tr">
+						<td class="text-left"><a  href="<?php echo base_url(); ?>index.php/suppliers/edit_suppliers/<?php echo $row->supplier_id; ?>" ><?php echo $row->supplier_name; ?></a></td>
+						<td class="text-left"><?php echo $row->first_name; ?></td>
+						<td class="text-center"><?php echo $row->mobile; ?></td>
+						<td class="text-left"><?php echo $row->email; ?></td>
+						<td class="text-center"><a href="<?php echo base_url(); ?>index.php/suppliers/supplier_items/<?php echo $row->supplier_id; ?>">items</a></td>
+						<td class="text-center"><button class="btn btn-danger btn-sm ml-1" onclick="delete_supplier(<?php echo $row->supplier_id; ?>)">Delete</button></td>
+					</tr>
+					
+				<?php }} ?>
+				</tbody>
+			</table>
+			</div>
+		</div>
+		</div>
+		</div>
+	</div>
+	
+	<div class="modal fade" id="delete_order_modal" tabindex="-1" role="dialog" aria-labelledby="delete_order_title" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="delete_order_title">Are you sure, You want to delete this Supplier ?</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form action="<?php echo base_url();?>index.php/suppliers/delete_suppliers" method="POST" id="delete_order_form">
+					<input type="hidden" name="supplier_id" id="delete_supp_id">
+					<div class="row mt-2">
+						<div class='col-12'>
+							<button type="submit" class="btn btn-info">Delete</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+function delete_supplier(supp_id){
+             console.log(supp_id);
+			$("#delete_supp_id").val(supp_id);
+			$("#delete_order_modal").modal('show');
+		}
+		</script>
+		
+<!--.container-->
+		<!--.table-->
+		<br>
+		<!--.footer-->
+<script type="text/javascript">
+	function delete_row(str){
+		if(confirm('Are you sure you want to delete supplier')){
+		    $.ajax({
+				type: "POST",
+		        url: "<?php echo base_url();?>index.php/suppliers/suppliers_delete",
+		        data:'id='+str,
+		        success: function(data){
+		          location.reload();
+		        }
+	       });
+		}	
+	}
+</script>	
+
+<script type="text/javascript">
+$(document).ready(function() { 
+    $("#contact_form").validate({
+		ignore: "input[type='text']:hidden",
+		rules: {
+			route: {
+				required:true
+			}									
+		},		
+		messages: {
+			route: {
+				required:"Please enter route name"
+			}	
+		},
+
+    });	
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() { 
+    $("#contact_form_edit").validate({
+      ignore: "input[type='text']:hidden",
+	    rules: {
+			route: {
+                required:true
+            }									
+			
+	},		
+	messages: {
+			route: {
+                 required:"Please enter route name"
+            }	
+	},
+
+    });	
+});
+</script>
+<script>
+	function getBranchSuppliers(e){
+		var branch_id = $(e).val();
+		if(branch_id == 'all'){
+			location.reload();
+		}else{
+			$.ajax({
+				type: "POST",
+		        url: "<?php echo base_url();?>index.php/suppliers/getBranchSuppliers",
+		        data:'branch_id='+branch_id,
+		        success: function(data){
+		        	// alert(data);
+		        	$('#branch_suppliers').html(data);
+		        }
+	        });
+		}
+		
+	}
+</script>

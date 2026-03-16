@@ -1,0 +1,33 @@
+supplier_id,location_id,supplier_name,account_number,account_name,tax_code
+97,20,Village Cheese and Yoghurt,5-1110,Milk/Yoghurt/Cheese,FREE
+98,20,Supreme Quality Foods,5-1170,Grocery/Miscellaneous,GST
+100,20,Fernhill farm,5-1110,Milk/Yoghurt/Cheese,FREE
+103,20,Tibaldi,,,
+140,20,Mauro Bros,5-1150,Meat/Chicken/Seafood,FREE
+142,20,TMA Australia Pty Limited,5-2000,Paper & Packaging Products,GST
+201,20,Chai Spice Beverages,5-1140,Coffee/Tea,GST
+309,20,Provincial Produce,5-1160,Fruit/Vegetables,FREE
+314,20,ELT Packaging,5-2000 ,Paper & Packaging Products,GST
+443,20,Restock,5-2000 ,Paper & Packaging Products,GST
+450,20,Street Ice Cream,5-1270,Ice cream,GST
+452,20,Nippys,5-1210,Soft Drinks/Other Beverage,GST
+455,20,Mr Donut,,,
+458,20,SATO Australia Pty Ltd,5-2000 ,Paper & Packaging Products,GST
+460,20,SCHWOBS SWISS BAKERY,,,
+463,20,kjtest,,,
+537,20,Butcher Meat Vic,5-1150,Meat/Chicken/Seafood,FRE
+539,20,Ecolab,6-2050,Chemicals & Cleaning Products,GST
+544,20,Chefs Choice Meat,5-1150,Meat/Chicken/Seafood,FRE
+418,20,Asahi Beverages Pty Ltd Footscray,5-1210,Soft Drinks/Other Beverage,GST
+99,20,G and T Chicken,5-1150,Meat/Chicken/Seafood,FRE
+29,20,Coffico,5-1140,Coffee/Tea,GST
+486,20,Pac Food,,,
+712,20,Sweet Heart New,,,
+203,20,Prime Gold Goods,5-1170,Grocery/Miscellaneous,GST
+14,20,Ribbons and Bows,5-1220,Cake/Bisc/Slice/Muffin,GST
+3,20,YBS Foods,5-1170,Grocery/Miscellaneous,GST
+381,20,Long Fine Hospitality Supplies Pty LTD,,,
+2,20,Bega (BDD Australia Pty Ltd) Footscray,,,
+17,20,Costa Cookies Footscray,5-1220,Cake/Bisc/Slice/Muffin,GST
+30,20,Jannah Foods,5-1170,Grocery/Miscellaneous,GST
+393,20,Melissa Cakes,5-1220,Cake/Bisc/Slice/Muffin,GST

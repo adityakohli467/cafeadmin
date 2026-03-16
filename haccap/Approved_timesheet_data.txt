@@ -1,0 +1,15 @@
+Date,First Name,Last Name,Payroll Category,Units
+21/06/2021,Abigail,Boateng ,Base Hourly,0
+22/06/2021,Abigail,Boateng ,Base Hourly,0
+23/06/2021,Abigail,Boateng ,Base Hourly,5.50
+24/06/2021,Abigail,Boateng ,Base Hourly,0
+25/06/2021,Abigail,Boateng ,Base Hourly,0
+26/06/2021,Abigail,Boateng ,Base Hourly,0
+27/06/2021,Abigail,Boateng ,Base Hourly,0
+21/06/2021,Abigail,Boateng ,Uniform Allowance,0.00
+22/06/2021,Abigail,Boateng ,Uniform Allowance,0.00
+23/06/2021,Abigail,Boateng ,Uniform Allowance,1.00
+24/06/2021,Abigail,Boateng ,Uniform Allowance,0.00
+25/06/2021,Abigail,Boateng ,Uniform Allowance,0.00
+26/06/2021,Abigail,Boateng ,Uniform Allowance,0.00
+27/06/2021,Abigail,Boateng ,Uniform Allowance,0.00

@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+body {
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-static-top {
+    margin-bottom: 0px;
+}
+
+.wrapper>p>.btn {
+    margin: 5px 0;
+}
+
+.wrapper .navbar .container {
+    width: auto;
+}
+
+.c-btn {
+    border-radius: 0px !important
+}
+
+.cxs-btn {
+    padding: 4px 5px;
+}
+
+.bg-white.navbar-default {
+    background-color: #ffffff !important;
+    border-color: #e7e7e7;
+    margin-bottom: 0;
+}
+
+.bg-white.navbar-default .navbar-brand {
+    padding: 10px 15px;
+}
+
+@media (min-width: 1200px) {
+    .container-fluid {
+        max-width: 1260px;
+    }
+}
+
+/*Text-align CSS*/
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-center {
+    text-align: center !important
+}
+
+.text-left {
+    text-align: left !important
+}
+
+.text-right {
+    text-align: right !important
+}
+
+/* Theme-background color CSS*/
+
+.bg-theme {
+    background-color: #563d7c !important
+}
+
+.bg-dark {
+    background: #000000;
+}
+
+.page-head {
+    margin-bottom: 20px;
+    height: 100px;
+    padding-top: 25px;
+    border-bottom: 1px solid #f1f1f1
+}
+
+.page-head h3 {
+    margin: 10px 0;
+    color: #fff;
+}
+
+main.wrapper {
+    min-height: 550px;
+}
+
+/*Dashboard CSS*/
+
+.recent-orders .panel,
+.mPurchases .panel,
+.f-orders .panel,
+.cmsp .panel,
+.cmcp .panel {
+    border-radius: 0px;
+}
+
+.recent-orders .panel .p-head,
+.mPurchases .panel .p-head,
+.f-orders .panel .p-head,
+.cmsp .panel .p-head,
+.cmcp .panel .p-head {
+    padding: 20px;
+    color: #fff;
+    background-color: #424242;
+    min-height: 58px;
+    border-radius: 0px;
+}
+
+.recent-orders .panel .p-head .panel-title,
+.mPurchases .panel .p-head .panel-title,
+.f-orders .panel .p-head .panel-title,
+.cmsp .panel .p-head .panel-title,
+.cmcp .panel .p-head .panel-title {
+    padding: 5px 0;
+}
+
+.recent-orders .panel .p-body,
+.mPurchases .panel .p-body,
+.f-orders .panel .p-body,
+.cmsp .panel .p-body,
+.cmcp .panel .p-body {
+    padding: 20px;
+}
+
+.recent-orders .single-item,
+.f-orders .single-item {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.recent-orders .single-item:last-child,
+.f-orders .single-item:last-child {
+    border-bottom: none;
+}
+
+.recent-orders .single-item .rate,
+.f-orders .single-item .rate {
+    text-align: center;
+    border-right: 1px solid #dbdbdb;
+}
+
+/*Place Orders CSS*/
+
+.place-orders-list .place-orders .table .bg-darken th {
+    color: #fff;
+    background-color: #1c2a48;
+    border-color: #1c2a48;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    padding: 20px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+table.dataTable.row-border tbody tr:first-child th,
+table.dataTable.row-border tbody tr:first-child td,
+table.dataTable.display tbody tr:first-child th,
+table.dataTable.display tbody tr:first-child td {
+    border-top: none;
+}
+
+table.dataTable thead>tr>th {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+}
+
+/* Product Quantity */
+
+.quantity {
+    padding: 0px;
+    margin: 0px;
+}
+
+.quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+    background: transparent;
+}
+
+button.q-btn {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    background-color: #1c2a48;
+    border-color: #1c2a48;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.minus-btn i {
+    margin-bottom: 3px;
+}
+
+.plus-btn i {
+    margin-top: 2px;
+}
+
+button:focus,
+input:focus {
+    outline: 0;
+}
+
+/* Place Order Right widget */
+
+.col-r-widget .price {
+    /*width: 50%;*/
+    float: left;
+    margin-top: 5px;
+}
+
+.col-r-widget .price h5 {
+    line-height: 20px;
+    margin: 0;
+}
+
+.price-text-color {
+    color: #219FD1;
+}
+
+.col-r-widget .info .delete {
+    color: #777;
+}
+
+.col-r-widget .delete {
+    float: left;
+    font-size: 17px;
+    text-align: right;
+    margin-bottom: 10px;
+    height: 52px;
+}
+
+.clear-left {
+    clear: left;
+}
+
+.col-r-widget .separator {
+    padding-top: 20px;
+    border-top: 1px solid #E1E1E1;
+}
+
+.col-r-widget .separator p {
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.col-r-widget .separator p i {
+    margin-right: 5px;
+}
+
+.col-r-widget .btn-add {
+    width: 50%;
+    float: left;
+    border-right: 1px solid #E1E1E1;
+}
+
+.col-r-widget .btn-details {
+    width: 50%;
+    float: left;
+    padding-left: 20px;
+}
+
+.email-bg {
+    position: relative;
+    padding: 25px 15px 25px;
+    background-color: #236ea6;
+    border: 1px solid #236ea6;
+}
+
+/*History Orders CSS*/
+
+.history-orders-list .history-orders .table .bg-darken th {
+    color: #fff;
+    background-color: #1c2a48;
+    border-color: #1c2a48;
+}
+
+.history-orders-list .history-orders table.dataTable thead tr th.empty:before,
+.history-orders-list .history-orders table.dataTable thead tr th.empty:after {
+    display: none;
+}
+
+/*Favourite Orders CSS*/
+
+.favourite-orders-list .favourite-orders .table .bg-darken th {
+    color: #fff;
+    background-color: #1c2a48;
+    border-color: #1c2a48;
+}
+
+.favourite-orders-list .favourite-orders table.dataTable thead tr th.empty:before,
+.favourite-orders-list .favourite-orders table.dataTable thead tr th.empty:after {
+    display: none;
+}
+
+/*Standing Orders CSS*/
+
+.standing-orders-list .standing-orders .table .bg-darken th {
+    color: #fff;
+    background-color: #1c2a48;
+    border-color: #1c2a48;
+}
+
+.standing-orders-list .standing-orders table.dataTable thead tr th.empty:before,
+.standing-orders-list .standing-orders table.dataTable thead tr th.empty:after {
+    display: none;
+}
+
+/*Footer CSS*/
+
+footer.bg-dark {
+    padding: 25px 0 0;
+}
+
+footer.bg-dark p {
+    color: #ffffff;
+}

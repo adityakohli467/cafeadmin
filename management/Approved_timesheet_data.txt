@@ -1,0 +1,813 @@
+Date,First Name,Last Name,Payroll Category,Units
+13/09/2021,Abdulla Abudy,Harb,Base Hourly,10.50
+14/09/2021,Abdulla Abudy,Harb,Base Hourly,10.50
+15/09/2021,Abdulla Abudy,Harb,Base Hourly,10.50
+16/09/2021,Abdulla Abudy,Harb,Base Hourly,10.50
+17/09/2021,Abdulla Abudy,Harb,Base Hourly,10.50
+18/09/2021,Abdulla Abudy,Harb,Base Hourly,0.00
+19/09/2021,Abdulla Abudy,Harb,Base Hourly,0.00
+13/09/2021,Abdulla Abudy,Harb,Uniform Allowance,0
+14/09/2021,Abdulla Abudy,Harb,Uniform Allowance,0
+15/09/2021,Abdulla Abudy,Harb,Uniform Allowance,0
+16/09/2021,Abdulla Abudy,Harb,Uniform Allowance,0
+17/09/2021,Abdulla Abudy,Harb,Uniform Allowance,0
+18/09/2021,Abdulla Abudy,Harb,Uniform Allowance,0.00
+19/09/2021,Abdulla Abudy,Harb,Uniform Allowance,0.00
+13/09/2021,Abedrabo,Batta,Base Hourly,8.50
+14/09/2021,Abedrabo,Batta,Base Hourly,8.50
+15/09/2021,Abedrabo,Batta,Base Hourly,8.50
+16/09/2021,Abedrabo,Batta,Base Hourly,8.50
+17/09/2021,Abedrabo,Batta,Base Hourly,8.50
+18/09/2021,Abedrabo,Batta,Base Hourly,0.00
+19/09/2021,Abedrabo,Batta,Base Hourly,0.00
+13/09/2021,Abedrabo,Batta,Uniform Allowance,0
+14/09/2021,Abedrabo,Batta,Uniform Allowance,0
+15/09/2021,Abedrabo,Batta,Uniform Allowance,0
+16/09/2021,Abedrabo,Batta,Uniform Allowance,0
+17/09/2021,Abedrabo,Batta,Uniform Allowance,0
+18/09/2021,Abedrabo,Batta,Uniform Allowance,0.00
+19/09/2021,Abedrabo,Batta,Uniform Allowance,0.00
+13/09/2021,Aiona,Tapaatoutai,Base Hourly,0.00
+14/09/2021,Aiona,Tapaatoutai,Base Hourly,8.53
+15/09/2021,Aiona,Tapaatoutai,Base Hourly,0.00
+16/09/2021,Aiona,Tapaatoutai,Base Hourly,0.00
+17/09/2021,Aiona,Tapaatoutai,Base Hourly,4.00
+18/09/2021,Aiona,Tapaatoutai,Base Hourly,5.52
+19/09/2021,Aiona,Tapaatoutai,Base Hourly,8.27
+13/09/2021,Aiona,Tapaatoutai,Uniform Allowance,0.00
+14/09/2021,Aiona,Tapaatoutai,Uniform Allowance,0
+15/09/2021,Aiona,Tapaatoutai,Uniform Allowance,0.00
+16/09/2021,Aiona,Tapaatoutai,Uniform Allowance,0.00
+17/09/2021,Aiona,Tapaatoutai,Uniform Allowance,0
+18/09/2021,Aiona,Tapaatoutai,Uniform Allowance,0
+19/09/2021,Aiona,Tapaatoutai,Uniform Allowance,0
+13/09/2021,Angela,Sifniotis,Base Hourly,6.50
+14/09/2021,Angela,Sifniotis,Base Hourly,6.50
+15/09/2021,Angela,Sifniotis,Base Hourly,6.50
+16/09/2021,Angela,Sifniotis,Base Hourly,6.50
+17/09/2021,Angela,Sifniotis,Base Hourly,6.50
+18/09/2021,Angela,Sifniotis,Base Hourly,0.00
+19/09/2021,Angela,Sifniotis,Base Hourly,0.00
+13/09/2021,Angela,Sifniotis,Uniform Allowance,1.71
+14/09/2021,Angela,Sifniotis,Uniform Allowance,1.71
+15/09/2021,Angela,Sifniotis,Uniform Allowance,1.71
+16/09/2021,Angela,Sifniotis,Uniform Allowance,1.71
+17/09/2021,Angela,Sifniotis,Uniform Allowance,1.71
+18/09/2021,Angela,Sifniotis,Uniform Allowance,0.00
+19/09/2021,Angela,Sifniotis,Uniform Allowance,0.00
+13/09/2021,Anil Kumar,Tamang,Base Hourly,5.50
+14/09/2021,Anil Kumar,Tamang,Base Hourly,5.52
+15/09/2021,Anil Kumar,Tamang,Base Hourly,0.00
+16/09/2021,Anil Kumar,Tamang,Base Hourly,0.00
+17/09/2021,Anil Kumar,Tamang,Base Hourly,0.00
+18/09/2021,Anil Kumar,Tamang,Base Hourly,0.00
+19/09/2021,Anil Kumar,Tamang,Base Hourly,0.00
+13/09/2021,Anil Kumar,Tamang,Uniform Allowance,1.71
+14/09/2021,Anil Kumar,Tamang,Uniform Allowance,1.71
+15/09/2021,Anil Kumar,Tamang,Uniform Allowance,0.00
+16/09/2021,Anil Kumar,Tamang,Uniform Allowance,0.00
+17/09/2021,Anil Kumar,Tamang,Uniform Allowance,0.00
+18/09/2021,Anil Kumar,Tamang,Uniform Allowance,0.00
+19/09/2021,Anil Kumar,Tamang,Uniform Allowance,0.00
+13/09/2021,Anil,Thapa,Base Hourly,0.00
+14/09/2021,Anil,Thapa,Base Hourly,0.00
+15/09/2021,Anil,Thapa,Base Hourly,6.05
+16/09/2021,Anil,Thapa,Base Hourly,14.00
+17/09/2021,Anil,Thapa,Base Hourly,5.60
+18/09/2021,Anil,Thapa,Base Hourly,5.33
+19/09/2021,Anil,Thapa,Base Hourly,0.00
+13/09/2021,Anil,Thapa,Uniform Allowance,0.00
+14/09/2021,Anil,Thapa,Uniform Allowance,0.00
+15/09/2021,Anil,Thapa,Uniform Allowance,1.71
+16/09/2021,Anil,Thapa,Uniform Allowance,1.71
+17/09/2021,Anil,Thapa,Uniform Allowance,1.71
+18/09/2021,Anil,Thapa,Uniform Allowance,1.71
+19/09/2021,Anil,Thapa,Uniform Allowance,0.00
+13/09/2021,Anisha,Gajurel,Base Hourly,0.00
+14/09/2021,Anisha,Gajurel,Base Hourly,0.00
+15/09/2021,Anisha,Gajurel,Base Hourly,0.00
+16/09/2021,Anisha,Gajurel,Base Hourly,0.00
+17/09/2021,Anisha,Gajurel,Base Hourly,0.00
+18/09/2021,Anisha,Gajurel,Base Hourly,0.00
+19/09/2021,Anisha,Gajurel,Base Hourly,0.00
+13/09/2021,Anisha,Gajurel,Uniform Allowance,0.00
+14/09/2021,Anisha,Gajurel,Uniform Allowance,0.00
+15/09/2021,Anisha,Gajurel,Uniform Allowance,0.00
+16/09/2021,Anisha,Gajurel,Uniform Allowance,0.00
+17/09/2021,Anisha,Gajurel,Uniform Allowance,0.00
+18/09/2021,Anisha,Gajurel,Uniform Allowance,0.00
+19/09/2021,Anisha,Gajurel,Uniform Allowance,0.00
+13/09/2021,Annabelle,Rowe,Base Hourly,5.50
+14/09/2021,Annabelle,Rowe,Base Hourly,5.50
+15/09/2021,Annabelle,Rowe,Base Hourly,5.50
+16/09/2021,Annabelle,Rowe,Base Hourly,5.50
+17/09/2021,Annabelle,Rowe,Base Hourly,0.00
+18/09/2021,Annabelle,Rowe,Base Hourly,0.00
+19/09/2021,Annabelle,Rowe,Base Hourly,0.00
+13/09/2021,Annabelle,Rowe,Uniform Allowance,1.71
+14/09/2021,Annabelle,Rowe,Uniform Allowance,1.71
+15/09/2021,Annabelle,Rowe,Uniform Allowance,1.71
+16/09/2021,Annabelle,Rowe,Uniform Allowance,1.71
+17/09/2021,Annabelle,Rowe,Uniform Allowance,0.00
+18/09/2021,Annabelle,Rowe,Uniform Allowance,0.00
+19/09/2021,Annabelle,Rowe,Uniform Allowance,0.00
+13/09/2021,Bengin,Erdogan,Base Hourly,0.00
+14/09/2021,Bengin,Erdogan,Base Hourly,0.00
+15/09/2021,Bengin,Erdogan,Base Hourly,0.00
+16/09/2021,Bengin,Erdogan,Base Hourly,0.00
+17/09/2021,Bengin,Erdogan,Base Hourly,0.00
+18/09/2021,Bengin,Erdogan,Base Hourly,0.00
+19/09/2021,Bengin,Erdogan,Base Hourly,0.00
+13/09/2021,Bengin,Erdogan,Uniform Allowance,0.00
+14/09/2021,Bengin,Erdogan,Uniform Allowance,0.00
+15/09/2021,Bengin,Erdogan,Uniform Allowance,0.00
+16/09/2021,Bengin,Erdogan,Uniform Allowance,0.00
+17/09/2021,Bengin,Erdogan,Uniform Allowance,0.00
+18/09/2021,Bengin,Erdogan,Uniform Allowance,0.00
+19/09/2021,Bengin,Erdogan,Uniform Allowance,0.00
+13/09/2021,Benjamin,Sweeney,Base Hourly,0.00
+14/09/2021,Benjamin,Sweeney,Base Hourly,0.00
+15/09/2021,Benjamin,Sweeney,Base Hourly,6.02
+16/09/2021,Benjamin,Sweeney,Base Hourly,6.02
+17/09/2021,Benjamin,Sweeney,Base Hourly,0.00
+18/09/2021,Benjamin,Sweeney,Base Hourly,0.00
+19/09/2021,Benjamin,Sweeney,Base Hourly,0.00
+13/09/2021,Benjamin,Sweeney,Uniform Allowance,0.00
+14/09/2021,Benjamin,Sweeney,Uniform Allowance,0.00
+15/09/2021,Benjamin,Sweeney,Uniform Allowance,1.71
+16/09/2021,Benjamin,Sweeney,Uniform Allowance,1.71
+17/09/2021,Benjamin,Sweeney,Uniform Allowance,0.00
+18/09/2021,Benjamin,Sweeney,Uniform Allowance,0.00
+19/09/2021,Benjamin,Sweeney,Uniform Allowance,0.00
+13/09/2021,Bhandari,Puran,Base Hourly,0.00
+14/09/2021,Bhandari,Puran,Base Hourly,0.00
+15/09/2021,Bhandari,Puran,Base Hourly,0.00
+16/09/2021,Bhandari,Puran,Base Hourly,0.00
+17/09/2021,Bhandari,Puran,Base Hourly,0.00
+18/09/2021,Bhandari,Puran,Base Hourly,0.00
+19/09/2021,Bhandari,Puran,Base Hourly,0.00
+13/09/2021,Bhandari,Puran,Uniform Allowance,0.00
+14/09/2021,Bhandari,Puran,Uniform Allowance,0.00
+15/09/2021,Bhandari,Puran,Uniform Allowance,0.00
+16/09/2021,Bhandari,Puran,Uniform Allowance,0.00
+17/09/2021,Bhandari,Puran,Uniform Allowance,0.00
+18/09/2021,Bhandari,Puran,Uniform Allowance,0.00
+19/09/2021,Bhandari,Puran,Uniform Allowance,0.00
+13/09/2021,Bijayakumar,Tamang ,Base Hourly,0.00
+14/09/2021,Bijayakumar,Tamang ,Base Hourly,0.00
+15/09/2021,Bijayakumar,Tamang ,Base Hourly,0.00
+16/09/2021,Bijayakumar,Tamang ,Base Hourly,0.00
+17/09/2021,Bijayakumar,Tamang ,Base Hourly,0.00
+18/09/2021,Bijayakumar,Tamang ,Base Hourly,0.00
+19/09/2021,Bijayakumar,Tamang ,Base Hourly,0.00
+13/09/2021,Bijayakumar,Tamang ,Uniform Allowance,0.00
+14/09/2021,Bijayakumar,Tamang ,Uniform Allowance,0.00
+15/09/2021,Bijayakumar,Tamang ,Uniform Allowance,0.00
+16/09/2021,Bijayakumar,Tamang ,Uniform Allowance,0.00
+17/09/2021,Bijayakumar,Tamang ,Uniform Allowance,0.00
+18/09/2021,Bijayakumar,Tamang ,Uniform Allowance,0.00
+19/09/2021,Bijayakumar,Tamang ,Uniform Allowance,0.00
+13/09/2021,Briarna Kathryn,Peters  ,Base Hourly,8.50
+14/09/2021,Briarna Kathryn,Peters  ,Base Hourly,8.50
+15/09/2021,Briarna Kathryn,Peters  ,Base Hourly,8.50
+16/09/2021,Briarna Kathryn,Peters  ,Base Hourly,8.50
+17/09/2021,Briarna Kathryn,Peters  ,Base Hourly,8.50
+18/09/2021,Briarna Kathryn,Peters  ,Base Hourly,0.00
+19/09/2021,Briarna Kathryn,Peters  ,Base Hourly,0.00
+13/09/2021,Briarna Kathryn,Peters  ,Uniform Allowance,0
+14/09/2021,Briarna Kathryn,Peters  ,Uniform Allowance,0
+15/09/2021,Briarna Kathryn,Peters  ,Uniform Allowance,0
+16/09/2021,Briarna Kathryn,Peters  ,Uniform Allowance,0
+17/09/2021,Briarna Kathryn,Peters  ,Uniform Allowance,0
+18/09/2021,Briarna Kathryn,Peters  ,Uniform Allowance,0.00
+19/09/2021,Briarna Kathryn,Peters  ,Uniform Allowance,0.00
+13/09/2021,Caitlin,Shields,Base Hourly,0.00
+14/09/2021,Caitlin,Shields,Base Hourly,0.00
+15/09/2021,Caitlin,Shields,Base Hourly,0.00
+16/09/2021,Caitlin,Shields,Base Hourly,0.00
+17/09/2021,Caitlin,Shields,Base Hourly,0.00
+18/09/2021,Caitlin,Shields,Base Hourly,0.00
+19/09/2021,Caitlin,Shields,Base Hourly,0.00
+13/09/2021,Caitlin,Shields,Uniform Allowance,0.00
+14/09/2021,Caitlin,Shields,Uniform Allowance,0.00
+15/09/2021,Caitlin,Shields,Uniform Allowance,0.00
+16/09/2021,Caitlin,Shields,Uniform Allowance,0.00
+17/09/2021,Caitlin,Shields,Uniform Allowance,0.00
+18/09/2021,Caitlin,Shields,Uniform Allowance,0.00
+19/09/2021,Caitlin,Shields,Uniform Allowance,0.00
+13/09/2021,Cameron Tyler,Vaccarella,Base Hourly,0.00
+14/09/2021,Cameron Tyler,Vaccarella,Base Hourly,0.00
+15/09/2021,Cameron Tyler,Vaccarella,Base Hourly,0.00
+16/09/2021,Cameron Tyler,Vaccarella,Base Hourly,0.00
+17/09/2021,Cameron Tyler,Vaccarella,Base Hourly,0.00
+18/09/2021,Cameron Tyler,Vaccarella,Base Hourly,0.00
+19/09/2021,Cameron Tyler,Vaccarella,Base Hourly,0.00
+13/09/2021,Cameron Tyler,Vaccarella,Uniform Allowance,0.00
+14/09/2021,Cameron Tyler,Vaccarella,Uniform Allowance,0.00
+15/09/2021,Cameron Tyler,Vaccarella,Uniform Allowance,0.00
+16/09/2021,Cameron Tyler,Vaccarella,Uniform Allowance,0.00
+17/09/2021,Cameron Tyler,Vaccarella,Uniform Allowance,0.00
+18/09/2021,Cameron Tyler,Vaccarella,Uniform Allowance,0.00
+19/09/2021,Cameron Tyler,Vaccarella,Uniform Allowance,0.00
+13/09/2021,Daniel Louis,Maloungila,Base Hourly,9.50
+14/09/2021,Daniel Louis,Maloungila,Base Hourly,0.00
+15/09/2021,Daniel Louis,Maloungila,Base Hourly,9.50
+16/09/2021,Daniel Louis,Maloungila,Base Hourly,9.50
+17/09/2021,Daniel Louis,Maloungila,Base Hourly,10.50
+18/09/2021,Daniel Louis,Maloungila,Base Hourly,0.00
+19/09/2021,Daniel Louis,Maloungila,Base Hourly,0.00
+13/09/2021,Daniel Louis,Maloungila,Uniform Allowance,0
+14/09/2021,Daniel Louis,Maloungila,Uniform Allowance,0.00
+15/09/2021,Daniel Louis,Maloungila,Uniform Allowance,0
+16/09/2021,Daniel Louis,Maloungila,Uniform Allowance,0
+17/09/2021,Daniel Louis,Maloungila,Uniform Allowance,0
+18/09/2021,Daniel Louis,Maloungila,Uniform Allowance,0.00
+19/09/2021,Daniel Louis,Maloungila,Uniform Allowance,0.00
+13/09/2021,Daniel,Ozgul,Base Hourly,8.50
+14/09/2021,Daniel,Ozgul,Base Hourly,8.50
+15/09/2021,Daniel,Ozgul,Base Hourly,8.50
+16/09/2021,Daniel,Ozgul,Base Hourly,8.50
+17/09/2021,Daniel,Ozgul,Base Hourly,10.50
+18/09/2021,Daniel,Ozgul,Base Hourly,0.00
+19/09/2021,Daniel,Ozgul,Base Hourly,0.00
+13/09/2021,Daniel,Ozgul,Uniform Allowance,0
+14/09/2021,Daniel,Ozgul,Uniform Allowance,0
+15/09/2021,Daniel,Ozgul,Uniform Allowance,0
+16/09/2021,Daniel,Ozgul,Uniform Allowance,0
+17/09/2021,Daniel,Ozgul,Uniform Allowance,0
+18/09/2021,Daniel,Ozgul,Uniform Allowance,0.00
+19/09/2021,Daniel,Ozgul,Uniform Allowance,0.00
+13/09/2021,Dragana,Ostojic,Base Hourly,0.00
+14/09/2021,Dragana,Ostojic,Base Hourly,0.00
+15/09/2021,Dragana,Ostojic,Base Hourly,0.00
+16/09/2021,Dragana,Ostojic,Base Hourly,5.50
+17/09/2021,Dragana,Ostojic,Base Hourly,0.00
+18/09/2021,Dragana,Ostojic,Base Hourly,10.00
+19/09/2021,Dragana,Ostojic,Base Hourly,10.00
+13/09/2021,Dragana,Ostojic,Uniform Allowance,0.00
+14/09/2021,Dragana,Ostojic,Uniform Allowance,0.00
+15/09/2021,Dragana,Ostojic,Uniform Allowance,0.00
+16/09/2021,Dragana,Ostojic,Uniform Allowance,1.71
+17/09/2021,Dragana,Ostojic,Uniform Allowance,0.00
+18/09/2021,Dragana,Ostojic,Uniform Allowance,1.71
+19/09/2021,Dragana,Ostojic,Uniform Allowance,1.71
+13/09/2021,Elysa,Kechagias,Base Hourly,4.00
+14/09/2021,Elysa,Kechagias,Base Hourly,4.00
+15/09/2021,Elysa,Kechagias,Base Hourly,0.00
+16/09/2021,Elysa,Kechagias,Base Hourly,0.00
+17/09/2021,Elysa,Kechagias,Base Hourly,0.00
+18/09/2021,Elysa,Kechagias,Base Hourly,0.00
+19/09/2021,Elysa,Kechagias,Base Hourly,0.00
+13/09/2021,Elysa,Kechagias,Uniform Allowance,1.71
+14/09/2021,Elysa,Kechagias,Uniform Allowance,1.71
+15/09/2021,Elysa,Kechagias,Uniform Allowance,0.00
+16/09/2021,Elysa,Kechagias,Uniform Allowance,0.00
+17/09/2021,Elysa,Kechagias,Uniform Allowance,0.00
+18/09/2021,Elysa,Kechagias,Uniform Allowance,0.00
+19/09/2021,Elysa,Kechagias,Uniform Allowance,0.00
+13/09/2021,Emily Georgia,Hogg,Base Hourly,0.00
+14/09/2021,Emily Georgia,Hogg,Base Hourly,0.00
+15/09/2021,Emily Georgia,Hogg,Base Hourly,0.00
+16/09/2021,Emily Georgia,Hogg,Base Hourly,0.00
+17/09/2021,Emily Georgia,Hogg,Base Hourly,0.00
+18/09/2021,Emily Georgia,Hogg,Base Hourly,0.00
+19/09/2021,Emily Georgia,Hogg,Base Hourly,0.00
+13/09/2021,Emily Georgia,Hogg,Uniform Allowance,0.00
+14/09/2021,Emily Georgia,Hogg,Uniform Allowance,0.00
+15/09/2021,Emily Georgia,Hogg,Uniform Allowance,0.00
+16/09/2021,Emily Georgia,Hogg,Uniform Allowance,0.00
+17/09/2021,Emily Georgia,Hogg,Uniform Allowance,0.00
+18/09/2021,Emily Georgia,Hogg,Uniform Allowance,0.00
+19/09/2021,Emily Georgia,Hogg,Uniform Allowance,0.00
+13/09/2021,Gareth,Allison,Base Hourly,5.97
+14/09/2021,Gareth,Allison,Base Hourly,5.75
+15/09/2021,Gareth,Allison,Base Hourly,5.50
+16/09/2021,Gareth,Allison,Base Hourly,0.00
+17/09/2021,Gareth,Allison,Base Hourly,5.58
+18/09/2021,Gareth,Allison,Base Hourly,0.00
+19/09/2021,Gareth,Allison,Base Hourly,6.60
+13/09/2021,Gareth,Allison,Uniform Allowance,1.71
+14/09/2021,Gareth,Allison,Uniform Allowance,1.71
+15/09/2021,Gareth,Allison,Uniform Allowance,1.71
+16/09/2021,Gareth,Allison,Uniform Allowance,0.00
+17/09/2021,Gareth,Allison,Uniform Allowance,1.71
+18/09/2021,Gareth,Allison,Uniform Allowance,0.00
+19/09/2021,Gareth,Allison,Uniform Allowance,1.71
+13/09/2021,Georgio,Bader,Base Hourly,8.50
+14/09/2021,Georgio,Bader,Base Hourly,8.50
+15/09/2021,Georgio,Bader,Base Hourly,8.50
+16/09/2021,Georgio,Bader,Base Hourly,8.50
+17/09/2021,Georgio,Bader,Base Hourly,8.50
+18/09/2021,Georgio,Bader,Base Hourly,0.00
+19/09/2021,Georgio,Bader,Base Hourly,0.00
+13/09/2021,Georgio,Bader,Uniform Allowance,0
+14/09/2021,Georgio,Bader,Uniform Allowance,0
+15/09/2021,Georgio,Bader,Uniform Allowance,0
+16/09/2021,Georgio,Bader,Uniform Allowance,0
+17/09/2021,Georgio,Bader,Uniform Allowance,0
+18/09/2021,Georgio,Bader,Uniform Allowance,0.00
+19/09/2021,Georgio,Bader,Uniform Allowance,0.00
+13/09/2021,Giuseppe,Borsellino,Base Hourly,0.00
+14/09/2021,Giuseppe,Borsellino,Base Hourly,0.00
+15/09/2021,Giuseppe,Borsellino,Base Hourly,0.00
+16/09/2021,Giuseppe,Borsellino,Base Hourly,0.00
+17/09/2021,Giuseppe,Borsellino,Base Hourly,0.00
+18/09/2021,Giuseppe,Borsellino,Base Hourly,0.00
+19/09/2021,Giuseppe,Borsellino,Base Hourly,0.00
+13/09/2021,Giuseppe,Borsellino,Uniform Allowance,0.00
+14/09/2021,Giuseppe,Borsellino,Uniform Allowance,0.00
+15/09/2021,Giuseppe,Borsellino,Uniform Allowance,0.00
+16/09/2021,Giuseppe,Borsellino,Uniform Allowance,0.00
+17/09/2021,Giuseppe,Borsellino,Uniform Allowance,0.00
+18/09/2021,Giuseppe,Borsellino,Uniform Allowance,0.00
+19/09/2021,Giuseppe,Borsellino,Uniform Allowance,0.00
+13/09/2021,Hyun Jin(Alex),Shin,Base Hourly,0.00
+14/09/2021,Hyun Jin(Alex),Shin,Base Hourly,0.00
+15/09/2021,Hyun Jin(Alex),Shin,Base Hourly,4.02
+16/09/2021,Hyun Jin(Alex),Shin,Base Hourly,4.00
+17/09/2021,Hyun Jin(Alex),Shin,Base Hourly,5.22
+18/09/2021,Hyun Jin(Alex),Shin,Base Hourly,0.00
+19/09/2021,Hyun Jin(Alex),Shin,Base Hourly,0.00
+13/09/2021,Hyun Jin(Alex),Shin,Uniform Allowance,0.00
+14/09/2021,Hyun Jin(Alex),Shin,Uniform Allowance,0.00
+15/09/2021,Hyun Jin(Alex),Shin,Uniform Allowance,1.71
+16/09/2021,Hyun Jin(Alex),Shin,Uniform Allowance,1.71
+17/09/2021,Hyun Jin(Alex),Shin,Uniform Allowance,1.71
+18/09/2021,Hyun Jin(Alex),Shin,Uniform Allowance,0.00
+19/09/2021,Hyun Jin(Alex),Shin,Uniform Allowance,0.00
+13/09/2021,Jason Edward,Kleeven,Base Hourly,5.00
+14/09/2021,Jason Edward,Kleeven,Base Hourly,5.00
+15/09/2021,Jason Edward,Kleeven,Base Hourly,0.00
+16/09/2021,Jason Edward,Kleeven,Base Hourly,0.00
+17/09/2021,Jason Edward,Kleeven,Base Hourly,0.00
+18/09/2021,Jason Edward,Kleeven,Base Hourly,0.00
+19/09/2021,Jason Edward,Kleeven,Base Hourly,0.00
+13/09/2021,Jason Edward,Kleeven,Uniform Allowance,1.71
+14/09/2021,Jason Edward,Kleeven,Uniform Allowance,1.71
+15/09/2021,Jason Edward,Kleeven,Uniform Allowance,0.00
+16/09/2021,Jason Edward,Kleeven,Uniform Allowance,0.00
+17/09/2021,Jason Edward,Kleeven,Uniform Allowance,0.00
+18/09/2021,Jason Edward,Kleeven,Uniform Allowance,0.00
+19/09/2021,Jason Edward,Kleeven,Uniform Allowance,0.00
+13/09/2021,Keziban,Ozkan,Base Hourly,5.00
+14/09/2021,Keziban,Ozkan,Base Hourly,5.30
+15/09/2021,Keziban,Ozkan,Base Hourly,5.20
+16/09/2021,Keziban,Ozkan,Base Hourly,5.92
+17/09/2021,Keziban,Ozkan,Base Hourly,5.68
+18/09/2021,Keziban,Ozkan,Base Hourly,0.00
+19/09/2021,Keziban,Ozkan,Base Hourly,0.00
+13/09/2021,Keziban,Ozkan,Uniform Allowance,0
+14/09/2021,Keziban,Ozkan,Uniform Allowance,0
+15/09/2021,Keziban,Ozkan,Uniform Allowance,0
+16/09/2021,Keziban,Ozkan,Uniform Allowance,0
+17/09/2021,Keziban,Ozkan,Uniform Allowance,0
+18/09/2021,Keziban,Ozkan,Uniform Allowance,0.00
+19/09/2021,Keziban,Ozkan,Uniform Allowance,0.00
+13/09/2021,Lisa Suzanne,Dellit,Base Hourly,0.00
+14/09/2021,Lisa Suzanne,Dellit,Base Hourly,0.00
+15/09/2021,Lisa Suzanne,Dellit,Base Hourly,0.00
+16/09/2021,Lisa Suzanne,Dellit,Base Hourly,0.00
+17/09/2021,Lisa Suzanne,Dellit,Base Hourly,0.00
+18/09/2021,Lisa Suzanne,Dellit,Base Hourly,5.00
+19/09/2021,Lisa Suzanne,Dellit,Base Hourly,5.00
+13/09/2021,Lisa Suzanne,Dellit,Uniform Allowance,0.00
+14/09/2021,Lisa Suzanne,Dellit,Uniform Allowance,0.00
+15/09/2021,Lisa Suzanne,Dellit,Uniform Allowance,0.00
+16/09/2021,Lisa Suzanne,Dellit,Uniform Allowance,0.00
+17/09/2021,Lisa Suzanne,Dellit,Uniform Allowance,0.00
+18/09/2021,Lisa Suzanne,Dellit,Uniform Allowance,1.71
+19/09/2021,Lisa Suzanne,Dellit,Uniform Allowance,1.71
+13/09/2021,Manish,Basukala,Base Hourly,5.05
+14/09/2021,Manish,Basukala,Base Hourly,4.50
+15/09/2021,Manish,Basukala,Base Hourly,0.00
+16/09/2021,Manish,Basukala,Base Hourly,0.00
+17/09/2021,Manish,Basukala,Base Hourly,0.00
+18/09/2021,Manish,Basukala,Base Hourly,0.00
+19/09/2021,Manish,Basukala,Base Hourly,0.00
+13/09/2021,Manish,Basukala,Uniform Allowance,1.71
+14/09/2021,Manish,Basukala,Uniform Allowance,1.71
+15/09/2021,Manish,Basukala,Uniform Allowance,0.00
+16/09/2021,Manish,Basukala,Uniform Allowance,0.00
+17/09/2021,Manish,Basukala,Uniform Allowance,0.00
+18/09/2021,Manish,Basukala,Uniform Allowance,0.00
+19/09/2021,Manish,Basukala,Uniform Allowance,0.00
+13/09/2021,Maria Chrystal,Busuttil,Base Hourly,6.53
+14/09/2021,Maria Chrystal,Busuttil,Base Hourly,0.00
+15/09/2021,Maria Chrystal,Busuttil,Base Hourly,0.00
+16/09/2021,Maria Chrystal,Busuttil,Base Hourly,0.00
+17/09/2021,Maria Chrystal,Busuttil,Base Hourly,0.00
+18/09/2021,Maria Chrystal,Busuttil,Base Hourly,0.00
+19/09/2021,Maria Chrystal,Busuttil,Base Hourly,0.00
+13/09/2021,Maria Chrystal,Busuttil,Uniform Allowance,1.71
+14/09/2021,Maria Chrystal,Busuttil,Uniform Allowance,0.00
+15/09/2021,Maria Chrystal,Busuttil,Uniform Allowance,0.00
+16/09/2021,Maria Chrystal,Busuttil,Uniform Allowance,0.00
+17/09/2021,Maria Chrystal,Busuttil,Uniform Allowance,0.00
+18/09/2021,Maria Chrystal,Busuttil,Uniform Allowance,0.00
+19/09/2021,Maria Chrystal,Busuttil,Uniform Allowance,0.00
+13/09/2021,Mark Anthony,Cachia,Base Hourly,0.00
+14/09/2021,Mark Anthony,Cachia,Base Hourly,0.00
+15/09/2021,Mark Anthony,Cachia,Base Hourly,0.00
+16/09/2021,Mark Anthony,Cachia,Base Hourly,0.00
+17/09/2021,Mark Anthony,Cachia,Base Hourly,0.00
+18/09/2021,Mark Anthony,Cachia,Base Hourly,0.00
+19/09/2021,Mark Anthony,Cachia,Base Hourly,0.00
+13/09/2021,Mark Anthony,Cachia,Uniform Allowance,0.00
+14/09/2021,Mark Anthony,Cachia,Uniform Allowance,0.00
+15/09/2021,Mark Anthony,Cachia,Uniform Allowance,0.00
+16/09/2021,Mark Anthony,Cachia,Uniform Allowance,0.00
+17/09/2021,Mark Anthony,Cachia,Uniform Allowance,0.00
+18/09/2021,Mark Anthony,Cachia,Uniform Allowance,0.00
+19/09/2021,Mark Anthony,Cachia,Uniform Allowance,0.00
+13/09/2021,Ngoc Truc Linh,Mai,Base Hourly,0.00
+14/09/2021,Ngoc Truc Linh,Mai,Base Hourly,0.00
+15/09/2021,Ngoc Truc Linh,Mai,Base Hourly,0.00
+16/09/2021,Ngoc Truc Linh,Mai,Base Hourly,5.40
+17/09/2021,Ngoc Truc Linh,Mai,Base Hourly,5.38
+18/09/2021,Ngoc Truc Linh,Mai,Base Hourly,0.00
+19/09/2021,Ngoc Truc Linh,Mai,Base Hourly,0.00
+13/09/2021,Ngoc Truc Linh,Mai,Uniform Allowance,0.00
+14/09/2021,Ngoc Truc Linh,Mai,Uniform Allowance,0.00
+15/09/2021,Ngoc Truc Linh,Mai,Uniform Allowance,0.00
+16/09/2021,Ngoc Truc Linh,Mai,Uniform Allowance,1.71
+17/09/2021,Ngoc Truc Linh,Mai,Uniform Allowance,1.71
+18/09/2021,Ngoc Truc Linh,Mai,Uniform Allowance,0.00
+19/09/2021,Ngoc Truc Linh,Mai,Uniform Allowance,0.00
+13/09/2021,Noury,Yazgi,Base Hourly,8.00
+14/09/2021,Noury,Yazgi,Base Hourly,8.50
+15/09/2021,Noury,Yazgi,Base Hourly,8.00
+16/09/2021,Noury,Yazgi,Base Hourly,5.00
+17/09/2021,Noury,Yazgi,Base Hourly,5.00
+18/09/2021,Noury,Yazgi,Base Hourly,0.00
+19/09/2021,Noury,Yazgi,Base Hourly,0.00
+13/09/2021,Noury,Yazgi,Uniform Allowance,0
+14/09/2021,Noury,Yazgi,Uniform Allowance,0
+15/09/2021,Noury,Yazgi,Uniform Allowance,0
+16/09/2021,Noury,Yazgi,Uniform Allowance,0
+17/09/2021,Noury,Yazgi,Uniform Allowance,0
+18/09/2021,Noury,Yazgi,Uniform Allowance,0.00
+19/09/2021,Noury,Yazgi,Uniform Allowance,0.00
+13/09/2021,Oanh Thuy,Luu,Base Hourly,4.50
+14/09/2021,Oanh Thuy,Luu,Base Hourly,4.60
+15/09/2021,Oanh Thuy,Luu,Base Hourly,4.00
+16/09/2021,Oanh Thuy,Luu,Base Hourly,4.00
+17/09/2021,Oanh Thuy,Luu,Base Hourly,0.00
+18/09/2021,Oanh Thuy,Luu,Base Hourly,0.00
+19/09/2021,Oanh Thuy,Luu,Base Hourly,0.00
+13/09/2021,Oanh Thuy,Luu,Uniform Allowance,1.71
+14/09/2021,Oanh Thuy,Luu,Uniform Allowance,1.71
+15/09/2021,Oanh Thuy,Luu,Uniform Allowance,1.71
+16/09/2021,Oanh Thuy,Luu,Uniform Allowance,1.71
+17/09/2021,Oanh Thuy,Luu,Uniform Allowance,0.00
+18/09/2021,Oanh Thuy,Luu,Uniform Allowance,0.00
+19/09/2021,Oanh Thuy,Luu,Uniform Allowance,0.00
+13/09/2021,Omar, Chechan  ,Base Hourly,8.50
+14/09/2021,Omar, Chechan  ,Base Hourly,8.50
+15/09/2021,Omar, Chechan  ,Base Hourly,8.50
+16/09/2021,Omar, Chechan  ,Base Hourly,8.50
+17/09/2021,Omar, Chechan  ,Base Hourly,8.50
+18/09/2021,Omar, Chechan  ,Base Hourly,0.00
+19/09/2021,Omar, Chechan  ,Base Hourly,0.00
+13/09/2021,Omar, Chechan  ,Uniform Allowance,0
+14/09/2021,Omar, Chechan  ,Uniform Allowance,0
+15/09/2021,Omar, Chechan  ,Uniform Allowance,0
+16/09/2021,Omar, Chechan  ,Uniform Allowance,0
+17/09/2021,Omar, Chechan  ,Uniform Allowance,0
+18/09/2021,Omar, Chechan  ,Uniform Allowance,0.00
+19/09/2021,Omar, Chechan  ,Uniform Allowance,0.00
+13/09/2021,Paige,Kay,Base Hourly,0.00
+14/09/2021,Paige,Kay,Base Hourly,0.00
+15/09/2021,Paige,Kay,Base Hourly,5.00
+16/09/2021,Paige,Kay,Base Hourly,4.50
+17/09/2021,Paige,Kay,Base Hourly,0.00
+18/09/2021,Paige,Kay,Base Hourly,0.00
+19/09/2021,Paige,Kay,Base Hourly,0.00
+13/09/2021,Paige,Kay,Uniform Allowance,0.00
+14/09/2021,Paige,Kay,Uniform Allowance,0.00
+15/09/2021,Paige,Kay,Uniform Allowance,1.71
+16/09/2021,Paige,Kay,Uniform Allowance,1.71
+17/09/2021,Paige,Kay,Uniform Allowance,0.00
+18/09/2021,Paige,Kay,Uniform Allowance,0.00
+19/09/2021,Paige,Kay,Uniform Allowance,0.00
+13/09/2021,Pinsiri,Vasasiri,Base Hourly,9.00
+14/09/2021,Pinsiri,Vasasiri,Base Hourly,9.03
+15/09/2021,Pinsiri,Vasasiri,Base Hourly,9.00
+16/09/2021,Pinsiri,Vasasiri,Base Hourly,8.18
+17/09/2021,Pinsiri,Vasasiri,Base Hourly,8.00
+18/09/2021,Pinsiri,Vasasiri,Base Hourly,0.00
+19/09/2021,Pinsiri,Vasasiri,Base Hourly,0.00
+13/09/2021,Pinsiri,Vasasiri,Uniform Allowance,0
+14/09/2021,Pinsiri,Vasasiri,Uniform Allowance,0
+15/09/2021,Pinsiri,Vasasiri,Uniform Allowance,0
+16/09/2021,Pinsiri,Vasasiri,Uniform Allowance,0
+17/09/2021,Pinsiri,Vasasiri,Uniform Allowance,0
+18/09/2021,Pinsiri,Vasasiri,Uniform Allowance,0.00
+19/09/2021,Pinsiri,Vasasiri,Uniform Allowance,0.00
+13/09/2021,Qolo Lavenia, Sabareka,Base Hourly,0.00
+14/09/2021,Qolo Lavenia, Sabareka,Base Hourly,0.00
+15/09/2021,Qolo Lavenia, Sabareka,Base Hourly,0.00
+16/09/2021,Qolo Lavenia, Sabareka,Base Hourly,0.00
+17/09/2021,Qolo Lavenia, Sabareka,Base Hourly,0.00
+18/09/2021,Qolo Lavenia, Sabareka,Base Hourly,0.00
+19/09/2021,Qolo Lavenia, Sabareka,Base Hourly,0.00
+13/09/2021,Qolo Lavenia, Sabareka,Uniform Allowance,0.00
+14/09/2021,Qolo Lavenia, Sabareka,Uniform Allowance,0.00
+15/09/2021,Qolo Lavenia, Sabareka,Uniform Allowance,0.00
+16/09/2021,Qolo Lavenia, Sabareka,Uniform Allowance,0.00
+17/09/2021,Qolo Lavenia, Sabareka,Uniform Allowance,0.00
+18/09/2021,Qolo Lavenia, Sabareka,Uniform Allowance,0.00
+19/09/2021,Qolo Lavenia, Sabareka,Uniform Allowance,0.00
+13/09/2021,Rami,Haddad,Base Hourly,5.18
+14/09/2021,Rami,Haddad,Base Hourly,10.07
+15/09/2021,Rami,Haddad,Base Hourly,0.00
+16/09/2021,Rami,Haddad,Base Hourly,0.00
+17/09/2021,Rami,Haddad,Base Hourly,3.95
+18/09/2021,Rami,Haddad,Base Hourly,0.00
+19/09/2021,Rami,Haddad,Base Hourly,0.00
+13/09/2021,Rami,Haddad,Uniform Allowance,1.71
+14/09/2021,Rami,Haddad,Uniform Allowance,1.71
+15/09/2021,Rami,Haddad,Uniform Allowance,0.00
+16/09/2021,Rami,Haddad,Uniform Allowance,0.00
+17/09/2021,Rami,Haddad,Uniform Allowance,1.71
+18/09/2021,Rami,Haddad,Uniform Allowance,0.00
+19/09/2021,Rami,Haddad,Uniform Allowance,0.00
+13/09/2021,Rebecca Louise,Brooks,Base Hourly,0.00
+14/09/2021,Rebecca Louise,Brooks,Base Hourly,0.00
+15/09/2021,Rebecca Louise,Brooks,Base Hourly,5.00
+16/09/2021,Rebecca Louise,Brooks,Base Hourly,5.00
+17/09/2021,Rebecca Louise,Brooks,Base Hourly,5.00
+18/09/2021,Rebecca Louise,Brooks,Base Hourly,0.00
+19/09/2021,Rebecca Louise,Brooks,Base Hourly,0.00
+13/09/2021,Rebecca Louise,Brooks,Uniform Allowance,0.00
+14/09/2021,Rebecca Louise,Brooks,Uniform Allowance,0.00
+15/09/2021,Rebecca Louise,Brooks,Uniform Allowance,1.71
+16/09/2021,Rebecca Louise,Brooks,Uniform Allowance,1.71
+17/09/2021,Rebecca Louise,Brooks,Uniform Allowance,1.71
+18/09/2021,Rebecca Louise,Brooks,Uniform Allowance,0.00
+19/09/2021,Rebecca Louise,Brooks,Uniform Allowance,0.00
+13/09/2021,Rijam,Thapa,Base Hourly,0.00
+14/09/2021,Rijam,Thapa,Base Hourly,0.00
+15/09/2021,Rijam,Thapa,Base Hourly,0.00
+16/09/2021,Rijam,Thapa,Base Hourly,0.00
+17/09/2021,Rijam,Thapa,Base Hourly,0.00
+18/09/2021,Rijam,Thapa,Base Hourly,0.00
+19/09/2021,Rijam,Thapa,Base Hourly,0.00
+13/09/2021,Rijam,Thapa,Uniform Allowance,0.00
+14/09/2021,Rijam,Thapa,Uniform Allowance,0.00
+15/09/2021,Rijam,Thapa,Uniform Allowance,0.00
+16/09/2021,Rijam,Thapa,Uniform Allowance,0.00
+17/09/2021,Rijam,Thapa,Uniform Allowance,0.00
+18/09/2021,Rijam,Thapa,Uniform Allowance,0.00
+19/09/2021,Rijam,Thapa,Uniform Allowance,0.00
+13/09/2021,Ronik,Shrestha,Base Hourly,0.00
+14/09/2021,Ronik,Shrestha,Base Hourly,6.40
+15/09/2021,Ronik,Shrestha,Base Hourly,5.00
+16/09/2021,Ronik,Shrestha,Base Hourly,0.00
+17/09/2021,Ronik,Shrestha,Base Hourly,0.00
+18/09/2021,Ronik,Shrestha,Base Hourly,0.00
+19/09/2021,Ronik,Shrestha,Base Hourly,5.50
+13/09/2021,Ronik,Shrestha,Uniform Allowance,0.00
+14/09/2021,Ronik,Shrestha,Uniform Allowance,1.71
+15/09/2021,Ronik,Shrestha,Uniform Allowance,1.71
+16/09/2021,Ronik,Shrestha,Uniform Allowance,0.00
+17/09/2021,Ronik,Shrestha,Uniform Allowance,0.00
+18/09/2021,Ronik,Shrestha,Uniform Allowance,0.00
+19/09/2021,Ronik,Shrestha,Uniform Allowance,1.71
+13/09/2021,Roshil,Mahato,Base Hourly,0.00
+14/09/2021,Roshil,Mahato,Base Hourly,0.00
+15/09/2021,Roshil,Mahato,Base Hourly,0.00
+16/09/2021,Roshil,Mahato,Base Hourly,5.48
+17/09/2021,Roshil,Mahato,Base Hourly,0.00
+18/09/2021,Roshil,Mahato,Base Hourly,0.00
+19/09/2021,Roshil,Mahato,Base Hourly,0.00
+13/09/2021,Roshil,Mahato,Uniform Allowance,0.00
+14/09/2021,Roshil,Mahato,Uniform Allowance,0.00
+15/09/2021,Roshil,Mahato,Uniform Allowance,0.00
+16/09/2021,Roshil,Mahato,Uniform Allowance,1.71
+17/09/2021,Roshil,Mahato,Uniform Allowance,0.00
+18/09/2021,Roshil,Mahato,Uniform Allowance,0.00
+19/09/2021,Roshil,Mahato,Uniform Allowance,0.00
+13/09/2021,Sagar,Kc,Base Hourly,0.00
+14/09/2021,Sagar,Kc,Base Hourly,0.00
+15/09/2021,Sagar,Kc,Base Hourly,0.00
+16/09/2021,Sagar,Kc,Base Hourly,0.00
+17/09/2021,Sagar,Kc,Base Hourly,0.00
+18/09/2021,Sagar,Kc,Base Hourly,0.00
+19/09/2021,Sagar,Kc,Base Hourly,0.00
+13/09/2021,Sagar,Kc,Uniform Allowance,0.00
+14/09/2021,Sagar,Kc,Uniform Allowance,0.00
+15/09/2021,Sagar,Kc,Uniform Allowance,0.00
+16/09/2021,Sagar,Kc,Uniform Allowance,0.00
+17/09/2021,Sagar,Kc,Uniform Allowance,0.00
+18/09/2021,Sagar,Kc,Uniform Allowance,0.00
+19/09/2021,Sagar,Kc,Uniform Allowance,0.00
+13/09/2021,Sajana,Shrestha,Base Hourly,0.00
+14/09/2021,Sajana,Shrestha,Base Hourly,7.20
+15/09/2021,Sajana,Shrestha,Base Hourly,0.00
+16/09/2021,Sajana,Shrestha,Base Hourly,0.00
+17/09/2021,Sajana,Shrestha,Base Hourly,0.00
+18/09/2021,Sajana,Shrestha,Base Hourly,0.00
+19/09/2021,Sajana,Shrestha,Base Hourly,0.00
+13/09/2021,Sajana,Shrestha,Uniform Allowance,0.00
+14/09/2021,Sajana,Shrestha,Uniform Allowance,0
+15/09/2021,Sajana,Shrestha,Uniform Allowance,0.00
+16/09/2021,Sajana,Shrestha,Uniform Allowance,0.00
+17/09/2021,Sajana,Shrestha,Uniform Allowance,0.00
+18/09/2021,Sajana,Shrestha,Uniform Allowance,0.00
+19/09/2021,Sajana,Shrestha,Uniform Allowance,0.00
+13/09/2021,Samriddha,Neupane,Base Hourly,0.00
+14/09/2021,Samriddha,Neupane,Base Hourly,0.00
+15/09/2021,Samriddha,Neupane,Base Hourly,0.00
+16/09/2021,Samriddha,Neupane,Base Hourly,0.00
+17/09/2021,Samriddha,Neupane,Base Hourly,0.00
+18/09/2021,Samriddha,Neupane,Base Hourly,6.98
+19/09/2021,Samriddha,Neupane,Base Hourly,7.13
+13/09/2021,Samriddha,Neupane,Uniform Allowance,0.00
+14/09/2021,Samriddha,Neupane,Uniform Allowance,0.00
+15/09/2021,Samriddha,Neupane,Uniform Allowance,0.00
+16/09/2021,Samriddha,Neupane,Uniform Allowance,0.00
+17/09/2021,Samriddha,Neupane,Uniform Allowance,0.00
+18/09/2021,Samriddha,Neupane,Uniform Allowance,0
+19/09/2021,Samriddha,Neupane,Uniform Allowance,0
+13/09/2021,Sangam,Nepali,Base Hourly,0.00
+14/09/2021,Sangam,Nepali,Base Hourly,8.05
+15/09/2021,Sangam,Nepali,Base Hourly,0.00
+16/09/2021,Sangam,Nepali,Base Hourly,0.00
+17/09/2021,Sangam,Nepali,Base Hourly,0.00
+18/09/2021,Sangam,Nepali,Base Hourly,5.00
+19/09/2021,Sangam,Nepali,Base Hourly,0.00
+13/09/2021,Sangam,Nepali,Uniform Allowance,0.00
+14/09/2021,Sangam,Nepali,Uniform Allowance,0
+15/09/2021,Sangam,Nepali,Uniform Allowance,0.00
+16/09/2021,Sangam,Nepali,Uniform Allowance,0.00
+17/09/2021,Sangam,Nepali,Uniform Allowance,0.00
+18/09/2021,Sangam,Nepali,Uniform Allowance,0
+19/09/2021,Sangam,Nepali,Uniform Allowance,0.00
+13/09/2021,Shristi,Chhetri,Base Hourly,0.00
+14/09/2021,Shristi,Chhetri,Base Hourly,0.00
+15/09/2021,Shristi,Chhetri,Base Hourly,0.00
+16/09/2021,Shristi,Chhetri,Base Hourly,0.00
+17/09/2021,Shristi,Chhetri,Base Hourly,0.00
+18/09/2021,Shristi,Chhetri,Base Hourly,4.72
+19/09/2021,Shristi,Chhetri,Base Hourly,5.00
+13/09/2021,Shristi,Chhetri,Uniform Allowance,0.00
+14/09/2021,Shristi,Chhetri,Uniform Allowance,0.00
+15/09/2021,Shristi,Chhetri,Uniform Allowance,0.00
+16/09/2021,Shristi,Chhetri,Uniform Allowance,0.00
+17/09/2021,Shristi,Chhetri,Uniform Allowance,0.00
+18/09/2021,Shristi,Chhetri,Uniform Allowance,1.71
+19/09/2021,Shristi,Chhetri,Uniform Allowance,1.71
+13/09/2021,Stephen Albert,Manson,Base Hourly,6.00
+14/09/2021,Stephen Albert,Manson,Base Hourly,0.00
+15/09/2021,Stephen Albert,Manson,Base Hourly,0.00
+16/09/2021,Stephen Albert,Manson,Base Hourly,0.00
+17/09/2021,Stephen Albert,Manson,Base Hourly,6.07
+18/09/2021,Stephen Albert,Manson,Base Hourly,0.00
+19/09/2021,Stephen Albert,Manson,Base Hourly,0.00
+13/09/2021,Stephen Albert,Manson,Uniform Allowance,1.71
+14/09/2021,Stephen Albert,Manson,Uniform Allowance,0.00
+15/09/2021,Stephen Albert,Manson,Uniform Allowance,0.00
+16/09/2021,Stephen Albert,Manson,Uniform Allowance,0.00
+17/09/2021,Stephen Albert,Manson,Uniform Allowance,1.71
+18/09/2021,Stephen Albert,Manson,Uniform Allowance,0.00
+19/09/2021,Stephen Albert,Manson,Uniform Allowance,0.00
+13/09/2021,Suman,Khatiwada,Base Hourly,0.00
+14/09/2021,Suman,Khatiwada,Base Hourly,0.00
+15/09/2021,Suman,Khatiwada,Base Hourly,0.00
+16/09/2021,Suman,Khatiwada,Base Hourly,0.00
+17/09/2021,Suman,Khatiwada,Base Hourly,0.00
+18/09/2021,Suman,Khatiwada,Base Hourly,5.00
+19/09/2021,Suman,Khatiwada,Base Hourly,5.00
+13/09/2021,Suman,Khatiwada,Uniform Allowance,0.00
+14/09/2021,Suman,Khatiwada,Uniform Allowance,0.00
+15/09/2021,Suman,Khatiwada,Uniform Allowance,0.00
+16/09/2021,Suman,Khatiwada,Uniform Allowance,0.00
+17/09/2021,Suman,Khatiwada,Uniform Allowance,0.00
+18/09/2021,Suman,Khatiwada,Uniform Allowance,1.71
+19/09/2021,Suman,Khatiwada,Uniform Allowance,1.71
+13/09/2021,Suman,Khatri,Base Hourly,5.00
+14/09/2021,Suman,Khatri,Base Hourly,5.00
+15/09/2021,Suman,Khatri,Base Hourly,5.00
+16/09/2021,Suman,Khatri,Base Hourly,5.00
+17/09/2021,Suman,Khatri,Base Hourly,5.00
+18/09/2021,Suman,Khatri,Base Hourly,5.00
+19/09/2021,Suman,Khatri,Base Hourly,5.00
+13/09/2021,Suman,Khatri,Uniform Allowance,1.71
+14/09/2021,Suman,Khatri,Uniform Allowance,1.71
+15/09/2021,Suman,Khatri,Uniform Allowance,1.71
+16/09/2021,Suman,Khatri,Uniform Allowance,1.71
+17/09/2021,Suman,Khatri,Uniform Allowance,1.71
+18/09/2021,Suman,Khatri,Uniform Allowance,1.71
+19/09/2021,Suman,Khatri,Uniform Allowance,1.71
+13/09/2021,Sunita,Gurung,Base Hourly,0.00
+14/09/2021,Sunita,Gurung,Base Hourly,0.00
+15/09/2021,Sunita,Gurung,Base Hourly,6.95
+16/09/2021,Sunita,Gurung,Base Hourly,5.98
+17/09/2021,Sunita,Gurung,Base Hourly,7.58
+18/09/2021,Sunita,Gurung,Base Hourly,8.93
+19/09/2021,Sunita,Gurung,Base Hourly,5.38
+13/09/2021,Sunita,Gurung,Uniform Allowance,0.00
+14/09/2021,Sunita,Gurung,Uniform Allowance,0.00
+15/09/2021,Sunita,Gurung,Uniform Allowance,0
+16/09/2021,Sunita,Gurung,Uniform Allowance,0
+17/09/2021,Sunita,Gurung,Uniform Allowance,0
+18/09/2021,Sunita,Gurung,Uniform Allowance,0
+19/09/2021,Sunita,Gurung,Uniform Allowance,0
+13/09/2021,Suniti,Gurung,Base Hourly,8.50
+14/09/2021,Suniti,Gurung,Base Hourly,8.50
+15/09/2021,Suniti,Gurung,Base Hourly,8.50
+16/09/2021,Suniti,Gurung,Base Hourly,8.50
+17/09/2021,Suniti,Gurung,Base Hourly,8.50
+18/09/2021,Suniti,Gurung,Base Hourly,0.00
+19/09/2021,Suniti,Gurung,Base Hourly,6.00
+13/09/2021,Suniti,Gurung,Uniform Allowance,1.71
+14/09/2021,Suniti,Gurung,Uniform Allowance,1.71
+15/09/2021,Suniti,Gurung,Uniform Allowance,1.71
+16/09/2021,Suniti,Gurung,Uniform Allowance,1.71
+17/09/2021,Suniti,Gurung,Uniform Allowance,1.71
+18/09/2021,Suniti,Gurung,Uniform Allowance,0.00
+19/09/2021,Suniti,Gurung,Uniform Allowance,1.71
+13/09/2021,Suzerian-Singh,Sitaula ,Base Hourly,8.00
+14/09/2021,Suzerian-Singh,Sitaula ,Base Hourly,8.00
+15/09/2021,Suzerian-Singh,Sitaula ,Base Hourly,8.00
+16/09/2021,Suzerian-Singh,Sitaula ,Base Hourly,8.00
+17/09/2021,Suzerian-Singh,Sitaula ,Base Hourly,8.00
+18/09/2021,Suzerian-Singh,Sitaula ,Base Hourly,0.00
+19/09/2021,Suzerian-Singh,Sitaula ,Base Hourly,0.00
+13/09/2021,Suzerian-Singh,Sitaula ,Uniform Allowance,0
+14/09/2021,Suzerian-Singh,Sitaula ,Uniform Allowance,0
+15/09/2021,Suzerian-Singh,Sitaula ,Uniform Allowance,0
+16/09/2021,Suzerian-Singh,Sitaula ,Uniform Allowance,0
+17/09/2021,Suzerian-Singh,Sitaula ,Uniform Allowance,0
+18/09/2021,Suzerian-Singh,Sitaula ,Uniform Allowance,0.00
+19/09/2021,Suzerian-Singh,Sitaula ,Uniform Allowance,0.00
+13/09/2021,Tara,Grenfell,Base Hourly,0.00
+14/09/2021,Tara,Grenfell,Base Hourly,0.00
+15/09/2021,Tara,Grenfell,Base Hourly,0.00
+16/09/2021,Tara,Grenfell,Base Hourly,0.00
+17/09/2021,Tara,Grenfell,Base Hourly,0.00
+18/09/2021,Tara,Grenfell,Base Hourly,0.00
+19/09/2021,Tara,Grenfell,Base Hourly,0.00
+13/09/2021,Tara,Grenfell,Uniform Allowance,0.00
+14/09/2021,Tara,Grenfell,Uniform Allowance,0.00
+15/09/2021,Tara,Grenfell,Uniform Allowance,0.00
+16/09/2021,Tara,Grenfell,Uniform Allowance,0.00
+17/09/2021,Tara,Grenfell,Uniform Allowance,0.00
+18/09/2021,Tara,Grenfell,Uniform Allowance,0.00
+19/09/2021,Tara,Grenfell,Uniform Allowance,0.00
+13/09/2021,Vera,Bakhar,Base Hourly,0.00
+14/09/2021,Vera,Bakhar,Base Hourly,0.00
+15/09/2021,Vera,Bakhar,Base Hourly,0.00
+16/09/2021,Vera,Bakhar,Base Hourly,0.00
+17/09/2021,Vera,Bakhar,Base Hourly,0.00
+18/09/2021,Vera,Bakhar,Base Hourly,0.00
+19/09/2021,Vera,Bakhar,Base Hourly,0.00
+13/09/2021,Vera,Bakhar,Uniform Allowance,0.00
+14/09/2021,Vera,Bakhar,Uniform Allowance,0.00
+15/09/2021,Vera,Bakhar,Uniform Allowance,0.00
+16/09/2021,Vera,Bakhar,Uniform Allowance,0.00
+17/09/2021,Vera,Bakhar,Uniform Allowance,0.00
+18/09/2021,Vera,Bakhar,Uniform Allowance,0.00
+19/09/2021,Vera,Bakhar,Uniform Allowance,0.00
+13/09/2021,Waleedoo,Aljafari,Base Hourly,0.00
+14/09/2021,Waleedoo,Aljafari,Base Hourly,0.00
+15/09/2021,Waleedoo,Aljafari,Base Hourly,0.00
+16/09/2021,Waleedoo,Aljafari,Base Hourly,4.50
+17/09/2021,Waleedoo,Aljafari,Base Hourly,8.00
+18/09/2021,Waleedoo,Aljafari,Base Hourly,0.00
+19/09/2021,Waleedoo,Aljafari,Base Hourly,0.00
+13/09/2021,Waleedoo,Aljafari,Uniform Allowance,0.00
+14/09/2021,Waleedoo,Aljafari,Uniform Allowance,0.00
+15/09/2021,Waleedoo,Aljafari,Uniform Allowance,0.00
+16/09/2021,Waleedoo,Aljafari,Uniform Allowance,1.71
+17/09/2021,Waleedoo,Aljafari,Uniform Allowance,1.71
+18/09/2021,Waleedoo,Aljafari,Uniform Allowance,0.00
+19/09/2021,Waleedoo,Aljafari,Uniform Allowance,0.00
+13/09/2021,Wilson,Shrestha,Base Hourly,5.00
+14/09/2021,Wilson,Shrestha,Base Hourly,0.00
+15/09/2021,Wilson,Shrestha,Base Hourly,3.95
+16/09/2021,Wilson,Shrestha,Base Hourly,0.00
+17/09/2021,Wilson,Shrestha,Base Hourly,4.40
+18/09/2021,Wilson,Shrestha,Base Hourly,0.00
+19/09/2021,Wilson,Shrestha,Base Hourly,0.00
+13/09/2021,Wilson,Shrestha,Uniform Allowance,0
+14/09/2021,Wilson,Shrestha,Uniform Allowance,0.00
+15/09/2021,Wilson,Shrestha,Uniform Allowance,0
+16/09/2021,Wilson,Shrestha,Uniform Allowance,0.00
+17/09/2021,Wilson,Shrestha,Uniform Allowance,0
+18/09/2021,Wilson,Shrestha,Uniform Allowance,0.00
+19/09/2021,Wilson,Shrestha,Uniform Allowance,0.00
+13/09/2021,Yodit,ackerman,Base Hourly,0.00
+14/09/2021,Yodit,ackerman,Base Hourly,0.00
+15/09/2021,Yodit,ackerman,Base Hourly,0.00
+16/09/2021,Yodit,ackerman,Base Hourly,0.00
+17/09/2021,Yodit,ackerman,Base Hourly,0.00
+18/09/2021,Yodit,ackerman,Base Hourly,0.00
+19/09/2021,Yodit,ackerman,Base Hourly,0.00
+13/09/2021,Yodit,ackerman,Uniform Allowance,0.00
+14/09/2021,Yodit,ackerman,Uniform Allowance,0.00
+15/09/2021,Yodit,ackerman,Uniform Allowance,0.00
+16/09/2021,Yodit,ackerman,Uniform Allowance,0.00
+17/09/2021,Yodit,ackerman,Uniform Allowance,0.00
+18/09/2021,Yodit,ackerman,Uniform Allowance,0.00
+19/09/2021,Yodit,ackerman,Uniform Allowance,0.00

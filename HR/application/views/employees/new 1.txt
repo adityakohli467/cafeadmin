@@ -1,0 +1,17 @@
+<section id="demo_input">
+          <div class="page-header">
+            <h2>Default input</h2>
+          </div>
+
+          <div>
+            <div class="bs-docs-example">
+              <p>One of the simpliest implementation is the component.</p>
+              <input size="16" type="text" value="2012-06-15 14:45" readonly class="form_datetime1">
+            </div>
+            <pre class="prettyprint linenums">&lt;input size=&quot;16&quot; type=&quot;text&quot; value=&quot;2012-06-15 14:45&quot; readonly class=&quot;form_datetime&quot;&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+    $(&quot;.form_datetime&quot;).datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+&lt;/script&gt;            </pre>
+          </div>
+        </section>

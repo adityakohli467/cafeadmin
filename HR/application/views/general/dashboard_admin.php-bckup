@@ -1,0 +1,182 @@
+
+<div class="col-md-12 page-head border-bottom">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+		<span class="text-center" >
+			<h3 style="font-weight: 800;">Dashboard</h3>
+		</span>
+	</div>
+	<div class="btn-div col-md-3">
+	</div>
+
+</div><!--.col-md-12 -->
+<div class="container-fluid main-container">
+	<div class="row">
+
+		<div class="col-md-6 table100 ver2 m-b-110">
+		    <span class="heading_dash">Recent Leave Activity </span>
+          <table data-vertable="ver2">
+				<thead>
+							<tr class="row100 head">
+							
+								<th class="column100 column2" data-column="column2">Employee Name</th>
+								<th class="column100 column3" data-column="column3">Leave Type</th>
+								<th class="column100 column4" data-column="column4">Start Date</th>
+								<th class="column100 column5" data-column="column5">End Date</th>
+								<th class="column100 column6" data-column="column6">status</th>
+								
+							</tr>
+						</thead>
+				<tbody id="branch_suppliers">
+				<?php
+				$i = 0;
+				foreach($leaves as $row){ 
+				    $i++;
+				    if($i < 6){
+				            if($row->leave_status == 'Pending'){
+								$color = "class='btn btn-danger cxs-btn c-btn btn-xs btn-block'";								
+								$btn_name = "Pending";
+							}else if($row->leave_status == 'Approve'){
+								$color = "class='btn btn-success cxs-btn c-btn btn-xs btn-block'";
+								$btn_name = "Approved"; 
+							}
+							else if($row->leave_status == 'Comment'){
+								$color = "class='btn btn-warning cxs-btn c-btn btn-xs btn-block'";
+								$btn_name = "Comment";
+							}
+				?>
+					<tr class="row100">
+			
+		<td class="column100 column1" data-column="column1"><a href="<?php echo base_url(); ?>index.php/admin/manager_leave_update/<?php echo $row->leave_id ?>"><?php echo $row->first_name; ?></a></td>
+		<td class="column100 column2" data-column="column2"><?php echo $row->leave_type; ?></td>
+		<td class="column100 column3" data-column="column3"><?php echo  date('d-m-Y',strtotime($row->start_date)); ?></td>
+		<td class="column100 column4" data-column="column4"><?php echo date('d-m-Y',strtotime($row->end_date)); ?></td>
+								
+		<td class="column100 column6" data-column="column6"><div <?php echo $color; ?> class="status-color"><?php echo $btn_name;  ?></div></td>
+							
+							</tr>
+				<?php } } ?>
+				</tbody>
+			</table>
+		</div>
+				<div class="col-md-6 table100 ver2 m-b-110">
+				    <span class="heading_dash">Recent Roster </span>
+           <table data-vertable="ver2">
+				<thead>
+				    
+							<tr class="row100 head">
+							
+								<th class="column100 column2" data-column="column2">Start Date</th>
+								<th class="column100 column3" data-column="column3">End Date</th>
+								<th class="column100 column4" data-column="column4">View</th>
+								<?php if($role !='normal') { ?>
+								<th class="column100 column5" data-column="column5">Re Create</th>
+									<?php } ?>
+								
+								
+							</tr>
+						</thead>
+				<tbody id="branch_suppliers">
+				<?php foreach($roster as $row){ ?>
+					<tr class="row100">
+			
+		<td class="column100 column1" data-column="column1"><?php echo date("d-m-Y", strtotime($row->start_date)); ?></td>
+		<td class="column100 column2" data-column="column2"><?php echo date("d-m-Y", strtotime($row->end_date)); ?></td>
+		<td class="column100 column3" data-column="column3"><a href="<?php echo base_url(); ?>index.php/admin/week_roster/<?php echo $row->roster_id ?>">View</td>
+			<?php if($role !='normal') { ?>
+		<td class="column100 column4" data-column="column4"><a href="<?php echo base_url(); ?>index.php/admin/re_create_roster/<?php echo $row->roster_id ?>">Recreate</td>
+			<?php } ?>
+								
+		
+							
+							</tr>
+				<?php } ?>
+				</tbody>
+			</table>
+		</div>
+		 
+	</div>
+	<div class="row">
+	    
+	    <div class="col-md-12">
+									<div class="row">
+					<div class="col-xl-12 mb-4">
+						<div class="card card-shadow">
+							<div class="card-header">
+									 <span class="heading_dash">	Roster Report For Last Weeks </span>
+							
+							</div>
+							<div class="card-body">
+																	
+								<div class="px-4">
+									<canvas id="myChart3" height="400"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					
+
+					
+
+				</div>
+					</div>
+	    </div>
+</div>
+<br>
+
+
+  
+
+
+<script src="<?php echo base_url();?>assets/js/Chart.min.js"></script>
+<?php $colors=array(
+'Week_1'=>'#ecb965',
+'Week_2'=>'#f8996e',
+'Week_3'=>'#fc7579',
+'Week_4'=>'#fc5a85',
+
+);?>
+<script>
+var ctx = document.getElementById('myChart3').getContext('2d');
+var myChart = new Chart(ctx, {
+type: 'bar',
+data: {
+	labels: [<?php $a=[];foreach($roster_report as $c){$a[]="'".$c['label']."'";}$label = implode(",",$a);  echo $label = str_replace('_', ' ', $label);?>],
+	datasets: [{
+		label: 'Weekly Benefit $',
+		data: [<?php $a=[];foreach($roster_report as $c){$a[]=$c['y'];} echo $benefit = implode(",",$a);   ?>],
+		backgroundColor: [
+			<?php foreach($roster_report as $c) echo "'".$colors[$c['label']]."',";?>
+		],
+		borderWidth: 0
+	}]
+},
+options: {
+	maintainAspectRatio: false,
+	legend: {
+		display: true
+	},
+	scales: {
+		xAxes: [{
+			display: true
+		}],
+		yAxes: [{
+			display: true
+		}]
+	},
+	height:'300px',
+	titles:{
+		display:false
+	}
+
+}
+});
+
+
+</script>
+<style>
+.canvasjs-chart-credit{
+    display:none !important;
+}
+</style>

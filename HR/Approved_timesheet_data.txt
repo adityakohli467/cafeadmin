@@ -1,0 +1,99 @@
+Date,First Name,Last Name,Payroll Category,Units
+09/02/2026,Daisy Vivra,Aukuso,Base Hourly,6.48
+10/02/2026,Daisy Vivra,Aukuso,Base Hourly,0
+11/02/2026,Daisy Vivra,Aukuso,Base Hourly,9.48
+12/02/2026,Daisy Vivra,Aukuso,Base Hourly,6.60
+13/02/2026,Daisy Vivra,Aukuso,Base Hourly,6.17
+14/02/2026,Daisy Vivra,Aukuso,19 Yrs Intro Weekend,0
+15/02/2026,Daisy Vivra,Aukuso,19 Yrs Intro Weekend,0
+09/02/2026,Daisy Vivra,Aukuso,Uniform Allowance,1.00
+10/02/2026,Daisy Vivra,Aukuso,Uniform Allowance,0.00
+11/02/2026,Daisy Vivra,Aukuso,Uniform Allowance,1.00
+12/02/2026,Daisy Vivra,Aukuso,Uniform Allowance,1.00
+13/02/2026,Daisy Vivra,Aukuso,Uniform Allowance,1.00
+14/02/2026,Daisy Vivra,Aukuso,Uniform Allowance,0.00
+15/02/2026,Daisy Vivra,Aukuso,Uniform Allowance,0.00
+09/02/2026,Georgina,Younan,Base Hourly,0
+10/02/2026,Georgina,Younan,Base Hourly,5.50
+11/02/2026,Georgina,Younan,Base Hourly,0
+12/02/2026,Georgina,Younan,Base Hourly,0
+13/02/2026,Georgina,Younan,Base Hourly,0
+14/02/2026,Georgina,Younan,19 Yrs Intro Weekend,0
+15/02/2026,Georgina,Younan,19 Yrs Intro Weekend,0
+09/02/2026,Georgina,Younan,Uniform Allowance,0.00
+10/02/2026,Georgina,Younan,Uniform Allowance,1.00
+11/02/2026,Georgina,Younan,Uniform Allowance,0.00
+12/02/2026,Georgina,Younan,Uniform Allowance,0.00
+13/02/2026,Georgina,Younan,Uniform Allowance,0.00
+14/02/2026,Georgina,Younan,Uniform Allowance,0.00
+15/02/2026,Georgina,Younan,Uniform Allowance,0.00
+09/02/2026,Joudi,Hanna,Base Hourly,5.03
+10/02/2026,Joudi,Hanna,Base Hourly,5.92
+11/02/2026,Joudi,Hanna,Base Hourly,0
+12/02/2026,Joudi,Hanna,Base Hourly,0
+13/02/2026,Joudi,Hanna,Base Hourly,0
+14/02/2026,Joudi,Hanna,18 Yrs Intro Weekend,0
+15/02/2026,Joudi,Hanna,18 Yrs Intro Weekend,0
+09/02/2026,Joudi,Hanna,Uniform Allowance,1.00
+10/02/2026,Joudi,Hanna,Uniform Allowance,1.00
+11/02/2026,Joudi,Hanna,Uniform Allowance,0.00
+12/02/2026,Joudi,Hanna,Uniform Allowance,0.00
+13/02/2026,Joudi,Hanna,Uniform Allowance,0.00
+14/02/2026,Joudi,Hanna,Uniform Allowance,0.00
+15/02/2026,Joudi,Hanna,Uniform Allowance,0.00
+09/02/2026,Lina,Wardan,Base Hourly,0
+10/02/2026,Lina,Wardan,Base Hourly,0
+11/02/2026,Lina,Wardan,Base Hourly,0
+12/02/2026,Lina,Wardan,Base Hourly,0
+13/02/2026,Lina,Wardan,Base Hourly,0
+14/02/2026,Lina,Wardan,Base Hourly,0
+15/02/2026,Lina,Wardan,Base Hourly,0
+09/02/2026,Lina,Wardan,Uniform Allowance,0.00
+10/02/2026,Lina,Wardan,Uniform Allowance,0.00
+11/02/2026,Lina,Wardan,Uniform Allowance,0.00
+12/02/2026,Lina,Wardan,Uniform Allowance,0.00
+13/02/2026,Lina,Wardan,Uniform Allowance,0.00
+14/02/2026,Lina,Wardan,Uniform Allowance,0.00
+15/02/2026,Lina,Wardan,Uniform Allowance,0.00
+09/02/2026,Maryam Amer,Ataalla,Base Hourly,0
+10/02/2026,Maryam Amer,Ataalla,Base Hourly,7.00
+11/02/2026,Maryam Amer,Ataalla,Base Hourly,7.92
+12/02/2026,Maryam Amer,Ataalla,Base Hourly,0
+13/02/2026,Maryam Amer,Ataalla,Base Hourly,5.00
+14/02/2026,Maryam Amer,Ataalla,Intro Weekend,6.98
+15/02/2026,Maryam Amer,Ataalla,Intro Weekend,0
+09/02/2026,Maryam Amer,Ataalla,Uniform Allowance,0.00
+10/02/2026,Maryam Amer,Ataalla,Uniform Allowance,1.00
+11/02/2026,Maryam Amer,Ataalla,Uniform Allowance,1.00
+12/02/2026,Maryam Amer,Ataalla,Uniform Allowance,0.00
+13/02/2026,Maryam Amer,Ataalla,Uniform Allowance,1.00
+14/02/2026,Maryam Amer,Ataalla,Uniform Allowance,1.00
+15/02/2026,Maryam Amer,Ataalla,Uniform Allowance,0.00
+09/02/2026,Rukaya,Dirani,Base Hourly,5.60
+10/02/2026,Rukaya,Dirani,Base Hourly,0
+11/02/2026,Rukaya,Dirani,Base Hourly,0
+12/02/2026,Rukaya,Dirani,Base Hourly,5.95
+13/02/2026,Rukaya,Dirani,Base Hourly,0
+14/02/2026,Rukaya,Dirani,18 Yrs Intro Weekend,0
+15/02/2026,Rukaya,Dirani,18 Yrs Intro Weekend,0
+09/02/2026,Rukaya,Dirani,Uniform Allowance,1.00
+10/02/2026,Rukaya,Dirani,Uniform Allowance,0.00
+11/02/2026,Rukaya,Dirani,Uniform Allowance,0.00
+12/02/2026,Rukaya,Dirani,Uniform Allowance,1.00
+13/02/2026,Rukaya,Dirani,Uniform Allowance,0.00
+14/02/2026,Rukaya,Dirani,Uniform Allowance,0.00
+15/02/2026,Rukaya,Dirani,Uniform Allowance,0.00
+09/02/2026,Taylah Louise,Poulter,Base Hourly,0
+10/02/2026,Taylah Louise,Poulter,Base Hourly,0
+11/02/2026,Taylah Louise,Poulter,Base Hourly,0
+12/02/2026,Taylah Louise,Poulter,Base Hourly,6.97
+13/02/2026,Taylah Louise,Poulter,Base Hourly,7.62
+14/02/2026,Taylah Louise,Poulter,18 Yrs Intro Weekend,4.50
+15/02/2026,Taylah Louise,Poulter,18 Yrs Intro Weekend,8.00
+09/02/2026,Taylah Louise,Poulter,Uniform Allowance,0.00
+10/02/2026,Taylah Louise,Poulter,Uniform Allowance,0.00
+11/02/2026,Taylah Louise,Poulter,Uniform Allowance,0.00
+12/02/2026,Taylah Louise,Poulter,Uniform Allowance,1.00
+13/02/2026,Taylah Louise,Poulter,Uniform Allowance,1.00
+14/02/2026,Taylah Louise,Poulter,Uniform Allowance,1.00
+15/02/2026,Taylah Louise,Poulter,Uniform Allowance,1.00

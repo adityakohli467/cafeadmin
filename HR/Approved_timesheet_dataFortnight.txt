@@ -1,0 +1,197 @@
+Date,First Name,Last Name,Payroll Category,Units
+10/02/2025,David,Beshara,Base Hourly,7.00
+11/02/2025,David,Beshara,Base Hourly,7.00
+12/02/2025,David,Beshara,Base Hourly,7.00
+13/02/2025,David,Beshara,Base Hourly,7.00
+14/02/2025,David,Beshara,Base Hourly,7.00
+15/02/2025,David,Beshara,Level 1 Weekends,0
+16/02/2025,David,Beshara,Level 1 Weekends,0
+03/02/2025,David,Beshara,Base Hourly,7.00
+04/02/2025,David,Beshara,Base Hourly,7.00
+05/02/2025,David,Beshara,Base Hourly,7.00
+06/02/2025,David,Beshara,Base Hourly,7.00
+07/02/2025,David,Beshara,Base Hourly,7.00
+08/02/2025,David,Beshara,Level 1 Weekends,0
+09/02/2025,David,Beshara,Level 1 Weekends,0
+10/02/2025,David,Beshara,Uniform Allowance,1.00
+11/02/2025,David,Beshara,Uniform Allowance,1.00
+12/02/2025,David,Beshara,Uniform Allowance,1.00
+13/02/2025,David,Beshara,Uniform Allowance,1.00
+14/02/2025,David,Beshara,Uniform Allowance,1.00
+15/02/2025,David,Beshara,Uniform Allowance,0.00
+16/02/2025,David,Beshara,Uniform Allowance,0.00
+03/02/2025,David,Beshara,Uniform Allowance,1.00
+04/02/2025,David,Beshara,Uniform Allowance,1.00
+05/02/2025,David,Beshara,Uniform Allowance,1.00
+06/02/2025,David,Beshara,Uniform Allowance,1.00
+07/02/2025,David,Beshara,Uniform Allowance,1.00
+08/02/2025,David,Beshara,Uniform Allowance,0.00
+09/02/2025,David,Beshara,Uniform Allowance,0.00
+10/02/2025,Jatinder,Kaur,Base Hourly,8.50
+11/02/2025,Jatinder,Kaur,Base Hourly,8.50
+12/02/2025,Jatinder,Kaur,Base Hourly,7.50
+13/02/2025,Jatinder,Kaur,Base Hourly,8.50
+14/02/2025,Jatinder,Kaur,Base Hourly,8.50
+15/02/2025,Jatinder,Kaur,Level 3 Saturday,0
+16/02/2025,Jatinder,Kaur,Level 3 Sunday,0
+03/02/2025,Jatinder,Kaur,Base Hourly,0
+04/02/2025,Jatinder,Kaur,Base Hourly,0
+05/02/2025,Jatinder,Kaur,Base Hourly,0
+06/02/2025,Jatinder,Kaur,Base Hourly,0
+07/02/2025,Jatinder,Kaur,Base Hourly,6.78
+08/02/2025,Jatinder,Kaur,Level 3 Saturday,0
+09/02/2025,Jatinder,Kaur,Level 3 Sunday,0
+10/02/2025,Jatinder,Kaur,Uniform Allowance,1.00
+11/02/2025,Jatinder,Kaur,Uniform Allowance,1.00
+12/02/2025,Jatinder,Kaur,Uniform Allowance,1.00
+13/02/2025,Jatinder,Kaur,Uniform Allowance,1.00
+14/02/2025,Jatinder,Kaur,Uniform Allowance,1.00
+15/02/2025,Jatinder,Kaur,Uniform Allowance,0.00
+16/02/2025,Jatinder,Kaur,Uniform Allowance,0.00
+03/02/2025,Jatinder,Kaur,Uniform Allowance,0.00
+04/02/2025,Jatinder,Kaur,Uniform Allowance,0.00
+05/02/2025,Jatinder,Kaur,Uniform Allowance,0.00
+06/02/2025,Jatinder,Kaur,Uniform Allowance,0.00
+07/02/2025,Jatinder,Kaur,Uniform Allowance,1.00
+08/02/2025,Jatinder,Kaur,Uniform Allowance,0.00
+09/02/2025,Jatinder,Kaur,Uniform Allowance,0.00
+10/02/2025,Kim,Nguyen,Base Hourly,5.00
+11/02/2025,Kim,Nguyen,Base Hourly,5.00
+12/02/2025,Kim,Nguyen,Base Hourly,0
+13/02/2025,Kim,Nguyen,Base Hourly,0
+14/02/2025,Kim,Nguyen,Base Hourly,0
+15/02/2025,Kim,Nguyen,Base Hourly,0
+16/02/2025,Kim,Nguyen,Base Hourly,0
+03/02/2025,Kim,Nguyen,Base Hourly,6.00
+04/02/2025,Kim,Nguyen,Base Hourly,5.57
+05/02/2025,Kim,Nguyen,Base Hourly,0
+06/02/2025,Kim,Nguyen,Base Hourly,0
+07/02/2025,Kim,Nguyen,Base Hourly,0
+08/02/2025,Kim,Nguyen,Base Hourly,0
+09/02/2025,Kim,Nguyen,Base Hourly,0
+10/02/2025,Kim,Nguyen,Uniform Allowance,1.00
+11/02/2025,Kim,Nguyen,Uniform Allowance,1.00
+12/02/2025,Kim,Nguyen,Uniform Allowance,0.00
+13/02/2025,Kim,Nguyen,Uniform Allowance,0.00
+14/02/2025,Kim,Nguyen,Uniform Allowance,0.00
+15/02/2025,Kim,Nguyen,Uniform Allowance,0.00
+16/02/2025,Kim,Nguyen,Uniform Allowance,0.00
+03/02/2025,Kim,Nguyen,Uniform Allowance,1.00
+04/02/2025,Kim,Nguyen,Uniform Allowance,1.00
+05/02/2025,Kim,Nguyen,Uniform Allowance,0.00
+06/02/2025,Kim,Nguyen,Uniform Allowance,0.00
+07/02/2025,Kim,Nguyen,Uniform Allowance,0.00
+08/02/2025,Kim,Nguyen,Uniform Allowance,0.00
+09/02/2025,Kim,Nguyen,Uniform Allowance,0.00
+10/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,6.50
+11/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,0
+12/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,0
+13/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,0
+14/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,6.50
+15/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,0
+16/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,0
+03/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,0
+04/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,0
+05/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,0
+06/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,0
+07/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,8.00
+08/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,0
+09/02/2025,Liz Estefanny,Gonzalez Guarin,Base Hourly,0
+10/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,1.00
+11/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,0.00
+12/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,0.00
+13/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,0.00
+14/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,1.00
+15/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,0.00
+16/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,0.00
+03/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,0.00
+04/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,0.00
+05/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,0.00
+06/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,0.00
+07/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,1.00
+08/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,0.00
+09/02/2025,Liz Estefanny,Gonzalez Guarin,Uniform Allowance,0.00
+10/02/2025,Netra,Kurumfang,Base Hourly,4.00
+11/02/2025,Netra,Kurumfang,Base Hourly,3.00
+12/02/2025,Netra,Kurumfang,Base Hourly,4.00
+13/02/2025,Netra,Kurumfang,Base Hourly,0
+14/02/2025,Netra,Kurumfang,Base Hourly,3.50
+15/02/2025,Netra,Kurumfang,Base Hourly,0
+16/02/2025,Netra,Kurumfang,Base Hourly,0
+03/02/2025,Netra,Kurumfang,Base Hourly,5.00
+04/02/2025,Netra,Kurumfang,Base Hourly,4.00
+05/02/2025,Netra,Kurumfang,Base Hourly,4.00
+06/02/2025,Netra,Kurumfang,Base Hourly,3.00
+07/02/2025,Netra,Kurumfang,Base Hourly,3.00
+08/02/2025,Netra,Kurumfang,Base Hourly,0
+09/02/2025,Netra,Kurumfang,Base Hourly,0
+10/02/2025,Netra,Kurumfang,Uniform Allowance,1.00
+11/02/2025,Netra,Kurumfang,Uniform Allowance,1.00
+12/02/2025,Netra,Kurumfang,Uniform Allowance,1.00
+13/02/2025,Netra,Kurumfang,Uniform Allowance,0.00
+14/02/2025,Netra,Kurumfang,Uniform Allowance,1.00
+15/02/2025,Netra,Kurumfang,Uniform Allowance,0.00
+16/02/2025,Netra,Kurumfang,Uniform Allowance,0.00
+03/02/2025,Netra,Kurumfang,Uniform Allowance,1.00
+04/02/2025,Netra,Kurumfang,Uniform Allowance,1.00
+05/02/2025,Netra,Kurumfang,Uniform Allowance,1.00
+06/02/2025,Netra,Kurumfang,Uniform Allowance,1.00
+07/02/2025,Netra,Kurumfang,Uniform Allowance,1.00
+08/02/2025,Netra,Kurumfang,Uniform Allowance,0.00
+09/02/2025,Netra,Kurumfang,Uniform Allowance,0.00
+10/02/2025,Q'din,Basha,Base Hourly,0
+11/02/2025,Q'din,Basha,Base Hourly,0
+12/02/2025,Q'din,Basha,Base Hourly,0
+13/02/2025,Q'din,Basha,Base Hourly,0
+14/02/2025,Q'din,Basha,Base Hourly,0
+15/02/2025,Q'din,Basha,Base Hourly,0
+16/02/2025,Q'din,Basha,Base Hourly,0
+03/02/2025,Q'din,Basha,Base Hourly,6.30
+04/02/2025,Q'din,Basha,Base Hourly,5.27
+05/02/2025,Q'din,Basha,Base Hourly,5.80
+06/02/2025,Q'din,Basha,Base Hourly,3.68
+07/02/2025,Q'din,Basha,Base Hourly,0
+08/02/2025,Q'din,Basha,Base Hourly,0
+09/02/2025,Q'din,Basha,Base Hourly,0
+10/02/2025,Q'din,Basha,Uniform Allowance,0.00
+11/02/2025,Q'din,Basha,Uniform Allowance,0.00
+12/02/2025,Q'din,Basha,Uniform Allowance,0.00
+13/02/2025,Q'din,Basha,Uniform Allowance,0.00
+14/02/2025,Q'din,Basha,Uniform Allowance,0.00
+15/02/2025,Q'din,Basha,Uniform Allowance,0.00
+16/02/2025,Q'din,Basha,Uniform Allowance,0.00
+03/02/2025,Q'din,Basha,Uniform Allowance,1.00
+04/02/2025,Q'din,Basha,Uniform Allowance,1.00
+05/02/2025,Q'din,Basha,Uniform Allowance,1.00
+06/02/2025,Q'din,Basha,Uniform Allowance,1.00
+07/02/2025,Q'din,Basha,Uniform Allowance,0.00
+08/02/2025,Q'din,Basha,Uniform Allowance,0.00
+09/02/2025,Q'din,Basha,Uniform Allowance,0.00
+10/02/2025,chanisra,kumma,Base Hourly,0
+11/02/2025,chanisra,kumma,Base Hourly,7.00
+12/02/2025,chanisra,kumma,Base Hourly,0
+13/02/2025,chanisra,kumma,Base Hourly,7.33
+14/02/2025,chanisra,kumma,Base Hourly,0
+15/02/2025,chanisra,kumma,Base Hourly,0
+16/02/2025,chanisra,kumma,Base Hourly,0
+03/02/2025,chanisra,kumma,Base Hourly,0
+04/02/2025,chanisra,kumma,Base Hourly,6.00
+05/02/2025,chanisra,kumma,Base Hourly,8.50
+06/02/2025,chanisra,kumma,Base Hourly,3.00
+07/02/2025,chanisra,kumma,Base Hourly,0
+08/02/2025,chanisra,kumma,Base Hourly,0
+09/02/2025,chanisra,kumma,Base Hourly,0
+10/02/2025,chanisra,kumma,Uniform Allowance,0.00
+11/02/2025,chanisra,kumma,Uniform Allowance,1.00
+12/02/2025,chanisra,kumma,Uniform Allowance,0.00
+13/02/2025,chanisra,kumma,Uniform Allowance,1.00
+14/02/2025,chanisra,kumma,Uniform Allowance,0.00
+15/02/2025,chanisra,kumma,Uniform Allowance,0.00
+16/02/2025,chanisra,kumma,Uniform Allowance,0.00
+03/02/2025,chanisra,kumma,Uniform Allowance,0.00
+04/02/2025,chanisra,kumma,Uniform Allowance,1.00
+05/02/2025,chanisra,kumma,Uniform Allowance,1.00
+06/02/2025,chanisra,kumma,Uniform Allowance,1.00
+07/02/2025,chanisra,kumma,Uniform Allowance,0.00
+08/02/2025,chanisra,kumma,Uniform Allowance,0.00
+09/02/2025,chanisra,kumma,Uniform Allowance,0.00

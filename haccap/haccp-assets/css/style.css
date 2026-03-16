@@ -1,0 +1,11 @@
+.auth-one-bg .bg-overlay {
+    background: none;
+    background-color: #000000;
+    opacity: 0.9;
+}
+.bg-secondary{ 
+    background-color: #FFDB57;
+}
+.glyphicon {
+    right: 5px;
+}

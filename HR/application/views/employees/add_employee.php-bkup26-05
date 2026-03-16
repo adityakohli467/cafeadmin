@@ -1,0 +1,182 @@
+
+	<div class="row item">
+			</div>
+		<form class="form-horizontal" id="employee_add" role="form" method="post" action="<?php echo base_url(); ?>index.php/admin/submit_employee" enctype="multipart/form-data">
+	<div  class="col-md-12 page-head border-bottom">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<span class="text-center">
+				<h3>Add Employee</h3>
+			</span>
+		</div>
+	
+	</div><!--.col-md-12 -->
+
+
+<div class="container-fluid main-container">
+    <span class="validation_text">
+	<?php echo validation_errors(); ?>
+	<span>
+	  		<div class="row">
+  			<div class="col-md-12">
+        	<div class="col-md-6">
+	        	<div class="panel pn">
+	        		<div class="gradient"></div>
+			        <div class="panel-heading">
+			        	<h3 class="panel-title"><b>Employee Details</b></h3>
+			        </div>
+	          		<div class="panel-body">
+						<div class="form-group">
+							<label for="businessname" class="col-sm-4 control-label">First Name<span>*</span></label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" name="first_name" autocomplete="off" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="businessname" class="col-sm-4 control-label">Last Name<span>*</span></label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" name="last_name" autocomplete="off" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="abn" class="col-sm-4 control-label">Email<span>*</span></label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" name="email"  autocomplete="off">
+							</div>
+						</div>
+						
+							<div class="form-group">
+							<label for="abn" class="col-sm-4 control-label">Hourly Rate<span>*</span></label>
+							<div class="col-sm-8">
+								<input type="number" class="form-control" name="rate"  autocomplete="off">
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="abn" class="col-sm-4 control-label">Department<span>*</span></label>
+							<div class="col-sm-8">
+								<select class="form-control" name="department">
+									<option value="">Select</option>
+									<option value="Admin">Admin</option>
+									<option value="Catering">Catering</option>
+									<option value="Coffee Box">Coffee Box</option>
+									<option value="Coffee Box, Organice">Coffee Box, Organice</option>
+									<option value="Coffee Box, Hot Food">Coffee Box, Hot Food</option>
+									<option value="Coffee Station">Coffee Station</option>
+										<option value="Dental">Dental</option>
+										<option value="Hot Food">Hot Food</option>
+											<option value="Hot Food, Jucie Bar">Hot Food, Jucie Bar</option>
+												<option value="Hot Food, Coffee stattion">Hot Food, Coffee stattion</option>
+												<option value="Juice Bar">Juice Bar</option>
+													<option value="Juice Bar, Organic">Juice Bar, Organic</option>
+														<option value="Kebab">Kebab</option>
+														<option value="Kitchen">Kitchen</option>
+									<option value="Organic">Organic</option>
+										<option value="Outpatients">Outpatients</option>
+								<option value="Sandwich Bar">Sandwich Bar</option>
+									<option value="Salad, Hot Food">Salad, Hot Food</option>
+								<option value="Store Room">Store Room</option>
+									<option value="Sandwich Bar, Hot Food">Sandwich Bar, Hot Food</option>
+									<option value="Sandwich Bar, Coffee Station">Sandwich Bar, Coffee Station</option>
+										<option value="Therapy ">Therapy </option>
+									<option value=""></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="abn" class="col-sm-4 control-label">Role<span>*</span></label>
+							<div class="col-sm-8">
+								<select name="role" class="form-control">
+									<option value="">Select</option>
+									<option value="Barista">Barista</option>
+									<option value="Barista, F& B attendant">Barista, F& B attendant</option>
+										<option value="catering">Catering</option>
+										<option value="Chef">Chef</option>
+										<option value="Cook">Cook</option>
+										<option value="F&B attendant">F&B attendant</option>
+											<option value="Kitchen Hand">Kitchen Hand</option>
+								     	<option value="Manager">Manager</option>
+									<option value="Supervisor">Supervisor</option>
+									<option value="Store Name">Store Name</option>
+									</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="abn" class="col-sm-4 control-label">Job Description</label>
+							<div class="col-sm-8">
+                               <input type="file" class="form-control" name="job_desc">
+							</div>
+						</div>
+						
+							<div class="btn-div col-md-3" style="width: 46% !important">
+			<button type="submit" name="contact_submit"  class="btn btn-success btn-ph">Add Employee</button>
+					<a href="<?php echo base_url(); ?>index.php/admin/manage_employee">
+						<button type="button"  class="btn btn-ph btn-ph-cancel btn-success">Cancel</button>
+					</a>
+		</div>
+						
+	          		</div>
+        		</div>
+	        </div>
+	    </div>
+	</div>
+  
+   </div>
+  </form>
+  <br>
+<script type="text/javascript">
+	$(document).ready(function() { 
+	    $("#employee_add").validate({
+	      	ignore: "input[type='text']:hidden",
+		    rules: {
+			first_name: {
+	                required:true
+	            },
+	        last_name: {
+	                required:true
+	            }, 
+	        email: {
+	        	required:true,
+                email: true
+            },
+	        department: {
+	                required:true
+	            },
+	        role: {
+	                required:true
+	            }   
+			},		
+			messages: {
+			first_name: {
+	                required:"Please provide first name"
+	            },
+	        last_name: {
+	                required:"Please provide last name"
+	            },    
+	        email: {
+	        	 required:"Please provide email",
+                 email:"Please enter valid email"
+                 },
+	        department: {
+	                required:"Please select Department"
+	            },
+	        role: {
+	                required:"Please select Role"
+	            }   
+			}
+
+	    });	
+	});
+</script>
+	<style>
+ 	label.error, label>span{
+ 		color:red;
+ 	}
+ 	.validation_text p{
+ 	 color: red;
+    font-size: 15px;
+    font-weight: 600;
+ 	}
+    </style>
+</body>
+</html>

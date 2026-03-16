@@ -1,0 +1,204 @@
+
+<style>
+.dataTables_wrapper .dataTables_filter {
+    float: none;
+    text-align: right;
+}
+.dataTables_filter label {
+    color: #6C6E7A;
+    width: 30%;
+}
+</style>	
+	
+	<div style="margin-bottom:0px;" class="col-md-12 page-head border-bottom">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<span class="text-center">
+				<h3>Employee Details</h3>
+			</span>
+		</div>
+		<div class="btn-div col-md-3">
+			<a href="<?php echo base_url(); ?>index.php/admin/add_employee">
+			<button type="button" class="btn btn-success btn-ph">Add Employee</button></a>
+		</div>
+	</div><!--.col-md-12 -->
+			
+<div style="background-color:#fff;" class="container-fluid main-container">
+	<div class="col-md-12">
+		<div style="box-shadow:none;" class="panel panel-default">
+			<div class="gradient"></div>
+			<div class="panel-body">
+			    
+			      <div class="card card-shadow mb-4" style="margin-bottom: 20px;">
+							<div class="card-header">
+								<h3 class="card-title">Filters</h3>
+							</div>
+							<div class="card-body">
+								<form id="employee_filters">
+									<div class="row">
+									    
+									    
+										
+										<div class="col-12 col-md-2 ">
+												<input class="form-control " id="name" type="text" placeholder="Name">
+											
+										</div>
+										<div class="col-12 col-md-2">
+											<input class="form-control " id="email" type="text" placeholder="Email">
+										</div>
+										<div class="col-12 col-md-2">
+											<input class="form-control " id="phone" type="text" placeholder="Phone">
+										</div>
+									
+									
+										<div class="col-12 col-md-1">
+												<button class="btn btn-primary">Go</button>
+											</div>
+									</div>
+									
+								
+								</form>
+							</div>
+						</div> 
+						
+				<?php if(null !==$this->session->userdata('sucess_msg')) { ?>  
+				<div class='hideMe'>
+					<p class="alert alert-success"><?php echo $this->session->flashdata('sucess_msg'); ?></p>
+				</div>
+				<?php } ?>
+				<?php if(null !==$this->session->userdata('error_msg')) { ?>  
+				<div class='hideMe'>
+					<p class="alert alert-danger"><?php echo $this->session->flashdata('error_msg'); ?></p>
+				</div>
+				<?php } ?>
+			<table id="example" class="row-border table-condensed datatable" cellspacing="0" width="100%" style="table-layout:fixed;">
+				<thead>
+					<tr>
+						<th class="text-left">Employee Name</th>						
+						<th class="text-left">Email</th>
+						<th class="text-center">Phone</th>
+						<th class="text-center">Status</th>
+						<th class="text-center"></th>
+					</tr>
+				</thead>
+				<tbody id="branch_suppliers">
+				<?php foreach($employees as $row){ 
+				            if($row->emptyclmn >= '40'){
+								$color = "class='btn btn-danger cxs-btn c-btn btn-xs btn-block'";								
+								$btn_name = "Not Started";
+							}else if($row->emptyclmn < '40' || $row->emptyclmn >= '20'){
+								$color = "class='btn btn-warning cxs-btn c-btn btn-xs btn-block'";
+								$btn_name = "Progress"; 
+							}else{
+								$color = "class='btn btn-success cxs-btn c-btn btn-xs btn-block'";
+								$btn_name = "Completed";
+							}
+				?>
+					<tr class="tr">
+						<td class="text-left"><a href="<?php echo base_url(); ?>index.php/admin/update_employee/<?php echo $row->emp_id ?>"><?php echo $row->first_name; ?></a></td>
+						
+						<td class="text-left"><?php echo $row->email; ?></td>
+						<td class="text-center"><?php echo $row->phone; ?></td>
+						<td class="text-center"><div <?php echo $color; ?> class="status-color"><?php echo $btn_name;  ?></div></td>
+						<th class="text-center"><a><type="button" onClick="delete_row(<?php echo  $row->emp_id ?>);"><span class="glyphicon glyphicon-remove"></span></a></th>
+					</tr>
+				<?php } ?>
+				</tbody>
+			</table>
+		</div>
+		</div>
+		</div>
+	</div><!--.container-->
+		<!--.table-->
+		<br>
+		<!--.footer-->
+<script type="text/javascript">
+	function delete_row(str){
+		if(confirm('Are you sure you want to delete the employee details')){
+		    $.ajax({
+				type: "POST",
+		        url: "<?php echo base_url();?>index.php/employees/employee_delete",
+		        data:'id='+str,
+		        success: function(data){
+		          
+		          location.reload();
+		        }
+	       });
+		}	
+	}
+</script>	
+
+<script type="text/javascript">
+$(document).ready(function() { 
+    $("#contact_form").validate({
+		ignore: "input[type='text']:hidden",
+		rules: {
+			route: {
+				required:true
+			}									
+		},		
+		messages: {
+			route: {
+				required:"Please enter route name"
+			}	
+		},
+
+    });	
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() { 
+    $("#contact_form_edit").validate({
+      ignore: "input[type='text']:hidden",
+	    rules: {
+			route: {
+                required:true
+            }									
+			
+	},		
+	messages: {
+			route: {
+                 required:"Please enter route name"
+            }	
+	},
+
+    });	
+});
+</script>
+<script>
+	function getBranchSuppliers(e){
+		var branch_id = $(e).val();
+		if(branch_id == 'all'){
+			location.reload();
+		}else{
+			$.ajax({
+				type: "POST",
+		        url: "<?php echo base_url();?>index.php/suppliers/getBranchSuppliers",
+		        data:'branch_id='+branch_id,
+		        success: function(data){
+		        	// alert(data);
+		        	$('#branch_suppliers').html(data);
+		        }
+	        });
+		}
+		
+	}
+	
+	
+	$("#employee_filters").on('submit',function(e){
+		e.preventDefault();
+		if($.trim($("#name").val())=='')
+			name='unset';
+		else name=$("#name").val();
+		if($.trim($("#email").val())=='')
+			email='unset';
+		else email=$("#email").val();
+		if($.trim($("#phone").val())=='')
+			phone='unset';
+		else phone=$("#phone").val();
+		
+	window.location.href="<?php echo base_url(); ?>index.php/admin/employee_filter/"+name+"/"+email+"/"+phone;
+
+		
+});
+</script>

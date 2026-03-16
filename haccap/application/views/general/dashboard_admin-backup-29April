@@ -1,0 +1,138 @@
+<style>
+    .tr td a {
+    padding: 4px 0;
+}
+</style>
+<div class="col-md-12 page-head border-bottom">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+		<span class="text-center" >
+			<h3 style="font-weight: 800;">DASHBOARD</h3>
+		</span>
+	</div>
+	<div class="btn-div col-md-3">
+	</div>
+
+</div><!--.col-md-12 -->
+
+<div class="container-fluid dashboard">
+    <div class="row">
+    	
+    	<div class="col-md-6">
+    	    <h2 class="heading_dash">LATEST MENU PLANNERS </h2>
+    	    	<div class="ct-scroll">
+    			<table id="example" class="row-border table-condensed " cellspacing="0" width="100%">
+    				<thead>
+    					<tr style="height: 49px !important;">
+    						<th class="text-left">Menu </th>
+    						<th class="text-center">Start Date </th>
+    						<th class="text-center">End Date </th>
+    						<th class="text-center">Month </th>
+    				        <th class="text-center">Action</th>
+    					
+    					</tr>
+    				</thead>
+    				<tbody id="branch_suppliers">
+    				<?php
+    				$i=1;
+    				foreach($menuPlanners as $row){  if($i == '5'){ break; }	?>
+    		        <tr class="tr" style="height: 49px !important;">
+    						<td class="text-left"><?php echo $row->week_menu_name; ?></td>
+    						<td class="text-center"><?php echo date('d-m-Y',strtotime($row->week_start_date)); ?></td>
+    						<td class="text-center"><?php echo date('d-m-Y',strtotime($row->week_end_date)); ?></td>
+    						<td class="text-center"><?php echo $row->week_menu_month; ?></td>
+    					   	<td class="text-center action-icons">
+    						    <a class="btn btn-success" href="<?php echo base_url(); ?>index.php/menuplanner/weekMenuView/<?php echo $row->week_menu_id ?>">View</a>
+    						    </td>
+    				</tr>
+    				<?php $i++; } ?>
+    				</tbody>
+    			</table>
+    		</div>
+    	</div>
+    	
+    	<div class="col-md-6">
+    	<h2 class="heading_dash">MENU CARDS </h2>
+    	    	<div class="ct-scroll">
+    			<table id="example" class="row-border table-condensed " cellspacing="0" width="100%">
+    				<thead>
+    					<tr style="height: 49px !important;">
+    						<th width="10%" class="text-center">Sr. No. </th>
+    						<th width="70%" class="text-center">Menu Name</th>
+    				        <th width="20%" class="text-center">Action</th>
+    					
+    					</tr>
+    				</thead>
+    				<tbody id="branch_suppliers">
+    			
+    		        <tr class="tr" style="height: 49px !important;">
+    						<td class="text-left">1</td>
+    						<td class="text-center">Hotfood Recipes</td>
+    						<td class="text-center action-icons">
+    						    <a class="btn btn-success" href="<?php echo base_url(); ?>index.php/menucard/viewRecipes/hotfood">View</a>
+    						    
+    						</td>
+    				</tr>
+    				 <tr class="tr" style="height: 49px !important;">
+    						<td class="text-left">2</td>
+    						<td class="text-center">Salad Recipes</td>
+    						<td class="text-center action-icons">
+    						    <a class="btn btn-success" href="<?php echo base_url(); ?>index.php/menucard/viewRecipes/salad">View</a>
+    						    
+    						</td>
+    				</tr>
+    				 <tr class="tr" style="height: 49px !important;">
+    						<td class="text-left">3</td>
+    						<td class="text-center">Cold Food Recipes</td>
+    						<td class="text-center action-icons">
+    						    <a class="btn btn-success" href="<?php echo base_url(); ?>index.php/menucard/viewRecipes/coldfood">View</a>
+    						    
+    						</td>
+    				</tr>
+    				 <tr class="tr" style="height: 49px !important;">
+    						<td class="text-left">4</td>
+    						<td class="text-center">Sweets Recipes</td>
+    						<td class="text-center action-icons">
+    						    <a class="btn btn-success" href="<?php echo base_url(); ?>index.php/menucard/viewRecipes/sweets">View</a>
+    						    
+    						</td>
+    				</tr>
+    			
+    				</tbody>
+    			</table>
+    		</div>
+    	</div>
+    
+    </div>
+    
+    <div class="row-module-menu">
+        <h2 class="heading_dash text-center" style="width:100%;margin-bottom:15px">ADMIN FORMS</h2>
+        <div class="module-menu">
+            <a href="<?php echo base_url(); ?>index.php/forms/TempFormList/haccap_temp_form">Temperature</a>
+        </div>
+        <div class="module-menu">
+            <a href="<?php echo base_url(); ?>index.php/forms/TempFormList/haccap_cold_form">OPENING AND CLOSING</a>
+        </div>
+        <div class="module-menu">
+            <a href="<?php echo base_url(); ?>index.php/forms/TempFormList/haccap_dishwashing_form">Dishwashing</a>
+        </div>
+        <div class="module-menu">
+            <a href="<?php echo base_url(); ?>index.php/forms/TempFormList/haccap_retention_stock_form">Retention Stock</a>
+        </div>
+        <div class="module-menu">
+            <a href="<?php echo base_url(); ?>index.php/forms/TempFormList/haccap_production_record_time">Production Record Time</a>
+        </div>
+        <div class="module-menu">
+            <a href="<?php echo base_url(); ?>index.php/forms/TempFormList/haccap_calibration_form">Calibration</a>
+        </div>
+        <div class="module-menu">
+            <a href="<?php echo base_url(); ?>index.php/forms/TempFormList/haccap_food_wastage_report">Food Wastage Report</a>
+        </div>
+        <div class="module-menu">
+            <a href="<?php echo base_url(); ?>index.php/forms/TempFormList/haccap_kitchen_operational_closedown_checklist">KITCHEN OPERATIONAL CLOSE DOWN CHECKLIST</a>
+        </div>
+        <div class="module-menu">
+            <a href="<?php echo base_url(); ?>index.php/forms/TempFormList/haccap_operational_incident_report">INCIDENT REPORT</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,376 @@
+<style>
+ul.tabs {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 32px;
+	border-bottom: 1px solid #333;
+	width: 100%;
+}
+
+ul.tabs li {
+	float: left;
+	margin: 0;
+	cursor: pointer;
+	padding: 0px 21px;
+	height: 31px;
+	line-height: 31px;
+	border-top: 1px solid #333;
+	border-left: 1px solid #333;
+	border-bottom: 1px solid #333;
+	background-color: #000000;
+	color: #ffffff;
+	overflow: hidden;
+	position: relative;
+	text-transform: uppercase;
+}
+
+.tab_last { border-right: 1px solid #333; }
+
+ul.tabs li:hover {
+	background-color: #ffdb57;
+	color: #333;
+}
+
+ul.tabs li.active {
+    background-color: #ffdb57;
+    color: #333;
+    border-bottom: 1px solid #ffdb57;
+    display: block;
+}
+
+.tab_container {
+	border: 1px solid #333;
+	border-top: none;
+	clear: both;
+	float: left;
+	width: 100%;
+	background: #fff;
+	overflow: auto;
+}
+
+.tab_content {
+	padding: 0px;
+	display: none;
+}
+
+.tab_drawer_heading { display: none; }
+@media(min-width:768px){
+    ul.tabs {
+    display: flex;
+    justify-content: space-between;
+}
+ul.tabs li {
+	
+	width: 100%;
+}
+}
+@media screen and (max-width: 767px) {
+	.tabs {
+		display: none;
+	}
+	.tab_drawer_heading {
+		background-color: #000000;
+		color: #fff;
+		border-top: 1px solid #333;
+		margin: 0;
+		padding: 5px 20px;
+		display: block;
+		cursor: pointer;
+		font-size: 20px;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	.d_active {
+		background-color: #ffdb57;
+		color: #000000;
+	}
+}
+.innerTableColumn{
+       background-color: #cdcdcd;
+    text-align: center;
+    
+}
+</style>
+	<form action="<?php echo base_url(); ?>index.php/forms/update_temperature_form" method="POST">
+	    <input type="hidden" name="id" value="<?php echo $TempFormData['id']; ?>">
+	     <input type="hidden" name="recreate" value="<?php echo $recreate; ?>">
+	<div style="margin-bottom:0px;" class="col-md-12 page-head border-bottom">
+			<span class="text-center">
+				<h3>Temperature Form</h3>
+			</span>
+			<?php if($disabled == '' && $recreate == 'recreate') { ?>
+			<button type="submit" class="btn btn-success btn-ph">Recreate Form</button>
+			<?php }else if($disabled == '') {  ?>
+			<button type="submit" class="btn btn-success btn-ph">Update Form</button>
+			<?php  }else if($disabled == 'disabled') {  ?>
+		<button class="btn btn-success btn-ph" onclick="window.print()">Print</button>
+			<?php } ?>
+		<a href="<?php echo base_url(); ?>index.php/forms/TempFormList" class="btn btn-success btn-ph">Back</a>
+		
+	</div>
+	<!--.col-md-12 -->
+			
+<div style="background-color:#fff;" class="container-fluid main-container ct-mngemp">
+	<div class="col-md-12">
+		<div style="box-shadow:none;" class="panel panel-default">
+			<div class="gradient"></div>
+			<div class="panel-body">
+			    <?php if(null !==$this->session->userdata('sucess_msg')) { ?>  
+				<div class='hideMe'>
+					<p class="alert alert-success"><?php echo $this->session->flashdata('sucess_msg'); ?></p>
+				</div>
+				<?php } ?>
+				<?php if(null !==$this->session->userdata('error_msg')) { ?>  
+				<div class='hideMe'>
+					<p class="alert alert-danger"><?php echo $this->session->flashdata('error_msg'); ?></p>
+				</div>
+				<?php } ?>
+			      <div class="card card-shadow mb-4" style="margin-bottom: 20px;">
+						
+							<div class="card-body">
+							
+									<div class="row">
+									   <div class="col-12 col-md-3 ">
+									       <label>Cafe Name</label>
+										<input class="form-control" type="text" <?php echo $disabled; ?> name="cafe_name" placeholder="Cafe Name" value="<?php echo $TempFormData['cafe_name']; ?>" >
+										</div>
+										<div class="col-12 col-md-3 ">
+									       <label>Prep Area Name</label>
+										<input class="form-control " type="text" <?php echo $disabled; ?> name="prep_name" placeholder="Prep Area Name" value="<?php echo $TempFormData['prep_name']; ?>">
+										</div>
+										<div class="col-12 col-md-3">
+										     <label>Start Date</label>
+											<input class="form-control " type="date"  <?php echo $disabled; ?> name="start_date" placeholder="Start Date" value="<?php echo $TempFormData['start_date']; ?>">
+										</div>
+                						<div class="col-12 col-md-3">
+                						     <label>End Date</label>
+                						<input class="form-control " type="date" <?php echo $disabled; ?> name="end_date" placeholder="End Date" value="<?php echo $TempFormData['end_date']; ?>">
+                						</div>
+									   
+									
+									</div>
+									<?php $weekdays = array('mon'=>'Mon','tue'=>'Tue','wed'=>'Wed','thu'=>'Thu','fri'=>'Fri','sat'=>'Sat','sun'=>'Sun'); ?>
+									<div class="create_menu_wrap">
+									    <div class="row">
+									        <div class="col-lg-12">
+									            <ul class="tabs">
+                                                      <li class="active" rel="Mon">Mon</li>
+                                                      <li rel="Tue">Tue</li>
+                                                      <li rel="Wed">Wed</li>
+                                                      <li rel="Thu">Thu</li>
+                                                      <li rel="Fri">Fri</li>
+                                                      <li rel="Sat">Sat</li>
+                                                      <li rel="Sun">Sun</li>
+                                                    </ul>
+                                                    <div class="tab_container">
+                                                        <!-- #Mon -->
+                                                        <?php foreach($weekdays as $title => $weekday_name) {  ?>
+                                                      <h3 class="d_active tab_drawer_heading" rel="<?php echo $weekday_name; ?>"><?php echo $weekday_name; ?></h3>
+                                                      <div id="<?php echo $weekday_name; ?>" class="tab_content">
+                                                           <div class="ct-scroll">
+			                                                 <table class="row-border table-condensed table-bordered menuTable parent_table" id="monWeek" cellspacing="0" width="100%">
+                                                                 <?php if(isset($rowData[$title]) && !empty($rowData[$title])) { $count = 1;?>
+                                                                     <?php foreach($rowData[$title] as $key => $value) {  ?>
+                                                                <tbody>
+                                                                    <tr class="menurow">
+                                                                        
+                                                                        <td class="menuinput-width">
+                                              <table class="row-border table-condensed table-bordered menuTable" id="monWeek" cellspacing="0" width="100%">  
+                                                                           <tr> 
+                                                                           <td class="innerTableColumn">Equipment Name, Unit Identification</td>
+                                                                           </tr> 
+                                                                           <tr> 
+                                                                           <td> <input class="form-control category" <?php echo $disabled; ?> type="text" name="<?php echo $title; ?>_equipname[]" value="<?php echo $value[$title."_equipname"] ?>" placeholder="Equipment Name, Unit Identification"></td>
+                                                                           </tr> 
+                                                                             </table>
+                                                                  </td>
+                                                                         
+                                                                         
+                                                                          <td class="menuinput-width">
+                                              <table class="row-border table-condensed table-bordered menuTable" id="monWeek" cellspacing="0" width="100%">  
+                                                                           <tr> 
+                                                                           <td class="innerTableColumn">AM
+                                                                           <table class="row-border table-condensed table-bordered menuTable" id="monWeek" cellspacing="0" width="100%">  
+                                                                           <tr> 
+                                        <td> <input class="form-control" <?php echo $disabled; ?> id="time" type="text" name="<?php echo $title; ?>_AM_time[]"  value="<?php echo $value[$title."_AM_time"] ?>" placeholder="Time"></td>
+                                        <td> <input class="form-control" <?php echo $disabled; ?> type="text" name="<?php echo $title; ?>_AM_temp[]" value="<?php echo $value[$title."_AM_temp"] ?>" placeholder="Temp."></td>
+
+                                                                           </tr> 
+                                                                             </table>
+                                                                           </td>
+                                                                          <td class="innerTableColumn">PM
+                                                                           <table class="row-border table-condensed table-bordered menuTable" id="monWeek" cellspacing="0" width="100%">  
+                                                                           <tr> 
+                                       <td> <input class="form-control" <?php echo $disabled; ?> type="text" name="<?php echo $title; ?>_PM_time[]"  value="<?php echo $value[$title."_PM_time"] ?>" placeholder="Time"></td>
+                                        <td> <input class="form-control" <?php echo $disabled; ?> type="text" name="<?php echo $title; ?>_PM_temp[]" value="<?php echo $value[$title."_PM_temp"] ?>" placeholder="Temp."></td>
+
+                                                                           </tr> 
+                                                                             </table>
+                                                                           </td> 
+                                                                           </tr> 
+                                                                           <tr> 
+                                                                           </tr> 
+                                                                             </table>
+                                                                             </td>
+                                                                             <?php if($disabled == '') { ?>
+                                                                          <td class="menubtns-width">
+                                                                            <div class="ct-btns">
+                                                                     <a href="javascript:void(0)" class="btn add_field_button" style="background-color:#16b708;color:#fff;">+</a>
+                                                                     <?php if($count > 1 ) { ?>
+                                                                     <a href="javascript:void(0)" class="btn remove_field_button" style="background-color:#ff5426;color:#fff;margin-left:5px;">-</a>               
+                                                                    <?php } ?>
+                                                                    </div>
+                                                                        </td>
+                                                                       <?php } ?>
+                                                                    </tr>
+                                                                     <?php $count ++; } ?>
+                                                                       </tbody>
+                                                                     <?php } else {  ?>
+                                                                      <tr class="menurow">
+                                                                        
+                                                                        <td class="menuinput-width">
+                                              <table class="row-border table-condensed table-bordered menuTable" id="monWeek" cellspacing="0" width="100%">  
+                                                                           <tr> 
+                                                                           <td class="innerTableColumn">Equipment Name, Unit Identification</td>
+                                                                           </tr> 
+                                                                           <tr> 
+                                                                           <td> <input class="form-control category" type="text" name="<?php echo $title; ?>_equipname[]"  placeholder="Equipment Name, Unit Identification"></td>
+                                                                           </tr> 
+                                                                             </table>
+                                                                  </td>
+                                                                         
+                                                                         
+                                                                          <td class="menuinput-width">
+                                              <table class="row-border table-condensed table-bordered menuTable" id="monWeek" cellspacing="0" width="100%">  
+                                                                           <tr> 
+                                                                           <td class="innerTableColumn">AM
+                                                                           <table class="row-border table-condensed table-bordered menuTable" id="monWeek" cellspacing="0" width="100%">  
+                                                                           <tr> 
+                                        <td> <input class="form-control" id="time" type="text" name="<?php echo $title; ?>_AM_time[]"  placeholder="Time"></td>
+                                        <td> <input class="form-control" type="text" name="<?php echo $title; ?>_AM_temp[]"  placeholder="Temp."></td>
+
+                                                                           </tr> 
+                                                                             </table>
+                                                                           </td>
+                                                                          <td class="innerTableColumn">PM
+                                                                           <table class="row-border table-condensed table-bordered menuTable" id="monWeek" cellspacing="0" width="100%">  
+                                                                           <tr> 
+                                       <td> <input class="form-control" type="text" name="<?php echo $title; ?>_PM_time[]"  placeholder="Time"></td>
+                                        <td> <input class="form-control" type="text" name="<?php echo $title; ?>_PM_temp[]"  placeholder="Temp."></td>
+
+                                                                           </tr> 
+                                                                             </table>
+                                                                           </td> 
+                                                                           </tr> 
+                                                                           <tr> 
+                                                                           </tr> 
+                                                                             </table>
+                                                                             </td>
+                                                                          <td class="menubtns-width">
+                                                                            <div class="ct-btns">
+                                                                     <a href="javascript:void(0)" class="btn add_field_button" style="background-color:#16b708;color:#fff;">+</a>
+                                                                                    
+                                                                    </div>
+                                                                        </td>
+                                                                       
+                                                                    </tr>
+                                                                      </tbody>
+                                                                       <?php } ?>
+                                                              
+                                                            </table>
+                                                        </div>
+                                                      </div>
+                                                      <!-- #Tue -->
+                                                    
+                                                     <?php } ?>
+                                                       
+                                                    </div>
+									        </div>
+									    </div>
+									</div>
+									
+									
+								</form>
+							</div>
+						</div> 
+						
+			
+			
+		</div>
+		</div>
+		</div>
+	</div><!--.container-->
+		<!--.table-->
+		
+		<!--.footer-->
+
+<script>
+ // tabbed content
+    // http://www.entheosweb.com/tutorials/css/tabs.asp
+    $(".tab_content").hide();
+    $(".tab_content:first").show();
+    
+ var table = $( '.parent_table' );
+       $( table ).delegate( '.add_field_button', 'click', function () {
+    var thisRow = $( this ).closest( 'tbody' )[0];
+    
+    $( thisRow ).clone().insertAfter( thisRow ).find( 'input:text' ).val( '' );
+    var thisRowAddbtn = $( thisRow ).next('tbody').find( '.add_field_button' );
+    if (!$(thisRow).has(".remove_field_button").length) {
+   $('<a href="javascript:void(0)" class="btn remove_field_button" style="background-color:#ff5426;color:#fff;margin-left:5px;">-</a>').insertAfter(thisRowAddbtn);
+    } 
+    });
+    
+  /* if in tab mode */
+    $("ul.tabs li").click(function() {
+		
+      $(".tab_content").hide();
+      var activeTab = $(this).attr("rel"); 
+      $("#"+activeTab).fadeIn();		
+		
+      $("ul.tabs li").removeClass("active");
+      $(this).addClass("active");
+
+	  $(".tab_drawer_heading").removeClass("d_active");
+	  $(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
+	  
+    });
+	/* if in drawer mode */
+	$(".tab_drawer_heading").click(function() {
+      
+      $(".tab_content").hide();
+      var d_activeTab = $(this).attr("rel"); 
+      $("#"+d_activeTab).fadeIn();
+	  
+	  $(".tab_drawer_heading").removeClass("d_active");
+      $(this).addClass("d_active");
+	  
+	  $("ul.tabs li").removeClass("active");
+	  $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
+    });
+	
+	
+	/* Extra class "tab_last" 
+	   to add border to right side
+	   of last tab */
+	$('ul.tabs li').last().addClass("tab_last");
+
+</script> 
+
+<script>
+
+    
+    
+   
+    
+    $(document).on("click", ".remove_field_button" , function() {
+    
+    $(this).parent().parents('.menurow').remove();
+});
+</script>

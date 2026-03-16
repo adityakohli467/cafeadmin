@@ -1,0 +1,40 @@
+supplier_id,location_id,supplier_name,account_number,account_name,tax_code
+90,61,ALSCO,,,
+106,61,Fresh Poultry,5-1150,Meat/Chicken/Seafood,FREE
+122,61,Addiction Foods,5-1220,Cake/Bisc/Slice/Muffin,GST
+123,61,Coffico,5-1140,Coffee/Tea,GST
+124,61,Nican Bros Pty Ltd _ Ginger Chai,5-1140,Coffee/Tea,GST
+125,61,Sato National,5-2000,Paper & Packaging Products,GST
+126,61,Mert Continental,,,
+129,61,Asahi Westmead,5-1210,Soft Drinks/other beverage,GST
+132,61,Australian Kebab factory,5-1150,Meat/Chicken/Seafood,FREE
+135,61,Bega Milk Westmead,5-1110,Milk/Yoghurt/Cheese,FREE
+136,61,Divino Gelato,5-1270,Ice Cream,GST
+137,61,Reliable,,,
+139,61,Spotted Cow,5-1220,Cake/Bisc/Slice/Muffin,GST
+352,61,RISE FRONT Quattro WESTMEAD,5-1140,Coffee/Tea,GST
+355,61,Quick Blend Foods Pty Ltd,5-1210,Soft Drinks/other beverage,GST
+363,61,I Love Sushi Pty. Ltd,5-1150,Meat/Chicken/Seafood,FREE
+383,61,Harkola Nuts,5-1170,Grocery/Miscellaneous,GST
+386,61,Just Pasta,5-1170,Grocery/Miscellaneous,GST
+392,61,Grange Food Industries Pty Ltd,5-1150,Meat/Chicken/Seafood,FREE
+407,61,FoodLink Westmead,,,
+411,61,Elite Packaging Westmead,5-2000,Paper & Packaging Products,GST
+421,61,Eustralis FOOD and WINE WESTMEAD,,,
+426,61,Socrates Westmead,5-1210,Soft Drinks/other beverage,GST
+430,61,TMA Cups,5-2000,Paper & Packaging Products,GST
+433,61,Shaan Foods,5-1170,Grocery/Miscellaneous,GST
+441,61,Risefront Zammit Small Goods Westmead,5-1170,Grocery/Miscellaneous,GST
+444,61,Risefront Dickstone Meat Westmead,5-1150,Meat/Chicken/Seafood,FREE
+459,61,PLUS HEMP PTY LTD,5-1210,Soft Drinks/other beverage,GST
+461,61,Sienna Desserts,5-1220,Cake/Bisc/Slice/Muffin,GST
+465,61,Safe Spray Pest Control,6-2050,Chemicals & cleaning products,GST
+488,61,Casa Del,5-1220,Cake/Bisc/Slice/Muffin,GST
+536,61,Yamo Small good,5-1170,Grocery/Miscellaneous,GST
+538,61,Risefront Fresh Poultry Westmead,5-1150,Meat/Chicken/Seafood,FREE
+644,61,Patricks Continental breads NEW,,,
+651,61,Organic Trader Pty Ltd,,,
+714,61,Freshco,5-1160,Fruit/Vegetables,FREE
+720,61,Big Crunch Sushi,5-1150,Meat/Chicken/Seafood,FREE
+723,61,Campos coffee,5-1140,Coffee/Tea,GST
+341,61,Cleanwash Products,6-2050,Chemicals & cleaning products,GST

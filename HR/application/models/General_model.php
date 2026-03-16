@@ -1,0 +1,216 @@
+<?php
+class General_model extends CI_Model{
+	function __construct() {
+	parent::__construct();
+	}
+	
+	function getBranchAccess($user_id, $i=null){ 
+		$this->db->select('branches_access.branch_id,customer_branches.branch_name');
+		$this->db->from('branches_access');
+		$this->db->join('customer_branches','branches_access.branch_id = customer_branches.branch_id');
+		$this->db->where('branches_access.customer_user_id',$user_id);
+		$this->db->where('customer_branches.status',1);
+		$query=$this->db->get();
+		$errors = $this->db->error();
+		if($errors['code'] != 0){
+			if($i == null){
+				$i = 1;
+			}else{
+				$i = $i+1;
+			}
+			
+			if($i == 5){
+				show_error('error '+$i);
+			}
+			sleep(5);
+			$this->getBranchAccess($user_id, $i);
+		}else{
+				$result = $query->result();
+				return $result;
+			}
+	}
+	
+	public function getBranchesDetails($branch_id,$fieldsTofetch='*'){
+		$this->db->select($fieldsTofetch);
+		$this->db->from('customer_branches');
+		$this->db->where('branch_id',$branch_id);
+		$query=$this->db->get();
+		
+		$result = $query->result();
+		    return $result;
+	}
+	
+	
+	function deleteBranchAccess($user_id,$old_branch_id){
+		$this->db->where('customer_user_id',$user_id);
+		$this->db->where('branch_id',$old_branch_id);
+		$this->db->delete('branches_access');
+	}
+		function getallBranches(){ 
+		    
+		$this->db->select('customer_branches.branch_id,customer_branches.branch_name');
+		$this->db->from('customer_branches');
+	
+	
+		$query=$this->db->get();
+		$errors = $this->db->error();
+		if($errors['code'] != 0){
+			if($i == null){
+				$i = 1;
+			}else{
+				$i = $i+1;
+			}
+			
+			if($i == 5){
+				show_error('error '+$i);
+			}
+			sleep(5);
+			$this->getallBranches($user_id, $i);
+		}else{
+				$result = $query->result();
+				return $result;
+			}
+	}
+	function getBranchDetails($branch_id,  $i=null){
+		$this->db->select('*');
+		$this->db->from('customer_branches');
+		$this->db->where('branch_id',$branch_id);
+		$query=$this->db->get();
+		$errors = $this->db->error();
+		if($errors['code'] != 0){
+			if($i == null){
+				$i = 1;
+			}else{
+				$i = $i+1;
+			}
+			
+			if($i == 5){
+				show_error('error '+$i);
+			}
+			sleep(5);
+			$this->getBranchDetails($branch_id, $i);
+		}else{
+			$result = $query->result();
+			return $result;
+			}
+	}
+
+  function select_employee_type($email, $i=null){
+	  $this->db->select('id');
+	  $this->db->from('com_users');
+	  $this->db->where('email',$email);
+	  $query=$this->db->get();
+	  $res4=$query->result();
+	  foreach($res4 as $a=>$b){
+	  	$id=$b->id;
+	  }
+	  $this->db->select('moduleId');
+	  $this->db->from('module_access');
+	  $this->db->where('userId',$id);
+	  $query=$this->db->get();
+	  $errors = $this->db->error();
+		if($errors['code'] != 0){
+			if($i == null){
+				$i = 1;
+			}else{
+				$i = $i+1;
+			}
+			
+			if($i == 5){
+				show_error('error '+$i);
+			}
+			sleep(5);
+			$this->select_employee_type($email, $i);
+			}else{
+				  $res1=$query->row_array();
+				  //$res1=(array)$res1[0];
+				  return $res1;
+			}
+	
+  }
+    function get_modules($v3, $i=null){  
+	  $this->db->select('*');
+	  $this->db->from('modules');
+	  $this->db->where('moduleId',$v3);
+	  $query=$this->db->get();
+	  $errors = $this->db->error();
+		if($errors['code'] != 0){
+			if($i == null){
+				$i = 1;
+			}else{
+				$i = $i+1;
+			}
+			
+			if($i == 5){
+				show_error('error '+$i);
+			}
+			sleep(5);
+			$this->get_modules($v3, $i);
+			}else{
+				  $res9=$query->result();
+				return $res9;
+			}
+  }
+	function get_modules_name($i=null){  
+	  $this->db->select('*');
+	  $this->db->from('modules');
+	  $query=$this->db->get();
+	  $errors = $this->db->error();
+		if($errors['code'] != 0){
+			if($i == null){
+				$i = 1;
+			}else{
+				$i = $i+1;
+			}
+			
+			if($i == 5){
+				show_error('error '+$i);
+			}
+			sleep(5);
+			$this->get_modules_name($i);
+			}else{
+				  $res10=$query->result();
+				return $res10;
+			}
+  }
+  
+  
+
+     function get_leaves($id='',$type='', $i=null){
+         
+	
+		$this->db->select('leave_management.*, employee.first_name');
+		$this->db->from('leave_management');
+		$this->db->join('employee', 'leave_management.emp_id = employee.emp_id');
+		if($type == 'admin'){
+		    	$this->db->where('leave_management.branch_id',$id);
+		}else{
+		    	$this->db->where('leave_management.emp_id',$id);
+		}
+	
+		$this->db->order_by('leave_id',"DESC");
+		$query = $this->db->get();
+		
+		$errors = $this->db->error();
+		if($errors['code'] != 0){
+			if($i == null){
+				$i = 1;
+			}else{
+				$i = $i+1;
+			}
+			
+			if($i == 5){
+				show_error('error '+$i);
+			}
+			sleep(5);
+			$this->get_leaves($id='',$type='',$i);
+		}else{
+			return $query->result();
+		}		
+	}
+
+
+    
+
+}
+?>
