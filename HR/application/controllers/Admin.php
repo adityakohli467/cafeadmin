@@ -537,9 +537,7 @@ class Admin extends CI_Controller {
         return $menu_items;
     }
     public function selectEmployeeName(){
-    ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+   
        $keyword = $this->input->post('keyword');
        $branchid = $this->session->userdata('branch_id');
         $branchempResult = $this->admin_model->filter_get_employees_branchwise($branchid,$keyword,'unset','unset');
@@ -3943,7 +3941,15 @@ if(!empty($roster)){
         foreach($weekdaysnew as $weekday){
         $index_name = $weekday.'_budget';
         $data[$weekday.'_budget'] = $branches[0]->$index_name;
+        $data[$weekday.'_cost'] = 0;
+        $data[$weekday.'_variance'] = 0;
+        $data[$weekday.'_percentage'] = 0;
+        $data[$weekday.'_hrs_allocated'] = '';
+        $data[$weekday.'_average_hr_rate'] = 0;
+        $data[$weekday.'no_of_employee'] = 0;
         }
+        $daily = array();
+        $daily_hrs_allocated = array();
 	    
 	  
 	  $week_earning_total = array();
@@ -4376,7 +4382,15 @@ if(!empty($roster)){
 	             foreach($weekdaysnew as $weekday){
                     $index_name = $weekday.'_budget';
                     $data[$weekday.'_budget'] = $branches[0]->$index_name;
+                    $data[$weekday.'_cost'] = 0;
+                    $data[$weekday.'_variance'] = 0;
+                    $data[$weekday.'_percentage'] = 0;
+                    $data[$weekday.'_hrs_allocated'] = '';
+                    $data[$weekday.'_average_hr_rate'] = 0;
+                    $data[$weekday.'no_of_employee'] = 0;
                        }
+                $daily = array();
+                $daily_hrs_allocated = array();
 	            
 	            if(!empty($roster)){
 				foreach($roster as $key => $ros){
@@ -4594,7 +4608,15 @@ if(!empty($roster)){
 	             foreach($weekdaysnew as $weekday){
                     $index_name = $weekday.'_budget';
                     $data[$weekday.'_budget'] = $branches[0]->$index_name;
+                    $data[$weekday.'_cost'] = 0;
+                    $data[$weekday.'_variance'] = 0;
+                    $data[$weekday.'_percentage'] = 0;
+                    $data[$weekday.'_hrs_allocated'] = '';
+                    $data[$weekday.'_average_hr_rate'] = 0;
+                    $data[$weekday.'no_of_employee'] = 0;
                        }
+                $daily = array();
+                $daily_hrs_allocated = array();
 	            
 	            if(!empty($roster)){
 				foreach($roster as $key => $ros){
@@ -4813,7 +4835,15 @@ if(!empty($roster)){
 	             foreach($weekdaysnew as $weekday){
                     $index_name = $weekday.'_budget';
                     $data[$weekday.'_budget'] = $branches[0]->$index_name;
+                    $data[$weekday.'_cost'] = 0;
+                    $data[$weekday.'_variance'] = 0;
+                    $data[$weekday.'_percentage'] = 0;
+                    $data[$weekday.'_hrs_allocated'] = '';
+                    $data[$weekday.'_average_hr_rate'] = 0;
+                    $data[$weekday.'no_of_employee'] = 0;
                        }
+                $daily = array();
+                $daily_hrs_allocated = array();
 	            
 	            if(!empty($roster)){
 				foreach($roster as $key => $ros){

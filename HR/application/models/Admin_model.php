@@ -14,7 +14,7 @@ class Admin_model extends CI_Model{
 		return $query->result();
 	}
 	
-	public function fetch_employee_for_timsheet_bulk($roster_ids) {
+	public function fetch_employee_for_timsheet_bulk($roster_ids, $branch_id = '') {
    
     
          $outletname = date("l")."_layout";
@@ -23,6 +23,9 @@ class Admin_model extends CI_Model{
 		$this->db->from('roster');
 	     $this->db->join('employee', 'roster.emp_id = employee.emp_id');
 		$this->db->where_in('roster.roster_group_id', $roster_ids);
+		if($branch_id != ''){
+		    $this->db->where('roster.branch_id', $branch_id);
+		}
 		$this->db->order_by('employee.first_name',"ASC");
 	   $query = $this->db->get();
 	   return $query->result();
@@ -399,6 +402,15 @@ public function fetch_employee_notifications(){
 		
 		return $query->result();
 	}
+	
+	public function verify_roster_branch($roster_id, $branch_id){
+	    $this->db->select('roster_id');
+	    $this->db->from('roster');
+	    $this->db->where('roster_id', $roster_id);
+	    $this->db->where('branch_id', $branch_id);
+	    return $this->db->get()->num_rows() > 0;
+	}
+	
 	public function fetch_role($branch_id,$i=null){
 		$this->db->select('*');
 		$this->db->from('role');
@@ -1525,7 +1537,7 @@ public function fetch_employee_notifications(){
 		
 	}
 	
-	public function fetch_employee_for_timsheet($roster_group_id){
+	public function fetch_employee_for_timsheet($roster_group_id, $branch_id = ''){
 	    
 	 
 	   $outletname = date("l")."_layout";
@@ -1534,6 +1546,9 @@ public function fetch_employee_notifications(){
 		$this->db->from('roster');
 	     $this->db->join('employee', 'roster.emp_id = employee.emp_id');
 		$this->db->where('roster.roster_group_id',$roster_group_id);
+		if($branch_id != ''){
+		    $this->db->where('roster.branch_id', $branch_id);
+		}
 		$this->db->order_by('employee.first_name',"ASC");
 	   $query = $this->db->get();
 	   $errors = $this->db->error();

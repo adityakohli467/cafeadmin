@@ -1740,13 +1740,13 @@ $msg = $empname.' has submitted the job keeper request. Please login to the HR p
 		       $data['timesheet_id'] = $timesheet_id;
 		       $data['timesheet_type'] = $timesheet_type;
 		       
-		       // Fetch employees based on single or multiple roster
+		       // Fetch employees based on single or multiple roster (filtered by branch_id to prevent cross-branch data leakage)
 		       if($timesheet_type == "m"){
 		           $seralized = $this->employees_model->get_timesheetfor_multiple_roster($timesheet_id);
 		           $all_roster_ids = unserialize($seralized[0]->multiple_roster_group_id);
-		           $all_emps = $this->admin_model->fetch_employee_for_timsheet_bulk($all_roster_ids);
+		           $all_emps = $this->admin_model->fetch_employee_for_timsheet_bulk($all_roster_ids, $branch_id);
 		       } else {
-		           $all_emps = $this->admin_model->fetch_employee_for_timsheet($roster_group_id);
+		           $all_emps = $this->admin_model->fetch_employee_for_timsheet($roster_group_id, $branch_id);
 		       }
 		       
 		       if(!empty($all_emps)){
@@ -3261,10 +3261,10 @@ public function fetch_employee_for_timsheet(){
         //fetch all roster id so that we can find all the employees of those roster to be displayted in timesheet in out page
          $seralized_all_roster_forthis_timesheet = $this->employees_model->get_timesheetfor_multiple_roster($timesheet_id);
          $all_roster_forhtis_timesheets = unserialize($seralized_all_roster_forthis_timesheet[0]->multiple_roster_group_id);
-         $all_emps = $this->admin_model->fetch_employee_for_timsheet_bulk($all_roster_forhtis_timesheets);
+         $all_emps = $this->admin_model->fetch_employee_for_timsheet_bulk($all_roster_forhtis_timesheets, $branch_id);
       
     }else{
-         $all_emps = $this->admin_model->fetch_employee_for_timsheet($roster_group_id);
+         $all_emps = $this->admin_model->fetch_employee_for_timsheet($roster_group_id, $branch_id);
     }
 
 		  	if (!$this->ion_auth->logged_in()) {
@@ -3995,6 +3995,14 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
     $roster_and_timesheet_id =  $this->input->post('roster_group_id');
     $roster_and_timesheet_id = explode('_', $roster_and_timesheet_id);
     $timesheet_id = $roster_and_timesheet_id[1];
+    
+    // Verify roster belongs to logged-in user's branch
+    $branch_id = $this->session->userdata('branch_id');
+    if(!$this->admin_model->verify_roster_branch($roster_id, $branch_id)){
+        echo 'error';
+        exit;
+    }
+    
     // compare and round up the time and searlize the day wise in out time's array as we are storing it in a single field in db
 //here in time is same name for in and out time
    $returned_data = $this->compare_time_logic($roster_id,$type,$in_time);
@@ -4119,6 +4127,15 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
     }    
      $emp_id =  $this->input->post('emp_id');   
      $emp_pin =  $this->input->post('emp_pin');
+     
+     // Verify employee belongs to logged-in user's branch
+     $branch_id = $this->session->userdata('branch_id');
+     $emp_branch = $this->admin_model->get_emp_details_fieldwise($emp_id, 'branch_id');
+     if($emp_branch != $branch_id){
+         echo 'error';
+         exit;
+     }
+     
      $result= $this->EmployeesDeatils_model->verify_pin($emp_pin,$emp_id);
       echo $result;
       exit;
@@ -4137,6 +4154,12 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
       $roster_and_timesheet_id = explode('_', $roster_and_timesheet_id);
       $roster_id =  $this->input->post('roster_id');
       
+      // Verify roster belongs to logged-in user's branch
+      $branch_id = $this->session->userdata('branch_id');
+      if(!$this->admin_model->verify_roster_branch($roster_id, $branch_id)){
+          echo 'error';
+          exit;
+      }
 
       $roster_group_id = $roster_and_timesheet_id[0];
       $timesheet_id = $roster_and_timesheet_id[1];
