@@ -104,7 +104,7 @@
                                             </tr>
                                         </thead>
                                         <tbody id="supplier_items">
-                                            <tr><td colspan="5" class="text-center">Please select supplier</td><tr>
+                                            <tr><td colspan="5" class="text-center">Please select supplier</td></tr>
                                             <?php 
 								// 			if(!empty($suppliers)){
 								// 			foreach($suppliers as $supplieritems){
@@ -906,7 +906,7 @@ getBranchOrderTotalFromDeliverDate().then(function(balanceThisWeek) {
             });
     	}
     	else{
-    	    $('#supplier_items').html('<tr><td colspan="5" class="text-center">Please select supplier</td><tr>');
+    	    $('#supplier_items').html('<tr><td colspan="5" class="text-center">Please select supplier</td></tr>');
     	}
 	}
 	
@@ -1024,6 +1024,14 @@ getBranchOrderTotalFromDeliverDate().then(function(balanceThisWeek) {
                 responsive: true
             });
         });
+    </script>
+    <script src="<?php echo base_url(); ?>assets/js/select2.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('#select_supplier_id').select2({ placeholder: 'Search Supplier...', allowClear: true, width: 'resolve' });
+        $('#select_category_id').select2({ placeholder: 'Search Category...', allowClear: true, width: 'resolve' });
+        $('#select_supplier_id, #select_category_id').on('change', function(){ getSupplierItems(this); });
+    });
     </script>
     <script src="<?php echo base_url(); ?>assets/js/select2.min.js"></script>
     <script>
