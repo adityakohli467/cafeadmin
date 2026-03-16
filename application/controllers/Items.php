@@ -203,7 +203,7 @@ error_reporting(E_ALL);
             $target_dir = 'images/SupplierItem/';
 		  	$userfile_name = $_FILES['itemdata']['name'];
             $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-		  	$file_name = 'items_'.rand('10000','99999');
+		  	$file_name = 'items_'.rand(10000,99999);
 		  	//$file_name = $_FILES["resume"]["name"];
 		  	$i = ".";
             $final_file_name=$file_name.$i.$userfile_extn;
@@ -256,8 +256,8 @@ fclose($fileUploaded);
                     }
                     $count++;
                 }
-                session()->setFlashdata('message', $count.' rows successfully added.');
-                session()->setFlashdata('alert-class', 'alert-success');
+                $this->session->set_flashdata('message', $count.' rows successfully added.');
+                $this->session->set_flashdata('alert-class', 'alert-success');
           
 	}else{
 	   

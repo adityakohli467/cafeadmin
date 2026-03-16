@@ -147,7 +147,7 @@ if(!empty($employee_weekly_timesheet_details)){
       $loop_count = 0;
       for ($i = 0; $i < 7; $i++) { ?>
       <input type="hidden" name="employee_timesheet_id[]" value="<?php  echo $employee_weekly_timesheet_detail[$i]['employee_timesheet_id']; ?>">
-    <?php $weekwiseTotal[date('D', strtotime($employee_weekly_timesheet_detail[$loop_count]['date']))] = $weekwiseTotal[date('D', strtotime($employee_weekly_timesheet_detail[$loop_count]['date']))] +  $employee_weekly_timesheet_detail[$loop_count]['total_hrsworked_this_day'];  ?>  
+    <?php $dayKey = date('D', strtotime($employee_weekly_timesheet_detail[$loop_count]['date'])); $weekwiseTotal[$dayKey] = ($weekwiseTotal[$dayKey] ?? 0) +  $employee_weekly_timesheet_detail[$loop_count]['total_hrsworked_this_day'];  ?>  
     <?php $readonly = ($employee_weekly_timesheet_detail[0]['in_verify'] == 1) ? 'readonly' : ''; ?>
 
         <td class="start_end">

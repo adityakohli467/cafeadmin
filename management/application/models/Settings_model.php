@@ -717,7 +717,7 @@ class Settings_model extends CI_Model{
 	 }
 	 
 	 public function deleteUsers($ids){
-	 	$userids = explode(',',$ids);
+	 	$userids = explode(',',$ids ?? '');
 	 	foreach($userids as $cusId){
 	 		//customer users
 	 		$this->db->where('customer_user_id',$cusId);

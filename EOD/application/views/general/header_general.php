@@ -440,7 +440,7 @@ $(document).ready(function(){
                         <li class="nav-item">
                             <?php if(!empty($menu->submenus)){ ?>
                             <a class="nav-link menu-link" href="#sidebar_<?php echo $countmenu;?>" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                                <span class="d-flex"><span data-key="t-dashboards" class="fs-12"><?php echo Strtoupper($menu->description); ?></span></span>
+                                <span class="d-flex"><span data-key="t-dashboards" class="fs-12"><?php echo strtoupper($menu->description ?? ''); ?></span></span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebar_<?php echo $countmenu;?>">
                                 <ul class="nav nav-sm flex-column">
@@ -466,7 +466,7 @@ $(document).ready(function(){
                             </div>
                             <?php  }else { ?>
                             <a class="nav-link menu-link" href="<?php echo base_url(); ?>index.php/<?php echo $menu->controller; ?>">
-                                <span class="d-flex"> <span data-key="t-dashboards" class="fs-12"><?php echo Strtoupper($menu->description); ?></span></span>
+                                <span class="d-flex"> <span data-key="t-dashboards" class="fs-12"><?php echo strtoupper($menu->description ?? ''); ?></span></span>
                             </a>
                             <?php } }?>
                             
@@ -488,7 +488,7 @@ $(document).ready(function(){
                                 <span class="d-flex align-items-center">
                                     <i class="bx bxs-user-circle fs-24"></i>
                                     <span class="text-start ms-xl-2">
-                                        <?php $parts = explode(" ", $this->session->userdata('username'));
+                                        <?php $parts = explode(" ", $this->session->userdata('username') ?? '');
                                         $firstName = $parts[0];
                                         ?>
                                         <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text"><?php echo $firstName;?></span>

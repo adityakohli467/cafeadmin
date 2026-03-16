@@ -693,7 +693,7 @@ foreach($branchempResult as $branchemp) {
 		     $count =0;
 		    foreach($roster as $row){ 
 		       
-		        $rate = $this->admin_model->get_emp_details_fieldwise($row->emp_id,'rate');
+		        $rate = (float)$this->admin_model->get_emp_details_fieldwise($row->emp_id,'rate');
 		        $week_earning =  0;
 		        for ($i = 0; $i < 7; $i++) {
 		          $start_nameofday = $week_days[$i].'_start_time';
@@ -996,7 +996,7 @@ foreach($branchempResult as $branchemp) {
         // $this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
 
         if ($this->form_validation->run() == true) {   
-            $username = strtolower($this->input->post('username'));
+            $username = strtolower((string)$this->input->post('username'));
             $email = $this->input->post('email');
             $phone = $this->input->post('phone');
             $password = $this->input->post('password');
@@ -1652,7 +1652,7 @@ foreach($branchempResult as $branchemp) {
                 
     		  	$userfile_name = $_FILES['resume']['name'];
                 $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-    		  	$file_name = 'resume_'.rand('10000','99999');
+    		  	$file_name = 'resume_'.rand(10000,99999);
     		  	$i = ".";
                 $resume_file_name=$file_name.$i.$userfile_extn;
                 $target_file = $target_dir . $resume_file_name;
@@ -1663,7 +1663,7 @@ foreach($branchempResult as $branchemp) {
                 
     		  	$userfile_name1 = $_FILES['cover_letter']['name'];
                 $userfile_extn1 = substr($userfile_name1, strrpos($userfile_name1, '.')+1);
-    		  	$file_name1 = 'cover_letter_'.rand('10000','99999');
+    		  	$file_name1 = 'cover_letter_'.rand(10000,99999);
     		  	$j = ".";
                 $cover_letter_file_name=$file_name1.$j.$userfile_extn1;
                 $target_file1 = $target_dir . $cover_letter_file_name;
@@ -1686,7 +1686,7 @@ foreach($branchempResult as $branchemp) {
                 
     		  	$userfile_name = $_FILES['resume']['name'];
                 $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-    		  	$file_name = 'resume_'.rand('10000','99999');
+    		  	$file_name = 'resume_'.rand(10000,99999);
     		  	$i = ".";
                 $resume_file_name=$file_name.$i.$userfile_extn;
                 $target_file = $target_dir . $resume_file_name;
@@ -1696,7 +1696,7 @@ foreach($branchempResult as $branchemp) {
                 
     		  	$userfile_name1 = $_FILES['cover_letter']['name'];
                 $userfile_extn1 = substr($userfile_name, strrpos($userfile_name, '.')+1);
-    		  	$file_name1 = 'cover_letter_'.rand('10000','99999');
+    		  	$file_name1 = 'cover_letter_'.rand(10000,99999);
     		  	$j = ".";
                 $cover_letter_file_name=$file_name1.$j.$userfile_extn1;
                 $target_file1 = $target_dir . $cover_letter_file_name;
@@ -1853,7 +1853,7 @@ foreach($branchempResult as $branchemp) {
     public  function update_user($user_id =''){
         
            $user_data = array(
-                'username' =>strtolower($this->input->post('username')),
+                'username' =>strtolower((string)$this->input->post('username')),
                  'email' => $this->input->post('email'),
                  'phone' => $this->input->post('phone'),
                 'role' => $this->input->post('role'),
@@ -1944,6 +1944,7 @@ foreach($branchempResult as $branchemp) {
 				$data['employees'] = $employees;
 				$hdata['menus'] = $menu_items;
 				$data['type'] = $type;
+				$data['ex_employee_listing'] = 0;
 				$this->load->view('general/header_general',$hdata);
 				$this->load->view('employees/manage_employee',$data);
 				$this->load->view('general/footer');
@@ -2064,7 +2065,7 @@ foreach($branchempResult as $branchemp) {
 		    $target_dir = 'assets/job_desc/';
 		  	$userfile_name = $_FILES['job_desc']['name'];
             $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-		  	$file_name = 'job_'.rand('10000','99999');
+		  	$file_name = 'job_'.rand(10000,99999);
 		  	//$file_name = $_FILES["resume"]["name"];
 		  	$i = ".";
             $final_file_name=$file_name.$i.$userfile_extn;
@@ -2218,7 +2219,7 @@ foreach($branchempResult as $branchemp) {
 		    $target_dir = 'assets/job_desc/';
 		  	$userfile_name = $_FILES['job_desc']['name'];
             $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-		  	$file_name = 'job_'.rand('10000','99999');
+		  	$file_name = 'job_'.rand(10000,99999);
 		  	//$file_name = $_FILES["resume"]["name"];
 		  	$i = ".";
             $final_file_name=$file_name.$i.$userfile_extn;
@@ -2590,7 +2591,7 @@ foreach($branchempResult as $branchemp) {
 		  	$target_dir = 'assets/resume/';
 		  	$userfile_name = $_FILES['resume']['name'];
             $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-		  	$file_name = 'resume_'.rand('10000','99999');
+		  	$file_name = 'resume_'.rand(10000,99999);
 		  	//$file_name = $_FILES["resume"]["name"];
 		  	$i = ".";
             $final_file_name=$file_name.$i.$userfile_extn;
@@ -2601,7 +2602,7 @@ foreach($branchempResult as $branchemp) {
             $target_dir1 = 'assets/cover_letter/';
 		  	$userfile_name1 = $_FILES['coverletter']['name'];
             $userfile_extn1 = substr($userfile_name1, strrpos($userfile_name1, '.')+1);
-		  	$file_name1 = 'coverletter_'.rand('10000','99999');
+		  	$file_name1 = 'coverletter_'.rand(10000,99999);
 		  	$i = ".";
             $final_file_name1=$file_name1.$i.$userfile_extn1;
             $target_file1 = $target_dir1 . $final_file_name1;
@@ -3421,7 +3422,7 @@ Please login to the HR portal to view the update. Responses to the request can b
 			$start_date = date('Y-m-d', strtotime($_POST['start_date']));
 			$end_date = date('Y-m-d', strtotime($_POST['end_date']));
 			$roster_name = $_POST['roster_name'];
-			$month = $_POST['month'];
+			$month = isset($_POST['month']) ? $_POST['month'] : '';
 			$emp_ids =  $_POST['emp_id'];
 			$prev_emp =  $_POST['prev_emp'];
 			
@@ -3998,18 +3999,18 @@ if(!empty($roster)){
 				    //   echo $week_days[$i]."</br>";;
                          if (array_key_exists($todaysdate,$array_holiday)){
                           // if today is punblic holiday get holiday emp rate 
-                          $rate = $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'holiday_rate');
+                          $rate = (float)$this->admin_model->get_emp_details_fieldwise($ros->emp_id,'holiday_rate');
                          
                          }elseif($week_days[$i] == "sat"){
                              // if today is saturday get holiday satrday rate 
-                             $rate = $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'Saturday_rate');
+                             $rate = (float)$this->admin_model->get_emp_details_fieldwise($ros->emp_id,'Saturday_rate');
                           
                          }elseif($week_days[$i] == "sun"){
                              // iif today is sunday get holiday sunday rate 
-                              $rate = $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'Sunday_rate');
+                              $rate = (float)$this->admin_model->get_emp_details_fieldwise($ros->emp_id,'Sunday_rate');
                           
                          }else{
-                              $rate = $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'rate');
+                              $rate = (float)$this->admin_model->get_emp_details_fieldwise($ros->emp_id,'rate');
                          }
                         
                       $start_nameofday = $week_days[$i].'_start_time';
@@ -4372,7 +4373,7 @@ if(!empty($roster)){
 	            if(!empty($roster)){
 				foreach($roster as $key => $ros){
 				    
-				     $rate = $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'rate');
+				     $rate = (float)$this->admin_model->get_emp_details_fieldwise($ros->emp_id,'rate');
 				     $emp_first_name= $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'first_name');
 				     $emp_last_name= $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'last_name');
 				     $emp_email= $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'email');
@@ -4590,7 +4591,7 @@ if(!empty($roster)){
 	            if(!empty($roster)){
 				foreach($roster as $key => $ros){
 				    
-				     $rate = $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'rate');
+				     $rate = (float)$this->admin_model->get_emp_details_fieldwise($ros->emp_id,'rate');
 				     $emp_first_name= $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'first_name');
 				     $emp_last_name= $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'last_name');
 				     $emp_email= $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'email');
@@ -4809,7 +4810,7 @@ if(!empty($roster)){
 	            if(!empty($roster)){
 				foreach($roster as $key => $ros){
 				    
-				     $rate = $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'rate');
+				     $rate = (float)$this->admin_model->get_emp_details_fieldwise($ros->emp_id,'rate');
 				     $emp_first_name= $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'first_name');
 				     $emp_last_name= $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'last_name');
 				     $emp_email= $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'email');
@@ -5152,8 +5153,8 @@ if(!empty($roster)){
 	            if(!empty($roster)){
 
 				foreach($roster as $key => $ros){
-				 $rate = $this->admin_model->get_emp_details_fieldwise($ros->emp_id,'rate');
-				  if($rate == ''){  $rate = 1;  }
+				 $rate = (float)$this->admin_model->get_emp_details_fieldwise($ros->emp_id,'rate');
+				  if($rate == 0){  $rate = 1;  }
 				    $total_hrs_of_this_employee = 0;
 				     for ($i = 0; $i < 7; $i++) {
 				         $start_nameofday = $week_days[$i].'_start_time';

@@ -377,7 +377,7 @@ function login2(){
         $this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
 
         if ($this->form_validation->run() == true) {
-            $username = strtolower($this->input->post('name'));
+            $username = strtolower((string)$this->input->post('name'));
             $email = $this->input->post('email');
             $password = $this->input->post('password');
 
@@ -421,7 +421,7 @@ function login2(){
         // $this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
 
         if ($this->form_validation->run() == true) {
-            $username = strtolower($this->input->post('name'));
+            $username = strtolower((string)$this->input->post('name'));
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             $package = $this->input->post('package');

@@ -4822,7 +4822,7 @@ function applyGPOSpdf($txt, $aix, $x, $y, $OTLdata, $textvar=0 ) {
 		else {
 			$tx = code2utf($c);
 			if ($this->usingCoreFont) { 
-				$tx = utf8_decode($tx);
+				$tx = mb_convert_encoding($tx, 'ISO-8859-1', 'UTF-8');
 			}
 			else {
 				$tx = $this->UTF8ToUTF16BE($tx, false);
@@ -9661,8 +9661,7 @@ function _putType0(&$font)
 function _putimages()
 {
 	$filter=($this->compress) ? '/Filter /FlateDecode ' : '';
-	reset($this->images);
-	while(list($file,$info)=each($this->images)) {
+	foreach($this->images as $file => $info) {
 		$this->_newobj();
 		$this->images[$file]['n']=$this->n;
 		$this->_out('<</Type /XObject');
@@ -11456,8 +11455,7 @@ function _imageTypeFromString(&$data) {
 
 // Moved outside WMF as also needed for SVG
 function _putformobjects() {
-	reset($this->formobjects);
-	while(list($file,$info)=each($this->formobjects)) {
+	foreach($this->formobjects as $file => $info) {
 		$this->_newobj();
 		$this->formobjects[$file]['n']=$this->n;
 		$this->_out('<</Type /XObject');
@@ -28208,10 +28206,9 @@ function _putresources() {
 			foreach($this->tpls as $tplidx => $tpl) {
 				if (isset($tpl['resources'])) {
 					$this->current_parser =& $tpl['parser'];
-					reset ($tpl['resources'][1]);
-					while (list($k, $v) = each($tpl['resources'][1])) {
+					foreach ($tpl['resources'][1] as $k => $v) {
 						if ($k == '/Shading') {
-							while (list($k2, $v2) = each($v[1])) {
+							foreach ($v[1] as $k2 => $v2) {
 								$this->_out($k2 . " ",false);
 								$this->pdf_write_value($v2);
 							}
@@ -32351,8 +32348,7 @@ function pdf_write_value(&$value) {
 		case PDF_TYPE_DICTIONARY :
 			// A dictionary.
 			$this->_out("<<",false);
-			reset ($value[1]);
-			while (list($k, $v) = each($value[1])) {
+			foreach ($value[1] as $k => $v) {
 				$this->_out($k . " ",false);
 				$this->pdf_write_value($v);
 			}

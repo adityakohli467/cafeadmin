@@ -596,7 +596,7 @@ $(document).ready(function(){
                         <li class="nav-item">
                             <?php if(!empty($menu->submenus)){ ?>
                             <a class="nav-link menu-link" href="#sidebar_<?php echo $countmenu;?>" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                                <span class="d-flex"><span data-key="t-dashboards" class="fs-12"><?php echo Strtoupper($menu->description); ?></span></span>
+                                <span class="d-flex"><span data-key="t-dashboards" class="fs-12"><?php echo strtoupper($menu->description ?? ''); ?></span></span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebar_<?php echo $countmenu;?>">
                                 <ul class="nav nav-sm flex-column">
@@ -622,7 +622,7 @@ $(document).ready(function(){
                             </div>
                             <?php  }else { ?>
                             <a class="nav-link menu-link" href="<?php echo base_url(); ?>index.php/<?php echo $menu->controller; ?>">
-                                <span class="d-flex"> <span data-key="t-dashboards" class="fs-12"><?php echo Strtoupper($menu->description); ?></span></span>
+                                <span class="d-flex"> <span data-key="t-dashboards" class="fs-12"><?php echo strtoupper($menu->description ?? ''); ?></span></span>
                             </a>
                             <?php } }?>
                             

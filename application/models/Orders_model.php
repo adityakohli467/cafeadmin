@@ -4,7 +4,7 @@ class Orders_model extends CI_Model{
 	parent::__construct();
 	}
 	
-	public function copy_supp($supp_id='',$branch_id){
+	public function copy_supp($supp_id='',$branch_id=''){
 	     $this->db->select('*');
 		$this->db->from('supplier_branch_access');
 		if(isset($supp_id) && $supp_id !='all'){

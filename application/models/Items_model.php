@@ -642,7 +642,7 @@ ORDER BY
 		
 // 	outlet
 
-    public function save_outlet($customer_id='',$username,$email,$new_user_type,$new_branch_id,$pwd,$i=null){
+    public function save_outlet($customer_id='',$username='',$email='',$new_user_type='',$new_branch_id='',$pwd='',$i=null){
 		 
 		
 		//   echo '<pre>';print_r($data);exit;

@@ -3,7 +3,7 @@
   // Please acknowledge use of this code by including this header.
 
   // initialise image with dimensions of 120 x 30 pixels
-  $image = @imagecreatetruecolor(120, 30) or die("Cannot Initialize new GD image stream");
+  $image = imagecreatetruecolor(120, 30);\n  if (!$image) { die("Cannot Initialize new GD image stream"); }
 
   // set background to white and allocate drawing colours
   $background = imagecolorallocate($image, 0xFF, 0xFF, 0xFF);

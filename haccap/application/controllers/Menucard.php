@@ -336,7 +336,7 @@ class Menucard extends CI_Controller {
                
     		  	$userfile_name = $_FILES['recipe_image']['name'];
                 $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-    		  	$file_name = 'recipe_'.rand('10000','99999');
+    		  	$file_name = 'recipe_'.rand(10000,99999);
     		  	$i = ".";
                 $recipe_file_name=$file_name.$i.$userfile_extn;
                 $target_file = $target_dir . $recipe_file_name;
@@ -405,7 +405,7 @@ class Menucard extends CI_Controller {
                
     		  	$userfile_name = $_FILES['recipe_image']['name'];
                 $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-    		  	$file_name = 'recipe_'.rand('10000','99999');
+    		  	$file_name = 'recipe_'.rand(10000,99999);
     		  	$i = ".";
                 $recipe_file_name=$file_name.$i.$userfile_extn;
                 $target_file = $target_dir . $recipe_file_name;
@@ -481,7 +481,7 @@ class Menucard extends CI_Controller {
                
     		  	$userfile_name = $_FILES['recipe_image']['name'];
                 $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-    		  	$file_name = 'recipe_'.rand('10000','99999');
+    		  	$file_name = 'recipe_'.rand(10000,99999);
     		  	$i = ".";
                 $recipe_file_name=$file_name.$i.$userfile_extn;
                 $target_file = $target_dir . $recipe_file_name;

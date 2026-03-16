@@ -635,7 +635,7 @@ $dob = date('Y-m-d',$dob);
 		
 		// echo '<pre>';print_r($_FILES);exit;
 		
-		$file_name = 'induction_'.rand('10000','99999');
+		$file_name = 'induction_'.rand(10000,99999);
     	$config['upload_path'] = 'assets/docs/emp_uploads/';
         $config['allowed_types'] = 'jpg|jpeg|png|pdf';
         $config['max_size']             = 1024;
@@ -724,7 +724,7 @@ $dob = date('Y-m-d',$dob);
 			$target_dir = 'assets/leave_certificates/';
 		  	$userfile_name = $_FILES['med_certificate']['name'];
             $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-		  	$file_name = 'leave_'.rand('10000','99999');
+		  	$file_name = 'leave_'.rand(10000,99999);
 		  	//$file_name = $_FILES["resume"]["name"];
 		  	$i = ".";
             $final_file_name=$file_name.$i.$userfile_extn;

@@ -44,7 +44,7 @@ class Employees_model extends CI_Model{
 	  return $query->result();
 
 	}
-	public function employeeIDTimesheetStatus($timesheet_id='',$roster_group_id='',$where){
+	public function employeeIDTimesheetStatus($timesheet_id='',$roster_group_id='',$where=''){
 // 	 echo "SELECT employee_id FROM employee_timesheet where timesheet_id =".$timesheet_id." AND roster_group_id =".$roster_group_id." AND in_verify =".$where; exit;
 	    $query = $this->db->query("SELECT distinct employee_id FROM employee_timesheet where timesheet_id =".$timesheet_id." AND  in_verify =".$where);
         return $query->result();

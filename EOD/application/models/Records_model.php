@@ -90,7 +90,7 @@ class Records_model extends CI_Model{
         $sql = $supplierManagement->query($query);
         return $sql->result();
 	}
-	public function getFilterData($table_name,$fields,$branch_id='',$whereid){
+	public function getFilterData($table_name,$fields,$branch_id='',$whereid=''){
 	   
         $field =implode(',',$fields);
 		

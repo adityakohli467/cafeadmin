@@ -402,7 +402,7 @@ foreach($branchempResult as $branchemp) {
         // $this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
 
         if ($this->form_validation->run() == true) {   
-            $username = strtolower($this->input->post('username'));
+            $username = strtolower((string)$this->input->post('username'));
             $email = $this->input->post('email');
             $phone = $this->input->post('phone');
             $password = $this->input->post('password');
@@ -543,7 +543,7 @@ foreach($branchempResult as $branchemp) {
     public  function update_user($user_id =''){
         
            $user_data = array(
-                'username' =>strtolower($this->input->post('username')),
+                'username' =>strtolower((string)$this->input->post('username')),
                  'email' => $this->input->post('email'),
                  'phone' => $this->input->post('phone'),
                 'role' => $this->input->post('role'),
@@ -590,7 +590,7 @@ foreach($branchempResult as $branchemp) {
 		  	$target_dir = 'assets/resume/';
 		  	$userfile_name = $_FILES['resume']['name'];
             $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-		  	$file_name = 'resume_'.rand('10000','99999');
+		  	$file_name = 'resume_'.rand(10000,99999);
 		  	//$file_name = $_FILES["resume"]["name"];
 		  	$i = ".";
             $final_file_name=$file_name.$i.$userfile_extn;
@@ -601,7 +601,7 @@ foreach($branchempResult as $branchemp) {
             $target_dir1 = 'assets/cover_letter/';
 		  	$userfile_name1 = $_FILES['coverletter']['name'];
             $userfile_extn1 = substr($userfile_name1, strrpos($userfile_name1, '.')+1);
-		  	$file_name1 = 'coverletter_'.rand('10000','99999');
+		  	$file_name1 = 'coverletter_'.rand(10000,99999);
 		  	$i = ".";
             $final_file_name1=$file_name1.$i.$userfile_extn1;
             $target_file1 = $target_dir1 . $final_file_name1;

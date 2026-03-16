@@ -1047,7 +1047,7 @@ public function TempFormList($table_name='haccap_cold_form'){
 		    $this->load->view('general/footer');
 		}
 	}
-public function tempFormEdit($id,$type='',$table_name){
+public function tempFormEdit($id,$type='',$table_name=''){
 	    if (!$this->ion_auth->logged_in()) {
 			redirect('auth/login');
 		}else{
@@ -1332,7 +1332,7 @@ public function tempFormEdit($id,$type='',$table_name){
 		}
 	}
 	
-public function tempFormView($id,$type='',$table_name){
+public function tempFormView($id,$type='',$table_name=''){
     if (!$this->ion_auth->logged_in()) {
 		redirect('auth/login');
 	}else{

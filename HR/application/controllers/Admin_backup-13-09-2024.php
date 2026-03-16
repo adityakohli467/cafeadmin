@@ -1438,7 +1438,7 @@ foreach($branchempResult as $branchemp) {
                 
     		  	$userfile_name = $_FILES['resume']['name'];
                 $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-    		  	$file_name = 'resume_'.rand('10000','99999');
+    		  	$file_name = 'resume_'.rand(10000,99999);
     		  	$i = ".";
                 $resume_file_name=$file_name.$i.$userfile_extn;
                 $target_file = $target_dir . $resume_file_name;
@@ -1449,7 +1449,7 @@ foreach($branchempResult as $branchemp) {
                 
     		  	$userfile_name1 = $_FILES['cover_letter']['name'];
                 $userfile_extn1 = substr($userfile_name1, strrpos($userfile_name1, '.')+1);
-    		  	$file_name1 = 'cover_letter_'.rand('10000','99999');
+    		  	$file_name1 = 'cover_letter_'.rand(10000,99999);
     		  	$j = ".";
                 $cover_letter_file_name=$file_name1.$j.$userfile_extn1;
                 $target_file1 = $target_dir . $cover_letter_file_name;
@@ -1472,7 +1472,7 @@ foreach($branchempResult as $branchemp) {
                 
     		  	$userfile_name = $_FILES['resume']['name'];
                 $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-    		  	$file_name = 'resume_'.rand('10000','99999');
+    		  	$file_name = 'resume_'.rand(10000,99999);
     		  	$i = ".";
                 $resume_file_name=$file_name.$i.$userfile_extn;
                 $target_file = $target_dir . $resume_file_name;
@@ -1482,7 +1482,7 @@ foreach($branchempResult as $branchemp) {
                 
     		  	$userfile_name1 = $_FILES['cover_letter']['name'];
                 $userfile_extn1 = substr($userfile_name, strrpos($userfile_name, '.')+1);
-    		  	$file_name1 = 'cover_letter_'.rand('10000','99999');
+    		  	$file_name1 = 'cover_letter_'.rand(10000,99999);
     		  	$j = ".";
                 $cover_letter_file_name=$file_name1.$j.$userfile_extn1;
                 $target_file1 = $target_dir . $cover_letter_file_name;
@@ -1850,7 +1850,7 @@ foreach($branchempResult as $branchemp) {
 		    $target_dir = 'assets/job_desc/';
 		  	$userfile_name = $_FILES['job_desc']['name'];
             $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-		  	$file_name = 'job_'.rand('10000','99999');
+		  	$file_name = 'job_'.rand(10000,99999);
 		  	//$file_name = $_FILES["resume"]["name"];
 		  	$i = ".";
             $final_file_name=$file_name.$i.$userfile_extn;
@@ -2004,7 +2004,7 @@ foreach($branchempResult as $branchemp) {
 		    $target_dir = 'assets/job_desc/';
 		  	$userfile_name = $_FILES['job_desc']['name'];
             $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-		  	$file_name = 'job_'.rand('10000','99999');
+		  	$file_name = 'job_'.rand(10000,99999);
 		  	//$file_name = $_FILES["resume"]["name"];
 		  	$i = ".";
             $final_file_name=$file_name.$i.$userfile_extn;
@@ -2369,7 +2369,7 @@ foreach($branchempResult as $branchemp) {
 		  	$target_dir = 'assets/resume/';
 		  	$userfile_name = $_FILES['resume']['name'];
             $userfile_extn = substr($userfile_name, strrpos($userfile_name, '.')+1);
-		  	$file_name = 'resume_'.rand('10000','99999');
+		  	$file_name = 'resume_'.rand(10000,99999);
 		  	//$file_name = $_FILES["resume"]["name"];
 		  	$i = ".";
             $final_file_name=$file_name.$i.$userfile_extn;
@@ -2380,7 +2380,7 @@ foreach($branchempResult as $branchemp) {
             $target_dir1 = 'assets/cover_letter/';
 		  	$userfile_name1 = $_FILES['coverletter']['name'];
             $userfile_extn1 = substr($userfile_name1, strrpos($userfile_name1, '.')+1);
-		  	$file_name1 = 'coverletter_'.rand('10000','99999');
+		  	$file_name1 = 'coverletter_'.rand(10000,99999);
 		  	$i = ".";
             $final_file_name1=$file_name1.$i.$userfile_extn1;
             $target_file1 = $target_dir1 . $final_file_name1;

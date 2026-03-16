@@ -8,7 +8,7 @@
 	
 	require_once('qrcode.class.php');
 	
-	$qrcode = new QRcode(utf8_encode($msg), $err);
+	$qrcode = new QRcode(mb_convert_encoding($msg, 'UTF-8', 'ISO-8859-1'), $err);
 	$qrcode->disableBorder();
 	$qrcode->displayPNG(200);
 ?>

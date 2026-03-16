@@ -403,6 +403,7 @@ class Employeedetails extends CI_Controller {
         }
            $result_count = "Showing ".$start." - ".$end." of ".$config['total_rows']." Results";
 		 
+		 $emp_id = '';
 		 if(isset($table_name) && ($table_name=='memo' || $table_name=='document')){
 		  
 		    if($branch_id ==''){

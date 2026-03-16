@@ -225,7 +225,7 @@ class Admin_model extends CI_Model{
 		}
 	}
 	
-	public function filter_get_employees_branchwise($branch_id='',$name,$phone,$email,$i=null){
+	public function filter_get_employees_branchwise($branch_id='',$name='',$phone='',$email='',$i=null){
 	 
 	    	$this->db->select('*');
 		$this->db->from('employee');

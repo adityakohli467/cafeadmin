@@ -113,7 +113,7 @@ class Admin_model extends CI_Model{
 	    
 	    return true;
 	}
-	public function get_resumes($resume_id='',$dataFilter){
+	public function get_resumes($resume_id='',$dataFilter=''){
 	    
 	    $branch_id = $this->session->userdata('branch_id');
 		$this->db->select('*');
@@ -231,7 +231,7 @@ public function fetch_employee_notifications(){
 			return $query->result();
 	}
 	
-	function employee_roster_reports($start_date='',$end_date='',$empID){ 
+	function employee_roster_reports($start_date='',$end_date='',$empID=''){ 
 		    
 	     $branch_id = $this->session->userdata('branch_id');
 	     
@@ -465,7 +465,7 @@ public function fetch_employee_notifications(){
 }
 
 	
-	public function filter_get_employees_branchwise($branch_id='',$name,$phone,$email,$i=null){
+	public function filter_get_employees_branchwise($branch_id='',$name='',$phone='',$email='',$i=null){
 	 
 	    	$this->db->select('*');
 		$this->db->from('employee');
@@ -504,7 +504,7 @@ public function fetch_employee_notifications(){
 	    
 	}
 	
-	public function filter_get_disabled_employees_branchwise($branch_id='',$name,$phone,$email,$i=null){
+	public function filter_get_disabled_employees_branchwise($branch_id='',$name='',$phone='',$email='',$i=null){
 	 
 	    	$this->db->select('*');
 		$this->db->from('employee');

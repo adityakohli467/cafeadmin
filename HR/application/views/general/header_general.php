@@ -384,7 +384,7 @@ $notifications_count = $CI->admin_model->fetch_notifications_count();
           <div class="col-12 col-md-12 d-xl-block dt-menu ">
             <nav class="site-navigation position-relative text-right br-top" role="navigation">
 
-              <ul class="site-menu main-nav main-menu js-clone-nav mr-auto d-lg-block <?php echo (sizeof($menus) < 4 ? 'small_menu_design' : '') ?>">
+              <ul class="site-menu main-nav main-menu js-clone-nav mr-auto d-lg-block <?php echo (!empty($menus) && sizeof($menus) < 4 ? 'small_menu_design' : '') ?>">
 
 <?php 
        if(!empty($menus)){  
@@ -393,7 +393,7 @@ $notifications_count = $CI->admin_model->fetch_notifications_count();
        foreach($menus as $menu){ ?>
        <?php if(!empty($menu->submenus)){ ?>
              <li class="has-children <?php echo (sizeof($menus) < 4 ? 'small_menu_design_items' : '') ?>">
-                 <a href="<?php echo base_url(); ?>index.php/<?php echo $menu->controller; ?>"   class="nav-link mb-dropdown-menu" data-toggle="dropdown"><?php echo Strtoupper($menu->description); ?></a> 
+                 <a href="<?php echo base_url(); ?>index.php/<?php echo $menu->controller; ?>"   class="nav-link mb-dropdown-menu" data-toggle="dropdown"><?php echo strtoupper($menu->description ?? ''); ?></a> 
                   <ul class="dropdown">
                      <?php foreach($menu->submenus as $submenu){ 
                       if($user_id == 265 || $user_id == 266){ 
@@ -405,7 +405,7 @@ $notifications_count = $CI->admin_model->fetch_notifications_count();
                   </ul>
                 </li>
                 <?php } else { ?>
-        <li class="<?php echo (sizeof($menus) < 4 ? 'small_menu_design_items' : '') ?>"><a href="<?php echo base_url(); ?>index.php/<?php echo $menu->controller; ?>" class="nav-link"><?php echo Strtoupper($menu->description); ?></a></li>
+        <li class="<?php echo (sizeof($menus) < 4 ? 'small_menu_design_items' : '') ?>"><a href="<?php echo base_url(); ?>index.php/<?php echo $menu->controller; ?>" class="nav-link"><?php echo strtoupper($menu->description ?? ''); ?></a></li>
              
                 <?php } } } ?> 
          
