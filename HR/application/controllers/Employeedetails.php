@@ -479,7 +479,7 @@ class Employeedetails extends CI_Controller {
         
     }
     
-    public function get_content_and_send_mail($emp_detail=array(),$msg,$from_email=''){
+    public function get_content_and_send_mail($emp_detail,$msg,$from_email=''){
         $this->_init_email();
         if($from_email==''){
             $from_email = 'admin@cafeadmin.com.au';
@@ -3224,6 +3224,9 @@ public function fetch_employee_for_timsheet(){
 	$role = $this->session->userdata('role');
 	$all_timesheet = $this->admin_model->get_all_timesheet($branch_id,'future');
     
+   $timesheet_id = '';
+   $roster_group_id = '';
+   
    if(empty($_POST)){
       $roster_group_id =  $all_timesheet[0]->roster_group_id;
       $timesheet_id =  $all_timesheet[0]->timesheet_id;
