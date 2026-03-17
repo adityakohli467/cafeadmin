@@ -300,10 +300,10 @@ if(!empty($employee_weekly_timesheet_details)){
 	</div>
    <script>
    function DownloadButtonFUn(){
-        window.location.href = "<?php echo base_url('HR/index.php/Employeedetails/download_textfile/'); ?><?php echo $timesheet_id; ?>/<?php echo $roster_group_id; ?>/casual";
+        window.location.href = "<?php echo base_url('index.php/Employeedetails/download_textfile/'); ?><?php echo $timesheet_id; ?>/<?php echo $roster_group_id; ?>/casual";
    }
    function DownloadButtonFUn2(){
-        window.location.href = "<?php echo base_url('HR/index.php/Employeedetails/download_textfile/'); ?><?php echo $timesheet_id; ?>/<?php echo $roster_group_id; ?>";
+        window.location.href = "<?php echo base_url('index.php/Employeedetails/download_textfile/'); ?><?php echo $timesheet_id; ?>/<?php echo $roster_group_id; ?>";
    }
    $('a.sortType').click(function() { 
     
