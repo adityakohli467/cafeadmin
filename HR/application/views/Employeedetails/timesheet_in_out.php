@@ -541,25 +541,6 @@
 	           $class_to_enable = $("#current_in_time").val();
 	           $class_to_disable = $("#current_pin_time").val();
 	           
-	        // Validation: clock-in before clock-out, break-start before break-end
-	        var days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
-	        var today = days[new Date().getDay()];
-	        
-	        if(type_empclick == 'clockout'){
-	            var inPinCell = $('.' + today + '_in_pintime' + emp_id + rosterID_emp);
-	            if(inPinCell.length > 0 && inPinCell.is(':visible')){
-	                swal({ text: 'Please clock in before clocking out.', icon: 'warning' });
-	                return;
-	            }
-	        }
-	        if(type_empclick == 'break_out_time'){
-	            var breakInPinCell = $('.' + today + '_break_pintime' + emp_id + rosterID_emp);
-	            if(breakInPinCell.length > 0 && breakInPinCell.is(':visible')){
-	                swal({ text: 'Please record break start time before break end time.', icon: 'warning' });
-	                return;
-	            }
-	        }
-	           
 	           $("."+$class_to_enable).show();
 	           $("."+$class_to_disable).hide();
         
