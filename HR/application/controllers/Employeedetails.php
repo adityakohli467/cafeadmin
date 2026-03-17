@@ -1809,12 +1809,7 @@ $msg = $empname.' has submitted the job keeper request. Please login to the HR p
 // 		    $menu_items  = $this->display_menu();
 			$hdata['timesheet_login'] = 'timesheet_login';
 			$this->load->view('general/header_general',$hdata);
-			if($branch_id == 48  || $branch_id == 49 || $branch_id == 55 || $branch_id == 56 || $branch_id == 57 || $branch_id == 58 || $branch_id == 59){
-		
-			  $this->load->view('Employeedetails/timesheet_in_out_test',$data);
-			}else{
-			 $this->load->view('Employeedetails/timesheet_in_out',$data);
-			}
+			$this->load->view('Employeedetails/timesheet_in_out',$data);
 		
 			$this->load->view('general/footer');
 		    }
