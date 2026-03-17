@@ -36,8 +36,11 @@
 <div class="col-4 ct-top mt-4">
     <button onclick="RefreshLocalStorge()" class=" btn-success ">Refresh</button>
     </div>
+<div class="col-3 ct-top mt-3">
+    <label class="control-label"><b>Search Employee</b></label>
+    <input type="text" id="employee_search" class="form-control" placeholder="Search Employee Name...">
+</div>
 <div class="col-lg-12">
-
 <div class="ct-scroll timesheet_container_div">
 <table border="1" class="ct-timeset">
     	
@@ -369,25 +372,25 @@
 </div>
 
  <div class="modal fade" id="pinModal" role="dialog" style="opacity: inherit !important;">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" onclick="closeModal('pinModal')" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Enter Your Pin Number</h4>
+    <div class="modal-dialog" style="width:420px;margin-top:10%;">
+      <div class="modal-content" style="border-radius:8px;border:none;box-shadow:0 8px 30px rgba(0,0,0,0.12);overflow:hidden;">
+        <div class="modal-header" style="text-align:center;border-bottom:1px solid #f1f1f1;padding:18px 20px;position:relative;">
+          <button type="button" class="close" onclick="closeModal('pinModal')" data-dismiss="modal" style="position:absolute;right:20px;top:18px;font-size:20px;color:#999;opacity:1;">&times;</button>
+          <h4 class="modal-title" style="font-weight:700;font-size:18px;color:#1A1C20;margin:0;">Enter Your Pin Number</h4>
         </div>
-        <div class="modal-body">
-          <p style="border: 2px solid #37b53c;"><input type="password" id="employee_pin_entered" name="employee_pin" autocomplete="new-password">
+        <div class="modal-body" style="padding:30px 40px;text-align:center;background:#fff;">
+          <p style="color:#888;font-size:14px;margin-bottom:20px;">Please enter your 4-digit security PIN to log your attendance.</p>
+          <input type="password" id="employee_pin_entered" name="employee_pin" maxlength="4" autocomplete="new-password" placeholder="••••" style="width:100%;max-width:240px;text-align:center;font-size:28px;font-weight:700;letter-spacing:0.8em;padding:14px 10px;border:2px solid #22C55E;border-radius:8px;outline:none;background:#F8FAFC;color:#1A1C20;display:block;margin:0 auto;">
           <input type="hidden" id="pin_emp_id">
           <input type="hidden" id="rosterID_emp">
           <input type="hidden" id="type_empclick">
           <input type="hidden" id="outletname_emp">
           <input type="hidden" id="objectreference">
-          
           <input type="hidden" id="current_in_time">
-          <input type="hidden" id="current_pin_time"></p>
+          <input type="hidden" id="current_pin_time">
         </div>
-        <div class="modal-footer">
-          <button type="button" onclick="verify_pin()" class="btn btn-success btn-ph" id="pin_submit" data-dismiss="modal">Verify</button>
+        <div class="modal-footer" style="border-top:1px solid #f1f1f1;background:#f9fafb;padding:18px 40px;text-align:center;">
+          <button type="button" onclick="verify_pin()" class="btn btn-success btn-ph" id="pin_submit" data-dismiss="modal" style="width:100%;max-width:240px;background:#22C55E;border:none;color:#fff;font-weight:600;padding:12px 20px;border-radius:8px;font-size:16px;box-shadow:0 4px 14px rgba(34,197,94,0.39);margin:0 auto;display:block;">Verify</button>
         </div>
       </div>
     </div>
@@ -537,16 +540,29 @@
 	        if(data=="verified"){
 	           $class_to_enable = $("#current_in_time").val();
 	           $class_to_disable = $("#current_pin_time").val();
+	           
+	        // Validation: clock-in before clock-out, break-start before break-end
+	        var days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+	        var today = days[new Date().getDay()];
+	        
+	        if(type_empclick == 'clockout'){
+	            var inPinCell = $('.' + today + '_in_pintime' + emp_id + rosterID_emp);
+	            if(inPinCell.length > 0 && inPinCell.is(':visible')){
+	                swal({ text: 'Please clock in before clocking out.', icon: 'warning' });
+	                return;
+	            }
+	        }
+	        if(type_empclick == 'break_out_time'){
+	            var breakInPinCell = $('.' + today + '_break_pintime' + emp_id + rosterID_emp);
+	            if(breakInPinCell.length > 0 && breakInPinCell.is(':visible')){
+	                swal({ text: 'Please record break start time before break end time.', icon: 'warning' });
+	                return;
+	            }
+	        }
+	           
 	           $("."+$class_to_enable).show();
 	           $("."+$class_to_disable).hide();
-	           
-	           
-	       //    swal({
-        //   text: "Your Pin has been Verified Succesfully",
-        //   icon: "success",
-        //   timer: 500
-        //   }); 
-     
+        
         if(type_empclick=="break_out_time" || type_empclick=="break_in_time"){
             
             save_break_record(type_empclick,rosterID_emp,emp_id);
@@ -567,6 +583,13 @@
 
 			}
 	});
+  }
+  
+  function revertCellSwap(){
+      var cls_icon = $("#current_in_time").val();
+      var cls_pin = $("#current_pin_time").val();
+      if(cls_icon) $("." + cls_icon).hide();
+      if(cls_pin) $("." + cls_pin).show();
   }
   
   function save_record(classname,roster_id,emp_id,outletname){
@@ -596,9 +619,11 @@
 		data:{in_time:time,type:type,emp_id:emp_id,roster_group_id:roster_group_id,outletname:outletname,roster_id:roster_id},
 	    success:function(response){
 	        if(response =='sessionexpired'){
+	            revertCellSwap();
 	            swal({ text: "Your session has expired. Please login again.", icon: "error" }).then(function(){ window.location.href = "<?php echo base_url();?>index.php/auth/homepage"; });
 	            return;
 	        }else if(response =='Early'){
+	            revertCellSwap();
 	             swal({
           text: "Login time not must not exceed 15 mins as per your rosterd time.Please Try again in some time.",
           icon: "warning",
@@ -621,10 +646,12 @@
            timer: 1300
           });
 	        }else{
+	            revertCellSwap();
 	            swal({ text: "Failed to save time. Please try again.", icon: "error" });
 	        }
 			},
 		error:function(){
+		    revertCellSwap();
 		    swal({ text: "Network error. Time was NOT saved. Please check your connection and try again.", icon: "error" });
 		}
 	});
@@ -662,6 +689,7 @@
 		data:{break_time:break_time,break_type:break_type,roster_group_id:roster_group_id,roster_id:roster_id},
 	    success:function(data){
 	        if(data =='sessionexpired'){
+	            revertCellSwap();
 	            swal({ text: "Your session has expired. Please login again.", icon: "error" }).then(function(){ window.location.href = "<?php echo base_url();?>index.php/auth/homepage"; });
 	            return;
 	        }else if(data =='saved'){
@@ -673,10 +701,12 @@
               timer: 1300
               });
 	        }else{
+	            revertCellSwap();
 	            swal({ text: "Failed to save break time. Please try again.", icon: "error" });
 	        }
 			},
 		error:function(){
+		    revertCellSwap();
 		    swal({ text: "Network error. Break time was NOT saved. Please check your connection and try again.", icon: "error" });
 		}
 	});
@@ -732,6 +762,15 @@ function breaksetTime_in_time(obj) {
     cursor: pointer !important;
 }
 </style>
+<script>
+$('#employee_search').on('keyup', function(){
+    var val = $(this).val().toLowerCase();
+    $('.parent_row').each(function(){
+        var name = $(this).find('td:first').text().toLowerCase();
+        $(this).toggle(name.indexOf(val) > -1);
+    });
+});
+</script>
 <script>
   
     
