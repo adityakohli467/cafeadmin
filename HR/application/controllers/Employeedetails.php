@@ -360,7 +360,7 @@ class Employeedetails extends CI_Controller {
            $branch_id = $this->session->userdata('branch_id');
          
             $config = array();
-            $config['base_url'] = base_url('HR/index.php/').$link;
+            $config['base_url'] = base_url('index.php/').$link;
             $config['total_rows'] = $total_records;
             if($total_records > 10){
               $config["per_page"] = 10;  
@@ -3344,12 +3344,7 @@ public function fetch_employee_for_timsheet(){
            
 			$hdata['timesheet_login'] = 'timesheet_login';
 			$this->load->view('general/header_general',$hdata);
-			if($branch_id == 57 ){
-			  
-			    	$this->load->view('Employeedetails/timesheet_in_out',$data);
-			}else{
-			  	$this->load->view('Employeedetails/timesheet_in_out',$data);  
-			}
+			$this->load->view('Employeedetails/timesheet_in_out',$data);
 		
 			$this->load->view('general/footer');
 		   
@@ -3999,6 +3994,14 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
         exit;
     }
     $in_time =  $this->input->post('in_time');
+    
+    // Server-side time safeguard: if client time differs by more than 2 minutes, use server time
+    $server_time = date('H:i');
+    $diff_seconds = abs(strtotime($in_time) - strtotime($server_time));
+    if ($diff_seconds > 120) {
+        $in_time = $server_time;
+    }
+    
     $type =  $this->input->post('type');
     $roster_id =  $this->input->post('roster_id');
     $emp_id_outletname =  explode('_', $this->input->post('emp_id'));
@@ -4130,6 +4133,11 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
     
      
  }
+    public function check_session_alive(){
+        echo $this->ion_auth->logged_in() ? 'active' : 'expired';
+        exit;
+    }
+
     public function verify_pin(){
     if (!$this->ion_auth->logged_in()) {
         echo 'sessionexpired';
@@ -4157,7 +4165,15 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
            echo 'sessionexpired';
            exit;
        }
-       $break_time =  $this->input->post('break_time');   
+       $break_time =  $this->input->post('break_time');
+       
+       // Server-side time safeguard: if client time differs by more than 2 minutes, use server time
+       $server_time = date('H:i');
+       $diff_seconds = abs(strtotime($break_time) - strtotime($server_time));
+       if ($diff_seconds > 120) {
+           $break_time = $server_time;
+       }
+       
        $break_type =  $this->input->post('break_type');
      
       $roster_and_timesheet_id =  $this->input->post('roster_group_id');

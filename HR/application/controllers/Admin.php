@@ -595,7 +595,7 @@ foreach($branchempResult as $branchemp) {
         {
             // get current page records
             $config = array();
-            $config['base_url'] = base_url('HR/index.php/').$link;
+            $config['base_url'] = base_url('index.php/').$link;
             $config['total_rows'] = $total_records;
             $config['uri_segment'] = 3;
             if($table_name == 'roster'){
@@ -1070,7 +1070,7 @@ foreach($branchempResult as $branchemp) {
                 <span>=> Select Employee Portal</span><br></br>
                  <p><span><b>Login Details  </b></span></p>
                   <p><span>Username : '.$footscray_user->email.'</span></p>
-                   <p><span>Password: <a href="'.base_url('HR/index.php/auth/forgot_password').'"> Reset your password here</a> </span></p>
+                   <p><span>Password: <a href="'.base_url('index.php/auth/forgot_password').'"> Reset your password here</a> </span></p>
                    
                    <p>Please contact your manager if you have any queries.</p>
                 <span>Kind Regards,</span><br></br>
@@ -1220,7 +1220,7 @@ foreach($branchempResult as $branchemp) {
    <br><br>
       <span>To set up your account please complete your onboarding by clicking below button: </span><br><br>
       </br>
-      <a href="'.base_url('HR/index.php/admin/onboarding_process/').$emp_id.'" style="text-decoration:none;cursor:pointer;"><button style="cursor:pointer;display: block;width: 250px;height: 45px;background: #4caf50;padding: 4px;text-align: center;border-radius: 5px;color: #fff;font-weight: bold;line-height: 25px;border: 0;font-size: 18px;">Complete Onboarding</button></a><br></br>
+      <a href="'.base_url('index.php/admin/onboarding_process/').$emp_id.'" style="text-decoration:none;cursor:pointer;"><button style="cursor:pointer;display: block;width: 250px;height: 45px;background: #4caf50;padding: 4px;text-align: center;border-radius: 5px;color: #fff;font-weight: bold;line-height: 25px;border: 0;font-size: 18px;">Complete Onboarding</button></a><br></br>
        
         <p>Please contact your manager if you have any queries.</p>
         <span>Kind Regards,</span><br></br>
@@ -1498,7 +1498,7 @@ foreach($branchempResult as $branchemp) {
                     <p>Hi HR team,</p>
                     <p> Onboarding of  '.$empname.' ('.$location.') has been completed. Please ensure the documents uploaded are correct.</p>
                     
-                    <p><a href="'.base_url('HR/index.php/auth/homepage').'">Click here to login your portal</a></p>
+                    <p><a href="'.base_url('index.php/auth/homepage').'">Click here to login your portal</a></p>
                       <p>Kind Regards,<br></br>
                       Cafeadmin</p>
                 

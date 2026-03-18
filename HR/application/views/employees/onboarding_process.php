@@ -2,27 +2,27 @@
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>HRM - ONBOARDING</title>
-  <link rel="shortcut icon" href="<?php echo base_url('HR/images/favicon.png'); ?>">
+  <link rel="shortcut icon" href="<?php echo base_url('images/favicon.png'); ?>">
   <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
       <!--header menu design -->
-   <link rel="stylesheet" href="<?php echo base_url('HR/assets/menu_design/css/bootstrap.min.css'); ?>">
+   <link rel="stylesheet" href="<?php echo base_url('assets/menu_design/css/bootstrap.min.css'); ?>">
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?php echo base_url('HR/assets/menu_design/fonts/icomoon/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/menu_design/fonts/icomoon/style.css'); ?>">
 
-    <link rel="stylesheet" href="<?php echo base_url('HR/assets/menu_design/css/owl.carousel.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/menu_design/css/owl.carousel.min.css'); ?>">
  <!-- Style -->
-    <link rel="stylesheet" href="<?php echo base_url('HR/assets/menu_design/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/menu_design/css/style.css'); ?>">
     
     <!--end menu design -->   
  
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/jquery.dataTables.css'); ?>">
-  <link rel="stylesheet" href="<?php echo base_url('HR/assets/js/jquery-ui.css'); ?>">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/datepicker.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/jquery.dataTables.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/js/jquery-ui.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/datepicker.css'); ?>">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"> 
  
     
@@ -30,36 +30,36 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/font-awesome.min.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/font-awesome.min.css'); ?>">
 <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/animate.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/animate.css'); ?>">
 <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/select2.min.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/select2.min.css'); ?>">
 <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/perfect-scrollbar.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/perfect-scrollbar.css'); ?>">
 <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/util.css'); ?>">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/main.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/main.css'); ?>">
   
    <!-- script file for fingerprint-->
-  <script src="<?php echo base_url('HR/assets/js/scripts/CloudABIS-ScanR.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/js/scripts/CloudABIS-ScanR.js'); ?>"></script>
   <!--<script src="assets/js/scripts/CloudABIS-Helper.js"></script>-->
     
     
   <!--====-->
-    <script src="<?php echo base_url('HR/assets/js/jquery-1.9.1.min.js'); ?>"></script>
-    <script src="<?php echo base_url('HR/assets/js/bootstrap-datepicker.js'); ?>"></script>
-    <script src="<?php echo base_url('HR/assets/js/jquery.validation.js'); ?>" type="text/javascript"></script>
-    <script type="text/javascript" src="<?php echo base_url('HR/assets/js/bootstrap.min.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('HR/assets/js/jquery.dataTables.min.js'); ?>"></script>
-  <script src="<?php echo base_url('HR/assets/js/jquery-ui.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('HR/assets/js/handleCounter.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery-1.9.1.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/bootstrap-datepicker.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery.validation.js'); ?>" type="text/javascript"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/js/jquery-ui.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/handleCounter.js'); ?>"></script>
   
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/dropzone.css'); ?>">
-  <script type="text/javascript" src="<?php echo base_url('HR/assets/js/dropzone.js'); ?>"></script>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/dropzone.css'); ?>">
+  <script type="text/javascript" src="<?php echo base_url('assets/js/dropzone.js'); ?>"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/app.css'); ?>">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('HR/assets/css/onboarding.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/app.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/onboarding.css'); ?>">
   
   
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
@@ -73,12 +73,12 @@
   
   <!--<script src="vendor/jquery/jquery-3.2.1.min.js"></script>-->
 <!--===============================================================================================-->
-  <script src="<?php echo base_url('HR/assets/js/popper.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/js/popper.min.js'); ?>"></script>
 
 <!--===============================================================================================-->
-  <script src="<?php echo base_url('HR/assets/js/select2.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/js/select2.min.js'); ?>"></script>
 <!--===============================================================================================-->
-  <script src="<?php echo base_url('HR/assets/js/main.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/js/main.js'); ?>"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>

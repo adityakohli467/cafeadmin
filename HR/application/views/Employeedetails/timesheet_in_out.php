@@ -529,7 +529,7 @@
       var rosterID_emp= $("#rosterID_emp").val();
       var type_empclick= $("#type_empclick").val();
       var outletname_emp= $("#outletname_emp").val();
-       console.log("e==t  -> ".type_empclick);
+       console.log("e==t  -> " + type_empclick);
       
      var emp_pin= $("#employee_pin_entered").val();
       $.ajax({
@@ -562,7 +562,10 @@
           }); 
 	        }
 
-			}
+			},
+		error:function(){
+		    swal({ text: "Network error. PIN verification failed. Please check your connection and try again.", icon: "error" });
+		}
 	});
   }
   
@@ -641,29 +644,12 @@
   function save_break_record(break_type,roster_id,emp_id){
        
      
-      var break_in_time = $("#break_in_time").val(); 
-     
-      if(break_in_time){
-       var break_time = getTimeStamp_in_time();    
-      }else{
-          var break_time = getTimeStamp_in_time(); 
-      }
-   
+      var break_time = getTimeStamp_in_time();
    
       var roster_group_id = $("#roster_list").val();
      
-    //   if(break_type == 'break_out_time'){
-         
-    //      $class_to_enable = $("#breaktime_class").val();
-    //      console.log($class_to_enable);
-    //      $("."+$class_to_enable).html(break_time); 
-    //       $("."+$class_to_enable).removeAttr('data-toggle');
-         
-    //   }else{
-    //         $("."+$class_to_enable).html(break_time);
-    //         $("."+$class_to_enable).removeAttr('data-toggle');
-    //   }
-      var $el_to_update = $("."+ $class_to_enable);
+      var current_class = $("#current_in_time").val();
+      var $el_to_update = $("."+ current_class);
       $.ajax({
 		url:"<?php echo base_url();?>index.php/Employeedetails/save_break_record",
 		method:"POST",
@@ -757,6 +743,7 @@ $('#employee_search').on('keyup', function(){
     
     window.onload = function() {
         reloadAfterTenHrs();
+        startSessionCheck();
     };
     
     function reloadAfterTenHrs() {
@@ -774,6 +761,41 @@ function RefreshLocalStorge(){
    setTimeout(function(){
     location.reload();   
    },2000)
+}
+
+var sessionExpired = false;
+function startSessionCheck(){
+    setInterval(function(){
+        if(sessionExpired) return;
+        $.ajax({
+            url: "<?php echo base_url();?>index.php/Employeedetails/check_session_alive",
+            method: "POST",
+            timeout: 5000,
+            success: function(data){
+                if(data.trim() === 'expired'){
+                    sessionExpired = true;
+                    showSessionExpiredOverlay();
+                }
+            }
+        });
+    }, 30000);
+}
+
+function showSessionExpiredOverlay(){
+    // Disable all clickable elements
+    $('.parent_row td').off('click').removeAttr('onclick').removeAttr('data-toggle').removeAttr('data-target');
+    $('.btn').prop('disabled', true);
+    // Close any open modals
+    $('.modal').modal('hide');
+    // Show full-screen overlay
+    $('body').append(
+        '<div id="session-expired-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);z-index:99999;display:flex;align-items:center;justify-content:center;">' +
+        '<div style="background:#fff;border-radius:12px;padding:40px 50px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.3);">' +
+        '<h3 style="color:#dc3545;margin-bottom:15px;">Session Expired</h3>' +
+        '<p style="color:#555;font-size:16px;margin-bottom:25px;">You have been logged out from another tab.<br>Time recording is disabled until you log in again.</p>' +
+        '<button onclick="window.location.href=\'' + $("#logoutLink").data("href") + '\'" class="btn btn-success" style="padding:12px 30px;font-size:16px;border-radius:8px;">Log In Again</button>' +
+        '</div></div>'
+    );
 }
 </script>
 

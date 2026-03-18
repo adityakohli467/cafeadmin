@@ -17,7 +17,7 @@
 				
 		</div>
 		<div class="col-md-3">
-		    <a href="<?php echo base_url('HR/index.php/admin/resumes'); ?>">
+		    <a href="<?php echo base_url('index.php/admin/resumes'); ?>">
 			<button type="button" class="btn btn-success btn-ph">Back</button></a>
 		</div>
 	
