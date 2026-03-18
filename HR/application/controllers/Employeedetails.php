@@ -3346,7 +3346,7 @@ public function fetch_employee_for_timsheet(){
 			$this->load->view('general/header_general',$hdata);
 			if($branch_id == 57 ){
 			  
-			    	$this->load->view('Employeedetails/timesheet_in_out_test',$data);
+			    	$this->load->view('Employeedetails/timesheet_in_out',$data);
 			}else{
 			  	$this->load->view('Employeedetails/timesheet_in_out',$data);  
 			}
