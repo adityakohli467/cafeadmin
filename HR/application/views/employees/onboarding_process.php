@@ -1,4 +1,4 @@
-<html>
+﻿<html>
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>HRM - ONBOARDING</title>
@@ -83,9 +83,7 @@
 </head>
 <body>
     
-    <div id='loader' style='display: none;'>
-  <img src="<?php echo base_url() ?>images/ajax-loader.gif" width='32px' height='32px'>
-</div>
+    <div class="overlayplaceorder" id='overlayplaceorder'></div>
 	<style>
     .tab_drawer_heading {
         opacity: 0.2; 
@@ -142,7 +140,6 @@
       
 	</div>
 	
-	<div class="loader" style="display:none"></div>
 <div class="container-fluid main-container">
 	
 		<?php if(null !==$this->session->userdata('error_msg')) { ?>  
@@ -734,7 +731,7 @@
                          
                           <div class="panel-body">
                                <h2>Tax Form</h2>
-                               <p style="color:#28a745;font-size: 15px;font-weight: 800">Please upload the scanned copy of the government Tax Form… this upload form is mandatory.</p>
+                               <p style="color:#28a745;font-size: 15px;font-weight: 800">Please upload the scanned copy of the government Tax Formâ€¦ this upload form is mandatory.</p>
                                	<a href="<?php echo base_url();?>assets/terms_docs/TFN_declaration_form_N3092.pdf" download="taxFile.pdf"><button class="btn btn-warning">Download Template</button></a>
         
     
@@ -1040,12 +1037,12 @@
 						                  <!--          <span>If you have nominated your own fund in Item 3 or 4, check you have attached the required documentation and then tick the box below.</span>-->
                         <!--						</div>-->
                         <!--						<div class="form-group col-md-6" >-->
-                        <!--							<label for="pdf_date_emp_choice" class=" control-label">Date employee’s choice is received</label>-->
+                        <!--							<label for="pdf_date_emp_choice" class=" control-label">Date employeeâ€™s choice is received</label>-->
                         <!--							<input type="date" id="pdf_date_emp_choice" class="form-control required" name="pdf_date_emp_choice" value="<?php echo $row->pdf_date_emp_choice; ?>" autocomplete="off" >-->
                         <!--						    <span class="fieldError" id="pdf_date_emp_choice_error"></span>-->
                         <!--						</div>-->
                         <!--						<div class="form-group col-md-6" >-->
-                        <!--							<label for="pdf_date_act" class=" control-label">Date you act on your employee’s choice</label>-->
+                        <!--							<label for="pdf_date_act" class=" control-label">Date you act on your employeeâ€™s choice</label>-->
                         <!--							<input type="date" id="pdf_date_act" class="form-control required" name="pdf_date_act" value="<?php echo $row->pdf_date_act; ?>" autocomplete="off" >-->
                         <!--						    <span class="fieldError" id="pdf_date_act_error"></span>-->
                         <!--						</div>-->
@@ -1378,14 +1375,14 @@ $('#save_continue_personal').click(function(e){
     
     
     if(err == '0'){
-        $("#loader").show();
+        $("#overlayplaceorder").show();
         var data1 = $('#personalDetailsForm').serialize();
         $.ajax({
             type: "POST",
         	enctype: 'multipart/form-data',
         	url: "<?php echo base_url(); ?>index.php/admin/submit_onboarding_process",
         	data: data1,
-        	success: function(data){  changetab('save_continue_personal'); $("#loader").hide(); }
+        	success: function(data){  changetab('save_continue_personal'); $("#overlayplaceorder").hide(); }
         }); e.preventDefault();
     }
     else{ alert('Please fill all the mandatory fields'); return false; }
@@ -1409,14 +1406,14 @@ $('#save_continue_personal').click(function(e){
     
     
     if(err == '0'){
-        $("#loader").show();
+        $("#overlayplaceorder").show();
         var data1 = $('#emergencyDetailsForm').serialize();
         $.ajax({
             type: "POST",
         	enctype: 'multipart/form-data',
         	url: "<?php echo base_url(); ?>index.php/admin/submit_onboarding_process",
         	data: data1,
-        	success: function(data){ console.log(data); changetab('save_continue_emergency'); $("#loader").hide();}
+        	success: function(data){ console.log(data); changetab('save_continue_emergency'); $("#overlayplaceorder").hide();}
         }); e.preventDefault();
     }
     else{ alert('Please fill all the mandatory fields'); return false; }
@@ -1439,14 +1436,14 @@ $('#save_continue_personal').click(function(e){
         });
     
     if(err == '0'){
-        $("#loader").show();
+        $("#overlayplaceorder").show();
         var data1 = $('#bankDetailsForm').serialize();
         $.ajax({
             type: "POST",
         	enctype: 'multipart/form-data',
         	url: "<?php echo base_url(); ?>index.php/admin/submit_onboarding_process",
         	data: data1,
-        	success: function(data){ changetab('save_continue_bank'); $("#loader").hide();}
+        	success: function(data){ changetab('save_continue_bank'); $("#overlayplaceorder").hide();}
         }); e.preventDefault();
     }
     else{ alert('Please fill all the mandatory fields'); return false; }
@@ -1502,14 +1499,14 @@ $('#save_continue_personal').click(function(e){
         // return false;
     // err=1; 
     if(err == '0'){
-        $("#loader").show();
+        $("#overlayplaceorder").show();
         var data1 = $('#taxDetailsForm').serialize();
         $.ajax({
             type: "POST",
         	enctype: 'multipart/form-data',
         	url: "<?php echo base_url(); ?>index.php/admin/submit_onboarding_process",
         	data: data1,
-        	success: function(data){ changetab('save_continue_tax'); $("#loader").hide();}
+        	success: function(data){ changetab('save_continue_tax'); $("#overlayplaceorder").hide();}
         }); e.preventDefault();
     }
     else{ alert('Please fill all the mandatory fields'); return false; }
@@ -1526,7 +1523,7 @@ $('#save_continue_personal').click(function(e){
         $('#police_error').html('Please upload police clearance certificate.');
     }
     if(err == '0'){
-        $("#loader").show();
+        $("#overlayplaceorder").show();
        
         
         $.ajax({
@@ -1538,9 +1535,9 @@ $('#save_continue_personal').click(function(e){
             processData:false,
         	success: function(data){ console.log(data); 
         	if(data == 'success'){
-        	    changetab('save_continue_police');  $("#loader").hide();
+        	    changetab('save_continue_police');  $("#overlayplaceorder").hide();
         	}
-        	else{ alert('File not uploaded. please try again...'); $("#loader").hide(); return false; }
+        	else{ alert('File not uploaded. please try again...'); $("#overlayplaceorder").hide(); return false; }
         	    
         	}
         // 		success: function(data){ console.log(data); changetab('save_continue_police'); }
@@ -1560,7 +1557,7 @@ $('#save_continue_personal').click(function(e){
         $('#taxFile_error').html('Please upload tax form.');
     }
     if(err == '0'){
-        $("#loader").show();
+        $("#overlayplaceorder").show();
        
         
         $.ajax({
@@ -1571,9 +1568,9 @@ $('#save_continue_personal').click(function(e){
             processData:false,
         	success: function(data){ console.log(data); 
         	if(data == 'success'){
-        	    changetab('save_continue_taxform');  $("#loader").hide();
+        	    changetab('save_continue_taxform');  $("#overlayplaceorder").hide();
         	}
-        	else{ alert('File not uploaded. please try again...'); $("#loader").hide(); return false; }
+        	else{ alert('File not uploaded. please try again...'); $("#overlayplaceorder").hide(); return false; }
         	    
         	}
         // 		success: function(data){ console.log(data); changetab('save_continue_police'); }
@@ -1605,14 +1602,14 @@ $('#save_continue_personal').click(function(e){
         });
     
     if(err == '0'){
-        $("#loader").show();
+        $("#overlayplaceorder").show();
         var data1 = $('#annuationDetailsForm').serialize();
         $.ajax({
             type: "POST",
         	enctype: 'multipart/form-data',
         	url: "<?php echo base_url(); ?>index.php/admin/submit_onboarding_process",
         	data: data1,
-        	success: function(data){ changetab('save_continue_annuation'); $("#loader").hide();}
+        	success: function(data){ changetab('save_continue_annuation'); $("#overlayplaceorder").hide();}
         }); e.preventDefault();
     }
     else{
@@ -1632,7 +1629,7 @@ $('#save_continue_personal').click(function(e){
         $('#resume_error').html('Please upload resume.');
     }
     if(err == '0'){
-        $("#loader").show();
+        $("#overlayplaceorder").show();
          
         $.ajax({
             type: "POST",
@@ -1643,9 +1640,9 @@ $('#save_continue_personal').click(function(e){
             processData:false,
         	success: function(data){ console.log(data); 
         	if(data == 'success'){
-        	    changetab('save_continue_resume');  $("#loader").hide();
+        	    changetab('save_continue_resume');  $("#overlayplaceorder").hide();
         	}
-        	else{ alert('File not uploaded. please try again...'); $("#loader").hide(); return false; }
+        	else{ alert('File not uploaded. please try again...'); $("#overlayplaceorder").hide(); return false; }
         	    
         	}
         // 		success: function(data){ console.log(data); changetab('save_continue_police'); }
@@ -1696,14 +1693,14 @@ $('#save_continue_personal').click(function(e){
             }
         }
 
-        // If any error → stop submission
+        // If any error â†’ stop submission
         if (err == 1) {
             alert('Please fill all the mandatory fields');
             return false;
         }
 
-        // All good → submit via AJAX
-        $("#loader").show();
+        // All good â†’ submit via AJAX
+        $("#overlayplaceorder").show();
 
         var data1 = new FormData(document.getElementById("qualificationsTabForm"));
 
@@ -1716,7 +1713,7 @@ $('#save_continue_personal').click(function(e){
             processData: false,
             success: function (data) {
                 console.log(data);
-                $("#loader").hide();
+                $("#overlayplaceorder").hide();
 
                 if (data.trim() == 'success') {
                     changetab('save_continue_qualifications');
@@ -1725,7 +1722,7 @@ $('#save_continue_personal').click(function(e){
                 }
             },
             error: function () {
-                $("#loader").hide();
+                $("#overlayplaceorder").hide();
                 alert('An error occurred. Please try again.');
             }
         });
@@ -1752,16 +1749,16 @@ $('#save_continue_personal').click(function(e){
         	url: "<?php echo base_url(); ?>index.php/admin/submit_onboarding_process",
         	data: data1,
         	beforeSend: function(){
-                $("#loader").show();
+                $("#overlayplaceorder").show();
                  },
                 complete:function(data){
-                $("#loader").hide();
+                $("#overlayplaceorder").hide();
                  },
         	success: function(data){ console.log(data); 
         	    if(data=='success'){
 		        $msg = "Thank you for submitting your onboarding application. You will receive an email shortly with the HR employee portal login process. Please contact your manager if any issues.";
 		        $icon = "success";
-		        $("#loader").hide();
+		        $("#overlayplaceorder").hide();
 		        }
 		        else{
 		         $msg = "Form not submitted.";
