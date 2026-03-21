@@ -105,7 +105,7 @@ class Admin extends CI_Controller {
         }
     }
 
-    public function sendTimesheetApprovalMail($emp_detail = array(), $msg, $from_email = '') {
+    public function sendTimesheetApprovalMail($emp_detail, $msg, $from_email = '') {
         if ($from_email == '') {
             $from_email = 'admin@cafeadmin.com.au';
         }
@@ -557,7 +557,7 @@ foreach($branchempResult as $branchemp) {
    // enndddddd   of method
     }
     
-    public function get_content_and_send_mail($emp_detail=array(),$body){
+    public function get_content_and_send_mail($emp_detail,$body){
        
 		       $email = $emp_detail['send_to'];
 		       $subject = $emp_detail['subject'];
@@ -4297,7 +4297,7 @@ if(!empty($roster)){
      echo "success"; exit;
 	 	}
 	
-	function MailSendRosterUpdate($roster=array(),$msg,$subject){
+	function MailSendRosterUpdate($roster,$msg,$subject){
 	 
 
 	    if(!empty($roster)){
