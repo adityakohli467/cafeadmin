@@ -110,12 +110,12 @@
                     foreach($weekdays as $weekday){
                     $index_name = $weekday.'_budget';
                     
-                    if(${$weekday.'_budget'} !='') {    $week_budg = number_format(${$weekday.'_budget'}, 2, '.', ''); $totalSales += $week_budg;  $week_budg = "$".$week_budg; }else{  $week_budg = ''; } 
-                    if(${$weekday.'_cost'} !='') {    $week_cost = number_format(${$weekday.'_cost'}, 2, '.', ''); $totalCost += $week_cost; $week_cost = "$".$week_cost; }else{  $week_cost = ''; } 
-                    if(${$weekday.'_variance'} !='') {    $week_variance = number_format($week_variance = ${$weekday.'_variance'}, 2, '.', ''); $week_variance = "$".$week_variance; }else{  $week_variance = ''; } 
-                    if(${$weekday.'_percentage'} !='') { $week_percentage = number_format($week_percentage = ${$weekday.'_percentage'}, 2, '.', ''); $week_percentage = $week_percentage."%"; }else{  $week_percentage = ''; }
-                    if(${$weekday.'_hrs_allocated'} !='') { $week_hrs_allocated = ${$weekday.'_hrs_allocated'};  }else{  $week_hrs_allocated = ''; }
-                    if(${$weekday.'_average_hr_rate'} !='') { $week_avg_hr_rate = ${$weekday.'_average_hr_rate'} / ${$weekday.'no_of_employee'};  
+                    if(isset(${$weekday.'_budget'}) && ${$weekday.'_budget'} !== '' && ${$weekday.'_budget'} != 0) {    $week_budg = number_format(${$weekday.'_budget'}, 2, '.', ''); $totalSales += $week_budg;  $week_budg = "$".$week_budg; }else{  $week_budg = ''; } 
+                    if(isset(${$weekday.'_cost'}) && ${$weekday.'_cost'} !== '' && ${$weekday.'_cost'} != 0) {    $week_cost = number_format(${$weekday.'_cost'}, 2, '.', ''); $totalCost += $week_cost; $week_cost = "$".$week_cost; }else{  $week_cost = ''; } 
+                    if(isset(${$weekday.'_variance'}) && ${$weekday.'_variance'} !== '' && ${$weekday.'_variance'} != 0) {    $week_variance = number_format($week_variance = ${$weekday.'_variance'}, 2, '.', ''); $week_variance = "$".$week_variance; }else{  $week_variance = ''; } 
+                    if(isset(${$weekday.'_percentage'}) && ${$weekday.'_percentage'} !== '' && ${$weekday.'_percentage'} != 0) { $week_percentage = number_format($week_percentage = ${$weekday.'_percentage'}, 2, '.', ''); $week_percentage = $week_percentage."%"; }else{  $week_percentage = ''; }
+                    if(isset(${$weekday.'_hrs_allocated'}) && ${$weekday.'_hrs_allocated'} !== '') { $week_hrs_allocated = ${$weekday.'_hrs_allocated'};  }else{  $week_hrs_allocated = ''; }
+                    if(isset(${$weekday.'_average_hr_rate'}) && ${$weekday.'_average_hr_rate'} != 0 && isset(${$weekday.'no_of_employee'}) && ${$weekday.'no_of_employee'} > 0) { $week_avg_hr_rate = ${$weekday.'_average_hr_rate'} / ${$weekday.'no_of_employee'};  
                     $extra_week_avg_hr_rate = ($week_avg_hr_rate*9.5)/100; $new_avg_hrs = $week_avg_hr_rate + $extra_week_avg_hr_rate;
                     $week_avg_hr_rate = number_format($week_avg_hr_rate, 2, '.', ''); $week_avg_hr_rate = "$".$week_avg_hr_rate; }else{  $week_avg_hr_rate = ''; } 
 
@@ -201,11 +201,13 @@ $outletweek_days = array('Monday','Tuesday','Wednesday','Thursday','Friday','Sat
       <?php $break_nameofday = $week_days[$i].'_break_time'; ?>
        <?php $layout_nameofday = $outletweek_days[$i].'_layout'; ?>
     <?php 
-$time1 = strtotime($row->$start_nameofday);
-$time2 = strtotime($row->$end_nameofday);
-$break_hrs = $row->$break_nameofday;
+$raw_start = $row->$start_nameofday ?? '';
+$raw_end = $row->$end_nameofday ?? '';
+$time1 = ($raw_start !== '' && $raw_start !== '0' && $raw_start !== 0) ? strtotime($raw_start) : false;
+$time2 = ($raw_end !== '' && $raw_end !== '0' && $raw_end !== 0) ? strtotime($raw_end) : false;
+$break_hrs = $row->$break_nameofday ?? 0;
 
-if ($time2 != '' && $time1 != '') {
+if ($time1 !== false && $time2 !== false) {
     // Check if the end time is less than the start time (crosses midnight)
     if ($time2 < $time1) {
         // Add one day to the end time
@@ -235,9 +237,9 @@ if ($time2 != '' && $time1 != '') {
 }
 ?>
 
-      <td class="child start_height"><?php if($row->$start_nameofday == 0 && $row->$end_nameofday ==0) { echo '   ';  } else {   echo date ('H:i A',strtotime($row->$start_nameofday)); } ?></td>
-      <td class="child start_height"><?php if($row->$start_nameofday == 0 && $row->$end_nameofday ==0) {  echo '   '; } else {   echo date ('H:i A',strtotime($row->$end_nameofday)); }?></td>
-      <td class="child start_height"><?php if($row->$break_nameofday > 0) { echo $row->$break_nameofday;  } else {  echo '   '; }?></td>
+      <td class="child start_height"><?php if(empty($raw_start) && empty($raw_end)) { echo '   ';  } else {   echo date ('H:i A',strtotime($raw_start)); } ?></td>
+      <td class="child start_height"><?php if(empty($raw_start) && empty($raw_end)) {  echo '   '; } else {   echo date ('H:i A',strtotime($raw_end)); }?></td>
+      <td class="child start_height"><?php if(($row->$break_nameofday ?? 0) > 0) { echo $row->$break_nameofday;  } else {  echo '   '; }?></td>
       
       <td class="child"><?php echo $difference; ?></td>
       <!--<td class="child"><b><?php //echo "$ ".$total_pay; ?></b></td>-->

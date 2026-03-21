@@ -4472,10 +4472,10 @@ if(!empty($roster)){
 
         // Percentage calculations
         if (isset($data[$weekdaysnew[$i] . "_percentage"])) {
-            $ad_perc = ($total_pay / $branches[0]->$index_name) * 100;
+            $ad_perc = ($branches[0]->$index_name > 0) ? ($total_pay / $branches[0]->$index_name) * 100 : 0;
             $data[$weekdaysnew[$i] . "_percentage"] += $ad_perc;
         } else {
-            $data[$weekdaysnew[$i] . "_percentage"] = ($total_pay / $branches[0]->$index_name) * 100;
+            $data[$weekdaysnew[$i] . "_percentage"] = ($branches[0]->$index_name > 0) ? ($total_pay / $branches[0]->$index_name) * 100 : 0;
         }
 
         // Hours allocated calculations
