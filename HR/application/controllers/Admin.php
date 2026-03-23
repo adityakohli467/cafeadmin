@@ -3419,30 +3419,20 @@ Please login to the HR portal to view the update. Responses to the request can b
             redirect('auth/login');
         }else {
             
-			$roster_id = $_POST['roster_id'];
+			$roster_id = isset($_POST['roster_id']) ? $_POST['roster_id'] : array();
 			$roster_group_id = $_POST['roster_group_id'];
-// 			echo "<pre>";print_r($_POST);exit;
 			$start_date = date('Y-m-d', strtotime($_POST['start_date']));
 			$end_date = date('Y-m-d', strtotime($_POST['end_date']));
 			$roster_name = $_POST['roster_name'];
 			$month = isset($_POST['month']) ? $_POST['month'] : '';
 			$emp_ids =  $_POST['emp_id'];
-			$prev_emp =  $_POST['prev_emp'];
+			$prev_emp =  isset($_POST['prev_emp']) ? $_POST['prev_emp'] : array();
 			
 			
 // 			echo "<pre>";print_r($_POST);exit;
-		// to add or remove (UPDATE) newly addded employee while updating the roster to timesheet also ========================================================== 22-06-2021
-			
+		// Fetch existing employees and timesheet ID for this roster group (used for add/swap detection)
 		$existing_employeeOfthisRoster = $this->admin_model->fetch_emp_idofthisroster($roster_group_id);
-       
-		$newlyaddedEmployees = array_diff($emp_ids,array_column($existing_employeeOfthisRoster,'emp_id'));
-		
 		 $timeSheetID = $this->admin_model->get_timesheet_by_roster_group_id($roster_group_id);
-//       echo "newlyaddedEmployees<pre>";print_r($newlyaddedEmployees);
-	
-		 
-
-		// end =========================================================================================================================================
 			
 		
 			
@@ -3697,57 +3687,42 @@ Please login to the HR portal to view the update. Responses to the request can b
 		
             
 			 //   echo "<pre>";print_r($roster_id); exit;
-       if (isset($roster_id[$count]) && (in_array($roster_id[$count], $roster_id) && $roster_id[$count] != '')){
-    //             echo "oldrecord";
-			 //   echo "<pre>";print_r($data);
+       // Determine if this is an existing roster row (has a valid roster_id) or a newly added row
+       $is_existing_row = (isset($roster_id[$count]) && $roster_id[$count] !== '' && $roster_id[$count] !== null);
+       
+       if ($is_existing_row){
 			    $roster = $this->admin_model->update_complete_roster($data,$roster_id[$count]);
 			 
 			
 			$timesheetID = (isset($timeSheetID[0]->timesheet_id) ? $timeSheetID[0]->timesheet_id : '');
 			   
-			        if($emp_id != $prev_emp[$count]){
+			        // Only check for employee swap if prev_emp exists for this index
+			        if(isset($prev_emp[$count]) && $prev_emp[$count] != '' && $emp_id != $prev_emp[$count]){
                         $this->admin_model->update_employee_timesheet_emps($prev_emp[$count],$emp_id,$timesheetID);
 			        }
 			   
 			}else{
-			 //   echo "newrecord";
-			    		
+			    // New employee row added via "+" button — insert new roster and add to timesheet
 			    $roster = $this->admin_model->insert_roster($data);
+			    $new_roster_id = $roster; // insert_roster returns the new roster_id
 
-		
-		
-		
-		//  To add new added roster and employee to timehsheet while updating  roster	  ======================================  
-			
-// 		foreach($newlyaddedEmployees as $newlyaddedEmployeeID){
-		 for($i=0;$i<7;$i++){
+		//  To add new added roster and employee to timehsheet while updating roster
+		    $timesheetID_val = (isset($timeSheetID[0]->timesheet_id) ? $timeSheetID[0]->timesheet_id : '');
+		    
+		    if($timesheetID_val != ''){
+			 for($i=0;$i<7;$i++){
               $all_seven_days_of_roster = date("Y-m-d", strtotime($start_date . ' + ' . $i . 'day')); 
             $datafortimesheet = array(
-          'employee_id' =>$newlyaddedEmployees[$count],
+          'employee_id' => $emp_id,
           'roster_group_id' => $roster_group_id,
-          'timesheet_id' => (isset($timeSheetID[0]->timesheet_id) ? $timeSheetID[0]->timesheet_id : ''),
-          'roster_id' => $roster,
+          'timesheet_id' => $timesheetID_val,
+          'roster_id' => $new_roster_id,
           'date'   => $all_seven_days_of_roster
             );
-        //   echo "fgdh<pre>";print_r($datafortimesheet);
-           
-// if($roster_group_id ==14464){
-// 	   	 echo $roster_group_id;
-// 		 echo "<pre>";
-// 		 print_r($datafortimesheet);
-		 
-// 	}
 
          $this->admin_model->submit_employee_timesheet($datafortimesheet);
-//           if($roster_group_id == 12388){
-//                 echo "<pre>";
-// print_r($datafortimesheet);
-// // exit;
-//             }
            }
-         
-// 		}
-			 
+		    }
 		// END =====================================================================================================================
 		}
 	

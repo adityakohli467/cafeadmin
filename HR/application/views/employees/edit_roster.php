@@ -252,6 +252,8 @@ $name = $week_days[$i].'_hours[]';
 	<script type="text/javascript"> 
 
     var codeBlock= '<div class="ct-row" style="display: initial;position: initial;">'+
+   '<input type="hidden" class="form-control roster_id" name="roster_id[]" value="">'+
+   '<input type="hidden" value="" name="prev_emp[]">'+
    '<div class="row" style="margin: 0 15px; padding-top:20px;clear: both;"><div class="form-group"><label for="email"><b>Role:</b></label><select onChange="test(this)" name="role" class="form-control roles_emp ct-emp-name"><option selected="selected" value="all">All roles</option>'+
 	'<?php if(isset($roles) && !empty($roles)) { foreach($roles as $role) { ?><option value="<?php echo $role->role_id; ?>"><?php echo $role->role_name; ?></option>	<?php }} ?></select> </div><div class="form-group"><label for="email">Employee:</label><select id="emp_slt" name="emp_id[]" class="form-control select1 ct-emp-name" required>'+
    '<option value="">Select</option><?php foreach($employees as $emp){ ?><option value="<?php echo $emp->emp_id; ?>"><?php echo preg_replace('#[^\w()/.%\-&]#',"",$emp->first_name).' '. preg_replace('#[^\w()/.%\-&]#',"",$emp->last_name).' ('.str_replace('_', ' ', $emp->employee_type).'  )';; ?></option><?php } ?></select>'+
@@ -418,9 +420,12 @@ $name = $week_days[$i].'_hours[]';
         }else{
              $(".remove_field_button").css("display","block");
         }
-         $(this).parent().parents('.ct-row').remove();
+         var rowToRemove = $(this).parent().parents('.ct-row');
          
-         
+         // Only call delete API if this row has a saved roster_id (not a newly added row)
+         if(roster_id && roster_id !== ''){
+          // Disable UPDATE button while delete is in progress
+          $("#submit_roster_link").css("pointer-events","none").css("opacity","0.5");
           $.ajax({
 		url:"<?php echo base_url();?>index.php/admin/delete_single_roster",
 		method:"POST",
@@ -430,12 +435,14 @@ $name = $week_days[$i].'_hours[]';
 		    },
 	    success:function(resp){
 	    console.log("Deleted");
-	}
-       
-        
+	    },
+	    complete:function(){
+	    $("#submit_roster_link").css("pointer-events","auto").css("opacity","1");
+	    }
         });
-        
-        
+         }
+         
+         rowToRemove.remove();
         
        }
 

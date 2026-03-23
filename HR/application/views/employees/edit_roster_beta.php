@@ -393,9 +393,15 @@
         
     var thisRow = $( this ).closest( '.employeeRole' );
     
-    $( thisRow ).clone().insertAfter( thisRow ).find('.form-control').val( '' );
-    var thisRowAddbtn = $( thisRow ).next('.employeeRole').find( '.add_field_wrap' );
-    if (!$(thisRow).has(".remove_field_button").length) {
+    var clonedRow = $( thisRow ).clone().insertAfter( thisRow );
+    clonedRow.find('.form-control').val( '' );
+    // Clear hidden fields that don't have .form-control class (prev_emp)
+    clonedRow.find('input[name="prev_emp[]"]').val('');
+    // Ensure roster_id is empty so server treats this as a new row
+    clonedRow.find('input[name="roster_id[]"]').val('');
+    
+    var thisRowAddbtn = clonedRow.find( '.add_field_wrap' );
+    if (!clonedRow.has(".remove_field_button").length) {
    $('<span><a href="#" class="remove_field_button">-</a></span>').insertAfter(thisRowAddbtn);
     } 
     
@@ -419,16 +425,12 @@
                
          var roster_id =  $(this).parents('.employeeRole').find('.roster_id').val();
          var roster_group_id = $(this).parent().parents('.ct-row').find('.roster_group_id').val();
-         var no_of_roster = $(".weekday_line_parent .ct-row").length
-        // if(no_of_roster < 3){
-        //   $(".remove_field_button").css("display","none");
-        // }else{
-        //      $(".remove_field_button").css("display","block");
-        // }
-        console.log('roster_id: '+roster_id);
-         $(this).closest('.employeeRole').remove();
+         var rowToRemove = $(this).closest('.employeeRole');
          
-         
+         // Only call delete API if this row has a saved roster_id (not a newly added row)
+         if(roster_id && roster_id !== ''){
+          // Disable UPDATE button while delete is in progress
+          $("#submit_roster_link").css("pointer-events","none").css("opacity","0.5");
           $.ajax({
 		url:"<?php echo base_url();?>index.php/admin/delete_single_roster",
 		method:"POST",
@@ -438,12 +440,14 @@
 		    },
 	    success:function(resp){
 	    console.log("Deleted");
-	}
-       
-        
+	    },
+	    complete:function(){
+	    $("#submit_roster_link").css("pointer-events","auto").css("opacity","1");
+	    }
         });
-        
-        
+         }
+         
+         rowToRemove.remove();
         
        }
 

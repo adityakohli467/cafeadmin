@@ -1132,6 +1132,8 @@ public function fetch_employee_notifications(){
 		$this->db->where('roster_group_id',$roster_group_id);
 		$this->db->where('status',1);
 			$this->db->where('timesheet_id !=',0);
+			$this->db->group_by('timesheet_id');
+			$this->db->limit(1);
 			$query = $this->db->get();
 			return $query->result();
   }
