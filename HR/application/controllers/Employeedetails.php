@@ -4003,8 +4003,16 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
     }
     
     $type =  $this->input->post('type');
+    
+    // Whitelist allowed type values to prevent column injection
+    if(!in_array($type, array('in_time', 'out_time'))){
+        echo 'error';
+        exit;
+    }
+    
     $roster_id =  $this->input->post('roster_id');
     $emp_id_outletname =  explode('_', $this->input->post('emp_id'));
+    $emp_id = intval($emp_id_outletname[0]);
     $roster_and_timesheet_id =  $this->input->post('roster_group_id');
     $roster_and_timesheet_id = explode('_', $roster_and_timesheet_id);
     $timesheet_id = $roster_and_timesheet_id[1];
@@ -4014,6 +4022,31 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
     if(!$this->admin_model->verify_roster_branch($roster_id, $branch_id)){
         echo 'error';
         exit;
+    }
+    
+    // Validation: check current state before allowing the operation
+    $existing = $this->admin_model->get_timesheet_entry($emp_id, $timesheet_id, $roster_id, date('Y-m-d'));
+    
+    if($type == 'in_time'){
+        // Cannot clock in if already clocked in
+        if(!empty($existing) && isset($existing->in_time) && $existing->in_time != '00:00:00'){
+            echo 'already_recorded';
+            exit;
+        }
+    }
+    
+    if($type == 'out_time'){
+        // Cannot clock out if already clocked out
+        if(!empty($existing) && isset($existing->out_time) && $existing->out_time != '00:00:00'){
+            echo 'already_recorded';
+            exit;
+        }
+        // Cannot clock out while on break (break_in recorded but no break_out)
+        if(!empty($existing) && isset($existing->break_in_time) && $existing->break_in_time != '00:00:00'
+           && (!isset($existing->break_out_time) || $existing->break_out_time == '00:00:00')){
+            echo 'on_break';
+            exit;
+        }
     }
     
     // compare and round up the time and searlize the day wise in out time's array as we are storing it in a single field in db
@@ -4040,7 +4073,7 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
         $data['outletname'] = $outletname;
       }
        
-        $result = $this->admin_model->update_employee_timesheet($data,$timesheet_id,$roster_id); 
+        $result = $this->admin_model->update_employee_timesheet($data,$timesheet_id,$roster_id,'',$emp_id); 
         echo $result ? 'saved' : 'error';
  }
     public function compare_time_logic($roster_id,$type,$in_time){
@@ -4175,10 +4208,17 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
        }
        
        $break_type =  $this->input->post('break_type');
+       
+       // Whitelist allowed break types to prevent column injection
+       if(!in_array($break_type, array('break_in_time', 'break_out_time'))){
+           echo 'error';
+           exit;
+       }
      
       $roster_and_timesheet_id =  $this->input->post('roster_group_id');
       $roster_and_timesheet_id = explode('_', $roster_and_timesheet_id);
       $roster_id =  $this->input->post('roster_id');
+      $emp_id = intval($this->input->post('emp_id'));
       
       // Verify roster belongs to logged-in user's branch
       $branch_id = $this->session->userdata('branch_id');
@@ -4190,13 +4230,32 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
       $roster_group_id = $roster_and_timesheet_id[0];
       $timesheet_id = $roster_and_timesheet_id[1];
        $date = date('Y-m-d');
+       
+      // Validation for break records: prevent duplicates
+      $existing = $this->admin_model->get_timesheet_entry($emp_id, $timesheet_id, $roster_id, $date);
+      
+      if($break_type == 'break_in_time'){
+          // Cannot record break_in if already recorded
+          if(!empty($existing) && isset($existing->break_in_time) && $existing->break_in_time != '00:00:00'){
+              echo 'already_recorded';
+              exit;
+          }
+      }
+      
+      if($break_type == 'break_out_time'){
+          // Cannot record break_out if already recorded
+          if(!empty($existing) && isset($existing->break_out_time) && $existing->break_out_time != '00:00:00'){
+              echo 'already_recorded';
+              exit;
+          }
+      }
+       
         $data = array(
-         
          $break_type =>$break_time,
          'date'=> $date,
         );
         
-        $result = $this->admin_model->update_employee_timesheet($data,$timesheet_id,$roster_id);
+        $result = $this->admin_model->update_employee_timesheet($data,$timesheet_id,$roster_id,'',$emp_id);
         echo $result ? 'saved' : 'error';
  }
  

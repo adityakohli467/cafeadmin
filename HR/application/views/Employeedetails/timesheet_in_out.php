@@ -495,7 +495,24 @@
     //   setInterval(function() {
     //               window.location.reload();
     //   }, 60000); 
+  var requestInProgress = false;
+
+  // Auto-reload at 1:00 AM daily so new timesheets (e.g. created Friday night) appear on Monday
+  (function scheduleAutoReload() {
+      var now = new Date();
+      var target = new Date(now);
+      target.setHours(1, 0, 0, 0);
+      if (target <= now) {
+          target.setDate(target.getDate() + 1);
+      }
+      var ms = target - now;
+      setTimeout(function() {
+          window.location.reload();
+      }, ms);
+  })();
+  
   function show_modal(modal_id,emp_id,obj,roster_id,outletname=''){
+      if(requestInProgress) return;
       
        $("."+modal_id).val(emp_id+'_'+outletname);
       $("#"+modal_id).show();
@@ -511,6 +528,8 @@
   }
   
   function show_pin_modal(type,emp_id,class_to_enable,rosterID,outletname){
+      if(requestInProgress) return;
+      
       $("#pin_emp_id").val(emp_id);
       $("#rosterID_emp").val(rosterID);
       $("#type_empclick").val(type);
@@ -525,6 +544,10 @@
   }
   
   function verify_pin(){
+     if(requestInProgress) return;
+     requestInProgress = true;
+     $("#pin_submit").prop('disabled', true);
+     
      var emp_id= $("#pin_emp_id").val();
       var rosterID_emp= $("#rosterID_emp").val();
       var type_empclick= $("#type_empclick").val();
@@ -552,10 +575,13 @@
         }
         
 	        }else if(data=='sessionexpired'){
+	            requestInProgress = false;
+	            $("#pin_submit").prop('disabled', false);
 	            window.location='<?php echo base_url('index.php/auth/login/timesheet'); ?>'
 	            
 	            }else{
-	            
+	            requestInProgress = false;
+	            $("#pin_submit").prop('disabled', false);
 	            swal({
           text: "Incorrect Pin, Please contact your adminstrator.",
           icon: "warning",
@@ -564,6 +590,8 @@
 
 			},
 		error:function(){
+		    requestInProgress = false;
+		    $("#pin_submit").prop('disabled', false);
 		    swal({ text: "Network error. PIN verification failed. Please check your connection and try again.", icon: "error" });
 		}
 	});
@@ -602,6 +630,8 @@
 		method:"POST",
 		data:{in_time:time,type:type,emp_id:emp_id,roster_group_id:roster_group_id,outletname:outletname,roster_id:roster_id},
 	    success:function(response){
+	        requestInProgress = false;
+	        $("#pin_submit").prop('disabled', false);
 	        if(response =='sessionexpired'){
 	            revertCellSwap();
 	            swal({ text: "Your session has expired. Please login again.", icon: "error" }).then(function(){ window.location.href = "<?php echo base_url();?>index.php/auth/homepage"; });
@@ -613,6 +643,12 @@
           icon: "warning",
            timer: 3300
           });
+	        }else if(response =='already_recorded'){
+	            revertCellSwap();
+	            swal({ text: "This time entry has already been recorded.", icon: "warning" });
+	        }else if(response =='on_break'){
+	            revertCellSwap();
+	            swal({ text: "You are currently on break. Please end your break before clocking out.", icon: "warning" });
 	        }else if(response =='saved'){
 	         $class_to_enable = $("#current_in_time").val();
 	         $("."+$class_to_enable).html('');
@@ -635,6 +671,8 @@
 	        }
 			},
 		error:function(){
+		    requestInProgress = false;
+		    $("#pin_submit").prop('disabled', false);
 		    revertCellSwap();
 		    swal({ text: "Network error. Time was NOT saved. Please check your connection and try again.", icon: "error" });
 		}
@@ -653,12 +691,17 @@
       $.ajax({
 		url:"<?php echo base_url();?>index.php/Employeedetails/save_break_record",
 		method:"POST",
-		data:{break_time:break_time,break_type:break_type,roster_group_id:roster_group_id,roster_id:roster_id},
+		data:{break_time:break_time,break_type:break_type,roster_group_id:roster_group_id,roster_id:roster_id,emp_id:emp_id},
 	    success:function(data){
+	        requestInProgress = false;
+	        $("#pin_submit").prop('disabled', false);
 	        if(data =='sessionexpired'){
 	            revertCellSwap();
 	            swal({ text: "Your session has expired. Please login again.", icon: "error" }).then(function(){ window.location.href = "<?php echo base_url();?>index.php/auth/homepage"; });
 	            return;
+	        }else if(data =='already_recorded'){
+	            revertCellSwap();
+	            swal({ text: "This break time has already been recorded.", icon: "warning" });
 	        }else if(data =='saved'){
 	            $el_to_update.html(break_time);
 	            $el_to_update.removeAttr('data-toggle');
@@ -673,6 +716,8 @@
 	        }
 			},
 		error:function(){
+		    requestInProgress = false;
+		    $("#pin_submit").prop('disabled', false);
 		    revertCellSwap();
 		    swal({ text: "Network error. Break time was NOT saved. Please check your connection and try again.", icon: "error" });
 		}

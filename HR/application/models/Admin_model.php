@@ -1147,7 +1147,7 @@ public function fetch_employee_notifications(){
 		
 		return $query->result();
 	}
-	function update_employee_timesheet($data_out,$timesheet_id,$roster_id,$outlet=''){
+	function update_employee_timesheet($data_out,$timesheet_id,$roster_id,$outlet='',$employee_id=''){
 	    
 	    if(isset($timesheet_id) && $timesheet_id !=''){
 	       $this->db->where('timesheet_id',$timesheet_id); 
@@ -1157,9 +1157,25 @@ public function fetch_employee_notifications(){
 	    $this->db->where('date = ', $date);
 	    
 		$this->db->where('roster_id',$roster_id);
-	     
+		
+		if($employee_id != ''){
+		    $this->db->where('employee_id', intval($employee_id));
+		}
 	    
 		return $this->db->update('employee_timesheet',$data_out);
+	}
+	
+	/**
+	 * Get a single timesheet entry for sequence validation.
+	 */
+	function get_timesheet_entry($emp_id, $timesheet_id, $roster_id, $date){
+	    $this->db->select('in_time, out_time, break_in_time, break_out_time');
+	    $this->db->from('employee_timesheet');
+	    $this->db->where('employee_id', intval($emp_id));
+	    $this->db->where('timesheet_id', $timesheet_id);
+	    $this->db->where('roster_id', $roster_id);
+	    $this->db->where('date', $date);
+	    return $this->db->get()->row();
 	}	
 	function update_employee_timesheet_emps($prev_emp,$emp_id,$timesheet_id){
 	    $data = array(
