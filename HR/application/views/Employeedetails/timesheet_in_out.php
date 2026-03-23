@@ -636,6 +636,7 @@
 	    success:function(response){
 	        requestInProgress = false;
 	        $("#pin_submit").prop('disabled', false);
+	        $('#pinModal').modal('hide');
 	        if(response =='sessionexpired'){
 	            revertCellSwap();
 	            swal({ text: "Your session has expired. Please login again.", icon: "error" }).then(function(){ window.location.href = "<?php echo base_url();?>index.php/auth/homepage"; });
@@ -653,8 +654,7 @@
 	        }else if(response =='on_break'){
 	            revertCellSwap();
 	            swal({ text: "You are currently on break. Please end your break before clocking out.", icon: "warning" });
-	        }else if(response =='saved'){
-	         $class_to_enable = $("#current_in_time").val();
+	        }else if(response =='saved'){	         $('#pinModal').modal('hide');	         $class_to_enable = $("#current_in_time").val();
 	         $("."+$class_to_enable).html('');
 	         $("."+$class_to_enable).removeAttr('data-toggle');
 	         
@@ -699,6 +699,7 @@
 	    success:function(data){
 	        requestInProgress = false;
 	        $("#pin_submit").prop('disabled', false);
+	        $('#pinModal').modal('hide');
 	        if(data =='sessionexpired'){
 	            revertCellSwap();
 	            swal({ text: "Your session has expired. Please login again.", icon: "error" }).then(function(){ window.location.href = "<?php echo base_url();?>index.php/auth/homepage"; });
