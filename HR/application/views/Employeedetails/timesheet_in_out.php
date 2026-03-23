@@ -527,6 +527,10 @@
     $("#"+modal_id).hide();  
   }
   
+  $('#pinModal').on('shown.bs.modal', function () {
+      $('#employee_pin_entered').focus();
+  });
+  
   function show_pin_modal(type,emp_id,class_to_enable,rosterID,outletname){
       if(requestInProgress) return;
       
