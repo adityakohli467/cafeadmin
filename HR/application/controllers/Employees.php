@@ -90,7 +90,7 @@ class Employees extends CI_Controller {
         return $menu_items;
     }
     
-    public function get_content_and_send_mail($emp_detail=array(),$msg){
+    public function get_content_and_send_mail($emp_detail,$msg){
            $from_email = 'admin@cafeadmin.com.au';
 		    $email = $emp_detail['send_to'];
 		     $subject = $emp_detail['subject'];
