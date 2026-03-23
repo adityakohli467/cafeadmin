@@ -372,16 +372,18 @@ $data['result_count']= "Showing ".$start." - ".$end." of ".$config['total_rows']
 		          $start_nameofday = $week_days[$i].'_start_time';
                  $end_nameofday = $week_days[$i].'_end_time'; 
                   $break_nameofday = $week_days[$i].'_break_time'; 
-                  $break_hrs = $row->$break_nameofday;
+                  $break_hrs = (float)($row->$break_nameofday ?? 0);
                     
-                    $time1 = strtotime($row->$start_nameofday);
-                    $time2 = strtotime($row->$end_nameofday);
-                   if($time1 !='' && $time2 !=''){
+                    $raw_start = $row->$start_nameofday ?? '';
+                    $raw_end = $row->$end_nameofday ?? '';
+                    $time1 = ($raw_start !== '') ? strtotime($raw_start) : false;
+                    $time2 = ($raw_end !== '') ? strtotime($raw_end) : false;
+                   if($time1 !== false && $time2 !== false){
                     $difference = round(abs(($time2 - $time1)) / 3600,2);
                 
                 $hr_in_min = $difference* 60;
               
-               if((isset($difference) && $difference !='') && isset($break_hrs) && $break_hrs !='' && isset($hr_in_min) && $hr_in_min !=''){
+               if($difference != 0 && $hr_in_min != 0){
                    
                 $difference = $hr_in_min -  $break_hrs;
                 // echo $difference; 
