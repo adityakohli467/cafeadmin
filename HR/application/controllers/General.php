@@ -365,7 +365,8 @@ $data['result_count']= "Showing ".$start." - ".$end." of ".$config['total_rows']
 		    $count =1;
 		    foreach($roster as $row){ 
 		       
-		        $rate = (float)($this->admin_model->get_emp_details_fieldwise($row->emp_id,'rate') ?? 0);
+		        $rate_val = $this->admin_model->get_emp_details_fieldwise($row->emp_id,'rate');
+		        $rate = (is_numeric($rate_val) && $rate_val !== '') ? (float)$rate_val : 0.0;
 		        $week_earning =  0;
 		        $hrs_worked =  0;
 		        for ($i = 0; $i < 7; $i++) {
@@ -387,7 +388,7 @@ $data['result_count']= "Showing ".$start." - ".$end." of ".$config['total_rows']
                    
                 $difference = $hr_in_min -  $break_hrs;
                 // echo $difference; 
-                $total_pay = (($rate)/60) * $difference;
+                $total_pay = ((float)$rate / 60) * $difference;
                 $hrs_worked = $hrs_worked + $difference;
                   
                  
