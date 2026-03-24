@@ -365,7 +365,7 @@ $data['result_count']= "Showing ".$start." - ".$end." of ".$config['total_rows']
 		    $count =1;
 		    foreach($roster as $row){ 
 		       
-		        $rate = $this->admin_model->get_emp_details_fieldwise($row->emp_id,'rate');
+		        $rate = (float)($this->admin_model->get_emp_details_fieldwise($row->emp_id,'rate') ?? 0);
 		        $week_earning =  0;
 		        $hrs_worked =  0;
 		        for ($i = 0; $i < 7; $i++) {
