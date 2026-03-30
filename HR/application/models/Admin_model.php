@@ -1037,6 +1037,8 @@ public function fetch_employee_notifications(){
         $thisMonday = date('Y-m-d', strtotime('monday this week', strtotime($currentDate)));
         $thisSunday = date('Y-m-d', strtotime('sunday this week', strtotime($currentDate)));
 
+		log_message('error', 'get_all_timesheet: branch_id='.$branch_id.', currentDate='.$currentDate.', thisMonday='.$thisMonday.', thisSunday='.$thisSunday);
+
 		$this->db->distinct();
 		$this->db->select('timesheet.*,roster.start_date,roster.end_date');
 		$this->db->from('timesheet');

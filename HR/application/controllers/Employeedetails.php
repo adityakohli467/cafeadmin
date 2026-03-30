@@ -1600,7 +1600,8 @@ $msg = $empname.' has submitted the job keeper request. Please login to the HR p
 		    'branch_id' => $branch_id,
 			'roster_group_id' => $this->input->post('roster_list')[0],
 			'timesheet_name' => $this->input->post('timesheet_name'),
-			'timesheet_type' => "s"
+			'timesheet_type' => "s",
+			'status' => 1
 			);
 		       
 		    }else{
@@ -1612,7 +1613,8 @@ $msg = $empname.' has submitted the job keeper request. Please login to the HR p
 			'multiple_roster_group_id' => $all_roster_group_ids,
 			'roster_group_id' => $this->input->post('roster_list')[0],
 			'timesheet_name' => $this->input->post('timesheet_name'),
-			 'timesheet_type' => "m"
+			 'timesheet_type' => "m",
+			 'status' => 1
 			);
 		        
 		    }
@@ -1699,7 +1701,8 @@ $msg = $empname.' has submitted the job keeper request. Please login to the HR p
 		   $data=array(
 		    'branch_id' => $branch_id,
 			'roster_group_id' => $this->input->post('roster_list'),
-			'timesheet_name' => $this->input->post('timesheet_name')
+			'timesheet_name' => $this->input->post('timesheet_name'),
+			'status' => 1
 			);
 			
 		    $insert_id = $this->EmployeesDeatils_model->add_data_to_tble('timesheet',$data);
@@ -3212,12 +3215,14 @@ Please login to the HR portal to view the update. ';
 
 public function fetch_employee_for_timsheet(){
     
-    $roster_plus_timesheet_id = $_POST['roster_list'];
+    $roster_plus_timesheet_id = isset($_POST['roster_list']) ? $_POST['roster_list'] : '';
     $data_posted = explode('_', $roster_plus_timesheet_id);
     
     $branch_id = $this->session->userdata('branch_id');
 	$role = $this->session->userdata('role');
+	log_message('error', 'fetch_employee_for_timsheet: branch_id='.$branch_id.', POST roster_list='.$roster_plus_timesheet_id);
 	$all_timesheet = $this->admin_model->get_all_timesheet($branch_id,'future');
+	log_message('error', 'fetch_employee_for_timsheet: all_timesheet count='.count($all_timesheet));
     
    $timesheet_id = '';
    $roster_group_id = '';
@@ -3276,6 +3281,8 @@ public function fetch_employee_for_timsheet(){
     }else{
          $all_emps = $this->admin_model->fetch_employee_for_timsheet($roster_group_id, $branch_id);
     }
+    
+    log_message('error', 'fetch_employee_for_timsheet: roster_group_id='.$roster_group_id.', timesheet_id='.$timesheet_id.', timesheet_type='.$timesheet_type.', employees_count='.(is_array($all_emps) ? count($all_emps) : 0));
 
 		  	if (!$this->ion_auth->logged_in()) {
 			redirect('auth/homepage');
