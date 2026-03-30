@@ -46,8 +46,14 @@
      <div class="dt-inner">
       <label for="pwd"><b>Month:</b></label>
       <div class='input-group date datetimepicker1'>
+        <?php
+        $months = array('January','February','March','April','May','June','July','August','September','October','November','December');
+        $current_month = date('F');
+        ?>
         <select class="form-control" name="month">
-    	    <option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option>
+            <?php foreach($months as $m){ ?>
+    	    <option value="<?php echo $m; ?>" <?php if($m == $current_month) echo 'selected'; ?>><?php echo $m; ?></option>
+    	    <?php } ?>
     	</select>
      </div>
      </div>
@@ -300,11 +306,23 @@ $('.datetimepicker3').datetimepicker({
 	<script type="text/javascript">
             $(function () {
                 $('.datetimepicker1').datetimepicker({
-					format: 'DD-MM-YYYY',
-					<!--minDate:new Date()-->
+					format: 'DD-MM-YYYY'
 				});
-				
-		
+
+				// When start_date changes, validate it's a Monday and auto-fill end_date
+				$('input[name="start_date"]').closest('.datetimepicker1').on('dp.change', function(e) {
+				    if (!e.date) return;
+				    var day = e.date.day(); // moment day: 0=Sun, 1=Mon
+				    if (day !== 1) {
+				        alert('Start date must be a Monday. Please select a Monday.');
+				        $(this).data('DateTimePicker').clear();
+				        $('input[name="end_date"]').closest('.datetimepicker1').data('DateTimePicker').clear();
+				        return;
+				    }
+				    // Auto-set end date to the coming Sunday (+6 days)
+				    var endDate = e.date.clone().add(6, 'days');
+				    $('input[name="end_date"]').closest('.datetimepicker1').data('DateTimePicker').date(endDate);
+				});
             });
             
            
