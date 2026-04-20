@@ -77,7 +77,7 @@ class Admin extends CI_Controller {
 
         // Email message template
         $msgTemplate = 'This email is to inform you that manager has an update on your timesheet.
-        Please login to the HR portal to view the update. <br><a href="'.base_url('HR').'">Click here to login your portal</a>';
+        Please login to the HR portal to view the update. <br><a href="'.base_url().'">Click here to login your portal</a>';
 
         // Process each result
         if (!empty($results)) {
