@@ -521,17 +521,6 @@ Thank you so much for your support and understanding';
 					}
 				}
 
-				// 3) Queue manager notification email
-				if(isset($branch_budget[0]->email) && $branch_budget[0]->email != ''){
-					$manager_cc = (isset($branch_budget[0]->ccEmail) && $branch_budget[0]->ccEmail != '') ? $branch_budget[0]->ccEmail : '';
-					$this->orders_model->queue_email(
-						$branch_budget[0]->email,
-						$manager_cc,
-						$suppName." Order Placed - Email Queued",
-						"Order #000".$order_number." has been placed for ".$suppName.". Supplier email is queued for delivery."
-					);
-				}
-
 				// 4) Queue force order admin notification
 				if($_POST['store_force_comment'] != ''){
 					$this->orders_model->queue_email(
