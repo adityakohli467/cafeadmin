@@ -25,8 +25,8 @@ class Employees extends CI_Controller {
               'protocol' => 'smtp', 
               'smtp_host' => 'smtp.gmail.com', 
               'smtp_port' => 587, 
-              'smtp_user' => 'admin@cafeadmin.com.au', 
-              'smtp_pass' => 'wdpoqmfuizogwfsj',
+              'smtp_user' => 'info@cafeadmin.com.au', 
+              'smtp_pass' => 'hrqa brvz tred dext',
               'mailtype' => 'html'
               );
               $this->load->library('email', $config);

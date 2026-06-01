@@ -31,8 +31,8 @@ class Admin extends CI_Controller {
               'protocol' => 'smtp', 
               'smtp_host' => 'smtp.gmail.com', 
               'smtp_port' => 587, 
-              'smtp_user' => 'cafehrmanage@gmail.com', 
-                'smtp_pass' => 'ypvb hxzn hlyu lkpr',
+              'smtp_user' => 'info@cafeadmin.com.au', 
+                'smtp_pass' => 'hrqa brvz qbyz dext',
                 'mailtype' => 'html'
               );
               $this->load->library('email', $config);
