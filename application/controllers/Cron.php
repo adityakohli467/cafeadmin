@@ -37,10 +37,13 @@ class Cron extends CI_Controller {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = TRUE;
         $mail->SMTPSecure = 'tls';
-        $mail->Username   = 'cafeorders1@gmail.com';
-        $mail->Password   = 'pahuepfjvhrovoga';
+        $mail->Username   = 'info@cafeadmin.com.au';
+        $mail->Password   = 'hrqa brvz qbyz dext';
         $mail->Port       = 587;
-        $mail->setFrom('cafeorders1@gmail.com', 'Cafeadmin');
+        $mail->setFrom('info@cafeadmin.com.au', 'Cafeadmin');
+        
+     
+
         $mail->isHTML(true);
 
         $sent = 0;

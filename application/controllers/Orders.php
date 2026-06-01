@@ -39,13 +39,24 @@ class Orders extends CI_Controller {
         if (!empty($this->phpmailermail)) return;
         $this->phpmailermail = new PHPMailer();
         $this->phpmailermail->isSMTP();
-        $this->phpmailermail->Host     = 'smtp.gmail.com';
+       
+        $this->phpmailermail->SMTPDebug = 2;
+         $this->phpmailermail->Host     = 'smtp.gmail.com';
         $this->phpmailermail->SMTPAuth = TRUE;
         $this->phpmailermail->SMTPSecure = 'tls';
-        $this->phpmailermail->Username = 'cafeorders1@gmail.com';
-        $this->phpmailermail->Password = 'pahuepfjvhrovoga';
+        $this->phpmailermail->Username = 'info@cafeadmin.com.au';
+        $this->phpmailermail->Password = 'hrqa brvz qbyz dext';
         $this->phpmailermail->Port     = 587;
-        $this->phpmailermail->setFrom('cafeorders1@gmail.com', 'Cafeadmin');
+        $this->phpmailermail->setFrom('info@cafeadmin.com.au', 'Cafeadmin');
+        
+//         $this->phpmailermail->Host       = 'smtp-relay.brevo.com';
+// $this->phpmailermail->SMTPAuth   = TRUE;
+// $this->phpmailermail->SMTPSecure = 'tls';
+// $this->phpmailermail->Username   = 'ad2615001@smtp-brevo.com';
+// $this->phpmailermail->Password   = 'xsmtpsib-fe537f38ba5e9fb49b189dc0d3367839398e4d6d82101cb6725af2a0e83d850f-R6SO9R4RXD9r0hJr';
+// $this->phpmailermail->Port       = 587;
+// $this->phpmailermail->setFrom('orders@cafeadmin.com.au', 'Cafeadmin');
+
     }
 
     /**
@@ -1178,7 +1189,7 @@ Please inform your delivery driver, Zouki staff may ask for evidence for registr
 Our delivery instructions given according to the hospital delivery guidelines.
 Thank you so much for your support and understanding';
 				}
-				$from_email = 'cafeadorders@gmail.com';
+				$from_email = 'info@bizadmin.com.au';
 				if($supDetails->email != ''){
 					$to = $supDetails->email;
 					$cc = $supDetails->cc;
@@ -1584,7 +1595,7 @@ Thank you so much for your support and understanding';
 		    	$supplier_details = $this->orders_model->get_supplier_details($supplier);
 		    	$branch_budget = $this->orders_model->get_branch_budget($branch_id);
 				
-				$from_email = 'cafeadorders@gmail.com';
+				$from_email = 'info@bizadmin.com.au';
 				
 				if($branch_id == 20){
 				    

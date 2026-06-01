@@ -66,14 +66,25 @@ class Ion_auth
 		$this->phpmailermail = new PHPMailer();
                
          $this->phpmailermail->isSMTP();
-        // $this->phpmailermail->SMTPDebug = 2;
+        $this->phpmailermail->SMTPDebug = 2;
          $this->phpmailermail->Host     = 'smtp.gmail.com';
         $this->phpmailermail->SMTPAuth = TRUE;
         $this->phpmailermail->SMTPSecure = 'tls';
-        $this->phpmailermail->Username = 'cafeadorders@gmail.com';
-        $this->phpmailermail->Password = 'Discoverf1y@123!!';
+        $this->phpmailermail->Username = 'info@cafeadmin.com.au';
+        $this->phpmailermail->Password = 'hrqa brvz qbyz dext';
         $this->phpmailermail->Port     = 587;
-        $this->phpmailermail->setFrom('cafeadorders@gmail.com', 'Cafeadmin');
+        $this->phpmailermail->setFrom('info@cafeadmin.com.au', 'Cafeadmin');
+        
+        
+// $this->phpmailermail->Host       = 'smtp-relay.brevo.com';
+// $this->phpmailermail->SMTPAuth   = TRUE;
+// $this->phpmailermail->SMTPSecure = 'tls';
+// $this->phpmailermail->Username   = 'ad2615001@smtp-brevo.com';
+// $this->phpmailermail->Password   = 'xsmtpsib-fe537f38ba5e9fb49b189dc0d3367839398e4d6d82101cb6725af2a0e83d850f-R6SO9R4RXD9r0hJr';
+// $this->phpmailermail->Port       = 587;
+// $this->phpmailermail->setFrom('orders@cafeadmin.com.au', 'Cafeadmin');
+
+				
 				
 			  //=========================================================php mailer end ======================================================
 		$this->lang->load('ion_auth');

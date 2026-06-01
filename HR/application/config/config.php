@@ -517,9 +517,9 @@ $config['proxy_ips'] = '';
 
 // EMAIL CREDENTILAS
 $config['Host'] = 'smtp.gmail.com';
-$config['Username'] = 'cafehrmanagement@gmail.com';
-$config['Password'] = 'wdpoqmfuizogwfsj';
+$config['Username'] = 'cafehrmanage@gmail.com';
+$config['Password'] = 'ypvb hxzn hlyu lkpr';
 $config['SMTPAuth'] = true;
 $config['SMTPSecure'] = 'tls';
 $config['Port'] = '587';
-$config['setFrom'] = 'cafehrmanagement@gmail.com';
+$config['setFrom'] = 'cafehrmanage@gmail.com';
