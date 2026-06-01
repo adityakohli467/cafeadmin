@@ -4048,12 +4048,6 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
             echo 'already_recorded';
             exit;
         }
-        // Cannot clock out while on break (break_in recorded but no break_out)
-        if(!empty($existing) && isset($existing->break_in_time) && $existing->break_in_time != '00:00:00'
-           && (!isset($existing->break_out_time) || $existing->break_out_time == '00:00:00')){
-            echo 'on_break';
-            exit;
-        }
     }
     
     // compare and round up the time and searlize the day wise in out time's array as we are storing it in a single field in db
