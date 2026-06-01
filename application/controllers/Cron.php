@@ -103,6 +103,8 @@ class Cron extends CI_Controller {
             $this->db->where('id', $ex->id)->update('email_queue', array('status' => 'failed'));
             if (!empty($ex->order_id)) {
                 $this->orders_model->updateOrderDetails(array('mail_status' => 2), $ex->order_id);
+                // Notify branch manager about the failed email
+                $this->notify_manager_failed_email($mail, $ex->order_id, $ex->to_email);
             }
         }
 
@@ -111,5 +113,48 @@ class Cron extends CI_Controller {
         $this->db->where('created_at <', $cutoff)->delete('email_queue');
 
         echo "Done. Sent: {$sent}, Failed: {$failed}\n";
+    }
+
+    /**
+     * Send notification to branch manager when a supplier order email fails after 5 attempts.
+     */
+    private function notify_manager_failed_email($mail, $order_id, $to_email) {
+        try {
+            $order = $this->orders_model->getOrderDetails($order_id);
+            if (empty($order)) return;
+
+            $branch_id = $order[0]->branch_id;
+            $supplier_id = isset($order[0]->supplier_id) ? $order[0]->supplier_id : '';
+
+            // Get branch manager email
+            $branch_info = $this->orders_model->get_branch_email($branch_id);
+            if (empty($branch_info) || empty($branch_info[0]->email)) return;
+            $manager_email = $branch_info[0]->email;
+
+            // Get supplier name
+            $supplier_name = 'Unknown Supplier';
+            if (!empty($supplier_id)) {
+                $supplier = $this->orders_model->get_supplier_details($supplier_id);
+                if (!empty($supplier)) {
+                    $supplier_name = $supplier[0]->supplier_name;
+                }
+            }
+
+            $mail->ClearAddresses();
+            $mail->ClearCCs();
+            $mail->addAddress($manager_email);
+            $mail->Subject = "Order Email Failed - Order #{$order_id}";
+            $mail->Body = "
+                <p>Hi Manager,</p>
+                <p>This is to inform you that the order email for <strong>Order #{$order_id}</strong> to supplier <strong>{$supplier_name}</strong> ({$to_email}) has failed .</p>
+                <p>Please follow up with the supplier directly to confirm the order.</p>
+                <p>Regards,<br>Cafeadmin System</p>
+            ";
+
+            $mail->send();
+            echo "Notified manager ({$manager_email}) about failed email for Order #{$order_id}\n";
+        } catch (Exception $e) {
+            echo "Could not notify manager for Order #{$order_id}: {$e->getMessage()}\n";
+        }
     }
 }
