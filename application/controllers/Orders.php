@@ -44,10 +44,10 @@ class Orders extends CI_Controller {
          $this->phpmailermail->Host     = 'smtp.gmail.com';
         $this->phpmailermail->SMTPAuth = TRUE;
         $this->phpmailermail->SMTPSecure = 'tls';
-        $this->phpmailermail->Username = 'info@cafeadmin.com.au';
-        $this->phpmailermail->Password = 'hrqa brvz qbyz dext';
+        $this->phpmailermail->Username = 'cafeadminsupplier@gmail.com';
+        $this->phpmailermail->Password = 'mpjk dyyo hddt nkis';
         $this->phpmailermail->Port     = 587;
-        $this->phpmailermail->setFrom('info@cafeadmin.com.au', 'Cafeadmin');
+        $this->phpmailermail->setFrom('cafeadminsupplier@gmail.com', 'Cafeadmin');
         
 //         $this->phpmailermail->Host       = 'smtp-relay.brevo.com';
 // $this->phpmailermail->SMTPAuth   = TRUE;
@@ -137,8 +137,8 @@ class Orders extends CI_Controller {
             'smtp_host' => 'smtp.gmail.com',
             'smtp_crypto' => 'tls',
             'smtp_port' => 587, 
-            'smtp_user' => 'cafeadorders@gmail.com', 
-            'smtp_pass' => 'Discoverf1y@123!!'
+            'smtp_user' => 'cafeadminsupplier@gmail.com', 
+            'smtp_pass' => 'mpjk dyyo hddt nkis'
             );
 
            // ini_set('display_errors', 1);

@@ -1,218 +1,43 @@
 Date,First Name,Last Name,Payroll Category,Units
-25/05/2026,Abby,Buchanan,Base Hourly,5.00
-26/05/2026,Abby,Buchanan,Base Hourly,5.00
-27/05/2026,Abby,Buchanan,Base Hourly,0
-28/05/2026,Abby,Buchanan,Base Hourly,0
-29/05/2026,Abby,Buchanan,Base Hourly,5.25
-30/05/2026,Abby,Buchanan,16 Yrs Intro Weekend,0
-31/05/2026,Abby,Buchanan,16 Yrs Intro Weekend,0
-25/05/2026,Abby,Buchanan,Uniform Allowance,1.00
-26/05/2026,Abby,Buchanan,Uniform Allowance,1.00
-27/05/2026,Abby,Buchanan,Uniform Allowance,0.00
-28/05/2026,Abby,Buchanan,Uniform Allowance,0.00
-29/05/2026,Abby,Buchanan,Uniform Allowance,1.00
-30/05/2026,Abby,Buchanan,Uniform Allowance,0.00
-31/05/2026,Abby,Buchanan,Uniform Allowance,0.00
-25/05/2026,Charlotte,Hogan,Base Hourly,0
-26/05/2026,Charlotte,Hogan,Base Hourly,0
-27/05/2026,Charlotte,Hogan,Base Hourly,0
-28/05/2026,Charlotte,Hogan,Base Hourly,0
-29/05/2026,Charlotte,Hogan,Base Hourly,0
-30/05/2026,Charlotte,Hogan,19 Yrs Intro Weekend,8.00
-31/05/2026,Charlotte,Hogan,19 Yrs Intro Weekend,8.00
-25/05/2026,Charlotte,Hogan,Uniform Allowance,0.00
-26/05/2026,Charlotte,Hogan,Uniform Allowance,0.00
-27/05/2026,Charlotte,Hogan,Uniform Allowance,0.00
-28/05/2026,Charlotte,Hogan,Uniform Allowance,0.00
-29/05/2026,Charlotte,Hogan,Uniform Allowance,0.00
-30/05/2026,Charlotte,Hogan,Uniform Allowance,1.00
-31/05/2026,Charlotte,Hogan,Uniform Allowance,1.00
-25/05/2026,Christopher,Myles,Base Hourly,5.00
-26/05/2026,Christopher,Myles,Base Hourly,0
-27/05/2026,Christopher,Myles,Base Hourly,5.00
-28/05/2026,Christopher,Myles,Base Hourly,0
-29/05/2026,Christopher,Myles,Base Hourly,5.00
-30/05/2026,Christopher,Myles,Intro Weekend,0
-31/05/2026,Christopher,Myles,Intro Weekend,3.50
-25/05/2026,Christopher,Myles,Uniform Allowance,1.00
-26/05/2026,Christopher,Myles,Uniform Allowance,0.00
-27/05/2026,Christopher,Myles,Uniform Allowance,1.00
-28/05/2026,Christopher,Myles,Uniform Allowance,0.00
-29/05/2026,Christopher,Myles,Uniform Allowance,1.00
-30/05/2026,Christopher,Myles,Uniform Allowance,0.00
-31/05/2026,Christopher,Myles,Uniform Allowance,1.00
-25/05/2026,Emmilie,Myles,Base Hourly,7.00
-26/05/2026,Emmilie,Myles,Base Hourly,7.00
-27/05/2026,Emmilie,Myles,Base Hourly,7.00
-28/05/2026,Emmilie,Myles,Base Hourly,7.00
-29/05/2026,Emmilie,Myles,Base Hourly,0
-30/05/2026,Emmilie,Myles,Level 2 Weekends,0
-31/05/2026,Emmilie,Myles,Level 2 Weekends,7.50
-25/05/2026,Emmilie,Myles,Uniform Allowance,1.00
-26/05/2026,Emmilie,Myles,Uniform Allowance,1.00
-27/05/2026,Emmilie,Myles,Uniform Allowance,1.00
-28/05/2026,Emmilie,Myles,Uniform Allowance,1.00
-29/05/2026,Emmilie,Myles,Uniform Allowance,0.00
-30/05/2026,Emmilie,Myles,Uniform Allowance,0.00
-31/05/2026,Emmilie,Myles,Uniform Allowance,1.00
-25/05/2026,Guan,Yu Lim,Base Hourly,8.00
-26/05/2026,Guan,Yu Lim,Base Hourly,8.00
-27/05/2026,Guan,Yu Lim,Base Hourly,8.00
-28/05/2026,Guan,Yu Lim,Base Hourly,8.00
-29/05/2026,Guan,Yu Lim,Base Hourly,8.00
-30/05/2026,Guan,Yu Lim,Base Hourly,5.00
-31/05/2026,Guan,Yu Lim,Base Hourly,0
-25/05/2026,Guan,Yu Lim,Uniform Allowance,1.00
-26/05/2026,Guan,Yu Lim,Uniform Allowance,1.00
-27/05/2026,Guan,Yu Lim,Uniform Allowance,1.00
-28/05/2026,Guan,Yu Lim,Uniform Allowance,1.00
-29/05/2026,Guan,Yu Lim,Uniform Allowance,1.00
-30/05/2026,Guan,Yu Lim,Uniform Allowance,1.00
-31/05/2026,Guan,Yu Lim,Uniform Allowance,0.00
-25/05/2026,Isla,Kang,Base Hourly,7.00
-26/05/2026,Isla,Kang,Base Hourly,7.00
-27/05/2026,Isla,Kang,Base Hourly,7.00
-28/05/2026,Isla,Kang,Base Hourly,7.00
-29/05/2026,Isla,Kang,Base Hourly,7.00
-30/05/2026,Isla,Kang,Level 2 Weekends,0
-31/05/2026,Isla,Kang,Level 2 Weekends,0
-25/05/2026,Isla,Kang,Uniform Allowance,1.00
-26/05/2026,Isla,Kang,Uniform Allowance,1.00
-27/05/2026,Isla,Kang,Uniform Allowance,1.00
-28/05/2026,Isla,Kang,Uniform Allowance,1.00
-29/05/2026,Isla,Kang,Uniform Allowance,1.00
-30/05/2026,Isla,Kang,Uniform Allowance,0.00
-31/05/2026,Isla,Kang,Uniform Allowance,0.00
-25/05/2026,Jacob,Ramsey,Base Hourly,7.50
-26/05/2026,Jacob,Ramsey,Base Hourly,7.50
-27/05/2026,Jacob,Ramsey,Base Hourly,7.50
-28/05/2026,Jacob,Ramsey,Base Hourly,7.50
-29/05/2026,Jacob,Ramsey,Base Hourly,0
-30/05/2026,Jacob,Ramsey,Level 2 Weekends,0
-31/05/2026,Jacob,Ramsey,Level 2 Weekends,0
-25/05/2026,Jacob,Ramsey,Uniform Allowance,1.00
-26/05/2026,Jacob,Ramsey,Uniform Allowance,1.00
-27/05/2026,Jacob,Ramsey,Uniform Allowance,1.00
-28/05/2026,Jacob,Ramsey,Uniform Allowance,1.00
-29/05/2026,Jacob,Ramsey,Uniform Allowance,0.00
-30/05/2026,Jacob,Ramsey,Uniform Allowance,0.00
-31/05/2026,Jacob,Ramsey,Uniform Allowance,0.00
-25/05/2026,Jacqueline,Hallam,Base Hourly,0
-26/05/2026,Jacqueline,Hallam,Base Hourly,0
-27/05/2026,Jacqueline,Hallam,Base Hourly,7.00
-28/05/2026,Jacqueline,Hallam,Base Hourly,7.00
-29/05/2026,Jacqueline,Hallam,Base Hourly,6.50
-30/05/2026,Jacqueline,Hallam,Intro Weekend,0
-31/05/2026,Jacqueline,Hallam,Intro Weekend,0
-25/05/2026,Jacqueline,Hallam,Uniform Allowance,0.00
-26/05/2026,Jacqueline,Hallam,Uniform Allowance,0.00
-27/05/2026,Jacqueline,Hallam,Uniform Allowance,1.00
-28/05/2026,Jacqueline,Hallam,Uniform Allowance,1.00
-29/05/2026,Jacqueline,Hallam,Uniform Allowance,1.00
-30/05/2026,Jacqueline,Hallam,Uniform Allowance,0.00
-31/05/2026,Jacqueline,Hallam,Uniform Allowance,0.00
-25/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Base Hourly,7.50
-26/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Base Hourly,7.50
-27/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Base Hourly,7.50
-28/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Base Hourly,7.50
-29/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Base Hourly,7.50
-30/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Intro Weekend,0
-31/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Intro Weekend,5.00
-25/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Uniform Allowance,1.00
-26/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Uniform Allowance,1.00
-27/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Uniform Allowance,1.00
-28/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Uniform Allowance,1.00
-29/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Uniform Allowance,1.00
-30/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Uniform Allowance,0.00
-31/05/2026,Kanaka Hewage Malsha,Madhushani Jayasena,Uniform Allowance,1.00
-25/05/2026,Kerrie,McLeod,Early Start,2.50
-25/05/2026,Kerrie,McLeod,Base Hourly,7.08
-26/05/2026,Kerrie,McLeod,Early Start,2.50
-26/05/2026,Kerrie,McLeod,Base Hourly,6.92
-27/05/2026,Kerrie,McLeod,Early Start,2.50
-27/05/2026,Kerrie,McLeod,Base Hourly,8.50
-28/05/2026,Kerrie,McLeod,Early Start,2.50
-28/05/2026,Kerrie,McLeod,Base Hourly,9.33
-29/05/2026,Kerrie,McLeod,Early Start,2.50
-29/05/2026,Kerrie,McLeod,Base Hourly,7.25
-30/05/2026,Kerrie,McLeod,Level 2 Weekends,0
-31/05/2026,Kerrie,McLeod,Level 2 Weekends,0
-25/05/2026,Kerrie,McLeod,Uniform Allowance,1.00
-26/05/2026,Kerrie,McLeod,Uniform Allowance,1.00
-27/05/2026,Kerrie,McLeod,Uniform Allowance,1.00
-28/05/2026,Kerrie,McLeod,Uniform Allowance,1.00
-29/05/2026,Kerrie,McLeod,Uniform Allowance,1.00
-30/05/2026,Kerrie,McLeod,Uniform Allowance,0.00
-31/05/2026,Kerrie,McLeod,Uniform Allowance,0.00
-25/05/2026,Lara,Antal,Base Hourly,7.50
-26/05/2026,Lara,Antal,Base Hourly,7.50
-27/05/2026,Lara,Antal,Base Hourly,7.50
-28/05/2026,Lara,Antal,Base Hourly,8.00
-29/05/2026,Lara,Antal,Base Hourly,7.75
-30/05/2026,Lara,Antal,Level 2 Weekends,0
-31/05/2026,Lara,Antal,Level 2 Weekends,0
-25/05/2026,Lara,Antal,Uniform Allowance,1.00
-26/05/2026,Lara,Antal,Uniform Allowance,1.00
-27/05/2026,Lara,Antal,Uniform Allowance,1.00
-28/05/2026,Lara,Antal,Uniform Allowance,1.00
-29/05/2026,Lara,Antal,Uniform Allowance,1.00
-30/05/2026,Lara,Antal,Uniform Allowance,0.00
-31/05/2026,Lara,Antal,Uniform Allowance,0.00
-25/05/2026,Liam,Benecke,Base Hourly,6.50
-26/05/2026,Liam,Benecke,Base Hourly,6.50
-27/05/2026,Liam,Benecke,Base Hourly,0
-28/05/2026,Liam,Benecke,Base Hourly,0
-29/05/2026,Liam,Benecke,Base Hourly,7.00
-30/05/2026,Liam,Benecke,Level 2 Weekends,7.00
-31/05/2026,Liam,Benecke,Level 2 Weekends,0
-25/05/2026,Liam,Benecke,Uniform Allowance,1.00
-26/05/2026,Liam,Benecke,Uniform Allowance,1.00
-27/05/2026,Liam,Benecke,Uniform Allowance,0.00
-28/05/2026,Liam,Benecke,Uniform Allowance,0.00
-29/05/2026,Liam,Benecke,Uniform Allowance,1.00
-30/05/2026,Liam,Benecke,Uniform Allowance,1.00
-31/05/2026,Liam,Benecke,Uniform Allowance,0.00
-25/05/2026,Madhuri,Sareddy,Base Hourly,0
-26/05/2026,Madhuri,Sareddy,Base Hourly,0
-27/05/2026,Madhuri,Sareddy,Base Hourly,0
-28/05/2026,Madhuri,Sareddy,Base Hourly,0
-29/05/2026,Madhuri,Sareddy,Base Hourly,3.75
-30/05/2026,Madhuri,Sareddy,Base Hourly,0
-31/05/2026,Madhuri,Sareddy,Base Hourly,0
-25/05/2026,Madhuri,Sareddy,Uniform Allowance,0.00
-26/05/2026,Madhuri,Sareddy,Uniform Allowance,0.00
-27/05/2026,Madhuri,Sareddy,Uniform Allowance,0.00
-28/05/2026,Madhuri,Sareddy,Uniform Allowance,0.00
-29/05/2026,Madhuri,Sareddy,Uniform Allowance,1.00
-30/05/2026,Madhuri,Sareddy,Uniform Allowance,0.00
-31/05/2026,Madhuri,Sareddy,Uniform Allowance,0.00
-25/05/2026,Piotr,Greczka,Base Hourly,8.50
-26/05/2026,Piotr,Greczka,Base Hourly,8.50
-27/05/2026,Piotr,Greczka,Base Hourly,8.50
-28/05/2026,Piotr,Greczka,Base Hourly,8.50
-29/05/2026,Piotr,Greczka,Base Hourly,8.50
-30/05/2026,Piotr,Greczka,Level 2 Weekends,0
-31/05/2026,Piotr,Greczka,Level 2 Weekends,6.50
-25/05/2026,Piotr,Greczka,Uniform Allowance,1.00
-26/05/2026,Piotr,Greczka,Uniform Allowance,1.00
-27/05/2026,Piotr,Greczka,Uniform Allowance,1.00
-28/05/2026,Piotr,Greczka,Uniform Allowance,1.00
-29/05/2026,Piotr,Greczka,Uniform Allowance,1.00
-30/05/2026,Piotr,Greczka,Uniform Allowance,0.00
-31/05/2026,Piotr,Greczka,Uniform Allowance,1.00
-25/05/2026,Tahnee,Wright,Early Start,1.00
-25/05/2026,Tahnee,Wright,Base Hourly,6.00
-26/05/2026,Tahnee,Wright,Early Start,1.00
-26/05/2026,Tahnee,Wright,Base Hourly,5.00
-27/05/2026,Tahnee,Wright,Base Hourly,0
-28/05/2026,Tahnee,Wright,Base Hourly,0
-29/05/2026,Tahnee,Wright,Base Hourly,7.50
-30/05/2026,Tahnee,Wright,Level 2 Weekends,7.50
-31/05/2026,Tahnee,Wright,Level 2 Weekends,4.25
-25/05/2026,Tahnee,Wright,Uniform Allowance,1.00
-26/05/2026,Tahnee,Wright,Uniform Allowance,1.00
-27/05/2026,Tahnee,Wright,Uniform Allowance,0.00
-28/05/2026,Tahnee,Wright,Uniform Allowance,0.00
-29/05/2026,Tahnee,Wright,Uniform Allowance,1.00
-30/05/2026,Tahnee,Wright,Uniform Allowance,1.00
-31/05/2026,Tahnee,Wright,Uniform Allowance,1.00
+25/05/2026,Angelina,Cagorski,Base Hourly,0
+26/05/2026,Angelina,Cagorski,Base Hourly,7.50
+27/05/2026,Angelina,Cagorski,Base Hourly,0
+28/05/2026,Angelina,Cagorski,Base Hourly,7.50
+29/05/2026,Angelina,Cagorski,Base Hourly,7.50
+30/05/2026,Angelina,Cagorski,Intro Weekend,0
+31/05/2026,Angelina,Cagorski,Intro Weekend,0
+25/05/2026,Angelina,Cagorski,Uniform Allowance,0.00
+26/05/2026,Angelina,Cagorski,Uniform Allowance,1.00
+27/05/2026,Angelina,Cagorski,Uniform Allowance,0.00
+28/05/2026,Angelina,Cagorski,Uniform Allowance,1.00
+29/05/2026,Angelina,Cagorski,Uniform Allowance,1.00
+30/05/2026,Angelina,Cagorski,Uniform Allowance,0.00
+31/05/2026,Angelina,Cagorski,Uniform Allowance,0.00
+25/05/2026,Sharon,Iorfino,Base Hourly,0
+26/05/2026,Sharon,Iorfino,Base Hourly,0
+27/05/2026,Sharon,Iorfino,Base Hourly,0
+28/05/2026,Sharon,Iorfino,Base Hourly,0
+29/05/2026,Sharon,Iorfino,Base Hourly,0
+30/05/2026,Sharon,Iorfino,Base Hourly,0
+31/05/2026,Sharon,Iorfino,Base Hourly,0
+25/05/2026,Sharon,Iorfino,Uniform Allowance,0.00
+26/05/2026,Sharon,Iorfino,Uniform Allowance,0.00
+27/05/2026,Sharon,Iorfino,Uniform Allowance,0.00
+28/05/2026,Sharon,Iorfino,Uniform Allowance,0.00
+29/05/2026,Sharon,Iorfino,Uniform Allowance,0.00
+30/05/2026,Sharon,Iorfino,Uniform Allowance,0.00
+31/05/2026,Sharon,Iorfino,Uniform Allowance,0.00
+25/05/2026,Shiara,Caldera,Base Hourly,0
+26/05/2026,Shiara,Caldera,Base Hourly,0
+27/05/2026,Shiara,Caldera,Base Hourly,4.50
+28/05/2026,Shiara,Caldera,Base Hourly,0
+29/05/2026,Shiara,Caldera,Base Hourly,0
+30/05/2026,Shiara,Caldera,Intro Weekend,0
+31/05/2026,Shiara,Caldera,Intro Weekend,0
+25/05/2026,Shiara,Caldera,Uniform Allowance,0.00
+26/05/2026,Shiara,Caldera,Uniform Allowance,0.00
+27/05/2026,Shiara,Caldera,Uniform Allowance,1.00
+28/05/2026,Shiara,Caldera,Uniform Allowance,0.00
+29/05/2026,Shiara,Caldera,Uniform Allowance,0.00
+30/05/2026,Shiara,Caldera,Uniform Allowance,0.00
+31/05/2026,Shiara,Caldera,Uniform Allowance,0.00

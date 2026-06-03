@@ -1522,9 +1522,9 @@ if (!$query) {
 		return $this->db->insert_id();
 	}
 
-	public function get_pending_emails($limit = 10) {
+	public function get_pending_emails($limit = 3) {
 		$this->db->where('status', 'pending');
-		$this->db->where('attempts <', 5);
+		$this->db->where('attempts <', 2);
 		$this->db->order_by('created_at', 'ASC');
 		$this->db->limit($limit);
 		return $this->db->get('email_queue')->result();

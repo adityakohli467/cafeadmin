@@ -38147,3 +38147,21 @@ Stack trace:
 [01-Jun-2026 10:56:10 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
 [01-Jun-2026 10:56:12 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
 [01-Jun-2026 11:16:07 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[01-Jun-2026 17:37:13 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[01-Jun-2026 18:42:11 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[01-Jun-2026 18:42:49 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[02-Jun-2026 03:17:14 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[02-Jun-2026 11:02:22 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[02-Jun-2026 12:36:56 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[02-Jun-2026 15:13:56 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[02-Jun-2026 15:59:52 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[02-Jun-2026 20:06:03 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[02-Jun-2026 20:06:03 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[02-Jun-2026 20:06:03 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/linrefvyxg59/public_html/Careers/captcha.php on line 6
+[02-Jun-2026 20:06:04 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[02-Jun-2026 20:06:04 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/linrefvyxg59/public_html/Careers/captcha.php on line 6
+[03-Jun-2026 00:38:56 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[03-Jun-2026 00:39:10 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[03-Jun-2026 03:57:13 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[03-Jun-2026 03:57:14 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
+[03-Jun-2026 03:57:14 UTC] PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1692 but version 1693 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0

@@ -37,10 +37,10 @@ class Cron extends CI_Controller {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = TRUE;
         $mail->SMTPSecure = 'tls';
-        $mail->Username   = 'info@cafeadmin.com.au';
-        $mail->Password   = 'hrqa brvz qbyz dext';
+        $mail->Username   = 'cafeadminsupplier@gmail.com';
+        $mail->Password   = 'mpjk dyyo hddt nkis';
         $mail->Port       = 587;
-        $mail->setFrom('info@cafeadmin.com.au', 'Cafeadmin');
+        $mail->setFrom('cafeadminsupplier@gmail.com', 'Cafeadmin');
         
      
 
@@ -109,7 +109,7 @@ class Cron extends CI_Controller {
         }
 
         // Delete failed records older than 3 months
-        $cutoff = date('Y-m-d H:i:s', strtotime('-3 months'));
+        $cutoff = date('Y-m-d H:i:s', strtotime('-1 months'));
         $this->db->where('created_at <', $cutoff)->delete('email_queue');
 
         echo "Done. Sent: {$sent}, Failed: {$failed}\n";
