@@ -83,14 +83,14 @@ class CI_Email {
 	 *
 	 * @var	string
 	 */
-	public $smtp_user	= 'admin@cafeadmin.com.au';
+	public $smtp_user	= 'info@cafeadmin.com.au';
 
 	/**
 	 * SMTP Password
 	 *
 	 * @var	string
 	 */
-	public $smtp_pass	= '1800@Footscray123!';
+	public $smtp_pass	= 'tyhw bjip baae pacc';
 
 	/**
 	 * SMTP Server port
