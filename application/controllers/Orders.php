@@ -44,10 +44,10 @@ class Orders extends CI_Controller {
          $this->phpmailermail->Host     = 'smtp.gmail.com';
         $this->phpmailermail->SMTPAuth = TRUE;
         $this->phpmailermail->SMTPSecure = 'tls';
-        $this->phpmailermail->Username = 'cafeadminsupplier@gmail.com';
-        $this->phpmailermail->Password = 'mpjk dyyo hddt nkis';
+        $this->phpmailermail->Username = 'info@cafeadmin.com.au';
+        $this->phpmailermail->Password = 'tyhw bjip baae pacc';
         $this->phpmailermail->Port     = 587;
-        $this->phpmailermail->setFrom('cafeadminsupplier@gmail.com', 'Cafeadmin');
+        $this->phpmailermail->setFrom('info@cafeadmin.com.au', 'Cafeadmin');
         
 //         $this->phpmailermail->Host       = 'smtp-relay.brevo.com';
 // $this->phpmailermail->SMTPAuth   = TRUE;
@@ -150,7 +150,7 @@ class Orders extends CI_Controller {
 //     $this->email->initialize($config);    
 // 	$this->email->set_newline("\r\n");
 // 	$this->email->to($to);
-// 	$this->email->from('cafeadorders@gmail.com', 'Test'); 
+// 	$this->email->from('info@cafeadmin.com.au', 'Test'); 
 // 	$this->email->reply_to($to);
 // 	$this->email->subject('Aditya test Gsuite');
 // 	$this->email->message('Test email with test content');

@@ -37,10 +37,10 @@ class Cron extends CI_Controller {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = TRUE;
         $mail->SMTPSecure = 'tls';
-        $mail->Username   = 'cafeadminsupplier@gmail.com';
-        $mail->Password   = 'mpjk dyyo hddt nkis';
+        $mail->Username   = 'info@cafeadmin.com.au';
+        $mail->Password   = 'tyhw bjip baae pacc';
         $mail->Port       = 587;
-        $mail->setFrom('cafeadminsupplier@gmail.com', 'Cafeadmin');
+        $mail->setFrom('info@cafeadmin.com.au', 'Cafeadmin');
         
      
 
@@ -97,7 +97,7 @@ class Cron extends CI_Controller {
 
         // Mark emails that have exhausted retries as failed
         $exhausted = $this->db->where('status', 'pending')
-                              ->where('attempts >=', 5)
+                              ->where('attempts >=', 2)
                               ->get('email_queue')->result();
         foreach ($exhausted as $ex) {
             $this->db->where('id', $ex->id)->update('email_queue', array('status' => 'failed'));
@@ -126,10 +126,11 @@ class Cron extends CI_Controller {
             $branch_id = $order[0]->branch_id;
             $supplier_id = isset($order[0]->supplier_id) ? $order[0]->supplier_id : '';
 
-            // Get branch manager email
+            // Get branch manager email and location name
             $branch_info = $this->orders_model->get_branch_email($branch_id);
             if (empty($branch_info) || empty($branch_info[0]->email)) return;
             $manager_email = $branch_info[0]->email;
+            $location_name = isset($branch_info[0]->branch_name) ? $branch_info[0]->branch_name : 'Unknown Location';
 
             // Get supplier name
             $supplier_name = 'Unknown Supplier';
@@ -153,6 +154,20 @@ class Cron extends CI_Controller {
 
             $mail->send();
             echo "Notified manager ({$manager_email}) about failed email for Order #{$order_id}\n";
+
+            // Notify KJ about the failed email
+            $mail->ClearAddresses();
+            $mail->ClearCCs();
+            $mail->addAddress('kaushika@aaria.com.au');
+            $mail->Subject = "Order Email Failed - Order #{$order_id}";
+            $mail->Body = "
+                <p>HI KJ</p>
+                <p>Email delivery failed for supplier system for order id <strong>#{$order_id}</strong> for location : <strong>{$location_name}</strong></p>
+                <p>Regards,<br>Cafeadmin System</p>
+            ";
+
+            $mail->send();
+            echo "Notified KJ (kaushika@aaria.com.au) about failed email for Order #{$order_id}\n";
         } catch (Exception $e) {
             echo "Could not notify manager for Order #{$order_id}: {$e->getMessage()}\n";
         }
