@@ -53,6 +53,15 @@
 	   
     <span class="validation_text">
 	<?php echo validation_errors(); ?>
+	<style>
+	.emp-search-wrap{position:relative;}
+	.emp-search-wrap .emp-search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#9aa0a6;font-size:20px;pointer-events:none;}
+	.emp-search-input{height:42px;padding-left:42px;padding-right:34px;border:1px solid #d9dde2;border-radius:24px;box-shadow:0 1px 2px rgba(0,0,0,.05);transition:border-color .2s,box-shadow .2s;}
+	.emp-search-input:focus{border-color:#28a745;box-shadow:0 0 0 3px rgba(40,167,69,.15);outline:none;}
+	.emp-search-input::placeholder{color:#9aa0a6;}
+	.emp-search-clear{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#9aa0a6;font-size:20px;cursor:pointer;display:none;line-height:1;}
+	.emp-search-clear:hover{color:#dc3545;}
+	</style>
 	<span>
 	  		<div class="row">
 	  		    <?php if($this->session->userdata('role') !='employee' && $user_id != 257  && $user_id != 258) {  ?>
@@ -62,8 +71,12 @@
 							<div class="card-body">
 								<form id="employee_filters" action="<?php echo base_url(); ?>index.php/Employeedetails/edit_timesheet/<?php echo $timesheet_id; ?>/<?php echo $roster_group_id; ?>" method="post">
 									<div class="row">
-									   <div class="col-12 col-md-2 ">
-										<input class="form-control" name="emp_name" type="text" placeholder="Emp. Name" value="<?php echo  (isset($filter_emp_name) && $filter_emp_name !='' ? $filter_emp_name : '')  ?>">
+									   <div class="col-12 col-md-4 ">
+									    <div class="emp-search-wrap">
+									        <span class="emp-search-icon material-icons">search</span>
+										<input class="form-control emp-search-input" id="liveEmpSearch" name="emp_name" type="text" autocomplete="off" placeholder="Type employee name to filter..." value="<?php echo  (isset($filter_emp_name) && $filter_emp_name !='' ? $filter_emp_name : '')  ?>">
+										<span class="emp-search-clear" id="liveEmpSearchClear" title="Clear">&times;</span>
+										</div>
 										</div>
 										<!--<div class="col-12 col-md-2">-->
 										<!--<select class="form-control"  name="timesheet_status">-->
@@ -81,6 +94,7 @@
 									</select>
 						</div>
 							<div class="col-12 col-md-1">	<button class="btn btn-success">Filter</button></div>
+							<div class="col-12 col-md-3"><span id="liveNoMatch" style="display:none;color:#dc3545;font-size:13px;font-weight:600;line-height:40px;">No employee found</span></div>
 							</div>
 								</form>
 							</div>
@@ -306,6 +320,26 @@
    function DownloadButtonFUn2(){
         window.location.href = "<?php echo base_url('index.php/Employeedetails/download_textfile/'); ?><?php echo $timesheet_id; ?>/<?php echo $roster_group_id; ?>";
    }
+   // Live, instant filtering of employee rows as the manager types
+   (function(){
+       var $input = $('#liveEmpSearch');
+       var $clear = $('#liveEmpSearchClear');
+       function applyFilter(){
+           var q = ($input.val() || '').trim().toLowerCase();
+           var visible = 0;
+           $('.no_of_row').each(function(){
+               var name = $(this).find('.emp_name').text().toLowerCase();
+               var show = q === '' || name.indexOf(q) > -1;
+               $(this).toggle(show);
+               if(show) visible++;
+           });
+           $clear.toggle(q !== '');
+           $('#liveNoMatch').toggle(visible === 0 && q !== '');
+       }
+       $input.on('keyup input', applyFilter);
+       $clear.on('click', function(){ $input.val('').focus(); applyFilter(); });
+       if(($input.val() || '').trim() !== '') applyFilter();
+   })();
    $('a.sortType').click(function() { 
     
    var sortType = localStorage.getItem("sortType");
