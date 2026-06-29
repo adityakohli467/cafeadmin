@@ -1052,8 +1052,10 @@ public function fetch_employee_notifications(){
 	   	  
 	   	if($future !=''){
 // 		 $this->db->where('roster.end_date >= ',$todays_date); commented on 15-07-2024
-         $this->db->where('roster.start_date', $thisMonday);
-         $this->db->where('roster.end_date', $thisSunday);
+// 		 Robust current-week match: show any timesheet whose roster range contains today,
+// 		 instead of requiring exact Mon=start / Sun=end (broke on Mondays / 8-day rosters)
+         $this->db->where('roster.start_date <=', $currentDate);
+         $this->db->where('roster.end_date >=', $currentDate);
 	   	}
 		
 // 		 $this->db->where('roster.start_date >=',$todays_date);
@@ -1074,7 +1076,7 @@ public function fetch_employee_notifications(){
 				show_error('error '+$i);
 			}
 			log_message('error', 'DB error in Admin_model');
-			$this->get_all_timesheet($branch_id,$i);
+			return $this->get_all_timesheet($branch_id,$future,$i);
 		}else{
 		return $query->result();
 		}
