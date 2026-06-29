@@ -121,21 +121,22 @@
          
      <?php  
      $weekwiseTotal= array();
-if(!empty($employee_weekly_timesheet_details)){
-    unset($employee_weekly_timesheet_details['total_hrs_of_all_employees_of_this_timesheet']);
-  
-     foreach($employee_weekly_timesheet_details as $employee_weekly_timesheet){ ?>
-   <?php  for($count = 0;$count < 7;$count++ ) {  ?>
-  <th style="text-align: center;"> <?php echo date("d-m-Y", strtotime($employee_weekly_timesheet[$count]['date'])).'('.strtoupper(date('D', strtotime($employee_weekly_timesheet[$count]['date']))).')'; ?>
+     // Header dates are derived from the timesheet's fixed start_date so they never shift on filter
+     for($count = 0; $count < 7; $count++) {
+         $col_date = date("d-m-Y", strtotime($start_date.' +'.$count.' day'));
+         $col_day  = strtoupper(date('D', strtotime($start_date.' +'.$count.' day')));
+     ?>
+  <th style="text-align: center;"> <?php echo $col_date.'('.$col_day.')'; ?>
         </th>
-     <?php } break; ?>
-     <?php } } ?>
+     <?php } ?>
      <th style="text-align: center;">Comments</th><th style="text-align: center;" class="w-100">Status</th> <?php if($this->session->userdata('role') !='employee' && $user_id != 257  && $user_id != 258) {  ?> 
      <th style="text-align: center;">Action</th> <?php } ?>
      </tr></thead>
   <?php if(!empty($employee_weekly_timesheet_details) ){   ?>
       <tbody>
-     <?php  foreach($employee_weekly_timesheet_details as $employee_weekly_timesheet_detail){    ?>
+     <?php
+     unset($employee_weekly_timesheet_details['total_hrs_of_all_employees_of_this_timesheet']);
+     foreach($employee_weekly_timesheet_details as $employee_weekly_timesheet_detail){    ?>
      
       
          <input type="hidden" name="timesheet_id" value="<?php echo $employee_weekly_timesheet_detail[0]['timesheet_id']?>">
