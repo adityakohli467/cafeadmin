@@ -253,18 +253,18 @@ class Suppliers extends CI_Controller {
 			$remaining = 0;
 			$trail_period = '';
 		
-			if($status == 'Trail'){
-				$exp_date = date('Y-m-d H:i:s', strtotime($res[0]->expiry));
-				$today = time();
-				$expdate = strtotime($exp_date);
-				if($expdate >= $today){
-					$trail_period = 'available';
-					$diff = $today - $expdate;
-					$remaining = (floor($diff / (60 * 60 * 24))) * -1;
-				}else{
-					$trail_period = 'Expired';
-				}
-			}
+// 			if($status == 'Trail'){
+// 				$exp_date = date('Y-m-d H:i:s', strtotime($res[0]->expiry));
+// 				$today = time();
+// 				$expdate = strtotime($exp_date);
+// 				if($expdate >= $today){
+// 					$trail_period = 'available';
+// 					$diff = $today - $expdate;
+// 					$remaining = (floor($diff / (60 * 60 * 24))) * -1;
+// 				}else{
+// 					$trail_period = 'Expired';
+// 				}
+// 			}
 			// echo $remaining;exit;
 			if($status != 'Expired' && $trail_period !='Expired'){
 				/*menu items */
@@ -313,7 +313,7 @@ class Suppliers extends CI_Controller {
 							}
 							}
 				}
-				 //echo '<pre>';print_r($suppliers);exit;
+				//  echo '<pre>';print_r($suppliers);exit;
 				
 				// $hdata['cat_result'] = $finalCatlist;
 				$data['suppliers'] = $suppliers;

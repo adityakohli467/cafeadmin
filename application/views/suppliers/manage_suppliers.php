@@ -73,27 +73,10 @@
 				    // exit;
 				    
 				    ?>
-				<?php foreach($suppliers as $row){
+				<?php foreach($suppliers as $row){ ?>
 				    
 			
-				if($user_group != 'Super Admin' && $row->name == 'Super Admin'){
-					//if($row->name == 'Super Admin'){
-				
-						?>
-					<tr class="tr">
-						<td class="text-left"><a  href="<?php echo base_url(); ?>index.php/suppliers/edit_suppliers/<?php echo $row->supplier_id; ?>" ><?php echo $row->supplier_name; ?></td>
-						<td class="text-left"><?php echo $row->first_name; ?></td>
-						<td class="text-center"><?php echo $row->mobile; ?></td>
-						<td class="text-left"><?php echo $row->email; ?></td>
-						<td class="text-center"><a href="<?php echo base_url(); ?>index.php/suppliers/supplier_items/<?php echo $row->supplier_id; ?>">items</td>
-						<td class="text-center"><?php echo "dattt ".date('d-m-Y',$row->haccp_expiry_date); ?></td>
-						<td class="text-center"><?php echo "dattt ".date('d-m-Y',$row->cfr_expiry_date); ?></td>
-					</tr>
-				<?php
-					//}
-				}else{ 	
-				?>
-					<tr class="tr">
+				<tr class="tr">
 						<td class="text-left"><a  href="<?php echo base_url(); ?>index.php/suppliers/edit_suppliers/<?php echo $row->supplier_id; ?>" ><?php echo $row->supplier_name; ?></a></td>
 						<td class="text-left"><?php echo $row->first_name; ?></td>
 						<td class="text-center"><?php echo $row->mobile; ?></td>
@@ -107,7 +90,8 @@
 					<?php echo ($row->cfr_expiry_date !='' ? date('d-m-Y',strtotime($row->cfr_expiry_date)) : ''); ?>
 						</td>
 					</tr>
-				<?php }} ?>
+				
+			<?php	} ?>
 				</tbody>
 			</table>
 			</div>
