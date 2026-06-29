@@ -246,6 +246,9 @@ $name = $week_days[$i].'_layout[]';
 		        }else if(data=='validation'){
 		         $msg = "Ensure all mandatory fields are populated";
 		         $icon = "warning";
+		        }else if(data=='weekvalidation'){
+		         $msg = "Roster must be exactly one week: start on Monday and end on Sunday.";
+		         $icon = "warning";
 		        }
 		         <!--start 6Jan 2021 work-->
 		         
@@ -374,10 +377,21 @@ $('.datetimepicker3').datetimepicker({
  </script>
 	<script type="text/javascript">
             $(function () {
-                $('.datetimepicker1').datetimepicker({
+                $("input[name='start_date']").closest('.datetimepicker1').datetimepicker({
 					format: 'DD-MM-YYYY',
-					<!--minDate:new Date()-->
+					daysOfWeekDisabled: [0,2,3,4,5,6]
 				});
+                $("input[name='end_date']").closest('.datetimepicker1').datetimepicker({
+					format: 'DD-MM-YYYY',
+					daysOfWeekDisabled: [1,2,3,4,5,6]
+				});
+                // When Monday chosen for start, auto-fill end with the following Sunday
+                $("input[name='start_date']").closest('.datetimepicker1').on('dp.change', function(e){
+                    if(e.date){
+                        var end = e.date.clone().add(6,'days');
+                        $("input[name='end_date']").closest('.datetimepicker1').data('DateTimePicker').date(end);
+                    }
+                });
             });
         </script>
 	<style>

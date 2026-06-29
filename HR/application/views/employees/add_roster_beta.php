@@ -376,6 +376,9 @@ function submitnewRoster(){
 		        }else if(data=='validation'){
 		         $msg = "Ensure all mandatory fields are populated";
 		         $icon = "warning";
+		        }else if(data=='weekvalidation'){
+		         $msg = "Roster must be exactly one week: start on Monday and end on Sunday.";
+		         $icon = "warning";
 		        }
 		         <!--start 6Jan 2021 work-->
 		         

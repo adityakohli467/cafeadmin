@@ -3145,6 +3145,14 @@ Please login to the HR portal to view the update. Responses to the request can b
 			    exit;
 			}
 			
+			// Strict weekly rule: roster MUST start on Monday, end on Sunday, span exactly 7 days
+			$diff_days = round((strtotime($end_date) - strtotime($start_date)) / 86400);
+			if(date('N', strtotime($start_date)) != 1 || date('N', strtotime($end_date)) != 7 || $diff_days != 6){
+			    if (ob_get_length()) ob_end_clean();
+			    echo "weekvalidation";
+			    exit;
+			}
+			
 			$roster_department = $_POST['roster_department'];
 			
 			$monday_start = $_POST['mon_start'];
@@ -3428,8 +3436,13 @@ Please login to the HR portal to view the update. Responses to the request can b
 			$emp_ids =  $_POST['emp_id'];
 			$prev_emp =  isset($_POST['prev_emp']) ? $_POST['prev_emp'] : array();
 			
-			
-// 			echo "<pre>";print_r($_POST);exit;
+			// Strict weekly rule: roster MUST start on Monday, end on Sunday, span exactly 7 days
+			$diff_days = round((strtotime($end_date) - strtotime($start_date)) / 86400);
+			if(date('N', strtotime($start_date)) != 1 || date('N', strtotime($end_date)) != 7 || $diff_days != 6){
+			    if (ob_get_length()) ob_end_clean();
+			    $return_data['result'] = 'weekvalidation';
+			    echo json_encode($return_data); exit;
+			}
 		// Fetch existing employees and timesheet ID for this roster group (used for add/swap detection)
 		$existing_employeeOfthisRoster = $this->admin_model->fetch_emp_idofthisroster($roster_group_id);
 		 $timeSheetID = $this->admin_model->get_timesheet_by_roster_group_id($roster_group_id);

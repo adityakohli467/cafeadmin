@@ -354,6 +354,9 @@
 		        }else if(data.result=='validation'){
 		         $msg = "Ensure all mandatory fields are populated";
 		         $icon = "warning";
+		        }else if(data.result=='weekvalidation'){
+		         $msg = "Roster must be exactly one week: start on Monday and end on Sunday.";
+		         $icon = "warning";
 		        }
 		         else if(data.result=='leaveValidation'){
 		         $msg = data.emp_name+" is on leave during the selected shift time. Please ensure this employee is not rostered for the leave days.";
