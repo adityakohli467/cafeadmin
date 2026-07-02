@@ -1189,6 +1189,8 @@
                             						<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_ipswich.pdf" target="_blank">View</a>
                             							<?php }elseif($branch_id =='55') { ?>
                             							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_rpa.pdf" target="_blank">View</a>
+                            							<?php }elseif($branch_id =='69' || $branch_id =='70') { ?>
+                            							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_tarator.pdf" target="_blank">View</a>
                             							<?php }else { ?>
                             							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_all.pdf" target="_blank">View</a>
                             							<?php } ?>
@@ -1201,6 +1203,8 @@
                             							<iframe src="<?php echo base_url();?>assets/terms_docs/induction_ipswich.pdf" width="100%" height="100%"></iframe>
                             								<?php }elseif($branch_id =='55') { ?>
                             								<iframe src="<?php echo base_url();?>assets/terms_docs/induction_rpa.pdf" width="100%" height="100%"></iframe>
+                            									<?php }elseif($branch_id =='69' || $branch_id =='70') { ?>
+                            									<iframe src="<?php echo base_url();?>assets/terms_docs/induction_tarator.pdf" width="100%" height="100%"></iframe>
                             									<?php }else { ?>
                             									<iframe src="<?php echo base_url();?>assets/terms_docs/induction_all.pdf" width="100%" height="100%"></iframe>
                             										<?php } ?>
