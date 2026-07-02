@@ -1052,14 +1052,14 @@ foreach($branchempResult as $branchemp) {
 		          $location='Ipswich Holdings';
 		      }
 		      else{
-		          $location='Zouki ';
+		          $location='';
 		      }
                			      
         $html = '<html> <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <title></title> 
             </head> 
             <body> 
             <p>Hello '. $footscray_user->first_name.' ,</p>
-            <p> Welcome to your new HR Portal for '.$location.'.</p>
+            <p> Welcome to your new HR Portal'.($location != '' ? ' for '.$location : '').'.</p>
             In this portal you will be able to check your rosters and timesheets,<br>
             communicate with the management, update your employee and leave details as<br>
             well as submit any compliance forms required by Cafe admin.
@@ -1213,7 +1213,7 @@ foreach($branchempResult as $branchemp) {
     </head> 
     <body> 
     <p>Hello '. $footscray_user->first_name.' ,</p>
-    <p> Welcome to your new HR Portal for Zouki.</p>
+    <p> Welcome to your new HR Portal.</p>
     In this portal you will be able to check your rosters and timesheets,<br>
     communicate with the management, update your employee and leave details as<br>
     well as submit any compliance forms required by Cafe admin.
