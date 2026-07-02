@@ -1185,11 +1185,11 @@
                                         <div class="col-lg-3">
                                       <h3>Staff Induction Manual</h3>
                                     <div class="col-md-2 btn-position" style="text-align:right;padding-right:0px;">
-                            					      <?php if($branch_id =='57') { ?>
+                            					      <?php if($row->branch_id =='57') { ?>
                             						<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_ipswich.pdf" target="_blank">View</a>
-                            							<?php }elseif($branch_id =='55') { ?>
+                            							<?php }elseif($row->branch_id =='55') { ?>
                             							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_rpa.pdf" target="_blank">View</a>
-                            							<?php }elseif($branch_id =='69' || $branch_id =='70') { ?>
+                            							<?php }elseif($row->branch_id =='69' || $row->branch_id =='70') { ?>
                             							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/new_induction_tarator.pdf" target="_blank">View</a>
                             							<?php }else { ?>
                             							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_all.pdf" target="_blank">View</a>
@@ -1199,11 +1199,11 @@
                             	   
                             						<div class="form-group">
                             							<div class="pdf-view-wrap">
-                            							      <?php if($branch_id =='57') { ?>
+                            							      <?php if($row->branch_id =='57') { ?>
                             							<iframe src="<?php echo base_url();?>assets/terms_docs/induction_ipswich.pdf" width="100%" height="100%"></iframe>
-                            								<?php }elseif($branch_id =='55') { ?>
+                            								<?php }elseif($row->branch_id =='55') { ?>
                             								<iframe src="<?php echo base_url();?>assets/terms_docs/induction_rpa.pdf" width="100%" height="100%"></iframe>
-                            									<?php }elseif($branch_id =='69' || $branch_id =='70') { ?>
+                            									<?php }elseif($row->branch_id =='69' || $row->branch_id =='70') { ?>
                             									<iframe src="<?php echo base_url();?>assets/terms_docs/new_induction_tarator.pdf" width="100%" height="100%"></iframe>
                             									<?php }else { ?>
                             									<iframe src="<?php echo base_url();?>assets/terms_docs/induction_all.pdf" width="100%" height="100%"></iframe>
@@ -1220,11 +1220,11 @@
                                                 <h3>Company Policies and Procedures</h3>
                                            
                         					<div class="col-md-2 btn-position" style="text-align:right;padding-right:0px;">
-                        					     <?php if($branch_id =='57') { ?>
+                        					     <?php if($row->branch_id =='57') { ?>
                         						<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/policy_ipswich.pdf" target="_blank">View</a>
-                        							<?php }elseif($branch_id =='55') { ?>
+                        							<?php }elseif($row->branch_id =='55') { ?>
                         						<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/policy_rpa.pdf" target="_blank">View</a>
-                        						<?php }elseif($branch_id =='69' || $branch_id =='70') { ?>
+                        						<?php }elseif($row->branch_id =='69' || $row->branch_id =='70') { ?>
                         						<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/new_policy_tarator.pdf" target="_blank">View</a>
                         						<?php }else{  ?>
                         					  <a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/policy_all.pdf" target="_blank">View</a>
@@ -1234,11 +1234,11 @@
                         						<div class="form-group">
                         							<div class="pdf-view-wrap">
                         							    
-                        						   <?php if($branch_id =='57') { ?>
+                        						   <?php if($row->branch_id =='57') { ?>
                         							<iframe src="<?php echo base_url();?>assets/terms_docs/policy_ipswich.pdf" width="100%" height="100%"></iframe>
-                        							<?php }elseif($branch_id =='55') { ?>
+                        							<?php }elseif($row->branch_id =='55') { ?>
                         					<iframe src="<?php echo base_url();?>assets/terms_docs/policy_rpa.pdf" width="100%" height="100%"></iframe>
-                        					<?php }elseif($branch_id =='69' || $branch_id =='70') { ?>
+                        					<?php }elseif($row->branch_id =='69' || $row->branch_id =='70') { ?>
                         					<iframe src="<?php echo base_url();?>assets/terms_docs/new_policy_tarator.pdf" width="100%" height="100%"></iframe>
                         						<?php }else { ?>
                         					<iframe src="<?php echo base_url();?>assets/terms_docs/policy_all.pdf" width="100%" height="100%"></iframe>
