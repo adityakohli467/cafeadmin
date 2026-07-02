@@ -1402,7 +1402,7 @@
                 							<?php }elseif($branch_id =='55') { ?>
                 							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_rpa.pdf" target="_blank">View</a>
                 							<?php } elseif($branch_id =='69' || $branch_id =='70') { ?>
-                							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_tarator.pdf" target="_blank">View</a>
+                							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/new_induction_tarator.pdf" target="_blank">View</a>
                 							<?php }  elseif($branch_id =='72') { ?>
                 							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/AlloBeirutinduction_all.pdf" target="_blank">View</a>
                 							<?php } else { ?>
@@ -1418,7 +1418,7 @@
                 								<?php }elseif($branch_id =='55') { ?>
                 								<iframe src="<?php echo base_url();?>assets/terms_docs/induction_rpa.pdf" width="100%" height="100%"></iframe>
                 								<?php }elseif($branch_id =='69' || $branch_id =='70') { ?>
-                								<iframe src="<?php echo base_url();?>assets/terms_docs/induction_tarator.pdf" width="100%" height="100%"></iframe>
+                								<iframe src="<?php echo base_url();?>assets/terms_docs/new_induction_tarator.pdf" width="100%" height="100%"></iframe>
                 								<?php } elseif($branch_id =='72') { ?>
                 									<iframe src="<?php echo base_url();?>assets/terms_docs/AlloBeirutinduction_all.pdf" width="100%" height="100%"></iframe>
 
@@ -1452,7 +1452,7 @@
             <a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/policy_redbean.pdf" target="_blank">View Policy</a>
             <a style="width:100%; margin-top: 5px;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" target="_blank">View Fair Work</a>
         <?php } elseif($branch_id == '69' || $branch_id == '70') { ?>
-            <a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/policy_tarator.pdf" target="_blank">View Policy</a>
+            <a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/new_policy_tarator.pdf" target="_blank">View Policy</a>
             <a style="width:100%; margin-top: 5px;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" target="_blank">View Fair Work</a>
         <?php } elseif($branch_id == '56' || $branch_id == '59' || $branch_id == '54' || $branch_id == '58') { ?>
             <a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/ZoukiPolicyProcedures.pdf" target="_blank">View Policy</a>
@@ -1476,7 +1476,7 @@
                     <iframe src="<?php echo base_url();?>assets/terms_docs/AlloBeirutPolicyProcedures.pdf" width="100%" height="600px"></iframe>
                     <iframe src="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" width="100%" height="600px" style="margin-top: 10px;"></iframe>
                 <?php } elseif($branch_id == '69' || $branch_id == '70') { ?>
-                    <iframe src="<?php echo base_url();?>assets/terms_docs/policy_tarator.pdf" width="100%" height="600px"></iframe>
+                    <iframe src="<?php echo base_url();?>assets/terms_docs/new_policy_tarator.pdf" width="100%" height="600px"></iframe>
                     <iframe src="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" width="100%" height="600px" style="margin-top: 10px;"></iframe>
                 <?php } elseif($branch_id == '56' || $branch_id == '59' || $branch_id == '54' || $branch_id == '58') { ?>
                     <iframe src="<?php echo base_url();?>assets/terms_docs/ZoukiPolicyProcedures.pdf" width="100%" height="600px"></iframe>
