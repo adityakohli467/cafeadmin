@@ -460,18 +460,28 @@ $name = $week_days[$i].'_hours[]';
         </script>
 	<script type="text/javascript">
             $(function () {
-                $("input[name='start_date']").closest('.datetimepicker1').datetimepicker({
-					format: 'DD-MM-YYYY',
-					daysOfWeekDisabled: [0,2,3,4,5,6]
-				});
-                $("input[name='end_date']").closest('.datetimepicker1').datetimepicker({
-					format: 'DD-MM-YYYY',
-					daysOfWeekDisabled: [1,2,3,4,5,6]
-				});
-                $("input[name='start_date']").closest('.datetimepicker1').on('dp.change', function(e){
+                var startGroup = $("input[name='start_date']").closest('.datetimepicker1');
+                var endGroup   = $("input[name='end_date']").closest('.datetimepicker1');
+
+                // useCurrent:false stops the picker from auto-advancing the loaded date
+                startGroup.datetimepicker({ format: 'DD-MM-YYYY', useCurrent: false });
+                endGroup.datetimepicker({ format: 'DD-MM-YYYY', useCurrent: false });
+
+                // Set the saved values explicitly BEFORE applying the day restrictions
+                var startVal = "<?php echo !empty($start_date) ? date('d-m-Y', strtotime($start_date)) : ''; ?>";
+                var endVal   = "<?php echo !empty($end_date) ? date('d-m-Y', strtotime($end_date)) : ''; ?>";
+                if(startVal){ startGroup.data('DateTimePicker').date(moment(startVal, 'DD-MM-YYYY')); }
+                if(endVal){ endGroup.data('DateTimePicker').date(moment(endVal, 'DD-MM-YYYY')); }
+
+                // Apply day-of-week restrictions AFTER setting values so they aren't shifted
+                startGroup.data('DateTimePicker').daysOfWeekDisabled([0,2,3,4,5,6]);
+                endGroup.data('DateTimePicker').daysOfWeekDisabled([1,2,3,4,5,6]);
+
+                // Auto-fill end date only when the user changes the start date
+                startGroup.on('dp.change', function(e){
                     if(e.date){
                         var end = e.date.clone().add(6,'days');
-                        $("input[name='end_date']").closest('.datetimepicker1').data('DateTimePicker').date(end);
+                        endGroup.data('DateTimePicker').date(end);
                     }
                 });
             });
