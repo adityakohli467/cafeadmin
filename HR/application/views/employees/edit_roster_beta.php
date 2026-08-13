@@ -349,8 +349,13 @@
 		            try { var data = (typeof response === 'object') ? response : JSON.parse(response); } catch(e) { $("#loader").hide(); swal({text:'Unexpected server response', icon:'error'}); return; }
 		            console.log(data.result);
 		        if(data.result=='Sucess'){
+		        if(data.warning=='swap_blocked'){
+		        $msg = "Roster updated. Note: one or more employees had already clocked time and could NOT be swapped out \u2014 their recorded hours were protected.";
+		        $icon = "warning";
+		        }else{
 		        $msg = "Roster Updated Succesfully";
 		        $icon = "success";
+		        }
 		        }else if(data.result=='validation'){
 		         $msg = "Ensure all mandatory fields are populated";
 		         $icon = "warning";

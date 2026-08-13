@@ -1119,7 +1119,23 @@ public function fetch_employee_notifications(){
 		}
 	}
 	function submit_employee_timesheet($data){
-		 return $this->db->insert('employee_timesheet',$data);
+		 // Idempotent seed. Once the UNIQUE(employee_id,timesheet_id,roster_id,date)
+		 // key exists, re-seeding the same day becomes a harmless no-op instead of
+		 // creating duplicate rows. Before the key exists it behaves like a normal
+		 // INSERT, so this is safe to deploy independently of the DB migration.
+		 if(empty($data) || !is_array($data)){
+		     return 0;
+		 }
+		 $cols = array();
+		 $vals = array();
+		 foreach($data as $col => $val){
+		     $cols[] = $this->db->protect_identifiers($col);
+		     $vals[] = $this->db->escape($val);
+		 }
+		 $sql = 'INSERT IGNORE INTO '.$this->db->protect_identifiers('employee_timesheet')
+		      .' ('.implode(', ', $cols).') VALUES ('.implode(', ', $vals).')';
+		 $this->db->query($sql);
+		 return $this->db->affected_rows(); // 1 = inserted, 0 = already existed
 	}
 	
   public function get_timesheet_nameby_id($timesheet_id){
@@ -1183,6 +1199,148 @@ public function fetch_employee_notifications(){
 	    $this->db->where('date', $date);
 	    return $this->db->get()->row();
 	}	
+
+	/**
+	 * Robust, race-safe clock/break write.
+	 *
+	 * Performs a single atomic conditional UPDATE that only fills the target
+	 * field when it is currently empty, bound to one row. Two concurrent
+	 * requests can no longer both succeed: the first changes the row, the
+	 * second matches nothing. Returns a precise status instead of a bare bool.
+	 *
+	 * @return string one of: saved | already_recorded | no_row | error
+	 */
+	function record_timesheet_punch($field, $value, $timesheet_id, $roster_id, $employee_id, $date){
+	    $allowed = array('in_time', 'out_time', 'break_in_time', 'break_out_time');
+	    if(!in_array($field, $allowed, true)){
+	        return 'error';
+	    }
+	    if($value === '' || $value === null){
+	        return 'error';
+	    }
+
+	    // $field is whitelisted above, so it is safe to interpolate.
+	    $sql = "UPDATE `employee_timesheet` SET `$field` = ? "
+	         . "WHERE `employee_id` = ? AND `roster_id` = ? AND `date` = ? "
+	         . "AND (`$field` IS NULL OR `$field` = '00:00:00' OR `$field` = '')";
+	    $params = array($value, intval($employee_id), $roster_id, $date);
+	    if($timesheet_id !== '' && $timesheet_id !== null){
+	        $sql .= " AND `timesheet_id` = ?";
+	        $params[] = $timesheet_id;
+	    }
+	    $sql .= " ORDER BY `employee_timesheet_id` ASC LIMIT 1";
+
+	    $this->db->query($sql, $params);
+
+	    if($this->db->affected_rows() >= 1){
+	        return 'saved';
+	    }
+
+	    // Nothing changed: either the value was already recorded, or there is no
+	    // seeded row for this day. Distinguish the two so the UI can react.
+	    $this->db->from('employee_timesheet');
+	    $this->db->where('employee_id', intval($employee_id));
+	    $this->db->where('roster_id', $roster_id);
+	    $this->db->where('date', $date);
+	    if($timesheet_id !== '' && $timesheet_id !== null){
+	        $this->db->where('timesheet_id', $timesheet_id);
+	    }
+	    return $this->db->count_all_results() > 0 ? 'already_recorded' : 'no_row';
+	}
+
+	/**
+	 * True if the employee has ANY recorded punch on this timesheet (optionally
+	 * scoped to one roster). Used to protect real worked hours during edits.
+	 */
+	function timesheet_has_punches($emp_id, $timesheet_id, $roster_id = ''){
+	    $this->db->from('employee_timesheet');
+	    $this->db->where('employee_id', intval($emp_id));
+	    $this->db->where('timesheet_id', $timesheet_id);
+	    if($roster_id !== '' && $roster_id !== null){
+	        $this->db->where('roster_id', $roster_id);
+	    }
+	    $this->db->group_start();
+	        $this->db->where("(in_time IS NOT NULL AND in_time <> '00:00:00')", NULL, FALSE);
+	        $this->db->or_where("(out_time IS NOT NULL AND out_time <> '00:00:00')", NULL, FALSE);
+	        $this->db->or_where("(break_in_time IS NOT NULL AND break_in_time <> '00:00:00')", NULL, FALSE);
+	        $this->db->or_where("(break_out_time IS NOT NULL AND break_out_time <> '00:00:00')", NULL, FALSE);
+	    $this->db->group_end();
+	    return $this->db->count_all_results() > 0;
+	}
+
+	/**
+	 * Safely move a roster/timesheet slot from one employee to another during a
+	 * roster edit, WITHOUT corrupting recorded hours.
+	 *  - If the outgoing employee already clocked time -> refuse ('has_punches').
+	 *  - If the incoming employee already has rows here -> drop the outgoing
+	 *    blank rows to avoid duplicates ('merged').
+	 *  - Otherwise reassign the blank rows ('reassigned').
+	 * Scoped by roster_id so other rosters in the same timesheet are untouched.
+	 *
+	 * @return string reassigned | merged | has_punches | noop
+	 */
+	function reassign_timesheet_employee($prev_emp, $new_emp, $timesheet_id, $roster_id = ''){
+	    $prev_emp = intval($prev_emp);
+	    $new_emp  = intval($new_emp);
+	    if($prev_emp === 0 || $new_emp === 0 || $prev_emp === $new_emp){
+	        return 'noop';
+	    }
+	    if($timesheet_id === '' || $timesheet_id === null){
+	        return 'noop';
+	    }
+
+	    if($this->timesheet_has_punches($prev_emp, $timesheet_id, $roster_id)){
+	        return 'has_punches';
+	    }
+
+	    $this->db->from('employee_timesheet');
+	    $this->db->where('employee_id', $new_emp);
+	    $this->db->where('timesheet_id', $timesheet_id);
+	    if($roster_id !== '' && $roster_id !== null){
+	        $this->db->where('roster_id', $roster_id);
+	    }
+	    $new_already_present = $this->db->count_all_results() > 0;
+
+	    $this->db->where('employee_id', $prev_emp);
+	    $this->db->where('timesheet_id', $timesheet_id);
+	    if($roster_id !== '' && $roster_id !== null){
+	        $this->db->where('roster_id', $roster_id);
+	    }
+	    if($new_already_present){
+	        $this->db->delete('employee_timesheet');
+	        return 'merged';
+	    }
+	    $this->db->update('employee_timesheet', array('employee_id' => $new_emp));
+	    return 'reassigned';
+	}
+
+	/**
+	 * Clean up a timesheet when an employee is removed from a roster during edit.
+	 *  - Real worked hours present -> soft-deactivate (status = 0), never destroy.
+	 *  - Only blank seeded rows     -> hard delete.
+	 *
+	 * @return string deactivated | deleted
+	 */
+	function remove_employee_from_timesheet($emp_id, $timesheet_id, $roster_id = ''){
+	    $emp_id = intval($emp_id);
+	    if($this->timesheet_has_punches($emp_id, $timesheet_id, $roster_id)){
+	        $this->db->where('employee_id', $emp_id);
+	        $this->db->where('timesheet_id', $timesheet_id);
+	        if($roster_id !== '' && $roster_id !== null){
+	            $this->db->where('roster_id', $roster_id);
+	        }
+	        $this->db->update('employee_timesheet', array('status' => 0));
+	        return 'deactivated';
+	    }
+	    $this->db->where('employee_id', $emp_id);
+	    $this->db->where('timesheet_id', $timesheet_id);
+	    if($roster_id !== '' && $roster_id !== null){
+	        $this->db->where('roster_id', $roster_id);
+	    }
+	    $this->db->delete('employee_timesheet');
+	    return 'deleted';
+	}
+
 	function update_employee_timesheet_emps($prev_emp,$emp_id,$timesheet_id){
 	    $data = array(
 	        'employee_id' => $emp_id,
@@ -1562,6 +1720,17 @@ public function fetch_employee_notifications(){
 		
 		
 		
+	}
+
+	/**
+	 * Deletes ONLY the roster row (not its timesheet rows). Timesheet cleanup is
+	 * handled by remove_employee_from_timesheet() so already-clocked hours are
+	 * soft-deactivated rather than destroyed.
+	 */
+	public function delete_roster_row_only($roster_group_id, $roster_id){
+	    $this->db->where('roster_group_id', $roster_group_id);
+	    $this->db->where('roster_id', $roster_id);
+	    return $this->db->delete('roster');
 	}
 	
 	public function fetch_employee_for_timsheet($roster_group_id, $branch_id = ''){

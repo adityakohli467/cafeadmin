@@ -654,6 +654,9 @@
 	        }else if(response =='on_break'){
 	            revertCellSwap();
 	            swal({ text: "You are currently on break. Please end your break before clocking out.", icon: "warning" });
+	        }else if(response =='no_row'){
+	            revertCellSwap();
+	            swal({ text: "No timesheet entry exists for this day. Please contact your manager — the time was NOT saved.", icon: "error" });
 	        }else if(response =='saved'){	         $('#pinModal').modal('hide');	         $class_to_enable = $("#current_in_time").val();
 	         $("."+$class_to_enable).html('');
 	         $("."+$class_to_enable).removeAttr('data-toggle');
@@ -707,6 +710,9 @@
 	        }else if(data =='already_recorded'){
 	            revertCellSwap();
 	            swal({ text: "This break time has already been recorded.", icon: "warning" });
+	        }else if(data =='no_row'){
+	            revertCellSwap();
+	            swal({ text: "No timesheet entry exists for this day. Please contact your manager — the break was NOT saved.", icon: "error" });
 	        }else if(data =='saved'){
 	            $el_to_update.html(break_time);
 	            $el_to_update.removeAttr('data-toggle');
@@ -777,6 +783,155 @@ function breaksetTime_in_time(obj) {
 <style>
 .material-icons{
     cursor: pointer !important;
+}
+
+/* ===================================================================
+   Modernized timesheet clock in / out UI  (visual only, no markup or
+   logic changes). Targets the existing classes and modal triggers.
+   =================================================================== */
+.ct-timesheet{
+    max-width: 1320px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1f2937;
+}
+
+/* ---- Top controls ---- */
+.ct-timesheet .ct-top .control-label,
+.ct-timesheet .ct-top label{
+    font-size: 12px;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+.ct-timesheet #roster_list,
+.ct-timesheet #employee_search{
+    height: 42px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+.ct-timesheet #roster_list:focus,
+.ct-timesheet #employee_search:focus{
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52,152,219,.15);
+    outline: none;
+}
+.ct-timesheet .ct-top button.btn-success,
+.ct-timesheet .ct-top .btn-success{
+    background: #16a34a;
+    border: none;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(22,163,74,.25);
+    transition: transform .08s ease, box-shadow .15s ease, background .15s ease;
+}
+.ct-timesheet .ct-top button.btn-success:hover,
+.ct-timesheet .ct-top .btn-success:hover{
+    background: #15803d;
+    box-shadow: 0 4px 12px rgba(22,163,74,.30);
+}
+.ct-timesheet .ct-top button.btn-success:active,
+.ct-timesheet .ct-top .btn-success:active{ transform: translateY(1px); }
+
+/* ---- Scroll wrapper (horizontal scroll on small screens) ---- */
+.ct-timesheet .ct-scroll{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    background: #fff;
+}
+
+/* ---- Main table ---- */
+.ct-timeset{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: none !important;
+    min-width: 900px;
+}
+.ct-timeset .ct-out-header th{
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: linear-gradient(180deg,#2c3e50,#1f2c39);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    padding: 14px 12px;
+    border: none !important;
+    text-align: center;
+}
+.ct-timeset .ct-out-header th:first-child{ text-align: left; border-top-left-radius: 14px; }
+.ct-timeset .ct-out-header th:last-child{ border-top-right-radius: 14px; }
+
+.ct-timeset > tbody > tr.parent_row > td{
+    padding: 12px;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid #eef2f7 !important;
+    vertical-align: middle;
+    background: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+.ct-timeset > tbody > tr.parent_row:nth-child(even) > td{ background: #f9fbfd; }
+.ct-timeset > tbody > tr.parent_row:hover > td{ background: #eef6ff; }
+.ct-timeset > tbody > tr.parent_row > td:first-child{ text-align: left; }
+
+/* ---- Inner day (IN / Break / OUT) tables ---- */
+.ct-timeset table{ width: 100%; border-collapse: separate; border-spacing: 0; }
+.ct-timeset .ct-in-header th{
+    background: #eef2f7;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    padding: 6px 4px;
+    border: none !important;
+    text-align: center;
+}
+.ct-timeset table td{ border: none !important; padding: 6px 4px; text-align: center; }
+.ct-timeset table tbody td{ font-weight: 600; color: #0f172a; }
+
+/* ---- Interactive cells that open a modal ---- */
+.ct-timeset td[data-toggle="modal"]{ cursor: pointer; }
+.ct-timeset td[data-target="#pinModal"]{
+    cursor: pointer;
+    background: #3498db;
+    color: #fff !important;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .4px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    text-align: center;
+    white-space: nowrap;
+    transition: background .15s ease;
+}
+.ct-timeset td[data-target="#pinModal"]:hover{ background: #2f89c5; }
+
+/* ---- Responsive: stack the top controls, keep the grid readable ---- */
+@media (max-width: 992px){
+    .ct-timesheet .col-5,
+    .ct-timesheet .col-4,
+    .ct-timesheet .col-3{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 8px !important;
+    }
+    .ct-timesheet .ct-top button.btn-success{ width: 100%; }
+}
+@media (max-width: 576px){
+    .ct-timesheet.mt-5{ margin-top: 1rem !important; }
+    .ct-timeset{ min-width: 760px; }
 }
 </style>
 <script>

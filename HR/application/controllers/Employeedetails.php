@@ -1673,7 +1673,7 @@ $msg = $empname.' has submitted the job keeper request. Please login to the HR p
            
            // insert all 7 days roster detail in timesheet, so that from timesheet portal when user will clock in  in just update correposnding date field 
            for($i=0;$i<7;$i++){
-              $all_seven_days_of_roster = date("Y-m-d", strtotime($date . ' + ' . $i . 'day')) . "<br>"; 
+              $all_seven_days_of_roster = date("Y-m-d", strtotime($date . ' + ' . $i . 'day')); 
             $data = array(
           'employee_id' =>$roster_detail->emp_id,
           'roster_group_id' =>$roster_group_ids,
@@ -4064,18 +4064,24 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
    
      // setting session for roster group id
       $this->session->set_userdata('roster_id', $roster_id);
-    
-       $data = array(
-         $type =>$in_time,
-        );
-         
-      if(isset($emp_id_outletname[1]) && !empty($emp_id_outletname[1])){
-        $outletname = $emp_id_outletname[1]; 
-        $data['outletname'] = $outletname;
-      }
-       
-        $result = $this->admin_model->update_employee_timesheet($data,$timesheet_id,$roster_id,'',$emp_id); 
-        echo $result ? 'saved' : 'error';
+
+        // Atomic, race-safe write bound to a single row. Only fills the field
+        // when empty, checks affected rows, and reports precisely what happened
+        // (no more silent "saved" when nothing was actually stored).
+        $status = $this->admin_model->record_timesheet_punch($type, $in_time, $timesheet_id, $roster_id, $emp_id, date('Y-m-d'));
+
+        if($status === 'saved' && isset($emp_id_outletname[1]) && $emp_id_outletname[1] !== ''){
+            // Persist the outlet name on the same row (non-critical metadata).
+            $this->db->where('employee_id', intval($emp_id));
+            $this->db->where('roster_id', $roster_id);
+            $this->db->where('date', date('Y-m-d'));
+            if($timesheet_id !== '' && $timesheet_id !== null){
+                $this->db->where('timesheet_id', $timesheet_id);
+            }
+            $this->db->update('employee_timesheet', array('outletname' => $emp_id_outletname[1]));
+        }
+
+        echo in_array($status, array('saved', 'already_recorded', 'no_row'), true) ? $status : 'error';
  }
     public function compare_time_logic($roster_id,$type,$in_time){
      $error = false;
@@ -4251,13 +4257,10 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
           }
       }
        
-        $data = array(
-         $break_type =>$break_time,
-         'date'=> $date,
-        );
-        
-        $result = $this->admin_model->update_employee_timesheet($data,$timesheet_id,$roster_id,'',$emp_id);
-        echo $result ? 'saved' : 'error';
+        // Atomic, race-safe break write bound to a single row.
+        $status = $this->admin_model->record_timesheet_punch($break_type, $break_time, $timesheet_id, $roster_id, $emp_id, $date);
+
+        echo in_array($status, array('saved', 'already_recorded', 'no_row'), true) ? $status : 'error';
  }
  
     public function update_timesheet(){

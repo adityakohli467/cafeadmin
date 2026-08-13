@@ -73,12 +73,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+/*
+ * Sensitive DB credentials are kept OUT of source control.
+ * Resolution order for each value: environment variable, then the untracked
+ * file database.credentials.php, then a safe default. See
+ * database.credentials.sample.php for the expected structure.
+ */
+$db_credentials_file = __DIR__ . '/database.credentials.php';
+$__db_creds = is_file($db_credentials_file) ? require $db_credentials_file : array();
+
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-    'username' => 'linrefvy_hr_portal',
-	'password' => '212x[j4=WmH!',
-	'database' => 'linrefvy_hr_portal',
+	'hostname' => getenv('HR_DB_HOST') ?: ($__db_creds['hostname'] ?? 'localhost'),
+	'username' => getenv('HR_DB_USER') ?: ($__db_creds['username'] ?? ''),
+	'password' => getenv('HR_DB_PASS') ?: ($__db_creds['password'] ?? ''),
+	'database' => getenv('HR_DB_NAME') ?: ($__db_creds['database'] ?? 'linrefvy_hr_portal'),
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

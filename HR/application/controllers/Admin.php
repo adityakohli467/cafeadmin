@@ -3508,7 +3508,12 @@ Please login to the HR portal to view the update. Responses to the request can b
 		        $count = 0;
 		        
 		  //  echo "<pre>"; print_r($emp_ids); exit;
-	
+
+		    // Wrap the whole roster + timesheet edit in ONE transaction so the two
+		    // tables can never drift out of sync on a partial failure.
+		    $this->db->trans_begin();
+		    $swap_blocked = array();
+
 			foreach($emp_ids as $key=>$emp_id){
 			  $data = array(
 			  'emp_id' => $emp_id,
@@ -3704,16 +3709,28 @@ Please login to the HR portal to view the update. Responses to the request can b
        $is_existing_row = (isset($roster_id[$count]) && $roster_id[$count] !== '' && $roster_id[$count] !== null);
        
        if ($is_existing_row){
-			    $roster = $this->admin_model->update_complete_roster($data,$roster_id[$count]);
-			 
-			
 			$timesheetID = (isset($timeSheetID[0]->timesheet_id) ? $timeSheetID[0]->timesheet_id : '');
-			   
-			        // Only check for employee swap if prev_emp exists for this index
-			        if(isset($prev_emp[$count]) && $prev_emp[$count] != '' && $emp_id != $prev_emp[$count]){
-                        $this->admin_model->update_employee_timesheet_emps($prev_emp[$count],$emp_id,$timesheetID);
-			        }
-			   
+
+			// Is this row an employee swap (row kept, but assigned to a different person)?
+			$is_swap = (isset($prev_emp[$count]) && $prev_emp[$count] != '' && $emp_id != $prev_emp[$count]);
+
+			if($is_swap && $timesheetID !== ''
+			    && $this->admin_model->timesheet_has_punches($prev_emp[$count], $timesheetID, $roster_id[$count])){
+			    // The outgoing employee has ALREADY clocked time on this slot.
+			    // Refuse the swap to protect real payroll data: keep the original
+			    // employee on the roster and flag it back to the UI.
+			    $data['emp_id'] = $prev_emp[$count];
+			    $swap_blocked[] = $prev_emp[$count];
+			    $roster = $this->admin_model->update_complete_roster($data,$roster_id[$count]);
+			}else{
+			    $roster = $this->admin_model->update_complete_roster($data,$roster_id[$count]);
+			    if($is_swap){
+			        // Safe swap: moves only blank seeded rows, preserves data,
+			        // avoids duplicates, and is scoped to THIS roster row.
+			        $this->admin_model->reassign_timesheet_employee($prev_emp[$count], $emp_id, $timesheetID, $roster_id[$count]);
+			    }
+			}
+
 			}else{
 			    // New employee row added via "+" button — insert new roster and add to timesheet
 			    $roster = $this->admin_model->insert_roster($data);
@@ -3743,13 +3760,41 @@ Please login to the HR portal to view the update. Responses to the request can b
 			 
 			}
 // 	exit;
-			if($roster){ 
-			    	// $this->updateEmployeeTimesheet($roster_group_id);
-			  $this->session->set_flashdata('sucess_msg', 'Roster sucessfully added');
-			   $return_data['result'] = 'Sucess';
+
+			// ---- Handle employees REMOVED from the roster during this edit ----
+			// Any roster row that existed before but was NOT resubmitted has been
+			// deleted by the user. Remove its roster row and clean up its timesheet
+			// rows (soft-deactivate if real hours were already clocked, else delete).
+			$timesheetID_removal = (isset($timeSheetID[0]->timesheet_id) ? $timeSheetID[0]->timesheet_id : '');
+			$posted_roster_ids = array();
+			foreach((array)$roster_id as $rid){
+			    if($rid !== '' && $rid !== null){ $posted_roster_ids[] = (string)$rid; }
+			}
+			$existing_roster_rows = $this->admin_model->get_emp_roster('', $roster_group_id);
+			if(!empty($existing_roster_rows)){
+			    foreach($existing_roster_rows as $er){
+			        if(!in_array((string)$er->roster_id, $posted_roster_ids, true)){
+			            if($timesheetID_removal !== ''){
+			                $this->admin_model->remove_employee_from_timesheet($er->emp_id, $timesheetID_removal, $er->roster_id);
+			            }
+			            $this->admin_model->delete_roster_row_only($roster_group_id, $er->roster_id);
+			        }
+			    }
+			}
+
+			if($this->db->trans_status() === FALSE){
+			    $this->db->trans_rollback();
+			    $this->session->set_flashdata('error_msg', 'Unable to update Roster');
+			    $return_data['result'] = 'error';
 			}else{
-				$this->session->set_flashdata('error_msg', 'Unable to add Roster');
-				$return_data['result'] = 'result';
+			    $this->db->trans_commit();
+			    $this->session->set_flashdata('sucess_msg', 'Roster sucessfully updated');
+			    $return_data['result'] = 'Sucess';
+			    if(!empty($swap_blocked)){
+			        // Some swaps were refused to protect already-clocked hours.
+			        $return_data['warning'] = 'swap_blocked';
+			        $return_data['swap_blocked_emps'] = array_values(array_unique($swap_blocked));
+			    }
 			}
 	
 			if (ob_get_length()) ob_end_clean();

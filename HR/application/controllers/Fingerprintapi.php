@@ -258,19 +258,21 @@ class Fingerprintapi extends CI_Controller {
    
      // setting session for roster group id
       $this->session->set_userdata('roster_id', $roster_id);
-    
-       $data = array(
-         $type =>$in_time,
-        );
-         
-      if(isset($outletname) && ($outletname !='')){
-       
-        $data['outletname'] = $outletname;
-      }
-        
-        $this->admin_model->update_employee_timesheet($data,$timesheet_id,$roster_id); 
-        
-    
+
+        // Atomic, race-safe write bound to a single row (same core the portal uses).
+        $status = $this->admin_model->record_timesheet_punch($type, $in_time, $timesheet_id, $roster_id, $emp_id, date('Y-m-d'));
+
+        if($status === 'saved' && isset($outletname) && $outletname !== ''){
+            $this->db->where('employee_id', intval($emp_id));
+            $this->db->where('roster_id', $roster_id);
+            $this->db->where('date', date('Y-m-d'));
+            if($timesheet_id !== '' && $timesheet_id !== null){
+                $this->db->where('timesheet_id', $timesheet_id);
+            }
+            $this->db->update('employee_timesheet', array('outletname' => $outletname));
+        }
+
+        return $status;
  }
  
   public function compare_time_logic($roster_id,$type,$in_time){
