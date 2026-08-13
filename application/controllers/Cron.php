@@ -51,25 +51,29 @@ class Cron extends CI_Controller {
 
         foreach ($emails as $email) {
             try {
-                $mail->ClearAddresses();
-                $mail->ClearCCs();
+                $mail->clearAllRecipients();
 
-                // Handle multiple comma-separated addresses
-                $to_addresses = array_map('trim', explode(',', $email->to_email));
-                foreach ($to_addresses as $addr) {
-                    if (!empty($addr)) {
-                        $mail->addAddress($addr);
-                    }
+                // Recipients may be stored separated by commas, semicolons OR
+                // spaces (supplier records frequently hold several
+                // space-separated addresses). Parse and validate robustly so a
+                // formatting quirk no longer makes the entire send fail.
+                $to_addresses = $this->parse_recipients($email->to_email);
+                $cc_addresses = $this->parse_recipients($email->cc_email);
+
+                if (empty($to_addresses)) {
+                    // Retrying cannot fix a missing/invalid address, so fail it
+                    // now with a clear reason the UI banner can surface.
+                    $this->fail_email_permanently(
+                        $email,
+                        'No valid recipient email address (stored value: "' . $email->to_email . '")'
+                    );
+                    $failed++;
+                    echo "Failed email #{$email->id}: no valid recipient in '{$email->to_email}'\n";
+                    continue;
                 }
 
-                if (!empty($email->cc_email)) {
-                    $cc_addresses = array_map('trim', explode(',', $email->cc_email));
-                    foreach ($cc_addresses as $cc) {
-                        if (!empty($cc)) {
-                            $mail->addCC($cc);
-                        }
-                    }
-                }
+                foreach ($to_addresses as $addr) { $mail->addAddress($addr); }
+                foreach ($cc_addresses as $cc)   { $mail->addCC($cc); }
 
                 $mail->Subject = $email->subject;
                 $mail->Body    = $email->body;
@@ -97,10 +101,16 @@ class Cron extends CI_Controller {
 
         // Mark emails that have exhausted retries as failed
         $exhausted = $this->db->where('status', 'pending')
-                              ->where('attempts >=', 2)
+                              ->where('attempts >=', 3)
                               ->get('email_queue')->result();
         foreach ($exhausted as $ex) {
-            $this->db->where('id', $ex->id)->update('email_queue', array('status' => 'failed'));
+            $fail_reason = !empty($ex->error_message)
+                ? $ex->error_message
+                : 'Delivery failed after maximum retry attempts';
+            $this->db->where('id', $ex->id)->update('email_queue', array(
+                'status'        => 'failed',
+                'error_message' => $fail_reason
+            ));
             if (!empty($ex->order_id)) {
                 $this->orders_model->updateOrderDetails(array('mail_status' => 2), $ex->order_id);
                 // Notify branch manager about the failed email
@@ -113,6 +123,40 @@ class Cron extends CI_Controller {
         $this->db->where('created_at <', $cutoff)->delete('email_queue');
 
         echo "Done. Sent: {$sent}, Failed: {$failed}\n";
+    }
+
+    /**
+     * Split a recipient string into a list of valid email addresses.
+     * Accepts commas, semicolons or whitespace as separators and drops any
+     * token that is not a syntactically valid address.
+     */
+    private function parse_recipients($raw) {
+        if ($raw === null || trim($raw) === '') {
+            return array();
+        }
+        $parts = preg_split('/[\s,;]+/', trim($raw));
+        $valid = array();
+        foreach ($parts as $p) {
+            $p = trim($p);
+            if ($p !== '' && filter_var($p, FILTER_VALIDATE_EMAIL)) {
+                $valid[] = $p;
+            }
+        }
+        return array_values(array_unique($valid));
+    }
+
+    /**
+     * Mark a queued email as permanently failed (retrying will not help) with a
+     * clear reason, and flag the linked order so the UI banner can surface it.
+     */
+    private function fail_email_permanently($email, $reason) {
+        $this->db->where('id', $email->id)->update('email_queue', array(
+            'status'        => 'failed',
+            'error_message' => $reason
+        ));
+        if (!empty($email->order_id)) {
+            $this->orders_model->updateOrderDetails(array('mail_status' => 2), $email->order_id);
+        }
     }
 
     /**

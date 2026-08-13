@@ -528,7 +528,7 @@ Thank you so much for your support and understanding';
 						$data['cc_mail'] = 'cc';
 						$body = $this->load->view('orders/order_email', $data, TRUE);
 						
-						$this->orders_model->queue_email($supplier_to, '', $email_subject, $body);
+						$this->orders_model->queue_email($supplier_to, '', $email_subject, $body, $order_id);
 					}
 				}
 
@@ -538,7 +538,8 @@ Thank you so much for your support and understanding';
 						'kaushika@1800mycatering.com.au',
 						'',
 						"Supplier, Force Order Placed",
-						"Hi Admin, A force order has been placed by ".$manager_emaill
+						"Hi Admin, A force order has been placed by ".$manager_emaill,
+						$order_id
 					);
 				}
 				
@@ -598,6 +599,55 @@ Thank you so much for your support and understanding';
     		
     	echo json_encode($data);
     }
+
+    /**
+     * JSON feed for the global "supplier order email failed" banner.
+     * Returns the current branch's failed order emails that the admin has not
+     * yet dismissed. Polled from the shared header on every page.
+     */
+    public function failed_order_alerts(){
+        $this->output->set_content_type('application/json');
+        if (!$this->ion_auth->logged_in()) {
+            echo json_encode(array());
+            return;
+        }
+        $branch_id = $this->session->userdata('branch_id');
+        if (!$branch_id) {
+            echo json_encode(array());
+            return;
+        }
+        $rows = $this->orders_model->get_failed_order_alerts($branch_id);
+        $out = array();
+        foreach ($rows as $r) {
+            $out[] = array(
+                'order_id'     => $r->order_id,
+                'order_number' => isset($r->order_number) ? $r->order_number : $r->order_id,
+                'email'        => $r->to_email,
+                'supplier'     => isset($r->supplier_name) ? $r->supplier_name : '',
+                'reason'       => $r->error_message
+            );
+        }
+        echo json_encode($out);
+    }
+
+    /**
+     * Acknowledge/dismiss failed-email alerts for one or more orders so the
+     * banner stops showing. Scoped to the logged-in user's branch.
+     */
+    public function dismiss_order_alert(){
+        if (!$this->ion_auth->logged_in()) {
+            echo 'unauthorized';
+            return;
+        }
+        $branch_id = $this->session->userdata('branch_id');
+        $ids = $this->input->post('order_ids');
+        $order_ids = array_filter(array_map('intval', explode(',', (string)$ids)));
+        if (!empty($order_ids)) {
+            $this->orders_model->mark_order_alerts_notified($order_ids, $branch_id);
+        }
+        echo 'ok';
+    }
+
     public function received_orders(){
 	    $this->orderHistory('Received');
 	}

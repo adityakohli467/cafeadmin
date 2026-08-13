@@ -42,6 +42,48 @@
 <body>
 	<div class="gradient"></div>
 
+	<!-- Global supplier-order email failure banner (populated by poller below) -->
+	<div id="order_email_fail_banner" style="display:none; position:fixed; top:0; left:0; right:0; z-index:99999; background:#dc3545; color:#fff; padding:12px 18px; box-shadow:0 2px 8px rgba(0,0,0,.25); font-family:Roboto,Arial,sans-serif; font-size:14px; line-height:1.4;">
+		<span id="order_email_fail_text"></span>
+		<a href="#" id="order_email_fail_dismiss" style="color:#fff; float:right; font-weight:bold; text-decoration:underline; margin-left:15px; white-space:nowrap;">Dismiss</a>
+		<div style="clear:both;"></div>
+	</div>
+	<script>
+	(function(){
+		var alertUrl   = '<?php echo base_url(); ?>index.php/orders/failed_order_alerts';
+		var dismissUrl = '<?php echo base_url(); ?>index.php/orders/dismiss_order_alert';
+		var currentIds = [];
+		function esc(s){ return (s==null?'':String(s)).replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];}); }
+		function poll(){
+			if(!window.jQuery){ return; }
+			$.ajax({ url: alertUrl, method:'GET', dataType:'json', timeout:8000,
+				success:function(rows){
+					if(!rows || !rows.length){ $('#order_email_fail_banner').hide(); currentIds=[]; return; }
+					var ids = rows.map(function(r){ return r.order_id; });
+					currentIds = ids;
+					var html;
+					if(rows.length === 1){
+						html = 'Email delivery for order id: <b>#'+esc(rows[0].order_id)+'</b> failed for email = <b>'+esc(rows[0].email)+'</b>. Please resend the order or contact the supplier directly.';
+					} else {
+						html = 'Email delivery failed for order ids: <b>#'+ ids.map(esc).join(', #') +'</b>. Please resend these orders or contact the suppliers directly.';
+					}
+					$('#order_email_fail_text').html(html);
+					$('#order_email_fail_banner').show();
+				}
+			});
+		}
+		$(function(){
+			$('#order_email_fail_dismiss').on('click', function(e){
+				e.preventDefault();
+				if(!currentIds.length){ $('#order_email_fail_banner').hide(); return; }
+				$.ajax({ url: dismissUrl, method:'POST', data:{ order_ids: currentIds.join(',') },
+					complete:function(){ $('#order_email_fail_banner').hide(); currentIds=[]; } });
+			});
+			setTimeout(poll, 3000);
+			setInterval(poll, 60000);
+		});
+	})();
+	</script>
 	<!--navigation-bar-->
 		<nav class="navbar navbar-default nav-border">
 		  <div class="container-fluid">

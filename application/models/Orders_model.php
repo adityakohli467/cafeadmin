@@ -1507,10 +1507,32 @@ if (!$query) {
 
 	// ==================== Email Queue Methods ====================
 
+	/**
+	 * Normalise a recipient list into a clean, comma-separated string.
+	 * Supplier records often store several addresses separated by spaces (or
+	 * semicolons). If those reach the mailer as-is they are treated as a single
+	 * invalid address and the whole send fails. Splitting on any run of
+	 * whitespace/comma/semicolon fixes that at the source.
+	 */
+	public function normalize_email_list($raw) {
+		if ($raw === null || trim($raw) === '') {
+			return '';
+		}
+		$parts = preg_split('/[\s,;]+/', trim($raw));
+		$clean = array();
+		foreach ($parts as $p) {
+			$p = trim($p);
+			if ($p !== '') {
+				$clean[] = $p;
+			}
+		}
+		return implode(', ', array_unique($clean));
+	}
+
 	public function queue_email($to, $cc, $subject, $body, $order_id = null) {
 		$data = array(
-			'to_email'   => $to,
-			'cc_email'   => $cc,
+			'to_email'   => $this->normalize_email_list($to),
+			'cc_email'   => $this->normalize_email_list($cc),
 			'subject'    => $subject,
 			'body'       => $body,
 			'order_id'   => $order_id,
@@ -1524,10 +1546,55 @@ if (!$query) {
 
 	public function get_pending_emails($limit = 3) {
 		$this->db->where('status', 'pending');
-		$this->db->where('attempts <', 2);
+		$this->db->where('attempts <', 3);
 		$this->db->order_by('created_at', 'ASC');
 		$this->db->limit($limit);
 		return $this->db->get('email_queue')->result();
+	}
+
+	/**
+	 * Failed supplier-order emails for a branch that the admin has not yet
+	 * dismissed. Used by the global UI banner. Scoped by branch (via the order)
+	 * and limited to the last 7 days so old noise does not resurface.
+	 */
+	public function get_failed_order_alerts($branch_id) {
+		$this->db->select('email_queue.order_id, email_queue.to_email, email_queue.error_message, email_queue.created_at, suppliers.supplier_name, orders.order_number');
+		$this->db->from('email_queue');
+		$this->db->join('orders', 'orders.order_id = email_queue.order_id');
+		$this->db->join('suppliers', 'suppliers.supplier_id = orders.supplier_id', 'left');
+		$this->db->where('email_queue.status', 'failed');
+		$this->db->where('email_queue.admin_notified', 0);
+		$this->db->where('email_queue.order_id IS NOT NULL', null, false);
+		$this->db->where('orders.branch_id', $branch_id);
+		$this->db->where('email_queue.created_at >=', date('Y-m-d H:i:s', strtotime('-7 days')));
+		$this->db->order_by('email_queue.created_at', 'DESC');
+		return $this->db->get()->result();
+	}
+
+	/**
+	 * Mark the failed alerts for the given orders as seen so the banner stops
+	 * showing. Scoped to the branch's own orders for safety.
+	 */
+	public function mark_order_alerts_notified($order_ids, $branch_id) {
+		$order_ids = array_filter(array_map('intval', (array)$order_ids));
+		if (empty($order_ids)) {
+			return;
+		}
+		$branch_order_ids = $this->db->select('order_id')
+			->from('orders')
+			->where('branch_id', $branch_id)
+			->where_in('order_id', $order_ids)
+			->get()->result();
+		$allowed = array();
+		foreach ($branch_order_ids as $row) {
+			$allowed[] = (int)$row->order_id;
+		}
+		if (empty($allowed)) {
+			return;
+		}
+		$this->db->where_in('order_id', $allowed);
+		$this->db->where('status', 'failed');
+		$this->db->update('email_queue', array('admin_notified' => 1));
 	}
 
 	public function update_email_status($id, $status, $error = null) {

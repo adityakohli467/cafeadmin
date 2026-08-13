@@ -735,8 +735,16 @@ function getBranchOrderTotalFromDeliverDate() {
 
 
 	//place order
+	function unlockPlaceOrder(){
+		window.orderSubmitInProgress = false;
+		$(".place_orderr").attr("disabled", false);
+	}
+
 	function placeOrder(obj){
 
+ // Double-submit lock: ignore extra clicks / Enter while a submit is in flight
+ if(window.orderSubmitInProgress){ return false; }
+ window.orderSubmitInProgress = true;
  $(".place_orderr").attr("disabled", true);
 getBranchOrderTotalFromDeliverDate().then(function(balanceThisWeek) {
   // Run this when your request was successful
@@ -759,13 +767,13 @@ getBranchOrderTotalFromDeliverDate().then(function(balanceThisWeek) {
             scrollTop: 0
             }, 1000);
             
-             $(".place_orderr").attr("disabled", false);
+             unlockPlaceOrder();
 		    return false;
 		}else{
 		
 		    if(Number(order_total) >= balanceThisWeek && (store_force_comment == '')){
 		        $("#commentModal").modal();
-		         $(".place_orderr").attr("disabled", false);
+		         unlockPlaceOrder();
 		        return false;
 		    }
 		      
@@ -843,7 +851,12 @@ getBranchOrderTotalFromDeliverDate().then(function(balanceThisWeek) {
 			        		window.location.href = "<?php echo base_url();?>index.php/orders/orderHistory";
 			        	}else{
 			        		alert(obj.message);
+			        		unlockPlaceOrder();
 			        	}
+			        },
+			        error:function(){
+			        	alert('Network error - your order may not have been placed. Please check Order History before trying again.');
+			        	unlockPlaceOrder();
 			        },
 			        complete:function(data){
                      $("#loader").hide();
@@ -864,15 +877,17 @@ getBranchOrderTotalFromDeliverDate().then(function(balanceThisWeek) {
 					$('#budget_supplier_msg').html('');
 					$('#budget_branch_msg').html('');
 				}
+				unlockPlaceOrder();
 			}
 		}else{
 			// alert('orders reached');
 			$('#limit_message').html('Orders limit reached');
 			$('#subscription').show();
+			unlockPlaceOrder();
 		}
 }).catch(function(err) {
   // Run this when promise was rejected via reject()
-   $(".place_orderr").attr("disabled", false);
+   unlockPlaceOrder();
   console.log(err)
 })
 
