@@ -3736,12 +3736,25 @@ Please login to the HR portal to view the update. Responses to the request can b
 			    $roster = $this->admin_model->insert_roster($data);
 			    $new_roster_id = $roster; // insert_roster returns the new roster_id
 
+			    // Validate insertion succeeded before using the new_roster_id
+			    if(!$new_roster_id || $new_roster_id == 0){
+			        $db_error = $this->db->_error_message();
+			        log_message('error', 'update_complete_roster: Failed to insert new roster for emp_id='.$emp_id
+			             . ', roster_group='.$roster_group_id.'. DB error: '.$db_error);
+			        $this->db->trans_rollback();
+			        if (ob_get_length()) ob_end_clean();
+			        $return_data['result'] = 'error';
+			        $return_data['message'] = 'Failed to add employee. ' . ($db_error ? 'Database error logged.' : 'Please check with administrator.');
+			        header('Content-Type: application/json');
+			        echo json_encode($return_data); exit;
+			    }
+
 		//  To add new added roster and employee to timehsheet while updating roster
 		    $timesheetID_val = (isset($timeSheetID[0]->timesheet_id) ? $timeSheetID[0]->timesheet_id : '');
-		    
+
 		    if($timesheetID_val != ''){
 			 for($i=0;$i<7;$i++){
-              $all_seven_days_of_roster = date("Y-m-d", strtotime($start_date . ' + ' . $i . 'day')); 
+              $all_seven_days_of_roster = date("Y-m-d", strtotime($start_date . ' + ' . $i . 'day'));
             $datafortimesheet = array(
           'employee_id' => $emp_id,
           'roster_group_id' => $roster_group_id,
