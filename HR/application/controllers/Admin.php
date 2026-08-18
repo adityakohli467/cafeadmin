@@ -3446,6 +3446,14 @@ Please login to the HR portal to view the update. Responses to the request can b
 		// Fetch existing employees and timesheet ID for this roster group (used for add/swap detection)
 		$existing_employeeOfthisRoster = $this->admin_model->fetch_emp_idofthisroster($roster_group_id);
 		 $timeSheetID = $this->admin_model->get_timesheet_by_roster_group_id($roster_group_id);
+
+		// Snapshot the roster_ids that exist BEFORE this edit. Only these may be
+		// removed by the cleanup below — rows inserted during THIS request (newly
+		// added employees) must never be treated as "removed".
+		$original_roster_ids = array();
+		foreach((array)$this->admin_model->get_emp_roster('', $roster_group_id) as $orr){
+		    $original_roster_ids[] = (string)$orr->roster_id;
+		}
 			
 		
 			
@@ -3736,25 +3744,12 @@ Please login to the HR portal to view the update. Responses to the request can b
 			    $roster = $this->admin_model->insert_roster($data);
 			    $new_roster_id = $roster; // insert_roster returns the new roster_id
 
-			    // Validate insertion succeeded before using the new_roster_id
-			    if(!$new_roster_id || $new_roster_id == 0){
-			        $db_error = $this->db->_error_message();
-			        log_message('error', 'update_complete_roster: Failed to insert new roster for emp_id='.$emp_id
-			             . ', roster_group='.$roster_group_id.'. DB error: '.$db_error);
-			        $this->db->trans_rollback();
-			        if (ob_get_length()) ob_end_clean();
-			        $return_data['result'] = 'error';
-			        $return_data['message'] = 'Failed to add employee. ' . ($db_error ? 'Database error logged.' : 'Please check with administrator.');
-			        header('Content-Type: application/json');
-			        echo json_encode($return_data); exit;
-			    }
-
 		//  To add new added roster and employee to timehsheet while updating roster
 		    $timesheetID_val = (isset($timeSheetID[0]->timesheet_id) ? $timeSheetID[0]->timesheet_id : '');
-
+		    
 		    if($timesheetID_val != ''){
 			 for($i=0;$i<7;$i++){
-              $all_seven_days_of_roster = date("Y-m-d", strtotime($start_date . ' + ' . $i . 'day'));
+              $all_seven_days_of_roster = date("Y-m-d", strtotime($start_date . ' + ' . $i . 'day')); 
             $datafortimesheet = array(
           'employee_id' => $emp_id,
           'roster_group_id' => $roster_group_id,
@@ -3786,7 +3781,10 @@ Please login to the HR portal to view the update. Responses to the request can b
 			$existing_roster_rows = $this->admin_model->get_emp_roster('', $roster_group_id);
 			if(!empty($existing_roster_rows)){
 			    foreach($existing_roster_rows as $er){
-			        if(!in_array((string)$er->roster_id, $posted_roster_ids, true)){
+			        $er_rid = (string)$er->roster_id;
+			        // Remove ONLY rows that existed before this edit and were not resubmitted.
+			        // Skip anything not in the original snapshot (i.e. just-added employees).
+			        if(in_array($er_rid, $original_roster_ids, true) && !in_array($er_rid, $posted_roster_ids, true)){
 			            if($timesheetID_removal !== ''){
 			                $this->admin_model->remove_employee_from_timesheet($er->emp_id, $timesheetID_removal, $er->roster_id);
 			            }
