@@ -3066,39 +3066,12 @@ Please login to the HR portal to view the update. Responses to the request can b
 
 	}
 	
-	// Convert a list of shift time strings to MySQL 24h H:i:s; blanks -> '' (treated as NULL later).
-	private function _normalize_time_list($times){
-		if(!is_array($times)){ $times = array(); }
-		return array_map(function($t){
-			$t = trim((string)$t);
-			if($t === ''){ return ''; }
-			$ts = strtotime($t);
-			return $ts === false ? '' : date('H:i:s', $ts);
-		}, $times);
-	}
-
-	// Append a timestamped diagnostic line to application/logs/roster_recreate_debug.log
-	private function _roster_log($msg){
-		@file_put_contents(
-			APPPATH.'logs/roster_recreate_debug.log',
-			date('Y-m-d H:i:s')." | ".$msg."\n",
-			FILE_APPEND
-		);
-	}
-
 	public function submit_roster(){
 	   ob_start();
 	   
 		if (!$this->ion_auth->logged_in()) {
             redirect('auth/login');
         }else {
-          try {
-            $this->_roster_log('START emp_ids='.json_encode($_POST['emp_id'] ?? null)
-                .' start='.($_POST['start_date'] ?? '').' end='.($_POST['end_date'] ?? '')
-                .' roster_name='.($_POST['roster_name'] ?? '')
-                .' mon_start='.json_encode($_POST['mon_start'] ?? null)
-                .' mon_end='.json_encode($_POST['mon_end'] ?? null)
-                .' sun_start='.json_encode($_POST['sun_start'] ?? null));
 
 			$start_date = date('Y-m-d', strtotime($_POST['start_date']));
 			$end_date   = date('Y-m-d', strtotime($_POST['end_date']));
@@ -3182,40 +3155,38 @@ Please login to the HR portal to view the update. Responses to the request can b
 			
 			$roster_department = $_POST['roster_department'];
 			
-			// Normalize all shift times to 24h H:i:s; time pickers may emit "09:00 AM"
-			// which is invalid for MySQL TIME columns and throws under strict mode.
-			$monday_start = $this->_normalize_time_list($_POST['mon_start'] ?? array());
-			$monday_end = $this->_normalize_time_list($_POST['mon_end'] ?? array());
+			$monday_start = $_POST['mon_start'];
+			$monday_end = $_POST['mon_end'];
 			$monday_break = $_POST['mon_break'];
 			$monday_layout = $_POST['mon_layout'];
 			
-			$tuesday_start = $this->_normalize_time_list($_POST['tues_start'] ?? array());
-			$tuesday_end = $this->_normalize_time_list($_POST['tues_end'] ?? array());
+			$tuesday_start = $_POST['tues_start'];
+			$tuesday_end = $_POST['tues_end'];
 			$tuesday_break = $_POST['tues_break'];
 			$tuesday_layout = $_POST['tues_layout'];
 			
-			$wed_start_time = $this->_normalize_time_list($_POST['wed_start'] ?? array());
-			$wed_end_time = $this->_normalize_time_list($_POST['wed_end'] ?? array());
+			$wed_start_time = $_POST['wed_start'];
+			$wed_end_time = $_POST['wed_end'];
 			$wed_break_time = $_POST['wed_break'];
 			$wed_layout = $_POST['wed_layout'];
 			
-			$thus_start_time = $this->_normalize_time_list($_POST['thus_start'] ?? array());
-			$thus_end_time = $this->_normalize_time_list($_POST['thus_end'] ?? array());
+			$thus_start_time = $_POST['thus_start'];
+			$thus_end_time = $_POST['thus_end'];
 			$thus_break_time = $_POST['thus_break'];
 			$thus_layout = $_POST['thus_layout'];
 			
-			$fri_start_time = $this->_normalize_time_list($_POST['fri_start'] ?? array());
-			$fri_end_time = $this->_normalize_time_list($_POST['fri_end'] ?? array());
+			$fri_start_time = $_POST['fri_start'];
+			$fri_end_time = $_POST['fri_end'];
 			$fri_break_time = $_POST['fri_break'];
 			$fri_layout = $_POST['fri_layout'];
 			
-			$sat_start_time = $this->_normalize_time_list($_POST['sat_start'] ?? array());
-			$sat_end_time = $this->_normalize_time_list($_POST['sat_end'] ?? array());
+			$sat_start_time = $_POST['sat_start'];
+			$sat_end_time = $_POST['sat_end'];
 			$sat_break_time = $_POST['sat_break'];
 			$sat_layout = $_POST['sat_layout'];
 			
-			$sun_start_time = $this->_normalize_time_list($_POST['sun_start'] ?? array());
-			$sun_end_time = $this->_normalize_time_list($_POST['sun_end'] ?? array());
+			$sun_start_time = $_POST['sun_start'];
+			$sun_end_time = $_POST['sun_end'];
 			$sun_break_time = $_POST['sun_break'];
 			$sun_layout = $_POST['sun_layout'];
 			
@@ -3421,11 +3392,6 @@ Please login to the HR portal to view the update. Responses to the request can b
 
 // ====================================================================   Time overlapping validation Ends here =============================
 			  $roster_id = $this->admin_model->insert_roster($data);
-			  if(!$roster_id){
-			      $this->_roster_log('INSERT FAILED emp_id='.$emp_id
-			          .' db_error='.json_encode($this->db->error())
-			          .' data='.json_encode($data));
-			  }
 			  
 			  
 			  
@@ -3449,13 +3415,6 @@ Please login to the HR portal to view the update. Responses to the request can b
 		echo "error_"; exit; 
 		}
 		  //  redirect('admin/get_roster_weeks');					
-          } catch (\Throwable $e) {
-            $this->_roster_log('EXCEPTION: '.get_class($e).': '.$e->getMessage()
-                .' @ '.$e->getFile().':'.$e->getLine()."\n".$e->getTraceAsString());
-            if (ob_get_length()) ob_end_clean();
-            echo 'exception: '.$e->getMessage();
-            exit;
-          }
        }
 	}
 	

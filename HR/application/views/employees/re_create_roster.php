@@ -99,7 +99,7 @@ $end_value = $week_days[$i].'_end_time';
 
 <td>  
 <div class='input-group date datetimepicker3'>
-                    <input type='text' class="form-control" name="<?php echo $name;  ?>" value="<?php if(($row->$value == 0 && $row->$end_value ==0)) {  echo '';  }else { echo $row->$value; }; ?>">
+                    <input type='text' class="form-control" name="<?php echo $name;  ?>" value="<?php if(($row->$value == 0 && $row->$end_value ==0)) {  echo ' ';  }else { echo date ('H:i A',strtotime($row->$value)); }; ?>">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-time"></span>
                     </span>
