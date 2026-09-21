@@ -3077,12 +3077,28 @@ Please login to the HR portal to view the update. Responses to the request can b
 		}, $times);
 	}
 
+	// Append a timestamped diagnostic line to application/logs/roster_recreate_debug.log
+	private function _roster_log($msg){
+		@file_put_contents(
+			APPPATH.'logs/roster_recreate_debug.log',
+			date('Y-m-d H:i:s')." | ".$msg."\n",
+			FILE_APPEND
+		);
+	}
+
 	public function submit_roster(){
 	   ob_start();
 	   
 		if (!$this->ion_auth->logged_in()) {
             redirect('auth/login');
         }else {
+          try {
+            $this->_roster_log('START emp_ids='.json_encode($_POST['emp_id'] ?? null)
+                .' start='.($_POST['start_date'] ?? '').' end='.($_POST['end_date'] ?? '')
+                .' roster_name='.($_POST['roster_name'] ?? '')
+                .' mon_start='.json_encode($_POST['mon_start'] ?? null)
+                .' mon_end='.json_encode($_POST['mon_end'] ?? null)
+                .' sun_start='.json_encode($_POST['sun_start'] ?? null));
 
 			$start_date = date('Y-m-d', strtotime($_POST['start_date']));
 			$end_date   = date('Y-m-d', strtotime($_POST['end_date']));
@@ -3405,6 +3421,11 @@ Please login to the HR portal to view the update. Responses to the request can b
 
 // ====================================================================   Time overlapping validation Ends here =============================
 			  $roster_id = $this->admin_model->insert_roster($data);
+			  if(!$roster_id){
+			      $this->_roster_log('INSERT FAILED emp_id='.$emp_id
+			          .' db_error='.json_encode($this->db->error())
+			          .' data='.json_encode($data));
+			  }
 			  
 			  
 			  
@@ -3428,6 +3449,13 @@ Please login to the HR portal to view the update. Responses to the request can b
 		echo "error_"; exit; 
 		}
 		  //  redirect('admin/get_roster_weeks');					
+          } catch (\Throwable $e) {
+            $this->_roster_log('EXCEPTION: '.get_class($e).': '.$e->getMessage()
+                .' @ '.$e->getFile().':'.$e->getLine()."\n".$e->getTraceAsString());
+            if (ob_get_length()) ob_end_clean();
+            echo 'exception: '.$e->getMessage();
+            exit;
+          }
        }
 	}
 	
