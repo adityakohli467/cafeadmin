@@ -1210,7 +1210,7 @@ public function fetch_employee_notifications(){
 	 *
 	 * @return string one of: saved | already_recorded | no_row | error
 	 */
-	function record_timesheet_punch($field, $value, $timesheet_id, $roster_id, $employee_id, $date){
+	function record_timesheet_punch($field, $value, $timesheet_id, $roster_id, $employee_id, $date, $roster_group_id = ''){
 	    $allowed = array('in_time', 'out_time', 'break_in_time', 'break_out_time');
 	    if(!in_array($field, $allowed, true)){
 	        return 'error';
@@ -1220,17 +1220,17 @@ public function fetch_employee_notifications(){
 	    }
 
 	    // $field is whitelisted above, so it is safe to interpolate.
-	    $sql = "UPDATE `employee_timesheet` SET `$field` = ? "
+	    $update_sql = "UPDATE `employee_timesheet` SET `$field` = ? "
 	         . "WHERE `employee_id` = ? AND `roster_id` = ? AND `date` = ? "
 	         . "AND (`$field` IS NULL OR `$field` = '00:00:00' OR `$field` = '')";
-	    $params = array($value, intval($employee_id), $roster_id, $date);
+	    $update_params = array($value, intval($employee_id), $roster_id, $date);
 	    if($timesheet_id !== '' && $timesheet_id !== null){
-	        $sql .= " AND `timesheet_id` = ?";
-	        $params[] = $timesheet_id;
+	        $update_sql .= " AND `timesheet_id` = ?";
+	        $update_params[] = $timesheet_id;
 	    }
-	    $sql .= " ORDER BY `employee_timesheet_id` ASC LIMIT 1";
+	    $update_sql .= " ORDER BY `employee_timesheet_id` ASC LIMIT 1";
 
-	    $this->db->query($sql, $params);
+	    $this->db->query($update_sql, $update_params);
 
 	    if($this->db->affected_rows() >= 1){
 	        return 'saved';
@@ -1245,7 +1245,47 @@ public function fetch_employee_notifications(){
 	    if($timesheet_id !== '' && $timesheet_id !== null){
 	        $this->db->where('timesheet_id', $timesheet_id);
 	    }
-	    return $this->db->count_all_results() > 0 ? 'already_recorded' : 'no_row';
+	    if($this->db->count_all_results() > 0){
+	        return 'already_recorded';
+	    }
+
+	    // Seed-on-demand: no row exists for this day (e.g. a stale kiosk page
+	    // still holding a previous week's roster_id/timesheet_id, or the week's
+	    // timesheet was never seeded). Create the row now so the first punch is
+	    // not silently rejected. Requires valid identifiers; the caller has
+	    // already verified the roster belongs to the branch.
+	    if($timesheet_id === '' || $timesheet_id === null || $roster_id === '' || $roster_id === null){
+	        return 'no_row';
+	    }
+	    $insert = array(
+	        'employee_id'  => intval($employee_id),
+	        'timesheet_id' => $timesheet_id,
+	        'roster_id'    => $roster_id,
+	        'date'         => $date,
+	        $field         => $value,
+	    );
+	    if($roster_group_id !== '' && $roster_group_id !== null){
+	        $insert['roster_group_id'] = $roster_group_id;
+	    }
+	    $cols = array();
+	    $vals = array();
+	    foreach($insert as $col => $val){
+	        $cols[] = $this->db->protect_identifiers($col);
+	        $vals[] = $this->db->escape($val);
+	    }
+	    // INSERT IGNORE is race-safe against the UNIQUE(employee_id,timesheet_id,
+	    // roster_id,date) key: a concurrent seed collapses to a harmless no-op.
+	    $insert_sql = 'INSERT IGNORE INTO '.$this->db->protect_identifiers('employee_timesheet')
+	         .' ('.implode(', ', $cols).') VALUES ('.implode(', ', $vals).')';
+	    $this->db->query($insert_sql);
+	    if($this->db->affected_rows() >= 1){
+	        return 'saved';
+	    }
+
+	    // Lost the race: another request seeded the row first. Fill the field via
+	    // the same conditional UPDATE so we never overwrite an existing value.
+	    $this->db->query($update_sql, $update_params);
+	    return $this->db->affected_rows() >= 1 ? 'saved' : 'already_recorded';
 	}
 
 	/**

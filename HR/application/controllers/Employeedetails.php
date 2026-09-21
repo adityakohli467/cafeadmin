@@ -4022,6 +4022,7 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
     $emp_id = intval($emp_id_outletname[0]);
     $roster_and_timesheet_id =  $this->input->post('roster_group_id');
     $roster_and_timesheet_id = explode('_', $roster_and_timesheet_id);
+    $roster_group_id = isset($roster_and_timesheet_id[0]) ? $roster_and_timesheet_id[0] : '';
     $timesheet_id = $roster_and_timesheet_id[1];
     
     // Verify roster belongs to logged-in user's branch
@@ -4068,7 +4069,7 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
         // Atomic, race-safe write bound to a single row. Only fills the field
         // when empty, checks affected rows, and reports precisely what happened
         // (no more silent "saved" when nothing was actually stored).
-        $status = $this->admin_model->record_timesheet_punch($type, $in_time, $timesheet_id, $roster_id, $emp_id, date('Y-m-d'));
+        $status = $this->admin_model->record_timesheet_punch($type, $in_time, $timesheet_id, $roster_id, $emp_id, date('Y-m-d'), $roster_group_id);
 
         if($status === 'saved' && isset($emp_id_outletname[1]) && $emp_id_outletname[1] !== ''){
             // Persist the outlet name on the same row (non-critical metadata).
@@ -4258,7 +4259,7 @@ public function timesheetFilter($filerData='',$timesheet_id='',$roster_group_id=
       }
        
         // Atomic, race-safe break write bound to a single row.
-        $status = $this->admin_model->record_timesheet_punch($break_type, $break_time, $timesheet_id, $roster_id, $emp_id, $date);
+        $status = $this->admin_model->record_timesheet_punch($break_type, $break_time, $timesheet_id, $roster_id, $emp_id, $date, $roster_group_id);
 
         echo in_array($status, array('saved', 'already_recorded', 'no_row'), true) ? $status : 'error';
  }
