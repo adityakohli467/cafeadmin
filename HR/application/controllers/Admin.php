@@ -3193,10 +3193,12 @@ Please login to the HR portal to view the update. Responses to the request can b
 		  $count_no_of_roster = count($emp_ids);
          
 			 $i= 1;
+			 $roster_id = false;
 			 $processed = array();
 			foreach($emp_ids as $key=>$emp_id){
 			    $error = false;
-			   if($emp_id != ''){
+			   // Skip blank employee rows so a stale/previous $data is never re-inserted
+			   if($emp_id == ''){ continue; }
 			     //  echo "validation"; exit;
 			   
 			  $data = array(
@@ -3244,7 +3246,6 @@ Please login to the HR portal to view the update. Responses to the request can b
               'Sunday_layout' => empty($sun_layout[$key]) ? NULL  : $sun_layout[$key],
               'branch_id' => $this->session->userdata('branch_id')			  
 			  );
-			   }
 		$lapped = "false"; 	  
 // 		if(!empty($employees_leave_validation)){
 // 		 // if the employee in posted roster is on the leave give error   
