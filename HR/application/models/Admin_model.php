@@ -1249,11 +1249,39 @@ public function fetch_employee_notifications(){
 	        return 'already_recorded';
 	    }
 
-	    // Seed-on-demand: no row exists for this day (e.g. a stale kiosk page
-	    // still holding a previous week's roster_id/timesheet_id, or the week's
-	    // timesheet was never seeded). Create the row now so the first punch is
-	    // not silently rejected. Requires valid identifiers; the caller has
-	    // already verified the roster belongs to the branch.
+	    // The provided roster_id has no seeded row for this employee/timesheet/
+	    // date. This happens when a long-lived kiosk page carries a previous
+	    // week's roster_id across the roster boundary. Before seeding a brand
+	    // new row (which would surface as a duplicate employee block in the
+	    // approval view), redirect the write to the real seeded row for this
+	    // employee on this date, matched by timesheet_id only. Seeding covers
+	    // every valid roster of a timesheet, so reaching this point means the
+	    // roster_id is stale; the existing seeded row is the correct target.
+	    if($timesheet_id !== '' && $timesheet_id !== null){
+	        $redirect_sql = "UPDATE `employee_timesheet` SET `$field` = ? "
+	             . "WHERE `employee_id` = ? AND `timesheet_id` = ? AND `date` = ? "
+	             . "AND (`$field` IS NULL OR `$field` = '00:00:00' OR `$field` = '') "
+	             . "ORDER BY `employee_timesheet_id` ASC LIMIT 1";
+	        $redirect_params = array($value, intval($employee_id), $timesheet_id, $date);
+	        $this->db->query($redirect_sql, $redirect_params);
+	        if($this->db->affected_rows() >= 1){
+	            return 'saved';
+	        }
+	        // A seeded row for this employee/timesheet/date already exists but the
+	        // field is filled: it is already recorded, do not create a duplicate.
+	        $this->db->from('employee_timesheet');
+	        $this->db->where('employee_id', intval($employee_id));
+	        $this->db->where('timesheet_id', $timesheet_id);
+	        $this->db->where('date', $date);
+	        if($this->db->count_all_results() > 0){
+	            return 'already_recorded';
+	        }
+	    }
+
+	    // Seed-on-demand: no row exists for this employee/timesheet/date at all
+	    // (the week's timesheet was never seeded). Create the row now so the
+	    // first punch is not silently rejected. Requires valid identifiers; the
+	    // caller has already verified the roster belongs to the branch.
 	    if($timesheet_id === '' || $timesheet_id === null || $roster_id === '' || $roster_id === null){
 	        return 'no_row';
 	    }
