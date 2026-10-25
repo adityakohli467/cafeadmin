@@ -1005,6 +1005,9 @@ foreach($branchempResult as $branchemp) {
             // echo "<pre>"; print_r($menus_list);
            
         }
+        ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
         if ($this->form_validation->run() == true && $this->ion_auth->register($username, $password, $email,$role,$phone,$branch,$menus_list,$supervisor)) {
             //check to see if we are creating the user
             //redirect them back to the admin page

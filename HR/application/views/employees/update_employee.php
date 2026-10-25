@@ -1405,7 +1405,12 @@
                 							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/new_induction_tarator.pdf" target="_blank">View</a>
                 							<?php }  elseif($branch_id =='72') { ?>
                 							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/AlloBeirutinduction_all.pdf" target="_blank">View</a>
-                							<?php } else { ?>
+                						
+                							<?php }  elseif($branch_id =='73') { ?>
+                							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/PulseInduction.pdf" target="_blank">View</a>
+                						
+                						
+                						<?php } else { ?>
                 							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_all.pdf" target="_blank">View</a>
                 							<?php } ?>
                 							
@@ -1421,7 +1426,8 @@
                 								<iframe src="<?php echo base_url();?>assets/terms_docs/new_induction_tarator.pdf" width="100%" height="100%"></iframe>
                 								<?php } elseif($branch_id =='72') { ?>
                 									<iframe src="<?php echo base_url();?>assets/terms_docs/AlloBeirutinduction_all.pdf" width="100%" height="100%"></iframe>
-
+                                             <?php }  elseif($branch_id =='73') { ?>
+                						<iframe src="<?php echo base_url();?>assets/terms_docs/PulseInduction.pdf" width="100%" height="100%"></iframe>
                 							<?php } else { ?>
                 									<iframe src="<?php echo base_url();?>assets/terms_docs/induction_all.pdf" width="100%" height="100%"></iframe>
                 										<?php } ?>
@@ -1448,6 +1454,8 @@
         <?php } elseif($branch_id == '72') { ?>
             <a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/AlloBeirutPolicyProcedures.pdf" target="_blank">View Policy</a>
             <a style="width:100%; margin-top: 5px;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" target="_blank">View Fair Work</a>
+       <?php } elseif($branch_id == '73') { ?>
+       <a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/PulsePolicies.pdf" target="_blank">View Policy</a>
         <?php } elseif($branch_id == '53') { ?>
             <a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/policy_redbean.pdf" target="_blank">View Policy</a>
             <a style="width:100%; margin-top: 5px;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" target="_blank">View Fair Work</a>
@@ -1475,6 +1483,10 @@
                 <?php } elseif($branch_id ==  '72') { ?>
                     <iframe src="<?php echo base_url();?>assets/terms_docs/AlloBeirutPolicyProcedures.pdf" width="100%" height="600px"></iframe>
                     <iframe src="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" width="100%" height="600px" style="margin-top: 10px;"></iframe>
+                 <?php } elseif($branch_id ==  '73') { ?>
+                 <iframe src="<?php echo base_url();?>assets/terms_docs/PulsePolicies.pdf" width="100%" height="600px"></iframe>
+                
+                
                 <?php } elseif($branch_id == '69' || $branch_id == '70') { ?>
                     <iframe src="<?php echo base_url();?>assets/terms_docs/new_policy_tarator.pdf" width="100%" height="600px"></iframe>
                     <iframe src="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" width="100%" height="600px" style="margin-top: 10px;"></iframe>

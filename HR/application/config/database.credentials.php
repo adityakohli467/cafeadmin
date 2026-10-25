@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 return array(
     'hostname' => 'localhost',
-    'username' => 'CHANGE_ME',
-    'password' => 'CHANGE_ME',
+    'username' => 'linrefvy_hr_portal',
+    'password' => '4-Fp5-]fZ@d-D]k@',
     'database' => 'linrefvy_hr_portal',
 );

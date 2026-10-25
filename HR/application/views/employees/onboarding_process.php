@@ -1,4 +1,4 @@
-﻿<html>
+<html>
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>HRM - ONBOARDING</title>
@@ -1191,9 +1191,14 @@
                             							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_rpa.pdf" target="_blank">View</a>
                             							<?php }elseif($row->branch_id =='69' || $row->branch_id =='70') { ?>
                             							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/new_induction_tarator.pdf" target="_blank">View</a>
-                            							<?php }else { ?>
-                            							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_all.pdf" target="_blank">View</a>
-                            							<?php } ?>
+                            								<?php }elseif($row->branch_id =='73') { ?>
+                              		<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/PulseInduction.pdf" target="_blank">View</a>
+
+
+                            							<?php }else {  ?>
+                            		<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/induction_all.pdf" target="_blank">View</a>
+
+                            							<?php }  ?>
                             							
                             					</div><br>
                             	   
@@ -1205,7 +1210,9 @@
                             								<iframe src="<?php echo base_url();?>assets/terms_docs/induction_rpa.pdf" width="100%" height="100%"></iframe>
                             									<?php }elseif($row->branch_id =='69' || $row->branch_id =='70') { ?>
                             									<iframe src="<?php echo base_url();?>assets/terms_docs/new_induction_tarator.pdf" width="100%" height="100%"></iframe>
-                            									<?php }else { ?>
+                            									<?php }elseif($row->branch_id =='73') { ?>
+                            					<iframe src="<?php echo base_url();?>assets/terms_docs/PulseInduction.pdf" width="100%" height="100%"></iframe>
+                            										<?php }else { ?>
                             									<iframe src="<?php echo base_url();?>assets/terms_docs/induction_all.pdf" width="100%" height="100%"></iframe>
                             										<?php } ?>
                             							<div class="checkbox">
@@ -1226,7 +1233,9 @@
                         						<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/policy_rpa.pdf" target="_blank">View</a>
                         						<?php }elseif($row->branch_id =='69' || $row->branch_id =='70') { ?>
                         						<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/new_policy_tarator.pdf" target="_blank">View</a>
-                        						<?php }else{  ?>
+                        						<?php }elseif($row->branch_id =='73') { ?>
+                        						<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/PulsePolicies.pdf" target="_blank">View</a>
+                        							<?php }else{  ?>
                         					  <a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/policy_all.pdf" target="_blank">View</a>
                         						<?php } ?>
                         					</div><br>
@@ -1240,7 +1249,10 @@
                         					<iframe src="<?php echo base_url();?>assets/terms_docs/policy_rpa.pdf" width="100%" height="100%"></iframe>
                         					<?php }elseif($row->branch_id =='69' || $row->branch_id =='70') { ?>
                         					<iframe src="<?php echo base_url();?>assets/terms_docs/new_policy_tarator.pdf" width="100%" height="100%"></iframe>
-                        						<?php }else { ?>
+                        							<?php }elseif($row->branch_id =='73') { ?>
+                        						
+                        							<iframe src="<?php echo base_url();?>assets/terms_docs/PulsePolicies.pdf" width="100%" height="100%"></iframe>
+                        							<?php }else { ?>
                         					<iframe src="<?php echo base_url();?>assets/terms_docs/policy_all.pdf" width="100%" height="100%"></iframe>
                         						<?php } ?>
                         						
