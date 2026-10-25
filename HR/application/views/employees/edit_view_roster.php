@@ -201,8 +201,8 @@ $outletweek_days = array('Monday','Tuesday','Wednesday','Thursday','Friday','Sat
       <?php $break_nameofday = $week_days[$i].'_break_time'; ?>
        <?php $layout_nameofday = $outletweek_days[$i].'_layout'; ?>
     <?php 
-$raw_start = $row->$start_nameofday ?? '';
-$raw_end = $row->$end_nameofday ?? '';
+$raw_start = trim((string)($row->$start_nameofday ?? ''));
+$raw_end = trim((string)($row->$end_nameofday ?? ''));
 $time1 = ($raw_start !== '' && $raw_start !== '0' && $raw_start !== 0) ? strtotime($raw_start) : false;
 $time2 = ($raw_end !== '' && $raw_end !== '0' && $raw_end !== 0) ? strtotime($raw_end) : false;
 $break_hrs = $row->$break_nameofday ?? 0;
