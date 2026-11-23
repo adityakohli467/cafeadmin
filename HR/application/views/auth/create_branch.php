@@ -182,6 +182,20 @@
             </div>
             </div>
             
+            <div class="col-md-6">
+             <div class="control-group">
+              <label class="control-label">Timezone</label>
+              <div class="controls">
+               <select name="timezone" id="timezone" class="form-control">
+                 <?php $selected_tz = (isset($timezone) && $timezone != '') ? $timezone : 'Australia/Melbourne'; ?>
+                 <?php foreach((array)$au_timezones as $tz_value => $tz_label) { ?>
+                   <option value="<?php echo html_escape($tz_value); ?>" <?php echo ($tz_value == $selected_tz) ? 'selected="selected"' : ''; ?>><?php echo html_escape($tz_label); ?></option>
+                 <?php } ?>
+               </select>
+              </div>
+            </div>
+            </div>
+            
              <div class="col-md-6">
              <div class="control-group">
               <label class="control-label">Public holidays</label>

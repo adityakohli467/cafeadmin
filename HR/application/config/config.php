@@ -100,7 +100,18 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
+
+// Timezones selectable per branch (customer_branches.timezone). First entry is the default.
+$config['au_timezones'] = array(
+	'Australia/Melbourne' => 'Melbourne (VIC) - AEST/AEDT',
+	'Australia/Sydney'    => 'Sydney / Canberra (NSW, ACT) - AEST/AEDT',
+	'Australia/Brisbane'  => 'Brisbane / Ipswich (QLD) - AEST, no daylight saving',
+	'Australia/Hobart'    => 'Hobart (TAS) - AEST/AEDT',
+	'Australia/Adelaide'  => 'Adelaide (SA) - ACST/ACDT',
+	'Australia/Darwin'    => 'Darwin (NT) - ACST, no daylight saving',
+	'Australia/Perth'     => 'Perth (WA) - AWST, no daylight saving',
+);
 
 /*
 |--------------------------------------------------------------------------

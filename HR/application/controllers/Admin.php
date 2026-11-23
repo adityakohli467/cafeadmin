@@ -759,6 +759,8 @@ foreach($branchempResult as $branchemp) {
              $data['gross_salary_weekly'] = $branches[0]->gross_salary_weekly;
              $data['status'] = $branches[0]->status;
              $data['budget'] = $branches[0]->budget;
+             $data['timezone'] = isset($branches[0]->timezone) ? $branches[0]->timezone : '';
+             $data['au_timezones'] = $this->config->item('au_timezones');
             
              $weekdays  = array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
              foreach($weekdays as $weekday){
@@ -776,12 +778,15 @@ foreach($branchempResult as $branchemp) {
        }else{
           $data['title'] = "Create Branch";
           $data['branch_id'] = $branch_id;
+          $data['au_timezones'] = $this->config->item('au_timezones');
           
            // validate form input
         $this->form_validation->set_rules('branch_name', $this->lang->line('create_user_validation_fname_label'), 'required');
 
         if ($this->form_validation->run() == true) { 
-           $this->admin_model->add_branch($this->input->post());
+           $post = $this->input->post();
+           $post['timezone'] = $this->valid_branch_timezone($this->input->post('timezone'));
+           $this->admin_model->add_branch($post);
         }
         $menu_items = $this->display_menu();
 		$hdata['menus'] = $menu_items;
@@ -795,11 +800,18 @@ foreach($branchempResult as $branchemp) {
     
             $branch_id = $this->input->post('branch_id');
 
-            $users = $this->admin_model->update_branch($branch_id,$this->input->post());
+            $post = $this->input->post();
+            $post['timezone'] = $this->valid_branch_timezone($this->input->post('timezone'));
+            $users = $this->admin_model->update_branch($branch_id,$post);
             
              redirect("admin/branches", 'refresh');
     
 }  
+
+    private function valid_branch_timezone($timezone){
+        $allowed = $this->config->item('au_timezones');
+        return isset($allowed[$timezone]) ? $timezone : key($allowed);
+    }
     
     public  function branches() {
          $data['title'] = "Site List";
