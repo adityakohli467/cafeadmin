@@ -1408,6 +1408,8 @@
                 						
                 							<?php }  elseif($branch_id =='73') { ?>
                 							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/PulseInduction.pdf" target="_blank">View</a>
+                						<?php }  elseif($branch_id =='66') { ?>
+                							<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/GreenbagInduction.pdf" target="_blank">View</a>
                 						
                 						
                 						<?php } else { ?>
@@ -1428,6 +1430,9 @@
                 									<iframe src="<?php echo base_url();?>assets/terms_docs/AlloBeirutinduction_all.pdf" width="100%" height="100%"></iframe>
                                              <?php }  elseif($branch_id =='73') { ?>
                 						<iframe src="<?php echo base_url();?>assets/terms_docs/PulseInduction.pdf" width="100%" height="100%"></iframe>
+                							<?php }  elseif($branch_id =='66') { ?>
+                								<iframe src="<?php echo base_url();?>assets/terms_docs/GreenbagInduction.pdf" width="100%" height="100%"></iframe>
+
                 							<?php } else { ?>
                 									<iframe src="<?php echo base_url();?>assets/terms_docs/induction_all.pdf" width="100%" height="100%"></iframe>
                 										<?php } ?>
@@ -1465,7 +1470,9 @@
         <?php } elseif($branch_id == '56' || $branch_id == '59' || $branch_id == '54' || $branch_id == '58') { ?>
             <a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/ZoukiPolicyProcedures.pdf" target="_blank">View Policy</a>
             <a style="width:100%; margin-top: 5px;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" target="_blank">View Fair Work</a>
-        <?php } else { ?>
+        	<?php }elseif($branch_id =='66') { ?>
+            	<a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/GreenbagPoliciesandProcedures.pdf" target="_blank">View</a>
+             <?php }else{  ?>
             <a style="width:100%;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/policy_all.pdf" target="_blank">View Policy</a>
             <a style="width:100%; margin-top: 5px;" class="btn btn-dark" href="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" target="_blank">View Fair Work</a>
         <?php } ?>
@@ -1493,7 +1500,9 @@
                 <?php } elseif($branch_id == '56' || $branch_id == '59' || $branch_id == '54' || $branch_id == '58') { ?>
                     <iframe src="<?php echo base_url();?>assets/terms_docs/ZoukiPolicyProcedures.pdf" width="100%" height="600px"></iframe>
                     <iframe src="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" width="100%" height="600px" style="margin-top: 10px;"></iframe>
-                <?php } else { ?>
+               	<?php }elseif($branch_id =='66') { ?>
+               	 <iframe src="<?php echo base_url();?>assets/terms_docs/GreenbagPoliciesandProcedures.pdf" width="100%" height="600px"></iframe>
+                 <?php }else{  ?>
                     <iframe src="<?php echo base_url();?>assets/terms_docs/policy_all.pdf" width="100%" height="600px"></iframe>
                     <iframe src="<?php echo base_url();?>assets/terms_docs/Fair-Work-Information-Statement.pdf" width="100%" height="600px" style="margin-top: 10px;"></iframe>
                 <?php } ?>

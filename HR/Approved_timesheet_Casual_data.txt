@@ -1,407 +1,1242 @@
 Date,First Name,Last Name,Payroll Category,Units
-12/10/2026,Alicia,Inglis,Base Hourly,0
-13/10/2026,Alicia,Inglis,Base Hourly,0
-14/10/2026,Alicia,Inglis,Base Hourly,0
-15/10/2026,Alicia,Inglis,Base Hourly,0
-16/10/2026,Alicia,Inglis,Base Hourly,0
-17/10/2026,Alicia,Inglis,Level 1 Weekends,0
-18/10/2026,Alicia,Inglis,Level 1 Weekends,0
-12/10/2026,Alicia,Inglis,Uniform Allowance,0.00
-13/10/2026,Alicia,Inglis,Uniform Allowance,0.00
-14/10/2026,Alicia,Inglis,Uniform Allowance,0.00
-15/10/2026,Alicia,Inglis,Uniform Allowance,0.00
-16/10/2026,Alicia,Inglis,Uniform Allowance,0.00
-17/10/2026,Alicia,Inglis,Uniform Allowance,0.00
-18/10/2026,Alicia,Inglis,Uniform Allowance,0.00
-12/10/2026,Amelia,Baldock,Base Hourly,6.50
-13/10/2026,Amelia,Baldock,Base Hourly,6.50
-14/10/2026,Amelia,Baldock,Base Hourly,6.50
-15/10/2026,Amelia,Baldock,Base Hourly,6.50
-16/10/2026,Amelia,Baldock,Base Hourly,0
-17/10/2026,Amelia,Baldock,19 Yrs Level 2 Weekend,0
-18/10/2026,Amelia,Baldock,19 Yrs Level 2 Weekend,0
-12/10/2026,Amelia,Baldock,Uniform Allowance,1.00
-13/10/2026,Amelia,Baldock,Uniform Allowance,1.00
-14/10/2026,Amelia,Baldock,Uniform Allowance,1.00
-15/10/2026,Amelia,Baldock,Uniform Allowance,1.00
-16/10/2026,Amelia,Baldock,Uniform Allowance,0.00
-17/10/2026,Amelia,Baldock,Uniform Allowance,0.00
-18/10/2026,Amelia,Baldock,Uniform Allowance,0.00
-12/10/2026,Annie Elizabeth,Murphy,Base Hourly,8.50
-13/10/2026,Annie Elizabeth,Murphy,Base Hourly,0
-14/10/2026,Annie Elizabeth,Murphy,Base Hourly,7.50
-15/10/2026,Annie Elizabeth,Murphy,Base Hourly,7.50
-16/10/2026,Annie Elizabeth,Murphy,Base Hourly,0
-17/10/2026,Annie Elizabeth,Murphy,19 Yrs Level 2 Weekend,0
-18/10/2026,Annie Elizabeth,Murphy,19 Yrs Level 2 Weekend,0
-12/10/2026,Annie Elizabeth,Murphy,Uniform Allowance,1.00
-13/10/2026,Annie Elizabeth,Murphy,Uniform Allowance,0.00
-14/10/2026,Annie Elizabeth,Murphy,Uniform Allowance,1.00
-15/10/2026,Annie Elizabeth,Murphy,Uniform Allowance,1.00
-16/10/2026,Annie Elizabeth,Murphy,Uniform Allowance,0.00
-17/10/2026,Annie Elizabeth,Murphy,Uniform Allowance,0.00
-18/10/2026,Annie Elizabeth,Murphy,Uniform Allowance,0.00
-12/10/2026,Bella Ivy,Baldock,Base Hourly,0
-13/10/2026,Bella Ivy,Baldock,Base Hourly,7.50
-14/10/2026,Bella Ivy,Baldock,Base Hourly,7.50
-15/10/2026,Bella Ivy,Baldock,Base Hourly,5.50
-16/10/2026,Bella Ivy,Baldock,Base Hourly,0
-17/10/2026,Bella Ivy,Baldock,18 Yrs Level 2 Weekend,0
-18/10/2026,Bella Ivy,Baldock,18 Yrs Level 2 Weekend,0
-12/10/2026,Bella Ivy,Baldock,Uniform Allowance,0.00
-13/10/2026,Bella Ivy,Baldock,Uniform Allowance,1.00
-14/10/2026,Bella Ivy,Baldock,Uniform Allowance,1.00
-15/10/2026,Bella Ivy,Baldock,Uniform Allowance,1.00
-16/10/2026,Bella Ivy,Baldock,Uniform Allowance,0.00
-17/10/2026,Bella Ivy,Baldock,Uniform Allowance,0.00
-18/10/2026,Bella Ivy,Baldock,Uniform Allowance,0.00
-12/10/2026,Benjamin,Johnsen,Base Hourly,0
-13/10/2026,Benjamin,Johnsen,Base Hourly,3.00
-14/10/2026,Benjamin,Johnsen,Base Hourly,3.00
-15/10/2026,Benjamin,Johnsen,Base Hourly,0
-16/10/2026,Benjamin,Johnsen,Base Hourly,0
-17/10/2026,Benjamin,Johnsen,Level 1 Weekends,0
-18/10/2026,Benjamin,Johnsen,Level 1 Weekends,0
-12/10/2026,Benjamin,Johnsen,Uniform Allowance,0.00
-13/10/2026,Benjamin,Johnsen,Uniform Allowance,1.00
-14/10/2026,Benjamin,Johnsen,Uniform Allowance,1.00
-15/10/2026,Benjamin,Johnsen,Uniform Allowance,0.00
-16/10/2026,Benjamin,Johnsen,Uniform Allowance,0.00
-17/10/2026,Benjamin,Johnsen,Uniform Allowance,0.00
-18/10/2026,Benjamin,Johnsen,Uniform Allowance,0.00
-12/10/2026,Bryan,Sawal,Base Hourly,6.50
-13/10/2026,Bryan,Sawal,Base Hourly,6.50
-14/10/2026,Bryan,Sawal,Base Hourly,6.50
-15/10/2026,Bryan,Sawal,Base Hourly,6.50
-16/10/2026,Bryan,Sawal,Base Hourly,0
-17/10/2026,Bryan,Sawal,Level 2 Weekends,0
-18/10/2026,Bryan,Sawal,Level 2 Weekends,0
-12/10/2026,Bryan,Sawal,Uniform Allowance,1.00
-13/10/2026,Bryan,Sawal,Uniform Allowance,1.00
-14/10/2026,Bryan,Sawal,Uniform Allowance,1.00
-15/10/2026,Bryan,Sawal,Uniform Allowance,1.00
-16/10/2026,Bryan,Sawal,Uniform Allowance,0.00
-17/10/2026,Bryan,Sawal,Uniform Allowance,0.00
-18/10/2026,Bryan,Sawal,Uniform Allowance,0.00
-12/10/2026,Cassandra,Parrott Vanderlinde,Base Hourly,0
-13/10/2026,Cassandra,Parrott Vanderlinde,Base Hourly,8.00
-14/10/2026,Cassandra,Parrott Vanderlinde,Base Hourly,8.17
-15/10/2026,Cassandra,Parrott Vanderlinde,Base Hourly,7.50
-16/10/2026,Cassandra,Parrott Vanderlinde,Base Hourly,0
-17/10/2026,Cassandra,Parrott Vanderlinde,Intro Weekend,0
-18/10/2026,Cassandra,Parrott Vanderlinde,Intro Weekend,0
-12/10/2026,Cassandra,Parrott Vanderlinde,Uniform Allowance,0.00
-13/10/2026,Cassandra,Parrott Vanderlinde,Uniform Allowance,1.00
-14/10/2026,Cassandra,Parrott Vanderlinde,Uniform Allowance,1.00
-15/10/2026,Cassandra,Parrott Vanderlinde,Uniform Allowance,1.00
-16/10/2026,Cassandra,Parrott Vanderlinde,Uniform Allowance,0.00
-17/10/2026,Cassandra,Parrott Vanderlinde,Uniform Allowance,0.00
-18/10/2026,Cassandra,Parrott Vanderlinde,Uniform Allowance,0.00
-12/10/2026,Chelsea,Gardner,Base Hourly,8.00
-13/10/2026,Chelsea,Gardner,Base Hourly,8.00
-14/10/2026,Chelsea,Gardner,Base Hourly,0
-15/10/2026,Chelsea,Gardner,Base Hourly,8.00
-16/10/2026,Chelsea,Gardner,Base Hourly,0
-17/10/2026,Chelsea,Gardner,Level 1 Weekends,0
-18/10/2026,Chelsea,Gardner,Level 1 Weekends,0
-12/10/2026,Chelsea,Gardner,Uniform Allowance,1.00
-13/10/2026,Chelsea,Gardner,Uniform Allowance,1.00
-14/10/2026,Chelsea,Gardner,Uniform Allowance,0.00
-15/10/2026,Chelsea,Gardner,Uniform Allowance,1.00
-16/10/2026,Chelsea,Gardner,Uniform Allowance,0.00
-17/10/2026,Chelsea,Gardner,Uniform Allowance,0.00
-18/10/2026,Chelsea,Gardner,Uniform Allowance,0.00
-12/10/2026,Connor,Newman,Base Hourly,7.75
-13/10/2026,Connor,Newman,Base Hourly,0
-14/10/2026,Connor,Newman,Base Hourly,8.50
-15/10/2026,Connor,Newman,Base Hourly,0
-16/10/2026,Connor,Newman,Base Hourly,0
-17/10/2026,Connor,Newman,Level 1 Weekends,0
-18/10/2026,Connor,Newman,Level 1 Weekends,0
-12/10/2026,Connor,Newman,Uniform Allowance,1.00
-13/10/2026,Connor,Newman,Uniform Allowance,0.00
-14/10/2026,Connor,Newman,Uniform Allowance,1.00
-15/10/2026,Connor,Newman,Uniform Allowance,0.00
-16/10/2026,Connor,Newman,Uniform Allowance,0.00
-17/10/2026,Connor,Newman,Uniform Allowance,0.00
-18/10/2026,Connor,Newman,Uniform Allowance,0.00
-12/10/2026,David,Friswell,Base Hourly,0
-13/10/2026,David,Friswell,Base Hourly,0
-14/10/2026,David,Friswell,Base Hourly,0
-15/10/2026,David,Friswell,Base Hourly,0
-16/10/2026,David,Friswell,Base Hourly,0
-17/10/2026,David,Friswell,Level 1 Weekends,0
-18/10/2026,David,Friswell,Level 1 Weekends,0
-12/10/2026,David,Friswell,Uniform Allowance,0.00
-13/10/2026,David,Friswell,Uniform Allowance,0.00
-14/10/2026,David,Friswell,Uniform Allowance,0.00
-15/10/2026,David,Friswell,Uniform Allowance,0.00
-16/10/2026,David,Friswell,Uniform Allowance,0.00
-17/10/2026,David,Friswell,Uniform Allowance,0.00
-18/10/2026,David,Friswell,Uniform Allowance,0.00
-12/10/2026,Finn,Millar,Base Hourly,0
-13/10/2026,Finn,Millar,Base Hourly,0
-14/10/2026,Finn,Millar,Base Hourly,4.75
-15/10/2026,Finn,Millar,Base Hourly,0
-16/10/2026,Finn,Millar,Base Hourly,0
-17/10/2026,Finn,Millar,16 Yrs Level 1 Weekend,0
-18/10/2026,Finn,Millar,16 Yrs Level 1 Weekend,0
-12/10/2026,Finn,Millar,Uniform Allowance,0.00
-13/10/2026,Finn,Millar,Uniform Allowance,0.00
-14/10/2026,Finn,Millar,Uniform Allowance,1.00
-15/10/2026,Finn,Millar,Uniform Allowance,0.00
-16/10/2026,Finn,Millar,Uniform Allowance,0.00
-17/10/2026,Finn,Millar,Uniform Allowance,0.00
-18/10/2026,Finn,Millar,Uniform Allowance,0.00
-12/10/2026,Freiya,O'Connor,Base Hourly,0
-13/10/2026,Freiya,O'Connor,Base Hourly,0
-14/10/2026,Freiya,O'Connor,Base Hourly,0
-15/10/2026,Freiya,O'Connor,Base Hourly,0
-16/10/2026,Freiya,O'Connor,Base Hourly,0
-17/10/2026,Freiya,O'Connor,16 Yrs Level 1 Weekend,0
-18/10/2026,Freiya,O'Connor,16 Yrs Level 1 Weekend,0
-12/10/2026,Freiya,O'Connor,Uniform Allowance,0.00
-13/10/2026,Freiya,O'Connor,Uniform Allowance,0.00
-14/10/2026,Freiya,O'Connor,Uniform Allowance,0.00
-15/10/2026,Freiya,O'Connor,Uniform Allowance,0.00
-16/10/2026,Freiya,O'Connor,Uniform Allowance,0.00
-17/10/2026,Freiya,O'Connor,Uniform Allowance,0.00
-18/10/2026,Freiya,O'Connor,Uniform Allowance,0.00
-12/10/2026,Janice,Argus,Base Hourly,7.00
-13/10/2026,Janice,Argus,Base Hourly,7.00
-14/10/2026,Janice,Argus,Base Hourly,7.00
-15/10/2026,Janice,Argus,Base Hourly,7.00
-16/10/2026,Janice,Argus,Base Hourly,0
-17/10/2026,Janice,Argus,Level 2 Weekends,0
-18/10/2026,Janice,Argus,Level 2 Weekends,0
-12/10/2026,Janice,Argus,Uniform Allowance,1.00
-13/10/2026,Janice,Argus,Uniform Allowance,1.00
-14/10/2026,Janice,Argus,Uniform Allowance,1.00
-15/10/2026,Janice,Argus,Uniform Allowance,1.00
-16/10/2026,Janice,Argus,Uniform Allowance,0.00
-17/10/2026,Janice,Argus,Uniform Allowance,0.00
-18/10/2026,Janice,Argus,Uniform Allowance,0.00
-12/10/2026,Mandy,Scott,Base Hourly,7.50
-13/10/2026,Mandy,Scott,Base Hourly,7.50
-14/10/2026,Mandy,Scott,Base Hourly,0
-15/10/2026,Mandy,Scott,Base Hourly,0
-16/10/2026,Mandy,Scott,Base Hourly,0
-17/10/2026,Mandy,Scott,Level 2 Weekends,0
-18/10/2026,Mandy,Scott,Level 2 Weekends,0
-12/10/2026,Mandy,Scott,Uniform Allowance,1.00
-13/10/2026,Mandy,Scott,Uniform Allowance,1.00
-14/10/2026,Mandy,Scott,Uniform Allowance,0.00
-15/10/2026,Mandy,Scott,Uniform Allowance,0.00
-16/10/2026,Mandy,Scott,Uniform Allowance,0.00
-17/10/2026,Mandy,Scott,Uniform Allowance,0.00
-18/10/2026,Mandy,Scott,Uniform Allowance,0.00
-12/10/2026,Mani Prasad,Gurung,Base Hourly,0
-13/10/2026,Mani Prasad,Gurung,Base Hourly,0
-14/10/2026,Mani Prasad,Gurung,Base Hourly,0
-15/10/2026,Mani Prasad,Gurung,Base Hourly,0
-16/10/2026,Mani Prasad,Gurung,Base Hourly,0
-17/10/2026,Mani Prasad,Gurung,Base Hourly,0
-18/10/2026,Mani Prasad,Gurung,Base Hourly,0
-12/10/2026,Mani Prasad,Gurung,Uniform Allowance,0.00
-13/10/2026,Mani Prasad,Gurung,Uniform Allowance,0.00
-14/10/2026,Mani Prasad,Gurung,Uniform Allowance,0.00
-15/10/2026,Mani Prasad,Gurung,Uniform Allowance,0.00
-16/10/2026,Mani Prasad,Gurung,Uniform Allowance,0.00
-17/10/2026,Mani Prasad,Gurung,Uniform Allowance,0.00
-18/10/2026,Mani Prasad,Gurung,Uniform Allowance,0.00
-12/10/2026,Morgan,Lehnert,Base Hourly,7.50
-13/10/2026,Morgan,Lehnert,Base Hourly,7.50
-14/10/2026,Morgan,Lehnert,Base Hourly,0
-15/10/2026,Morgan,Lehnert,Base Hourly,0
-16/10/2026,Morgan,Lehnert,Base Hourly,0
-17/10/2026,Morgan,Lehnert,Base Hourly,0
-18/10/2026,Morgan,Lehnert,Base Hourly,0
-12/10/2026,Morgan,Lehnert,Uniform Allowance,1.00
-13/10/2026,Morgan,Lehnert,Uniform Allowance,1.00
-14/10/2026,Morgan,Lehnert,Uniform Allowance,0.00
-15/10/2026,Morgan,Lehnert,Uniform Allowance,0.00
-16/10/2026,Morgan,Lehnert,Uniform Allowance,0.00
-17/10/2026,Morgan,Lehnert,Uniform Allowance,0.00
-18/10/2026,Morgan,Lehnert,Uniform Allowance,0.00
-12/10/2026,Naomi,Clark,Base Hourly,0
-13/10/2026,Naomi,Clark,Base Hourly,8.00
-14/10/2026,Naomi,Clark,Base Hourly,8.25
-15/10/2026,Naomi,Clark,Base Hourly,8.00
-16/10/2026,Naomi,Clark,Base Hourly,0
-17/10/2026,Naomi,Clark,Level 1 Weekends,0
-18/10/2026,Naomi,Clark,Level 1 Weekends,0
-12/10/2026,Naomi,Clark,Uniform Allowance,0.00
-13/10/2026,Naomi,Clark,Uniform Allowance,1.00
-14/10/2026,Naomi,Clark,Uniform Allowance,1.00
-15/10/2026,Naomi,Clark,Uniform Allowance,1.00
-16/10/2026,Naomi,Clark,Uniform Allowance,0.00
-17/10/2026,Naomi,Clark,Uniform Allowance,0.00
-18/10/2026,Naomi,Clark,Uniform Allowance,0.00
-12/10/2026,Natalie,Bishop,Base Hourly,5.50
-13/10/2026,Natalie,Bishop,Base Hourly,0
-14/10/2026,Natalie,Bishop,Base Hourly,7.50
-15/10/2026,Natalie,Bishop,Base Hourly,0
-16/10/2026,Natalie,Bishop,Base Hourly,0
-17/10/2026,Natalie,Bishop,17 Yrs Intro Weekend,0
-18/10/2026,Natalie,Bishop,17 Yrs Intro Weekend,0
-12/10/2026,Natalie,Bishop,Uniform Allowance,1.00
-13/10/2026,Natalie,Bishop,Uniform Allowance,0.00
-14/10/2026,Natalie,Bishop,Uniform Allowance,1.00
-15/10/2026,Natalie,Bishop,Uniform Allowance,0.00
-16/10/2026,Natalie,Bishop,Uniform Allowance,0.00
-17/10/2026,Natalie,Bishop,Uniform Allowance,0.00
-18/10/2026,Natalie,Bishop,Uniform Allowance,0.00
-12/10/2026,Nicholas,Gallianos,Base Hourly,0
-13/10/2026,Nicholas,Gallianos,Base Hourly,5.50
-14/10/2026,Nicholas,Gallianos,Base Hourly,5.50
-15/10/2026,Nicholas,Gallianos,Base Hourly,0
-16/10/2026,Nicholas,Gallianos,Base Hourly,0
-17/10/2026,Nicholas,Gallianos,Base Hourly,0
-18/10/2026,Nicholas,Gallianos,Base Hourly,0
-12/10/2026,Nicholas,Gallianos,Uniform Allowance,0.00
-13/10/2026,Nicholas,Gallianos,Uniform Allowance,1.00
-14/10/2026,Nicholas,Gallianos,Uniform Allowance,1.00
-15/10/2026,Nicholas,Gallianos,Uniform Allowance,0.00
-16/10/2026,Nicholas,Gallianos,Uniform Allowance,0.00
-17/10/2026,Nicholas,Gallianos,Uniform Allowance,0.00
-18/10/2026,Nicholas,Gallianos,Uniform Allowance,0.00
-12/10/2026,Olivia,Alley Te-Huia,Base Hourly,0
-13/10/2026,Olivia,Alley Te-Huia,Base Hourly,0
-14/10/2026,Olivia,Alley Te-Huia,Base Hourly,8.25
-15/10/2026,Olivia,Alley Te-Huia,Base Hourly,7.50
-16/10/2026,Olivia,Alley Te-Huia,Base Hourly,0
-17/10/2026,Olivia,Alley Te-Huia,Level 1 Weekends,0
-18/10/2026,Olivia,Alley Te-Huia,Level 1 Weekends,0
-12/10/2026,Olivia,Alley Te-Huia,Uniform Allowance,0.00
-13/10/2026,Olivia,Alley Te-Huia,Uniform Allowance,0.00
-14/10/2026,Olivia,Alley Te-Huia,Uniform Allowance,1.00
-15/10/2026,Olivia,Alley Te-Huia,Uniform Allowance,1.00
-16/10/2026,Olivia,Alley Te-Huia,Uniform Allowance,0.00
-17/10/2026,Olivia,Alley Te-Huia,Uniform Allowance,0.00
-18/10/2026,Olivia,Alley Te-Huia,Uniform Allowance,0.00
-12/10/2026,Racheal Lynn,Webster,Base Hourly,8.00
-13/10/2026,Racheal Lynn,Webster,Base Hourly,0
-14/10/2026,Racheal Lynn,Webster,Base Hourly,0
-15/10/2026,Racheal Lynn,Webster,Base Hourly,8.00
-16/10/2026,Racheal Lynn,Webster,Base Hourly,0
-17/10/2026,Racheal Lynn,Webster,Level 2 Weekends,0
-18/10/2026,Racheal Lynn,Webster,Level 2 Weekends,0
-12/10/2026,Racheal Lynn,Webster,Uniform Allowance,1.00
-13/10/2026,Racheal Lynn,Webster,Uniform Allowance,0.00
-14/10/2026,Racheal Lynn,Webster,Uniform Allowance,0.00
-15/10/2026,Racheal Lynn,Webster,Uniform Allowance,1.00
-16/10/2026,Racheal Lynn,Webster,Uniform Allowance,0.00
-17/10/2026,Racheal Lynn,Webster,Uniform Allowance,0.00
-18/10/2026,Racheal Lynn,Webster,Uniform Allowance,0.00
-12/10/2026,Ruckshan Samilana,Kapugama Geeganage,Base Hourly,0
-13/10/2026,Ruckshan Samilana,Kapugama Geeganage,Base Hourly,0
-14/10/2026,Ruckshan Samilana,Kapugama Geeganage,Base Hourly,8.00
-15/10/2026,Ruckshan Samilana,Kapugama Geeganage,Base Hourly,8.00
-16/10/2026,Ruckshan Samilana,Kapugama Geeganage,Base Hourly,0
-17/10/2026,Ruckshan Samilana,Kapugama Geeganage,Base Hourly,0
-18/10/2026,Ruckshan Samilana,Kapugama Geeganage,Base Hourly,0
-12/10/2026,Ruckshan Samilana,Kapugama Geeganage,Uniform Allowance,0.00
-13/10/2026,Ruckshan Samilana,Kapugama Geeganage,Uniform Allowance,0.00
-14/10/2026,Ruckshan Samilana,Kapugama Geeganage,Uniform Allowance,1.00
-15/10/2026,Ruckshan Samilana,Kapugama Geeganage,Uniform Allowance,1.00
-16/10/2026,Ruckshan Samilana,Kapugama Geeganage,Uniform Allowance,0.00
-17/10/2026,Ruckshan Samilana,Kapugama Geeganage,Uniform Allowance,0.00
-18/10/2026,Ruckshan Samilana,Kapugama Geeganage,Uniform Allowance,0.00
-12/10/2026,Scarlett,O'Connor,Base Hourly,8.00
-13/10/2026,Scarlett,O'Connor,Base Hourly,7.50
-14/10/2026,Scarlett,O'Connor,Base Hourly,0
-15/10/2026,Scarlett,O'Connor,Base Hourly,7.50
-16/10/2026,Scarlett,O'Connor,Base Hourly,0
-17/10/2026,Scarlett,O'Connor,17 Yrs Level 2 Weekend,0
-18/10/2026,Scarlett,O'Connor,17 Yrs Level 2 Weekend,0
-12/10/2026,Scarlett,O'Connor,Uniform Allowance,1.00
-13/10/2026,Scarlett,O'Connor,Uniform Allowance,1.00
-14/10/2026,Scarlett,O'Connor,Uniform Allowance,0.00
-15/10/2026,Scarlett,O'Connor,Uniform Allowance,1.00
-16/10/2026,Scarlett,O'Connor,Uniform Allowance,0.00
-17/10/2026,Scarlett,O'Connor,Uniform Allowance,0.00
-18/10/2026,Scarlett,O'Connor,Uniform Allowance,0.00
-12/10/2026,Sienna,Wagstaff,Base Hourly,0
-13/10/2026,Sienna,Wagstaff,Base Hourly,0
-14/10/2026,Sienna,Wagstaff,Base Hourly,4.75
-15/10/2026,Sienna,Wagstaff,Base Hourly,4.50
-16/10/2026,Sienna,Wagstaff,Base Hourly,0
-17/10/2026,Sienna,Wagstaff,17 Yrs Level 2 Weekend,0
-18/10/2026,Sienna,Wagstaff,17 Yrs Level 2 Weekend,0
-12/10/2026,Sienna,Wagstaff,Uniform Allowance,0.00
-13/10/2026,Sienna,Wagstaff,Uniform Allowance,0.00
-14/10/2026,Sienna,Wagstaff,Uniform Allowance,1.00
-15/10/2026,Sienna,Wagstaff,Uniform Allowance,1.00
-16/10/2026,Sienna,Wagstaff,Uniform Allowance,0.00
-17/10/2026,Sienna,Wagstaff,Uniform Allowance,0.00
-18/10/2026,Sienna,Wagstaff,Uniform Allowance,0.00
-12/10/2026,Sophia,Kelly,Base Hourly,0
-13/10/2026,Sophia,Kelly,Base Hourly,4.50
-14/10/2026,Sophia,Kelly,Base Hourly,0
-15/10/2026,Sophia,Kelly,Base Hourly,0
-16/10/2026,Sophia,Kelly,Base Hourly,0
-17/10/2026,Sophia,Kelly,Base Hourly,0
-18/10/2026,Sophia,Kelly,Base Hourly,0
-12/10/2026,Sophia,Kelly,Uniform Allowance,0.00
-13/10/2026,Sophia,Kelly,Uniform Allowance,1.00
-14/10/2026,Sophia,Kelly,Uniform Allowance,0.00
-15/10/2026,Sophia,Kelly,Uniform Allowance,0.00
-16/10/2026,Sophia,Kelly,Uniform Allowance,0.00
-17/10/2026,Sophia,Kelly,Uniform Allowance,0.00
-18/10/2026,Sophia,Kelly,Uniform Allowance,0.00
-12/10/2026,Tanika,Moretti,Base Hourly,3.00
-13/10/2026,Tanika,Moretti,Base Hourly,0
-14/10/2026,Tanika,Moretti,Base Hourly,0
-15/10/2026,Tanika,Moretti,Base Hourly,3.00
-16/10/2026,Tanika,Moretti,Base Hourly,0
-17/10/2026,Tanika,Moretti,Level 1 Weekends,0
-18/10/2026,Tanika,Moretti,Level 1 Weekends,0
-12/10/2026,Tanika,Moretti,Uniform Allowance,1.00
-13/10/2026,Tanika,Moretti,Uniform Allowance,0.00
-14/10/2026,Tanika,Moretti,Uniform Allowance,0.00
-15/10/2026,Tanika,Moretti,Uniform Allowance,1.00
-16/10/2026,Tanika,Moretti,Uniform Allowance,0.00
-17/10/2026,Tanika,Moretti,Uniform Allowance,0.00
-18/10/2026,Tanika,Moretti,Uniform Allowance,0.00
-12/10/2026,Tyde,Frost,Base Hourly,8.75
-13/10/2026,Tyde,Frost,Base Hourly,8.00
-14/10/2026,Tyde,Frost,Base Hourly,7.75
-15/10/2026,Tyde,Frost,Base Hourly,7.75
-16/10/2026,Tyde,Frost,Base Hourly,0
-17/10/2026,Tyde,Frost,Level 1 Weekends,0
-18/10/2026,Tyde,Frost,Level 1 Weekends,0
-12/10/2026,Tyde,Frost,Uniform Allowance,1.00
-13/10/2026,Tyde,Frost,Uniform Allowance,1.00
-14/10/2026,Tyde,Frost,Uniform Allowance,1.00
-15/10/2026,Tyde,Frost,Uniform Allowance,1.00
-16/10/2026,Tyde,Frost,Uniform Allowance,0.00
-17/10/2026,Tyde,Frost,Uniform Allowance,0.00
-18/10/2026,Tyde,Frost,Uniform Allowance,0.00
-12/10/2026,Tynan,Caine,Base Hourly,4.50
-13/10/2026,Tynan,Caine,Base Hourly,4.50
-14/10/2026,Tynan,Caine,Base Hourly,0
-15/10/2026,Tynan,Caine,Base Hourly,4.50
-16/10/2026,Tynan,Caine,Base Hourly,0
-17/10/2026,Tynan,Caine,18 Yrs Level 2 Weekend,0
-18/10/2026,Tynan,Caine,18 Yrs Level 2 Weekend,0
-12/10/2026,Tynan,Caine,Uniform Allowance,1.00
-13/10/2026,Tynan,Caine,Uniform Allowance,1.00
-14/10/2026,Tynan,Caine,Uniform Allowance,0.00
-15/10/2026,Tynan,Caine,Uniform Allowance,1.00
-16/10/2026,Tynan,Caine,Uniform Allowance,0.00
-17/10/2026,Tynan,Caine,Uniform Allowance,0.00
-18/10/2026,Tynan,Caine,Uniform Allowance,0.00
-12/10/2026,Willow,Camilleri,Base Hourly,4.50
-13/10/2026,Willow,Camilleri,Base Hourly,14.50
-14/10/2026,Willow,Camilleri,Base Hourly,0
-15/10/2026,Willow,Camilleri,Base Hourly,0
-16/10/2026,Willow,Camilleri,Base Hourly,0
-17/10/2026,Willow,Camilleri,17 Yrs Level 1 Weekend,0
-18/10/2026,Willow,Camilleri,17 Yrs Level 1 Weekend,0
-12/10/2026,Willow,Camilleri,Uniform Allowance,1.00
-13/10/2026,Willow,Camilleri,Uniform Allowance,1.00
-14/10/2026,Willow,Camilleri,Uniform Allowance,0.00
-15/10/2026,Willow,Camilleri,Uniform Allowance,0.00
-16/10/2026,Willow,Camilleri,Uniform Allowance,0.00
-17/10/2026,Willow,Camilleri,Uniform Allowance,0.00
-18/10/2026,Willow,Camilleri,Uniform Allowance,0.00
+16/11/2026,Aavash Man,Dangol,Base Hourly,0
+17/11/2026,Aavash Man,Dangol,Base Hourly,0
+18/11/2026,Aavash Man,Dangol,Base Hourly,7.45
+19/11/2026,Aavash Man,Dangol,Base Hourly,3.57
+20/11/2026,Aavash Man,Dangol,Base Hourly,7.52
+21/11/2026,Aavash Man,Dangol,Intro Weekend,0
+22/11/2026,Aavash Man,Dangol,Intro Weekend,5.40
+16/11/2026,Aavash Man,Dangol,Uniform Allowance,0.00
+17/11/2026,Aavash Man,Dangol,Uniform Allowance,0.00
+18/11/2026,Aavash Man,Dangol,Uniform Allowance,1.00
+19/11/2026,Aavash Man,Dangol,Uniform Allowance,1.00
+20/11/2026,Aavash Man,Dangol,Uniform Allowance,1.00
+21/11/2026,Aavash Man,Dangol,Uniform Allowance,0.00
+22/11/2026,Aavash Man,Dangol,Uniform Allowance,1.00
+16/11/2026,Abdullah,Ates,Base Hourly,8.50
+17/11/2026,Abdullah,Ates,Base Hourly,6.50
+18/11/2026,Abdullah,Ates,Base Hourly,6.50
+19/11/2026,Abdullah,Ates,Base Hourly,6.50
+20/11/2026,Abdullah,Ates,Base Hourly,6.50
+21/11/2026,Abdullah,Ates,Level 3 Saturday,6.50
+22/11/2026,Abdullah,Ates,Level 3 Sunday,6.52
+16/11/2026,Abdullah,Ates,Uniform Allowance,1.00
+17/11/2026,Abdullah,Ates,Uniform Allowance,1.00
+18/11/2026,Abdullah,Ates,Uniform Allowance,1.00
+19/11/2026,Abdullah,Ates,Uniform Allowance,1.00
+20/11/2026,Abdullah,Ates,Uniform Allowance,1.00
+21/11/2026,Abdullah,Ates,Uniform Allowance,1.00
+22/11/2026,Abdullah,Ates,Uniform Allowance,1.00
+16/11/2026,Agustiningtyas,Khediri,Base Hourly,0
+17/11/2026,Agustiningtyas,Khediri,Base Hourly,9.60
+18/11/2026,Agustiningtyas,Khediri,Base Hourly,7.35
+19/11/2026,Agustiningtyas,Khediri,Base Hourly,0
+20/11/2026,Agustiningtyas,Khediri,Early Start,0.47
+20/11/2026,Agustiningtyas,Khediri,Base Hourly,4.03
+21/11/2026,Agustiningtyas,Khediri,Level 1 Weekends,7.17
+22/11/2026,Agustiningtyas,Khediri,Early Start,0.05
+22/11/2026,Agustiningtyas,Khediri,Level 1 Weekends,9.27
+16/11/2026,Agustiningtyas,Khediri,Uniform Allowance,0.00
+17/11/2026,Agustiningtyas,Khediri,Uniform Allowance,1.00
+18/11/2026,Agustiningtyas,Khediri,Uniform Allowance,1.00
+19/11/2026,Agustiningtyas,Khediri,Uniform Allowance,0.00
+20/11/2026,Agustiningtyas,Khediri,Uniform Allowance,1.00
+21/11/2026,Agustiningtyas,Khediri,Uniform Allowance,1.00
+22/11/2026,Agustiningtyas,Khediri,Uniform Allowance,1.00
+16/11/2026,Alisha,Tamang,Base Hourly,0
+17/11/2026,Alisha,Tamang,Base Hourly,0
+18/11/2026,Alisha,Tamang,Base Hourly,0
+19/11/2026,Alisha,Tamang,Base Hourly,0
+20/11/2026,Alisha,Tamang,Base Hourly,0
+21/11/2026,Alisha,Tamang,Base Hourly,0
+22/11/2026,Alisha,Tamang,Base Hourly,0
+16/11/2026,Alisha,Tamang,Uniform Allowance,0.00
+17/11/2026,Alisha,Tamang,Uniform Allowance,0.00
+18/11/2026,Alisha,Tamang,Uniform Allowance,0.00
+19/11/2026,Alisha,Tamang,Uniform Allowance,0.00
+20/11/2026,Alisha,Tamang,Uniform Allowance,0.00
+21/11/2026,Alisha,Tamang,Uniform Allowance,0.00
+22/11/2026,Alisha,Tamang,Uniform Allowance,0.00
+16/11/2026,Aliyan Shareef,Mohammed,Base Hourly,0
+17/11/2026,Aliyan Shareef,Mohammed,Base Hourly,0
+18/11/2026,Aliyan Shareef,Mohammed,Base Hourly,0
+19/11/2026,Aliyan Shareef,Mohammed,Base Hourly,0
+20/11/2026,Aliyan Shareef,Mohammed,Base Hourly,0
+21/11/2026,Aliyan Shareef,Mohammed,Level 2 Weekends,0
+22/11/2026,Aliyan Shareef,Mohammed,Level 2 Weekends,0
+16/11/2026,Aliyan Shareef,Mohammed,Uniform Allowance,0.00
+17/11/2026,Aliyan Shareef,Mohammed,Uniform Allowance,0.00
+18/11/2026,Aliyan Shareef,Mohammed,Uniform Allowance,0.00
+19/11/2026,Aliyan Shareef,Mohammed,Uniform Allowance,0.00
+20/11/2026,Aliyan Shareef,Mohammed,Uniform Allowance,0.00
+21/11/2026,Aliyan Shareef,Mohammed,Uniform Allowance,0.00
+22/11/2026,Aliyan Shareef,Mohammed,Uniform Allowance,0.00
+16/11/2026,Ana sofia,Calderon,Base Hourly,0
+17/11/2026,Ana sofia,Calderon,Early Start,0.03
+17/11/2026,Ana sofia,Calderon,Base Hourly,7.58
+18/11/2026,Ana sofia,Calderon,Base Hourly,5.52
+19/11/2026,Ana sofia,Calderon,Base Hourly,5.15
+20/11/2026,Ana sofia,Calderon,Base Hourly,0
+21/11/2026,Ana sofia,Calderon,Level 2 Weekends,0
+22/11/2026,Ana sofia,Calderon,Level 2 Weekends,5.50
+16/11/2026,Ana sofia,Calderon,Uniform Allowance,0.00
+17/11/2026,Ana sofia,Calderon,Uniform Allowance,1.00
+18/11/2026,Ana sofia,Calderon,Uniform Allowance,1.00
+19/11/2026,Ana sofia,Calderon,Uniform Allowance,1.00
+20/11/2026,Ana sofia,Calderon,Uniform Allowance,0.00
+21/11/2026,Ana sofia,Calderon,Uniform Allowance,0.00
+22/11/2026,Ana sofia,Calderon,Uniform Allowance,1.00
+16/11/2026,Angelina,yakou,Early Start,0.53
+16/11/2026,Angelina,yakou,Base Hourly,8.07
+17/11/2026,Angelina,yakou,Early Start,0.48
+17/11/2026,Angelina,yakou,Base Hourly,8.07
+18/11/2026,Angelina,yakou,Early Start,0.50
+18/11/2026,Angelina,yakou,Base Hourly,8.02
+19/11/2026,Angelina,yakou,Early Start,0.47
+19/11/2026,Angelina,yakou,Base Hourly,8.00
+20/11/2026,Angelina,yakou,Base Hourly,0
+21/11/2026,Angelina,yakou,19 Yrs Intro Weekend,0
+22/11/2026,Angelina,yakou,19 Yrs Intro Weekend,0
+16/11/2026,Angelina,yakou,Uniform Allowance,1.00
+17/11/2026,Angelina,yakou,Uniform Allowance,1.00
+18/11/2026,Angelina,yakou,Uniform Allowance,1.00
+19/11/2026,Angelina,yakou,Uniform Allowance,1.00
+20/11/2026,Angelina,yakou,Uniform Allowance,0.00
+21/11/2026,Angelina,yakou,Uniform Allowance,0.00
+22/11/2026,Angelina,yakou,Uniform Allowance,0.00
+16/11/2026,Anish,Khadka,Base Hourly,0
+17/11/2026,Anish,Khadka,Base Hourly,5.53
+18/11/2026,Anish,Khadka,Base Hourly,5.53
+19/11/2026,Anish,Khadka,Base Hourly,5.35
+20/11/2026,Anish,Khadka,Base Hourly,5.62
+21/11/2026,Anish,Khadka,Intro Weekend,0
+22/11/2026,Anish,Khadka,Intro Weekend,0
+16/11/2026,Anish,Khadka,Uniform Allowance,0.00
+17/11/2026,Anish,Khadka,Uniform Allowance,1.00
+18/11/2026,Anish,Khadka,Uniform Allowance,1.00
+19/11/2026,Anish,Khadka,Uniform Allowance,1.00
+20/11/2026,Anish,Khadka,Uniform Allowance,1.00
+21/11/2026,Anish,Khadka,Uniform Allowance,0.00
+22/11/2026,Anish,Khadka,Uniform Allowance,0.00
+16/11/2026,Anisha,Tandukar,Base Hourly,7.28
+17/11/2026,Anisha,Tandukar,Base Hourly,8.35
+18/11/2026,Anisha,Tandukar,Base Hourly,0
+19/11/2026,Anisha,Tandukar,Base Hourly,6.27
+20/11/2026,Anisha,Tandukar,Base Hourly,7.43
+21/11/2026,Anisha,Tandukar,Intro Weekend,4.88
+22/11/2026,Anisha,Tandukar,Intro Weekend,0
+16/11/2026,Anisha,Tandukar,Uniform Allowance,1.00
+17/11/2026,Anisha,Tandukar,Uniform Allowance,1.00
+18/11/2026,Anisha,Tandukar,Uniform Allowance,0.00
+19/11/2026,Anisha,Tandukar,Uniform Allowance,1.00
+20/11/2026,Anisha,Tandukar,Uniform Allowance,1.00
+21/11/2026,Anisha,Tandukar,Uniform Allowance,1.00
+22/11/2026,Anisha,Tandukar,Uniform Allowance,0.00
+16/11/2026,Annabella,Yakou ,Base Hourly,5.55
+17/11/2026,Annabella,Yakou ,Base Hourly,5.05
+18/11/2026,Annabella,Yakou ,Base Hourly,5.17
+19/11/2026,Annabella,Yakou ,Base Hourly,6.03
+20/11/2026,Annabella,Yakou ,Base Hourly,5.48
+21/11/2026,Annabella,Yakou ,18 Yrs Intro Weekend,0
+22/11/2026,Annabella,Yakou ,18 Yrs Intro Weekend,0
+16/11/2026,Annabella,Yakou ,Uniform Allowance,1.00
+17/11/2026,Annabella,Yakou ,Uniform Allowance,1.00
+18/11/2026,Annabella,Yakou ,Uniform Allowance,1.00
+19/11/2026,Annabella,Yakou ,Uniform Allowance,1.00
+20/11/2026,Annabella,Yakou ,Uniform Allowance,1.00
+21/11/2026,Annabella,Yakou ,Uniform Allowance,0.00
+22/11/2026,Annabella,Yakou ,Uniform Allowance,0.00
+16/11/2026,Arati,Rai,Base Hourly,0
+17/11/2026,Arati,Rai,Base Hourly,0
+18/11/2026,Arati,Rai,Early Start,0.47
+18/11/2026,Arati,Rai,Base Hourly,7.98
+19/11/2026,Arati,Rai,Base Hourly,6.37
+20/11/2026,Arati,Rai,Early Start,0.52
+20/11/2026,Arati,Rai,Base Hourly,8.10
+21/11/2026,Arati,Rai,Level 1 Weekends,6.23
+22/11/2026,Arati,Rai,Level 1 Weekends,0
+16/11/2026,Arati,Rai,Uniform Allowance,0.00
+17/11/2026,Arati,Rai,Uniform Allowance,0.00
+18/11/2026,Arati,Rai,Uniform Allowance,1.00
+19/11/2026,Arati,Rai,Uniform Allowance,1.00
+20/11/2026,Arati,Rai,Uniform Allowance,1.00
+21/11/2026,Arati,Rai,Uniform Allowance,1.00
+22/11/2026,Arati,Rai,Uniform Allowance,0.00
+16/11/2026,Bibek,Bhandari,Base Hourly,5.57
+17/11/2026,Bibek,Bhandari,Base Hourly,0
+18/11/2026,Bibek,Bhandari,Base Hourly,0
+19/11/2026,Bibek,Bhandari,Base Hourly,0
+20/11/2026,Bibek,Bhandari,Base Hourly,0
+21/11/2026,Bibek,Bhandari,Intro Weekend,0
+22/11/2026,Bibek,Bhandari,Intro Weekend,0
+16/11/2026,Bibek,Bhandari,Uniform Allowance,1.00
+17/11/2026,Bibek,Bhandari,Uniform Allowance,0.00
+18/11/2026,Bibek,Bhandari,Uniform Allowance,0.00
+19/11/2026,Bibek,Bhandari,Uniform Allowance,0.00
+20/11/2026,Bibek,Bhandari,Uniform Allowance,0.00
+21/11/2026,Bibek,Bhandari,Uniform Allowance,0.00
+22/11/2026,Bibek,Bhandari,Uniform Allowance,0.00
+16/11/2026,Binaya,Shrestha,Base Hourly,0
+17/11/2026,Binaya,Shrestha,Base Hourly,0
+18/11/2026,Binaya,Shrestha,Base Hourly,0
+19/11/2026,Binaya,Shrestha,Base Hourly,0
+20/11/2026,Binaya,Shrestha,Base Hourly,0
+21/11/2026,Binaya,Shrestha,Early Start,0.10
+21/11/2026,Binaya,Shrestha,Intro Weekend,8.57
+22/11/2026,Binaya,Shrestha,Intro Weekend,7.57
+16/11/2026,Binaya,Shrestha,Uniform Allowance,0.00
+17/11/2026,Binaya,Shrestha,Uniform Allowance,0.00
+18/11/2026,Binaya,Shrestha,Uniform Allowance,0.00
+19/11/2026,Binaya,Shrestha,Uniform Allowance,0.00
+20/11/2026,Binaya,Shrestha,Uniform Allowance,0.00
+21/11/2026,Binaya,Shrestha,Uniform Allowance,1.00
+22/11/2026,Binaya,Shrestha,Uniform Allowance,1.00
+16/11/2026,Briggite,Redrovan,Base Hourly,0
+17/11/2026,Briggite,Redrovan,Base Hourly,0
+18/11/2026,Briggite,Redrovan,Base Hourly,6.72
+19/11/2026,Briggite,Redrovan,Base Hourly,0
+20/11/2026,Briggite,Redrovan,Base Hourly,4.82
+21/11/2026,Briggite,Redrovan,Base Hourly,0
+22/11/2026,Briggite,Redrovan,Base Hourly,0
+16/11/2026,Briggite,Redrovan,Uniform Allowance,0.00
+17/11/2026,Briggite,Redrovan,Uniform Allowance,0.00
+18/11/2026,Briggite,Redrovan,Uniform Allowance,1.00
+19/11/2026,Briggite,Redrovan,Uniform Allowance,0.00
+20/11/2026,Briggite,Redrovan,Uniform Allowance,1.00
+21/11/2026,Briggite,Redrovan,Uniform Allowance,0.00
+22/11/2026,Briggite,Redrovan,Uniform Allowance,0.00
+16/11/2026,Dilisha,Khadka,Base Hourly,0
+17/11/2026,Dilisha,Khadka,Base Hourly,0
+18/11/2026,Dilisha,Khadka,Base Hourly,0
+19/11/2026,Dilisha,Khadka,Base Hourly,0
+20/11/2026,Dilisha,Khadka,Base Hourly,0
+21/11/2026,Dilisha,Khadka,Level 1 Weekends,5.27
+22/11/2026,Dilisha,Khadka,Level 1 Weekends,8.48
+16/11/2026,Dilisha,Khadka,Uniform Allowance,0.00
+17/11/2026,Dilisha,Khadka,Uniform Allowance,0.00
+18/11/2026,Dilisha,Khadka,Uniform Allowance,0.00
+19/11/2026,Dilisha,Khadka,Uniform Allowance,0.00
+20/11/2026,Dilisha,Khadka,Uniform Allowance,0.00
+21/11/2026,Dilisha,Khadka,Uniform Allowance,1.00
+22/11/2026,Dilisha,Khadka,Uniform Allowance,1.00
+16/11/2026,Divya,Bardewa,Base Hourly,0
+17/11/2026,Divya,Bardewa,Base Hourly,0
+18/11/2026,Divya,Bardewa,Base Hourly,0
+19/11/2026,Divya,Bardewa,Base Hourly,0
+20/11/2026,Divya,Bardewa,Base Hourly,0
+21/11/2026,Divya,Bardewa,Level 2 Weekends,0
+22/11/2026,Divya,Bardewa,Level 2 Weekends,0
+16/11/2026,Divya,Bardewa,Uniform Allowance,0.00
+17/11/2026,Divya,Bardewa,Uniform Allowance,0.00
+18/11/2026,Divya,Bardewa,Uniform Allowance,0.00
+19/11/2026,Divya,Bardewa,Uniform Allowance,0.00
+20/11/2026,Divya,Bardewa,Uniform Allowance,0.00
+21/11/2026,Divya,Bardewa,Uniform Allowance,0.00
+22/11/2026,Divya,Bardewa,Uniform Allowance,0.00
+16/11/2026,Dusan Rana,Magar,Base Hourly,8.77
+17/11/2026,Dusan Rana,Magar,Base Hourly,8.60
+18/11/2026,Dusan Rana,Magar,Base Hourly,8.55
+19/11/2026,Dusan Rana,Magar,Base Hourly,8.60
+20/11/2026,Dusan Rana,Magar,Base Hourly,8.52
+21/11/2026,Dusan Rana,Magar,Level 2 Weekends,6.50
+22/11/2026,Dusan Rana,Magar,Level 2 Weekends,0
+16/11/2026,Dusan Rana,Magar,Uniform Allowance,1.00
+17/11/2026,Dusan Rana,Magar,Uniform Allowance,1.00
+18/11/2026,Dusan Rana,Magar,Uniform Allowance,1.00
+19/11/2026,Dusan Rana,Magar,Uniform Allowance,1.00
+20/11/2026,Dusan Rana,Magar,Uniform Allowance,1.00
+21/11/2026,Dusan Rana,Magar,Uniform Allowance,1.00
+22/11/2026,Dusan Rana,Magar,Uniform Allowance,0.00
+16/11/2026,Eliza,El Bayeh,Base Hourly,0
+17/11/2026,Eliza,El Bayeh,Base Hourly,6.53
+18/11/2026,Eliza,El Bayeh,Base Hourly,0
+19/11/2026,Eliza,El Bayeh,Base Hourly,6.50
+20/11/2026,Eliza,El Bayeh,Base Hourly,6.62
+21/11/2026,Eliza,El Bayeh,19 Yrs Intro Weekend,0
+22/11/2026,Eliza,El Bayeh,19 Yrs Intro Weekend,0
+16/11/2026,Eliza,El Bayeh,Uniform Allowance,0.00
+17/11/2026,Eliza,El Bayeh,Uniform Allowance,1.00
+18/11/2026,Eliza,El Bayeh,Uniform Allowance,0.00
+19/11/2026,Eliza,El Bayeh,Uniform Allowance,1.00
+20/11/2026,Eliza,El Bayeh,Uniform Allowance,1.00
+21/11/2026,Eliza,El Bayeh,Uniform Allowance,0.00
+22/11/2026,Eliza,El Bayeh,Uniform Allowance,0.00
+16/11/2026,Elyssa,Noney,Base Hourly,5.07
+17/11/2026,Elyssa,Noney,Base Hourly,5.67
+18/11/2026,Elyssa,Noney,Base Hourly,5.05
+19/11/2026,Elyssa,Noney,Base Hourly,0
+20/11/2026,Elyssa,Noney,Base Hourly,0
+21/11/2026,Elyssa,Noney,Base Hourly,0
+22/11/2026,Elyssa,Noney,Base Hourly,0
+16/11/2026,Elyssa,Noney,Uniform Allowance,1.00
+17/11/2026,Elyssa,Noney,Uniform Allowance,1.00
+18/11/2026,Elyssa,Noney,Uniform Allowance,1.00
+19/11/2026,Elyssa,Noney,Uniform Allowance,0.00
+20/11/2026,Elyssa,Noney,Uniform Allowance,0.00
+21/11/2026,Elyssa,Noney,Uniform Allowance,0.00
+22/11/2026,Elyssa,Noney,Uniform Allowance,0.00
+16/11/2026,Eunyoung,Lee,Base Hourly,0
+17/11/2026,Eunyoung,Lee,Base Hourly,0
+18/11/2026,Eunyoung,Lee,Base Hourly,0
+19/11/2026,Eunyoung,Lee,Base Hourly,0
+20/11/2026,Eunyoung,Lee,Base Hourly,0
+21/11/2026,Eunyoung,Lee,Level 3 Saturday,0
+22/11/2026,Eunyoung,Lee,Level 3 Sunday,5.47
+16/11/2026,Eunyoung,Lee,Uniform Allowance,0.00
+17/11/2026,Eunyoung,Lee,Uniform Allowance,0.00
+18/11/2026,Eunyoung,Lee,Uniform Allowance,0.00
+19/11/2026,Eunyoung,Lee,Uniform Allowance,0.00
+20/11/2026,Eunyoung,Lee,Uniform Allowance,0.00
+21/11/2026,Eunyoung,Lee,Uniform Allowance,0.00
+22/11/2026,Eunyoung,Lee,Uniform Allowance,1.00
+16/11/2026,Gopal,KC,Base Hourly,7.50
+17/11/2026,Gopal,KC,Base Hourly,6.50
+18/11/2026,Gopal,KC,Base Hourly,0
+19/11/2026,Gopal,KC,Base Hourly,0
+20/11/2026,Gopal,KC,Base Hourly,0
+21/11/2026,Gopal,KC,Base Hourly,0
+22/11/2026,Gopal,KC,Base Hourly,0
+16/11/2026,Gopal,KC,Uniform Allowance,1.00
+17/11/2026,Gopal,KC,Uniform Allowance,1.00
+18/11/2026,Gopal,KC,Uniform Allowance,0.00
+19/11/2026,Gopal,KC,Uniform Allowance,0.00
+20/11/2026,Gopal,KC,Uniform Allowance,0.00
+21/11/2026,Gopal,KC,Uniform Allowance,0.00
+22/11/2026,Gopal,KC,Uniform Allowance,0.00
+16/11/2026,Grishma,Gurung,Base Hourly,0
+17/11/2026,Grishma,Gurung,Base Hourly,0
+18/11/2026,Grishma,Gurung,Base Hourly,5.17
+19/11/2026,Grishma,Gurung,Base Hourly,0
+20/11/2026,Grishma,Gurung,Base Hourly,0
+21/11/2026,Grishma,Gurung,19 Yrs Level 2 Weekend,10.42
+22/11/2026,Grishma,Gurung,19 Yrs Level 2 Weekend,7.55
+16/11/2026,Grishma,Gurung,Uniform Allowance,0.00
+17/11/2026,Grishma,Gurung,Uniform Allowance,0.00
+18/11/2026,Grishma,Gurung,Uniform Allowance,1.00
+19/11/2026,Grishma,Gurung,Uniform Allowance,0.00
+20/11/2026,Grishma,Gurung,Uniform Allowance,0.00
+21/11/2026,Grishma,Gurung,Uniform Allowance,1.00
+22/11/2026,Grishma,Gurung,Uniform Allowance,1.00
+16/11/2026,John Mark,Carreon,Base Hourly,7.43
+17/11/2026,John Mark,Carreon,Base Hourly,8.35
+18/11/2026,John Mark,Carreon,Base Hourly,7.32
+19/11/2026,John Mark,Carreon,Base Hourly,7.25
+20/11/2026,John Mark,Carreon,Base Hourly,7.38
+21/11/2026,John Mark,Carreon,Base Hourly,0
+22/11/2026,John Mark,Carreon,Base Hourly,0
+16/11/2026,John Mark,Carreon,Uniform Allowance,1.00
+17/11/2026,John Mark,Carreon,Uniform Allowance,1.00
+18/11/2026,John Mark,Carreon,Uniform Allowance,1.00
+19/11/2026,John Mark,Carreon,Uniform Allowance,1.00
+20/11/2026,John Mark,Carreon,Uniform Allowance,1.00
+21/11/2026,John Mark,Carreon,Uniform Allowance,0.00
+22/11/2026,John Mark,Carreon,Uniform Allowance,0.00
+16/11/2026,Jovina Jay,Nafarrete,Base Hourly,0
+17/11/2026,Jovina Jay,Nafarrete,Base Hourly,0
+18/11/2026,Jovina Jay,Nafarrete,Base Hourly,0
+19/11/2026,Jovina Jay,Nafarrete,Base Hourly,0
+20/11/2026,Jovina Jay,Nafarrete,Base Hourly,0
+21/11/2026,Jovina Jay,Nafarrete,19 Yrs Intro Weekend,0
+22/11/2026,Jovina Jay,Nafarrete,19 Yrs Intro Weekend,0
+16/11/2026,Jovina Jay,Nafarrete,Uniform Allowance,0.00
+17/11/2026,Jovina Jay,Nafarrete,Uniform Allowance,0.00
+18/11/2026,Jovina Jay,Nafarrete,Uniform Allowance,0.00
+19/11/2026,Jovina Jay,Nafarrete,Uniform Allowance,0.00
+20/11/2026,Jovina Jay,Nafarrete,Uniform Allowance,0.00
+21/11/2026,Jovina Jay,Nafarrete,Uniform Allowance,0.00
+22/11/2026,Jovina Jay,Nafarrete,Uniform Allowance,0.00
+16/11/2026,KATALINA,LANGI,Base Hourly,0
+17/11/2026,KATALINA,LANGI,Base Hourly,0
+18/11/2026,KATALINA,LANGI,Base Hourly,8.53
+19/11/2026,KATALINA,LANGI,Base Hourly,0
+20/11/2026,KATALINA,LANGI,Base Hourly,0
+21/11/2026,KATALINA,LANGI,Level 1 Weekends,0
+22/11/2026,KATALINA,LANGI,Level 1 Weekends,0
+16/11/2026,KATALINA,LANGI,Uniform Allowance,0.00
+17/11/2026,KATALINA,LANGI,Uniform Allowance,0.00
+18/11/2026,KATALINA,LANGI,Uniform Allowance,1.00
+19/11/2026,KATALINA,LANGI,Uniform Allowance,0.00
+20/11/2026,KATALINA,LANGI,Uniform Allowance,0.00
+21/11/2026,KATALINA,LANGI,Uniform Allowance,0.00
+22/11/2026,KATALINA,LANGI,Uniform Allowance,0.00
+16/11/2026,Kirti,Kirti,Base Hourly,0
+17/11/2026,Kirti,Kirti,Base Hourly,0
+18/11/2026,Kirti,Kirti,Base Hourly,0
+19/11/2026,Kirti,Kirti,Base Hourly,0
+20/11/2026,Kirti,Kirti,Base Hourly,0
+21/11/2026,Kirti,Kirti,Base Hourly,0
+22/11/2026,Kirti,Kirti,Base Hourly,0
+16/11/2026,Kirti,Kirti,Uniform Allowance,0.00
+17/11/2026,Kirti,Kirti,Uniform Allowance,0.00
+18/11/2026,Kirti,Kirti,Uniform Allowance,0.00
+19/11/2026,Kirti,Kirti,Uniform Allowance,0.00
+20/11/2026,Kirti,Kirti,Uniform Allowance,0.00
+21/11/2026,Kirti,Kirti,Uniform Allowance,0.00
+22/11/2026,Kirti,Kirti,Uniform Allowance,0.00
+16/11/2026,Kritika,Tamang,Base Hourly,0
+17/11/2026,Kritika,Tamang,Base Hourly,0
+18/11/2026,Kritika,Tamang,Base Hourly,7.73
+19/11/2026,Kritika,Tamang,Base Hourly,0
+20/11/2026,Kritika,Tamang,Base Hourly,6.90
+21/11/2026,Kritika,Tamang,Base Hourly,0
+22/11/2026,Kritika,Tamang,Base Hourly,0
+16/11/2026,Kritika,Tamang,Uniform Allowance,0.00
+17/11/2026,Kritika,Tamang,Uniform Allowance,0.00
+18/11/2026,Kritika,Tamang,Uniform Allowance,1.00
+19/11/2026,Kritika,Tamang,Uniform Allowance,0.00
+20/11/2026,Kritika,Tamang,Uniform Allowance,1.00
+21/11/2026,Kritika,Tamang,Uniform Allowance,0.00
+22/11/2026,Kritika,Tamang,Uniform Allowance,0.00
+16/11/2026,Mahima,Ranabhat,Base Hourly,0
+17/11/2026,Mahima,Ranabhat,Base Hourly,8.00
+18/11/2026,Mahima,Ranabhat,Base Hourly,7.17
+19/11/2026,Mahima,Ranabhat,Base Hourly,0
+20/11/2026,Mahima,Ranabhat,Base Hourly,7.02
+21/11/2026,Mahima,Ranabhat,Base Hourly,0
+22/11/2026,Mahima,Ranabhat,Base Hourly,0
+16/11/2026,Mahima,Ranabhat,Uniform Allowance,0.00
+17/11/2026,Mahima,Ranabhat,Uniform Allowance,1.00
+18/11/2026,Mahima,Ranabhat,Uniform Allowance,1.00
+19/11/2026,Mahima,Ranabhat,Uniform Allowance,0.00
+20/11/2026,Mahima,Ranabhat,Uniform Allowance,1.00
+21/11/2026,Mahima,Ranabhat,Uniform Allowance,0.00
+22/11/2026,Mahima,Ranabhat,Uniform Allowance,0.00
+16/11/2026,Mai Anh,Dang,Base Hourly,6.62
+17/11/2026,Mai Anh,Dang,Base Hourly,7.43
+18/11/2026,Mai Anh,Dang,Early Start,0.02
+18/11/2026,Mai Anh,Dang,Base Hourly,6.43
+19/11/2026,Mai Anh,Dang,Early Start,0.07
+19/11/2026,Mai Anh,Dang,Base Hourly,6.52
+20/11/2026,Mai Anh,Dang,Base Hourly,6.02
+21/11/2026,Mai Anh,Dang,Intro Weekend,0
+22/11/2026,Mai Anh,Dang,Intro Weekend,0
+16/11/2026,Mai Anh,Dang,Uniform Allowance,1.00
+17/11/2026,Mai Anh,Dang,Uniform Allowance,1.00
+18/11/2026,Mai Anh,Dang,Uniform Allowance,1.00
+19/11/2026,Mai Anh,Dang,Uniform Allowance,1.00
+20/11/2026,Mai Anh,Dang,Uniform Allowance,1.00
+21/11/2026,Mai Anh,Dang,Uniform Allowance,0.00
+22/11/2026,Mai Anh,Dang,Uniform Allowance,0.00
+16/11/2026,Manita,Pulami,Early Start,0.50
+16/11/2026,Manita,Pulami,Base Hourly,12.67
+17/11/2026,Manita,Pulami,Base Hourly,10.48
+18/11/2026,Manita,Pulami,Base Hourly,11.95
+19/11/2026,Manita,Pulami,Base Hourly,0
+20/11/2026,Manita,Pulami,Base Hourly,7.38
+21/11/2026,Manita,Pulami,Intro Weekend,5.48
+22/11/2026,Manita,Pulami,Intro Weekend,0
+16/11/2026,Manita,Pulami,Uniform Allowance,1.00
+17/11/2026,Manita,Pulami,Uniform Allowance,1.00
+18/11/2026,Manita,Pulami,Uniform Allowance,1.00
+19/11/2026,Manita,Pulami,Uniform Allowance,0.00
+20/11/2026,Manita,Pulami,Uniform Allowance,1.00
+21/11/2026,Manita,Pulami,Uniform Allowance,1.00
+22/11/2026,Manita,Pulami,Uniform Allowance,0.00
+16/11/2026,Manjil,Maharjan,Base Hourly,0
+17/11/2026,Manjil,Maharjan,Base Hourly,0
+18/11/2026,Manjil,Maharjan,Base Hourly,0
+19/11/2026,Manjil,Maharjan,Base Hourly,0
+20/11/2026,Manjil,Maharjan,Base Hourly,4.75
+21/11/2026,Manjil,Maharjan,19 Yrs Intro Weekend,0
+22/11/2026,Manjil,Maharjan,19 Yrs Intro Weekend,0
+16/11/2026,Manjil,Maharjan,Uniform Allowance,0.00
+17/11/2026,Manjil,Maharjan,Uniform Allowance,0.00
+18/11/2026,Manjil,Maharjan,Uniform Allowance,0.00
+19/11/2026,Manjil,Maharjan,Uniform Allowance,0.00
+20/11/2026,Manjil,Maharjan,Uniform Allowance,1.00
+21/11/2026,Manjil,Maharjan,Uniform Allowance,0.00
+22/11/2026,Manjil,Maharjan,Uniform Allowance,0.00
+16/11/2026,Milan,Regmi,Base Hourly,0
+17/11/2026,Milan,Regmi,Base Hourly,0
+18/11/2026,Milan,Regmi,Base Hourly,0
+19/11/2026,Milan,Regmi,Base Hourly,0
+20/11/2026,Milan,Regmi,Base Hourly,0
+21/11/2026,Milan,Regmi,Intro Weekend,0
+22/11/2026,Milan,Regmi,Intro Weekend,0
+16/11/2026,Milan,Regmi,Uniform Allowance,0.00
+17/11/2026,Milan,Regmi,Uniform Allowance,0.00
+18/11/2026,Milan,Regmi,Uniform Allowance,0.00
+19/11/2026,Milan,Regmi,Uniform Allowance,0.00
+20/11/2026,Milan,Regmi,Uniform Allowance,0.00
+21/11/2026,Milan,Regmi,Uniform Allowance,0.00
+22/11/2026,Milan,Regmi,Uniform Allowance,0.00
+16/11/2026,Nabina,Gajurel,Base Hourly,0
+17/11/2026,Nabina,Gajurel,Base Hourly,0
+18/11/2026,Nabina,Gajurel,Base Hourly,0
+19/11/2026,Nabina,Gajurel,Base Hourly,0
+20/11/2026,Nabina,Gajurel,Base Hourly,0
+21/11/2026,Nabina,Gajurel,Level 1 Weekends,0
+22/11/2026,Nabina,Gajurel,Level 1 Weekends,0
+16/11/2026,Nabina,Gajurel,Uniform Allowance,0.00
+17/11/2026,Nabina,Gajurel,Uniform Allowance,0.00
+18/11/2026,Nabina,Gajurel,Uniform Allowance,0.00
+19/11/2026,Nabina,Gajurel,Uniform Allowance,0.00
+20/11/2026,Nabina,Gajurel,Uniform Allowance,0.00
+21/11/2026,Nabina,Gajurel,Uniform Allowance,0.00
+22/11/2026,Nabina,Gajurel,Uniform Allowance,0.00
+16/11/2026,Natasha,Yakou,Base Hourly,4.08
+17/11/2026,Natasha,Yakou,Base Hourly,0
+18/11/2026,Natasha,Yakou,Base Hourly,0
+19/11/2026,Natasha,Yakou,Base Hourly,7.80
+20/11/2026,Natasha,Yakou,Base Hourly,7.52
+21/11/2026,Natasha,Yakou,18 Yrs Intro Weekend,0
+22/11/2026,Natasha,Yakou,18 Yrs Intro Weekend,0
+16/11/2026,Natasha,Yakou,Uniform Allowance,1.00
+17/11/2026,Natasha,Yakou,Uniform Allowance,0.00
+18/11/2026,Natasha,Yakou,Uniform Allowance,0.00
+19/11/2026,Natasha,Yakou,Uniform Allowance,1.00
+20/11/2026,Natasha,Yakou,Uniform Allowance,1.00
+21/11/2026,Natasha,Yakou,Uniform Allowance,0.00
+22/11/2026,Natasha,Yakou,Uniform Allowance,0.00
+16/11/2026,Neha,Rayamajhi,Base Hourly,0
+17/11/2026,Neha,Rayamajhi,Base Hourly,0
+18/11/2026,Neha,Rayamajhi,Base Hourly,0
+19/11/2026,Neha,Rayamajhi,Base Hourly,0
+20/11/2026,Neha,Rayamajhi,Base Hourly,0
+21/11/2026,Neha,Rayamajhi,Base Hourly,0
+22/11/2026,Neha,Rayamajhi,Base Hourly,0
+16/11/2026,Neha,Rayamajhi,Uniform Allowance,0.00
+17/11/2026,Neha,Rayamajhi,Uniform Allowance,0.00
+18/11/2026,Neha,Rayamajhi,Uniform Allowance,0.00
+19/11/2026,Neha,Rayamajhi,Uniform Allowance,0.00
+20/11/2026,Neha,Rayamajhi,Uniform Allowance,0.00
+21/11/2026,Neha,Rayamajhi,Uniform Allowance,0.00
+22/11/2026,Neha,Rayamajhi,Uniform Allowance,0.00
+16/11/2026,Nikita,Shrestha,Base Hourly,4.52
+17/11/2026,Nikita,Shrestha,Base Hourly,5.48
+18/11/2026,Nikita,Shrestha,Base Hourly,5.52
+19/11/2026,Nikita,Shrestha,Base Hourly,5.57
+20/11/2026,Nikita,Shrestha,Base Hourly,0
+21/11/2026,Nikita,Shrestha,Base Hourly,0
+22/11/2026,Nikita,Shrestha,Base Hourly,9.23
+16/11/2026,Nikita,Shrestha,Uniform Allowance,1.00
+17/11/2026,Nikita,Shrestha,Uniform Allowance,1.00
+18/11/2026,Nikita,Shrestha,Uniform Allowance,1.00
+19/11/2026,Nikita,Shrestha,Uniform Allowance,1.00
+20/11/2026,Nikita,Shrestha,Uniform Allowance,0.00
+21/11/2026,Nikita,Shrestha,Uniform Allowance,0.00
+22/11/2026,Nikita,Shrestha,Uniform Allowance,1.00
+16/11/2026,Nirajan,Rimal,Base Hourly,0
+17/11/2026,Nirajan,Rimal,Base Hourly,0
+18/11/2026,Nirajan,Rimal,Base Hourly,0
+19/11/2026,Nirajan,Rimal,Base Hourly,0
+20/11/2026,Nirajan,Rimal,Base Hourly,0
+21/11/2026,Nirajan,Rimal,Base Hourly,0
+22/11/2026,Nirajan,Rimal,Base Hourly,0
+16/11/2026,Nirajan,Rimal,Uniform Allowance,0.00
+17/11/2026,Nirajan,Rimal,Uniform Allowance,0.00
+18/11/2026,Nirajan,Rimal,Uniform Allowance,0.00
+19/11/2026,Nirajan,Rimal,Uniform Allowance,0.00
+20/11/2026,Nirajan,Rimal,Uniform Allowance,0.00
+21/11/2026,Nirajan,Rimal,Uniform Allowance,0.00
+22/11/2026,Nirajan,Rimal,Uniform Allowance,0.00
+16/11/2026,Niran,Yakou,Base Hourly,7.03
+17/11/2026,Niran,Yakou,Base Hourly,6.35
+18/11/2026,Niran,Yakou,Base Hourly,5.83
+19/11/2026,Niran,Yakou,Base Hourly,5.92
+20/11/2026,Niran,Yakou,Base Hourly,6.68
+21/11/2026,Niran,Yakou,Level 2 Weekends,0
+22/11/2026,Niran,Yakou,Level 2 Weekends,0
+16/11/2026,Niran,Yakou,Uniform Allowance,1.00
+17/11/2026,Niran,Yakou,Uniform Allowance,1.00
+18/11/2026,Niran,Yakou,Uniform Allowance,1.00
+19/11/2026,Niran,Yakou,Uniform Allowance,1.00
+20/11/2026,Niran,Yakou,Uniform Allowance,1.00
+21/11/2026,Niran,Yakou,Uniform Allowance,0.00
+22/11/2026,Niran,Yakou,Uniform Allowance,0.00
+16/11/2026,Norbu,Sherpa,Base Hourly,6.58
+17/11/2026,Norbu,Sherpa,Base Hourly,0
+18/11/2026,Norbu,Sherpa,Base Hourly,6.63
+19/11/2026,Norbu,Sherpa,Base Hourly,0
+20/11/2026,Norbu,Sherpa,Base Hourly,6.27
+21/11/2026,Norbu,Sherpa,Base Hourly,0
+22/11/2026,Norbu,Sherpa,Base Hourly,0
+16/11/2026,Norbu,Sherpa,Uniform Allowance,1.00
+17/11/2026,Norbu,Sherpa,Uniform Allowance,0.00
+18/11/2026,Norbu,Sherpa,Uniform Allowance,1.00
+19/11/2026,Norbu,Sherpa,Uniform Allowance,0.00
+20/11/2026,Norbu,Sherpa,Uniform Allowance,1.00
+21/11/2026,Norbu,Sherpa,Uniform Allowance,0.00
+22/11/2026,Norbu,Sherpa,Uniform Allowance,0.00
+16/11/2026,Ojaswi,Duwal ,Base Hourly,0
+17/11/2026,Ojaswi,Duwal ,Base Hourly,9.12
+18/11/2026,Ojaswi,Duwal ,Base Hourly,7.73
+19/11/2026,Ojaswi,Duwal ,Base Hourly,8.98
+20/11/2026,Ojaswi,Duwal ,Base Hourly,0
+21/11/2026,Ojaswi,Duwal ,Base Hourly,0
+22/11/2026,Ojaswi,Duwal ,Base Hourly,0
+16/11/2026,Ojaswi,Duwal ,Uniform Allowance,0.00
+17/11/2026,Ojaswi,Duwal ,Uniform Allowance,1.00
+18/11/2026,Ojaswi,Duwal ,Uniform Allowance,1.00
+19/11/2026,Ojaswi,Duwal ,Uniform Allowance,1.00
+20/11/2026,Ojaswi,Duwal ,Uniform Allowance,0.00
+21/11/2026,Ojaswi,Duwal ,Uniform Allowance,0.00
+22/11/2026,Ojaswi,Duwal ,Uniform Allowance,0.00
+16/11/2026,Pawan,parajuli,Base Hourly,0
+17/11/2026,Pawan,parajuli,Base Hourly,0
+18/11/2026,Pawan,parajuli,Base Hourly,0
+19/11/2026,Pawan,parajuli,Base Hourly,0
+20/11/2026,Pawan,parajuli,Base Hourly,0
+21/11/2026,Pawan,parajuli,Level 1 Weekends,0
+22/11/2026,Pawan,parajuli,Level 1 Weekends,8.73
+16/11/2026,Pawan,parajuli,Uniform Allowance,0.00
+17/11/2026,Pawan,parajuli,Uniform Allowance,0.00
+18/11/2026,Pawan,parajuli,Uniform Allowance,0.00
+19/11/2026,Pawan,parajuli,Uniform Allowance,0.00
+20/11/2026,Pawan,parajuli,Uniform Allowance,0.00
+21/11/2026,Pawan,parajuli,Uniform Allowance,0.00
+22/11/2026,Pawan,parajuli,Uniform Allowance,1.00
+16/11/2026,Pooja,Thapa Magar,Base Hourly,0
+17/11/2026,Pooja,Thapa Magar,Base Hourly,0
+18/11/2026,Pooja,Thapa Magar,Base Hourly,0
+19/11/2026,Pooja,Thapa Magar,Base Hourly,0
+20/11/2026,Pooja,Thapa Magar,Base Hourly,0
+21/11/2026,Pooja,Thapa Magar,Base Hourly,0
+22/11/2026,Pooja,Thapa Magar,Base Hourly,0
+16/11/2026,Pooja,Thapa Magar,Uniform Allowance,0.00
+17/11/2026,Pooja,Thapa Magar,Uniform Allowance,0.00
+18/11/2026,Pooja,Thapa Magar,Uniform Allowance,0.00
+19/11/2026,Pooja,Thapa Magar,Uniform Allowance,0.00
+20/11/2026,Pooja,Thapa Magar,Uniform Allowance,0.00
+21/11/2026,Pooja,Thapa Magar,Uniform Allowance,0.00
+22/11/2026,Pooja,Thapa Magar,Uniform Allowance,0.00
+16/11/2026,Prabin,Gorathoki,Base Hourly,0
+17/11/2026,Prabin,Gorathoki,Base Hourly,0
+18/11/2026,Prabin,Gorathoki,Base Hourly,0
+19/11/2026,Prabin,Gorathoki,Base Hourly,0
+20/11/2026,Prabin,Gorathoki,Base Hourly,0
+21/11/2026,Prabin,Gorathoki,Intro Weekend,0
+22/11/2026,Prabin,Gorathoki,Intro Weekend,0
+16/11/2026,Prabin,Gorathoki,Uniform Allowance,0.00
+17/11/2026,Prabin,Gorathoki,Uniform Allowance,0.00
+18/11/2026,Prabin,Gorathoki,Uniform Allowance,0.00
+19/11/2026,Prabin,Gorathoki,Uniform Allowance,0.00
+20/11/2026,Prabin,Gorathoki,Uniform Allowance,0.00
+21/11/2026,Prabin,Gorathoki,Uniform Allowance,0.00
+22/11/2026,Prabin,Gorathoki,Uniform Allowance,0.00
+16/11/2026,Prajita,Gautam,Base Hourly,0
+17/11/2026,Prajita,Gautam,Base Hourly,0
+18/11/2026,Prajita,Gautam,Base Hourly,0
+19/11/2026,Prajita,Gautam,Base Hourly,0
+20/11/2026,Prajita,Gautam,Base Hourly,0
+21/11/2026,Prajita,Gautam,Base Hourly,0
+22/11/2026,Prajita,Gautam,Base Hourly,0
+16/11/2026,Prajita,Gautam,Uniform Allowance,0.00
+17/11/2026,Prajita,Gautam,Uniform Allowance,0.00
+18/11/2026,Prajita,Gautam,Uniform Allowance,0.00
+19/11/2026,Prajita,Gautam,Uniform Allowance,0.00
+20/11/2026,Prajita,Gautam,Uniform Allowance,0.00
+21/11/2026,Prajita,Gautam,Uniform Allowance,0.00
+22/11/2026,Prajita,Gautam,Uniform Allowance,0.00
+16/11/2026,Pranaya,Bhattarai,Base Hourly,0
+17/11/2026,Pranaya,Bhattarai,Base Hourly,0
+18/11/2026,Pranaya,Bhattarai,Base Hourly,0
+19/11/2026,Pranaya,Bhattarai,Early Start,0.03
+19/11/2026,Pranaya,Bhattarai,Base Hourly,7.37
+20/11/2026,Pranaya,Bhattarai,Base Hourly,7.42
+21/11/2026,Pranaya,Bhattarai,Base Hourly,7.45
+22/11/2026,Pranaya,Bhattarai,Base Hourly,0
+16/11/2026,Pranaya,Bhattarai,Uniform Allowance,0.00
+17/11/2026,Pranaya,Bhattarai,Uniform Allowance,0.00
+18/11/2026,Pranaya,Bhattarai,Uniform Allowance,0.00
+19/11/2026,Pranaya,Bhattarai,Uniform Allowance,1.00
+20/11/2026,Pranaya,Bhattarai,Uniform Allowance,1.00
+21/11/2026,Pranaya,Bhattarai,Uniform Allowance,1.00
+22/11/2026,Pranaya,Bhattarai,Uniform Allowance,0.00
+16/11/2026,Pritika,Shrestha,Base Hourly,0
+17/11/2026,Pritika,Shrestha,Base Hourly,0
+18/11/2026,Pritika,Shrestha,Base Hourly,0
+19/11/2026,Pritika,Shrestha,Base Hourly,0
+20/11/2026,Pritika,Shrestha,Base Hourly,0
+21/11/2026,Pritika,Shrestha,Level 2 Weekends,0
+22/11/2026,Pritika,Shrestha,Level 2 Weekends,8.05
+16/11/2026,Pritika,Shrestha,Uniform Allowance,0.00
+17/11/2026,Pritika,Shrestha,Uniform Allowance,0.00
+18/11/2026,Pritika,Shrestha,Uniform Allowance,0.00
+19/11/2026,Pritika,Shrestha,Uniform Allowance,0.00
+20/11/2026,Pritika,Shrestha,Uniform Allowance,0.00
+21/11/2026,Pritika,Shrestha,Uniform Allowance,0.00
+22/11/2026,Pritika,Shrestha,Uniform Allowance,1.00
+16/11/2026,Puspa,Niure,Base Hourly,0
+17/11/2026,Puspa,Niure,Base Hourly,0
+18/11/2026,Puspa,Niure,Base Hourly,10.07
+19/11/2026,Puspa,Niure,Base Hourly,7.47
+20/11/2026,Puspa,Niure,Base Hourly,2.07
+21/11/2026,Puspa,Niure,Base Hourly,4.03
+22/11/2026,Puspa,Niure,Base Hourly,0
+16/11/2026,Puspa,Niure,Uniform Allowance,0.00
+17/11/2026,Puspa,Niure,Uniform Allowance,0.00
+18/11/2026,Puspa,Niure,Uniform Allowance,1.00
+19/11/2026,Puspa,Niure,Uniform Allowance,1.00
+20/11/2026,Puspa,Niure,Uniform Allowance,1.00
+21/11/2026,Puspa,Niure,Uniform Allowance,1.00
+22/11/2026,Puspa,Niure,Uniform Allowance,0.00
+16/11/2026,Rachana,Shrestha,Base Hourly,13.00
+17/11/2026,Rachana,Shrestha,Base Hourly,9.42
+18/11/2026,Rachana,Shrestha,Base Hourly,0
+19/11/2026,Rachana,Shrestha,Base Hourly,9.40
+20/11/2026,Rachana,Shrestha,Early Start,0.33
+20/11/2026,Rachana,Shrestha,Base Hourly,9.80
+21/11/2026,Rachana,Shrestha,Intro Weekend,8.93
+22/11/2026,Rachana,Shrestha,Intro Weekend,7.02
+16/11/2026,Rachana,Shrestha,Uniform Allowance,1.00
+17/11/2026,Rachana,Shrestha,Uniform Allowance,1.00
+18/11/2026,Rachana,Shrestha,Uniform Allowance,0.00
+19/11/2026,Rachana,Shrestha,Uniform Allowance,1.00
+20/11/2026,Rachana,Shrestha,Uniform Allowance,1.00
+21/11/2026,Rachana,Shrestha,Uniform Allowance,1.00
+22/11/2026,Rachana,Shrestha,Uniform Allowance,1.00
+16/11/2026,Ramesh,Paudel,Base Hourly,6.97
+17/11/2026,Ramesh,Paudel,Base Hourly,8.53
+18/11/2026,Ramesh,Paudel,Base Hourly,0
+19/11/2026,Ramesh,Paudel,Base Hourly,7.07
+20/11/2026,Ramesh,Paudel,Base Hourly,5.02
+21/11/2026,Ramesh,Paudel,Base Hourly,0
+22/11/2026,Ramesh,Paudel,Base Hourly,0
+16/11/2026,Ramesh,Paudel,Uniform Allowance,1.00
+17/11/2026,Ramesh,Paudel,Uniform Allowance,1.00
+18/11/2026,Ramesh,Paudel,Uniform Allowance,0.00
+19/11/2026,Ramesh,Paudel,Uniform Allowance,1.00
+20/11/2026,Ramesh,Paudel,Uniform Allowance,1.00
+21/11/2026,Ramesh,Paudel,Uniform Allowance,0.00
+22/11/2026,Ramesh,Paudel,Uniform Allowance,0.00
+16/11/2026,Reeya,Baniya,Base Hourly,0
+17/11/2026,Reeya,Baniya,Base Hourly,7.48
+18/11/2026,Reeya,Baniya,Base Hourly,8.17
+19/11/2026,Reeya,Baniya,Base Hourly,0
+20/11/2026,Reeya,Baniya,Base Hourly,0
+21/11/2026,Reeya,Baniya,Intro Weekend,0
+22/11/2026,Reeya,Baniya,Intro Weekend,5.53
+16/11/2026,Reeya,Baniya,Uniform Allowance,0.00
+17/11/2026,Reeya,Baniya,Uniform Allowance,1.00
+18/11/2026,Reeya,Baniya,Uniform Allowance,1.00
+19/11/2026,Reeya,Baniya,Uniform Allowance,0.00
+20/11/2026,Reeya,Baniya,Uniform Allowance,0.00
+21/11/2026,Reeya,Baniya,Uniform Allowance,0.00
+22/11/2026,Reeya,Baniya,Uniform Allowance,1.00
+16/11/2026,Rheanne-May Vaño,Santos,Base Hourly,5.52
+17/11/2026,Rheanne-May Vaño,Santos,Base Hourly,7.52
+18/11/2026,Rheanne-May Vaño,Santos,Base Hourly,0
+19/11/2026,Rheanne-May Vaño,Santos,Base Hourly,7.53
+20/11/2026,Rheanne-May Vaño,Santos,Base Hourly,6.55
+21/11/2026,Rheanne-May Vaño,Santos,Base Hourly,0
+22/11/2026,Rheanne-May Vaño,Santos,Base Hourly,0
+16/11/2026,Rheanne-May Vaño,Santos,Uniform Allowance,1.00
+17/11/2026,Rheanne-May Vaño,Santos,Uniform Allowance,1.00
+18/11/2026,Rheanne-May Vaño,Santos,Uniform Allowance,0.00
+19/11/2026,Rheanne-May Vaño,Santos,Uniform Allowance,1.00
+20/11/2026,Rheanne-May Vaño,Santos,Uniform Allowance,1.00
+21/11/2026,Rheanne-May Vaño,Santos,Uniform Allowance,0.00
+22/11/2026,Rheanne-May Vaño,Santos,Uniform Allowance,0.00
+16/11/2026,Rishav,Dahal,Base Hourly,0
+17/11/2026,Rishav,Dahal,Base Hourly,0
+18/11/2026,Rishav,Dahal,Base Hourly,0
+19/11/2026,Rishav,Dahal,Base Hourly,0
+20/11/2026,Rishav,Dahal,Base Hourly,5.32
+21/11/2026,Rishav,Dahal,Intro Weekend,8.50
+22/11/2026,Rishav,Dahal,Intro Weekend,8.50
+16/11/2026,Rishav,Dahal,Uniform Allowance,0.00
+17/11/2026,Rishav,Dahal,Uniform Allowance,0.00
+18/11/2026,Rishav,Dahal,Uniform Allowance,0.00
+19/11/2026,Rishav,Dahal,Uniform Allowance,0.00
+20/11/2026,Rishav,Dahal,Uniform Allowance,1.00
+21/11/2026,Rishav,Dahal,Uniform Allowance,1.00
+22/11/2026,Rishav,Dahal,Uniform Allowance,1.00
+16/11/2026,Rojina,Karki,Base Hourly,5.33
+17/11/2026,Rojina,Karki,Base Hourly,0
+18/11/2026,Rojina,Karki,Early Start,0.02
+18/11/2026,Rojina,Karki,Base Hourly,7.65
+19/11/2026,Rojina,Karki,Base Hourly,0
+20/11/2026,Rojina,Karki,Base Hourly,0
+21/11/2026,Rojina,Karki,Level 1 Weekends,0
+22/11/2026,Rojina,Karki,Level 1 Weekends,9.02
+16/11/2026,Rojina,Karki,Uniform Allowance,1.00
+17/11/2026,Rojina,Karki,Uniform Allowance,0.00
+18/11/2026,Rojina,Karki,Uniform Allowance,1.00
+19/11/2026,Rojina,Karki,Uniform Allowance,0.00
+20/11/2026,Rojina,Karki,Uniform Allowance,0.00
+21/11/2026,Rojina,Karki,Uniform Allowance,0.00
+22/11/2026,Rojina,Karki,Uniform Allowance,1.00
+16/11/2026,Roshani,Giri,Early Start,0.08
+16/11/2026,Roshani,Giri,Base Hourly,7.63
+17/11/2026,Roshani,Giri,Early Start,0.10
+17/11/2026,Roshani,Giri,Base Hourly,7.58
+18/11/2026,Roshani,Giri,Early Start,0.02
+18/11/2026,Roshani,Giri,Base Hourly,7.55
+19/11/2026,Roshani,Giri,Early Start,0.03
+19/11/2026,Roshani,Giri,Base Hourly,7.57
+20/11/2026,Roshani,Giri,Base Hourly,0
+21/11/2026,Roshani,Giri,Intro Weekend,0
+22/11/2026,Roshani,Giri,Intro Weekend,6.10
+16/11/2026,Roshani,Giri,Uniform Allowance,1.00
+17/11/2026,Roshani,Giri,Uniform Allowance,1.00
+18/11/2026,Roshani,Giri,Uniform Allowance,1.00
+19/11/2026,Roshani,Giri,Uniform Allowance,1.00
+20/11/2026,Roshani,Giri,Uniform Allowance,0.00
+21/11/2026,Roshani,Giri,Uniform Allowance,0.00
+22/11/2026,Roshani,Giri,Uniform Allowance,1.00
+16/11/2026,Roshani,Tamang,Base Hourly,0
+17/11/2026,Roshani,Tamang,Base Hourly,0
+18/11/2026,Roshani,Tamang,Base Hourly,0
+19/11/2026,Roshani,Tamang,Base Hourly,0
+20/11/2026,Roshani,Tamang,Base Hourly,0
+21/11/2026,Roshani,Tamang,Base Hourly,0
+22/11/2026,Roshani,Tamang,Base Hourly,0
+16/11/2026,Roshani,Tamang,Uniform Allowance,0.00
+17/11/2026,Roshani,Tamang,Uniform Allowance,0.00
+18/11/2026,Roshani,Tamang,Uniform Allowance,0.00
+19/11/2026,Roshani,Tamang,Uniform Allowance,0.00
+20/11/2026,Roshani,Tamang,Uniform Allowance,0.00
+21/11/2026,Roshani,Tamang,Uniform Allowance,0.00
+22/11/2026,Roshani,Tamang,Uniform Allowance,0.00
+16/11/2026,Roshna,Khadgi,Base Hourly,0
+17/11/2026,Roshna,Khadgi,Base Hourly,0
+18/11/2026,Roshna,Khadgi,Base Hourly,7.50
+19/11/2026,Roshna,Khadgi,Base Hourly,0
+20/11/2026,Roshna,Khadgi,Base Hourly,0
+21/11/2026,Roshna,Khadgi,Base Hourly,0
+22/11/2026,Roshna,Khadgi,Base Hourly,0
+16/11/2026,Roshna,Khadgi,Uniform Allowance,0.00
+17/11/2026,Roshna,Khadgi,Uniform Allowance,0.00
+18/11/2026,Roshna,Khadgi,Uniform Allowance,1.00
+19/11/2026,Roshna,Khadgi,Uniform Allowance,0.00
+20/11/2026,Roshna,Khadgi,Uniform Allowance,0.00
+21/11/2026,Roshna,Khadgi,Uniform Allowance,0.00
+22/11/2026,Roshna,Khadgi,Uniform Allowance,0.00
+16/11/2026,SANILAITA,KULUKA,Base Hourly,4.98
+17/11/2026,SANILAITA,KULUKA,Base Hourly,4.93
+18/11/2026,SANILAITA,KULUKA,Base Hourly,0
+19/11/2026,SANILAITA,KULUKA,Base Hourly,6.50
+20/11/2026,SANILAITA,KULUKA,Base Hourly,8.45
+21/11/2026,SANILAITA,KULUKA,Level 1 Weekends,0
+22/11/2026,SANILAITA,KULUKA,Level 1 Weekends,0
+16/11/2026,SANILAITA,KULUKA,Uniform Allowance,1.00
+17/11/2026,SANILAITA,KULUKA,Uniform Allowance,1.00
+18/11/2026,SANILAITA,KULUKA,Uniform Allowance,0.00
+19/11/2026,SANILAITA,KULUKA,Uniform Allowance,1.00
+20/11/2026,SANILAITA,KULUKA,Uniform Allowance,1.00
+21/11/2026,SANILAITA,KULUKA,Uniform Allowance,0.00
+22/11/2026,SANILAITA,KULUKA,Uniform Allowance,0.00
+16/11/2026,Saanvi,Shrestha,Base Hourly,7.57
+17/11/2026,Saanvi,Shrestha,Base Hourly,0
+18/11/2026,Saanvi,Shrestha,Base Hourly,4.00
+19/11/2026,Saanvi,Shrestha,Base Hourly,6.50
+20/11/2026,Saanvi,Shrestha,Base Hourly,0
+21/11/2026,Saanvi,Shrestha,Base Hourly,5.62
+22/11/2026,Saanvi,Shrestha,Base Hourly,6.50
+16/11/2026,Saanvi,Shrestha,Uniform Allowance,1.00
+17/11/2026,Saanvi,Shrestha,Uniform Allowance,0.00
+18/11/2026,Saanvi,Shrestha,Uniform Allowance,1.00
+19/11/2026,Saanvi,Shrestha,Uniform Allowance,1.00
+20/11/2026,Saanvi,Shrestha,Uniform Allowance,0.00
+21/11/2026,Saanvi,Shrestha,Uniform Allowance,1.00
+22/11/2026,Saanvi,Shrestha,Uniform Allowance,1.00
+16/11/2026,Sajana,Shrestha,Base Hourly,0
+17/11/2026,Sajana,Shrestha,Base Hourly,0
+18/11/2026,Sajana,Shrestha,Base Hourly,5.50
+19/11/2026,Sajana,Shrestha,Base Hourly,0
+20/11/2026,Sajana,Shrestha,Base Hourly,0
+21/11/2026,Sajana,Shrestha,Level 2 Weekends,6.27
+22/11/2026,Sajana,Shrestha,Level 2 Weekends,0
+16/11/2026,Sajana,Shrestha,Uniform Allowance,0.00
+17/11/2026,Sajana,Shrestha,Uniform Allowance,0.00
+18/11/2026,Sajana,Shrestha,Uniform Allowance,1.00
+19/11/2026,Sajana,Shrestha,Uniform Allowance,0.00
+20/11/2026,Sajana,Shrestha,Uniform Allowance,0.00
+21/11/2026,Sajana,Shrestha,Uniform Allowance,1.00
+22/11/2026,Sajana,Shrestha,Uniform Allowance,0.00
+16/11/2026,Sajeet,Shilpakar,Base Hourly,0
+17/11/2026,Sajeet,Shilpakar,Base Hourly,0
+18/11/2026,Sajeet,Shilpakar,Base Hourly,0
+19/11/2026,Sajeet,Shilpakar,Base Hourly,0
+20/11/2026,Sajeet,Shilpakar,Base Hourly,0
+21/11/2026,Sajeet,Shilpakar,Intro Weekend,0
+22/11/2026,Sajeet,Shilpakar,Intro Weekend,0
+16/11/2026,Sajeet,Shilpakar,Uniform Allowance,0.00
+17/11/2026,Sajeet,Shilpakar,Uniform Allowance,0.00
+18/11/2026,Sajeet,Shilpakar,Uniform Allowance,0.00
+19/11/2026,Sajeet,Shilpakar,Uniform Allowance,0.00
+20/11/2026,Sajeet,Shilpakar,Uniform Allowance,0.00
+21/11/2026,Sajeet,Shilpakar,Uniform Allowance,0.00
+22/11/2026,Sajeet,Shilpakar,Uniform Allowance,0.00
+16/11/2026,Salina,Dulal ,Base Hourly,9.08
+17/11/2026,Salina,Dulal ,Base Hourly,8.53
+18/11/2026,Salina,Dulal ,Base Hourly,0
+19/11/2026,Salina,Dulal ,Base Hourly,8.83
+20/11/2026,Salina,Dulal ,Base Hourly,7.18
+21/11/2026,Salina,Dulal ,Base Hourly,0
+22/11/2026,Salina,Dulal ,Base Hourly,0
+16/11/2026,Salina,Dulal ,Uniform Allowance,1.00
+17/11/2026,Salina,Dulal ,Uniform Allowance,1.00
+18/11/2026,Salina,Dulal ,Uniform Allowance,0.00
+19/11/2026,Salina,Dulal ,Uniform Allowance,1.00
+20/11/2026,Salina,Dulal ,Uniform Allowance,1.00
+21/11/2026,Salina,Dulal ,Uniform Allowance,0.00
+22/11/2026,Salina,Dulal ,Uniform Allowance,0.00
+16/11/2026,Sanjiv,Shrestha,Base Hourly,6.50
+17/11/2026,Sanjiv,Shrestha,Base Hourly,6.50
+18/11/2026,Sanjiv,Shrestha,Base Hourly,6.58
+19/11/2026,Sanjiv,Shrestha,Base Hourly,3.00
+20/11/2026,Sanjiv,Shrestha,Base Hourly,5.53
+21/11/2026,Sanjiv,Shrestha,Intro Weekend,7.85
+22/11/2026,Sanjiv,Shrestha,Intro Weekend,9.02
+16/11/2026,Sanjiv,Shrestha,Uniform Allowance,1.00
+17/11/2026,Sanjiv,Shrestha,Uniform Allowance,1.00
+18/11/2026,Sanjiv,Shrestha,Uniform Allowance,1.00
+19/11/2026,Sanjiv,Shrestha,Uniform Allowance,1.00
+20/11/2026,Sanjiv,Shrestha,Uniform Allowance,1.00
+21/11/2026,Sanjiv,Shrestha,Uniform Allowance,1.00
+22/11/2026,Sanjiv,Shrestha,Uniform Allowance,1.00
+16/11/2026,Sanjog,Limbu,Base Hourly,3.27
+17/11/2026,Sanjog,Limbu,Base Hourly,0
+18/11/2026,Sanjog,Limbu,Base Hourly,6.05
+19/11/2026,Sanjog,Limbu,Base Hourly,0
+20/11/2026,Sanjog,Limbu,Base Hourly,14.63
+21/11/2026,Sanjog,Limbu,Level 1 Weekends,5.85
+22/11/2026,Sanjog,Limbu,Level 1 Weekends,5.15
+16/11/2026,Sanjog,Limbu,Uniform Allowance,1.00
+17/11/2026,Sanjog,Limbu,Uniform Allowance,0.00
+18/11/2026,Sanjog,Limbu,Uniform Allowance,1.00
+19/11/2026,Sanjog,Limbu,Uniform Allowance,0.00
+20/11/2026,Sanjog,Limbu,Uniform Allowance,1.00
+21/11/2026,Sanjog,Limbu,Uniform Allowance,1.00
+22/11/2026,Sanjog,Limbu,Uniform Allowance,1.00
+16/11/2026,Sarita,Pun,Base Hourly,8.00
+17/11/2026,Sarita,Pun,Base Hourly,8.45
+18/11/2026,Sarita,Pun,Base Hourly,7.57
+19/11/2026,Sarita,Pun,Base Hourly,0
+20/11/2026,Sarita,Pun,Base Hourly,0
+21/11/2026,Sarita,Pun,Base Hourly,0
+22/11/2026,Sarita,Pun,Base Hourly,0
+16/11/2026,Sarita,Pun,Uniform Allowance,1.00
+17/11/2026,Sarita,Pun,Uniform Allowance,1.00
+18/11/2026,Sarita,Pun,Uniform Allowance,1.00
+19/11/2026,Sarita,Pun,Uniform Allowance,0.00
+20/11/2026,Sarita,Pun,Uniform Allowance,0.00
+21/11/2026,Sarita,Pun,Uniform Allowance,0.00
+22/11/2026,Sarita,Pun,Uniform Allowance,0.00
+16/11/2026,Saroj,Bhandari,Base Hourly,7.35
+17/11/2026,Saroj,Bhandari,Base Hourly,5.93
+18/11/2026,Saroj,Bhandari,Base Hourly,5.62
+19/11/2026,Saroj,Bhandari,Base Hourly,6.53
+20/11/2026,Saroj,Bhandari,Base Hourly,6.53
+21/11/2026,Saroj,Bhandari,Intro Weekend,0
+22/11/2026,Saroj,Bhandari,Intro Weekend,0
+16/11/2026,Saroj,Bhandari,Uniform Allowance,1.00
+17/11/2026,Saroj,Bhandari,Uniform Allowance,1.00
+18/11/2026,Saroj,Bhandari,Uniform Allowance,1.00
+19/11/2026,Saroj,Bhandari,Uniform Allowance,1.00
+20/11/2026,Saroj,Bhandari,Uniform Allowance,1.00
+21/11/2026,Saroj,Bhandari,Uniform Allowance,0.00
+22/11/2026,Saroj,Bhandari,Uniform Allowance,0.00
+16/11/2026,Shivangi,Gautam,Base Hourly,0
+17/11/2026,Shivangi,Gautam,Base Hourly,7.57
+18/11/2026,Shivangi,Gautam,Base Hourly,0
+19/11/2026,Shivangi,Gautam,Base Hourly,7.58
+20/11/2026,Shivangi,Gautam,Base Hourly,7.62
+21/11/2026,Shivangi,Gautam,Base Hourly,0
+22/11/2026,Shivangi,Gautam,Base Hourly,0
+16/11/2026,Shivangi,Gautam,Uniform Allowance,0.00
+17/11/2026,Shivangi,Gautam,Uniform Allowance,1.00
+18/11/2026,Shivangi,Gautam,Uniform Allowance,0.00
+19/11/2026,Shivangi,Gautam,Uniform Allowance,1.00
+20/11/2026,Shivangi,Gautam,Uniform Allowance,1.00
+21/11/2026,Shivangi,Gautam,Uniform Allowance,0.00
+22/11/2026,Shivangi,Gautam,Uniform Allowance,0.00
+16/11/2026,Shriyanka,Pradhan,Base Hourly,8.37
+17/11/2026,Shriyanka,Pradhan,Base Hourly,4.32
+18/11/2026,Shriyanka,Pradhan,Base Hourly,0
+19/11/2026,Shriyanka,Pradhan,Base Hourly,6.20
+20/11/2026,Shriyanka,Pradhan,Base Hourly,0
+21/11/2026,Shriyanka,Pradhan,Base Hourly,5.05
+22/11/2026,Shriyanka,Pradhan,Base Hourly,0
+16/11/2026,Shriyanka,Pradhan,Uniform Allowance,1.00
+17/11/2026,Shriyanka,Pradhan,Uniform Allowance,1.00
+18/11/2026,Shriyanka,Pradhan,Uniform Allowance,0.00
+19/11/2026,Shriyanka,Pradhan,Uniform Allowance,1.00
+20/11/2026,Shriyanka,Pradhan,Uniform Allowance,0.00
+21/11/2026,Shriyanka,Pradhan,Uniform Allowance,1.00
+22/11/2026,Shriyanka,Pradhan,Uniform Allowance,0.00
+16/11/2026,Siddhartha,Rimal,Base Hourly,10.68
+17/11/2026,Siddhartha,Rimal,Base Hourly,12.55
+18/11/2026,Siddhartha,Rimal,Base Hourly,0
+19/11/2026,Siddhartha,Rimal,Base Hourly,0.75
+20/11/2026,Siddhartha,Rimal,Base Hourly,0
+21/11/2026,Siddhartha,Rimal,Base Hourly,0
+22/11/2026,Siddhartha,Rimal,Base Hourly,0
+16/11/2026,Siddhartha,Rimal,Uniform Allowance,1.00
+17/11/2026,Siddhartha,Rimal,Uniform Allowance,1.00
+18/11/2026,Siddhartha,Rimal,Uniform Allowance,0.00
+19/11/2026,Siddhartha,Rimal,Uniform Allowance,1.00
+20/11/2026,Siddhartha,Rimal,Uniform Allowance,0.00
+21/11/2026,Siddhartha,Rimal,Uniform Allowance,0.00
+22/11/2026,Siddhartha,Rimal,Uniform Allowance,0.00
+16/11/2026,Singjango,Limbu ,Base Hourly,5.00
+17/11/2026,Singjango,Limbu ,Base Hourly,5.00
+18/11/2026,Singjango,Limbu ,Base Hourly,6.53
+19/11/2026,Singjango,Limbu ,Base Hourly,0
+20/11/2026,Singjango,Limbu ,Base Hourly,0
+21/11/2026,Singjango,Limbu ,Base Hourly,0
+22/11/2026,Singjango,Limbu ,Base Hourly,0
+16/11/2026,Singjango,Limbu ,Uniform Allowance,1.00
+17/11/2026,Singjango,Limbu ,Uniform Allowance,1.00
+18/11/2026,Singjango,Limbu ,Uniform Allowance,1.00
+19/11/2026,Singjango,Limbu ,Uniform Allowance,0.00
+20/11/2026,Singjango,Limbu ,Uniform Allowance,0.00
+21/11/2026,Singjango,Limbu ,Uniform Allowance,0.00
+22/11/2026,Singjango,Limbu ,Uniform Allowance,0.00
+16/11/2026,Smritee,Tamang,Base Hourly,0
+17/11/2026,Smritee,Tamang,Base Hourly,4.93
+18/11/2026,Smritee,Tamang,Base Hourly,7.37
+19/11/2026,Smritee,Tamang,Base Hourly,0
+20/11/2026,Smritee,Tamang,Base Hourly,0
+21/11/2026,Smritee,Tamang,Level 1 Weekends,5.30
+22/11/2026,Smritee,Tamang,Level 1 Weekends,0
+16/11/2026,Smritee,Tamang,Uniform Allowance,0.00
+17/11/2026,Smritee,Tamang,Uniform Allowance,1.00
+18/11/2026,Smritee,Tamang,Uniform Allowance,1.00
+19/11/2026,Smritee,Tamang,Uniform Allowance,0.00
+20/11/2026,Smritee,Tamang,Uniform Allowance,0.00
+21/11/2026,Smritee,Tamang,Uniform Allowance,1.00
+22/11/2026,Smritee,Tamang,Uniform Allowance,0.00
+16/11/2026,Som Kumari,Gurung,Base Hourly,6.33
+17/11/2026,Som Kumari,Gurung,Base Hourly,0
+18/11/2026,Som Kumari,Gurung,Base Hourly,0
+19/11/2026,Som Kumari,Gurung,Base Hourly,0
+20/11/2026,Som Kumari,Gurung,Base Hourly,6.55
+21/11/2026,Som Kumari,Gurung,Intro Weekend,0
+22/11/2026,Som Kumari,Gurung,Intro Weekend,0
+16/11/2026,Som Kumari,Gurung,Uniform Allowance,1.00
+17/11/2026,Som Kumari,Gurung,Uniform Allowance,0.00
+18/11/2026,Som Kumari,Gurung,Uniform Allowance,0.00
+19/11/2026,Som Kumari,Gurung,Uniform Allowance,0.00
+20/11/2026,Som Kumari,Gurung,Uniform Allowance,1.00
+21/11/2026,Som Kumari,Gurung,Uniform Allowance,0.00
+22/11/2026,Som Kumari,Gurung,Uniform Allowance,0.00
+16/11/2026,Sonam,Gurung,Base Hourly,9.28
+17/11/2026,Sonam,Gurung,Base Hourly,9.12
+18/11/2026,Sonam,Gurung,Base Hourly,9.08
+19/11/2026,Sonam,Gurung,Base Hourly,9.07
+20/11/2026,Sonam,Gurung,Base Hourly,7.48
+21/11/2026,Sonam,Gurung,Level 1 Weekends,0
+22/11/2026,Sonam,Gurung,Level 1 Weekends,0
+16/11/2026,Sonam,Gurung,Uniform Allowance,1.00
+17/11/2026,Sonam,Gurung,Uniform Allowance,1.00
+18/11/2026,Sonam,Gurung,Uniform Allowance,1.00
+19/11/2026,Sonam,Gurung,Uniform Allowance,1.00
+20/11/2026,Sonam,Gurung,Uniform Allowance,1.00
+21/11/2026,Sonam,Gurung,Uniform Allowance,0.00
+22/11/2026,Sonam,Gurung,Uniform Allowance,0.00
+16/11/2026,Sumina,Lama,Base Hourly,8.00
+17/11/2026,Sumina,Lama,Base Hourly,8.00
+18/11/2026,Sumina,Lama,Base Hourly,7.63
+19/11/2026,Sumina,Lama,Base Hourly,7.57
+20/11/2026,Sumina,Lama,Base Hourly,7.67
+21/11/2026,Sumina,Lama,Intro Weekend,0
+22/11/2026,Sumina,Lama,Intro Weekend,0
+16/11/2026,Sumina,Lama,Uniform Allowance,1.00
+17/11/2026,Sumina,Lama,Uniform Allowance,1.00
+18/11/2026,Sumina,Lama,Uniform Allowance,1.00
+19/11/2026,Sumina,Lama,Uniform Allowance,1.00
+20/11/2026,Sumina,Lama,Uniform Allowance,1.00
+21/11/2026,Sumina,Lama,Uniform Allowance,0.00
+22/11/2026,Sumina,Lama,Uniform Allowance,0.00
+16/11/2026,Sumit,Giri,Base Hourly,0
+17/11/2026,Sumit,Giri,Base Hourly,0
+18/11/2026,Sumit,Giri,Base Hourly,0
+19/11/2026,Sumit,Giri,Base Hourly,0
+20/11/2026,Sumit,Giri,Base Hourly,0
+21/11/2026,Sumit,Giri,Base Hourly,0
+22/11/2026,Sumit,Giri,Base Hourly,0
+16/11/2026,Sumit,Giri,Uniform Allowance,0.00
+17/11/2026,Sumit,Giri,Uniform Allowance,0.00
+18/11/2026,Sumit,Giri,Uniform Allowance,0.00
+19/11/2026,Sumit,Giri,Uniform Allowance,0.00
+20/11/2026,Sumit,Giri,Uniform Allowance,0.00
+21/11/2026,Sumit,Giri,Uniform Allowance,0.00
+22/11/2026,Sumit,Giri,Uniform Allowance,0.00
+16/11/2026,Sunidhi,Bhattarai,Base Hourly,0
+17/11/2026,Sunidhi,Bhattarai,Base Hourly,0
+18/11/2026,Sunidhi,Bhattarai,Base Hourly,0
+19/11/2026,Sunidhi,Bhattarai,Base Hourly,7.32
+20/11/2026,Sunidhi,Bhattarai,Base Hourly,0
+21/11/2026,Sunidhi,Bhattarai,Level 2 Weekends,0
+22/11/2026,Sunidhi,Bhattarai,Level 2 Weekends,6.47
+16/11/2026,Sunidhi,Bhattarai,Uniform Allowance,0.00
+17/11/2026,Sunidhi,Bhattarai,Uniform Allowance,0.00
+18/11/2026,Sunidhi,Bhattarai,Uniform Allowance,0.00
+19/11/2026,Sunidhi,Bhattarai,Uniform Allowance,1.00
+20/11/2026,Sunidhi,Bhattarai,Uniform Allowance,0.00
+21/11/2026,Sunidhi,Bhattarai,Uniform Allowance,0.00
+22/11/2026,Sunidhi,Bhattarai,Uniform Allowance,1.00
+16/11/2026,Sunita,Muktan,Base Hourly,0
+17/11/2026,Sunita,Muktan,Base Hourly,0
+18/11/2026,Sunita,Muktan,Base Hourly,0
+19/11/2026,Sunita,Muktan,Base Hourly,7.00
+20/11/2026,Sunita,Muktan,Base Hourly,6.00
+21/11/2026,Sunita,Muktan,Base Hourly,5.60
+22/11/2026,Sunita,Muktan,Base Hourly,5.55
+16/11/2026,Sunita,Muktan,Uniform Allowance,0.00
+17/11/2026,Sunita,Muktan,Uniform Allowance,0.00
+18/11/2026,Sunita,Muktan,Uniform Allowance,0.00
+19/11/2026,Sunita,Muktan,Uniform Allowance,1.00
+20/11/2026,Sunita,Muktan,Uniform Allowance,1.00
+21/11/2026,Sunita,Muktan,Uniform Allowance,1.00
+22/11/2026,Sunita,Muktan,Uniform Allowance,1.00
+16/11/2026,Suraksha,Gharti,Base Hourly,7.70
+17/11/2026,Suraksha,Gharti,Early Start,0.60
+17/11/2026,Suraksha,Gharti,Base Hourly,8.08
+18/11/2026,Suraksha,Gharti,Base Hourly,0
+19/11/2026,Suraksha,Gharti,Early Start,0.55
+19/11/2026,Suraksha,Gharti,Base Hourly,9.05
+20/11/2026,Suraksha,Gharti,Early Start,0.08
+20/11/2026,Suraksha,Gharti,Base Hourly,7.53
+21/11/2026,Suraksha,Gharti,19 Yrs Intro Weekend,0
+22/11/2026,Suraksha,Gharti,19 Yrs Intro Weekend,0
+16/11/2026,Suraksha,Gharti,Uniform Allowance,1.00
+17/11/2026,Suraksha,Gharti,Uniform Allowance,1.00
+18/11/2026,Suraksha,Gharti,Uniform Allowance,0.00
+19/11/2026,Suraksha,Gharti,Uniform Allowance,1.00
+20/11/2026,Suraksha,Gharti,Uniform Allowance,1.00
+21/11/2026,Suraksha,Gharti,Uniform Allowance,0.00
+22/11/2026,Suraksha,Gharti,Uniform Allowance,0.00
+16/11/2026,Sushil,Adhikari,Base Hourly,6.55
+17/11/2026,Sushil,Adhikari,Base Hourly,6.55
+18/11/2026,Sushil,Adhikari,Base Hourly,12.00
+19/11/2026,Sushil,Adhikari,Base Hourly,6.53
+20/11/2026,Sushil,Adhikari,Base Hourly,0
+21/11/2026,Sushil,Adhikari,Base Hourly,0
+22/11/2026,Sushil,Adhikari,Base Hourly,0
+16/11/2026,Sushil,Adhikari,Uniform Allowance,1.00
+17/11/2026,Sushil,Adhikari,Uniform Allowance,1.00
+18/11/2026,Sushil,Adhikari,Uniform Allowance,1.00
+19/11/2026,Sushil,Adhikari,Uniform Allowance,1.00
+20/11/2026,Sushil,Adhikari,Uniform Allowance,0.00
+21/11/2026,Sushil,Adhikari,Uniform Allowance,0.00
+22/11/2026,Sushil,Adhikari,Uniform Allowance,0.00
+16/11/2026,Sushmita,Khadka,Base Hourly,0
+17/11/2026,Sushmita,Khadka,Base Hourly,0
+18/11/2026,Sushmita,Khadka,Base Hourly,0
+19/11/2026,Sushmita,Khadka,Base Hourly,0
+20/11/2026,Sushmita,Khadka,Base Hourly,0
+21/11/2026,Sushmita,Khadka,Intro Weekend,0
+22/11/2026,Sushmita,Khadka,Intro Weekend,0
+16/11/2026,Sushmita,Khadka,Uniform Allowance,0.00
+17/11/2026,Sushmita,Khadka,Uniform Allowance,0.00
+18/11/2026,Sushmita,Khadka,Uniform Allowance,0.00
+19/11/2026,Sushmita,Khadka,Uniform Allowance,0.00
+20/11/2026,Sushmita,Khadka,Uniform Allowance,0.00
+21/11/2026,Sushmita,Khadka,Uniform Allowance,0.00
+22/11/2026,Sushmita,Khadka,Uniform Allowance,0.00
+16/11/2026,Suva,Shrestha,Base Hourly,0
+17/11/2026,Suva,Shrestha,Base Hourly,0
+18/11/2026,Suva,Shrestha,Base Hourly,0
+19/11/2026,Suva,Shrestha,Base Hourly,0
+20/11/2026,Suva,Shrestha,Base Hourly,0
+21/11/2026,Suva,Shrestha,Base Hourly,0
+22/11/2026,Suva,Shrestha,Base Hourly,0
+16/11/2026,Suva,Shrestha,Uniform Allowance,0.00
+17/11/2026,Suva,Shrestha,Uniform Allowance,0.00
+18/11/2026,Suva,Shrestha,Uniform Allowance,0.00
+19/11/2026,Suva,Shrestha,Uniform Allowance,0.00
+20/11/2026,Suva,Shrestha,Uniform Allowance,0.00
+21/11/2026,Suva,Shrestha,Uniform Allowance,0.00
+22/11/2026,Suva,Shrestha,Uniform Allowance,0.00
+16/11/2026,Swostika,Lama Pakhrin Gm,Base Hourly,0
+17/11/2026,Swostika,Lama Pakhrin Gm,Base Hourly,6.38
+18/11/2026,Swostika,Lama Pakhrin Gm,Base Hourly,0
+19/11/2026,Swostika,Lama Pakhrin Gm,Base Hourly,0
+20/11/2026,Swostika,Lama Pakhrin Gm,Base Hourly,0
+21/11/2026,Swostika,Lama Pakhrin Gm,Base Hourly,8.43
+22/11/2026,Swostika,Lama Pakhrin Gm,Base Hourly,0
+16/11/2026,Swostika,Lama Pakhrin Gm,Uniform Allowance,0.00
+17/11/2026,Swostika,Lama Pakhrin Gm,Uniform Allowance,1.00
+18/11/2026,Swostika,Lama Pakhrin Gm,Uniform Allowance,0.00
+19/11/2026,Swostika,Lama Pakhrin Gm,Uniform Allowance,0.00
+20/11/2026,Swostika,Lama Pakhrin Gm,Uniform Allowance,0.00
+21/11/2026,Swostika,Lama Pakhrin Gm,Uniform Allowance,1.00
+22/11/2026,Swostika,Lama Pakhrin Gm,Uniform Allowance,0.00
+16/11/2026,Swostika,Simkhada,Base Hourly,5.00
+17/11/2026,Swostika,Simkhada,Base Hourly,0
+18/11/2026,Swostika,Simkhada,Base Hourly,0
+19/11/2026,Swostika,Simkhada,Base Hourly,4.93
+20/11/2026,Swostika,Simkhada,Base Hourly,0
+21/11/2026,Swostika,Simkhada,Base Hourly,0
+22/11/2026,Swostika,Simkhada,Base Hourly,0
+16/11/2026,Swostika,Simkhada,Uniform Allowance,1.00
+17/11/2026,Swostika,Simkhada,Uniform Allowance,0.00
+18/11/2026,Swostika,Simkhada,Uniform Allowance,0.00
+19/11/2026,Swostika,Simkhada,Uniform Allowance,1.00
+20/11/2026,Swostika,Simkhada,Uniform Allowance,0.00
+21/11/2026,Swostika,Simkhada,Uniform Allowance,0.00
+22/11/2026,Swostika,Simkhada,Uniform Allowance,0.00
+16/11/2026,Tin Tin,Aung,Base Hourly,6.20
+17/11/2026,Tin Tin,Aung,Base Hourly,5.83
+18/11/2026,Tin Tin,Aung,Base Hourly,6.20
+19/11/2026,Tin Tin,Aung,Base Hourly,6.40
+20/11/2026,Tin Tin,Aung,Base Hourly,6.18
+21/11/2026,Tin Tin,Aung,Level 2 Weekends,0
+22/11/2026,Tin Tin,Aung,Level 2 Weekends,0
+16/11/2026,Tin Tin,Aung,Uniform Allowance,1.00
+17/11/2026,Tin Tin,Aung,Uniform Allowance,1.00
+18/11/2026,Tin Tin,Aung,Uniform Allowance,1.00
+19/11/2026,Tin Tin,Aung,Uniform Allowance,1.00
+20/11/2026,Tin Tin,Aung,Uniform Allowance,1.00
+21/11/2026,Tin Tin,Aung,Uniform Allowance,0.00
+22/11/2026,Tin Tin,Aung,Uniform Allowance,0.00
+16/11/2026,Trishna,Gurung,Base Hourly,7.15
+17/11/2026,Trishna,Gurung,Base Hourly,6.93
+18/11/2026,Trishna,Gurung,Base Hourly,7.13
+19/11/2026,Trishna,Gurung,Base Hourly,0
+20/11/2026,Trishna,Gurung,Base Hourly,6.97
+21/11/2026,Trishna,Gurung,Intro Weekend,0
+22/11/2026,Trishna,Gurung,Intro Weekend,0
+16/11/2026,Trishna,Gurung,Uniform Allowance,1.00
+17/11/2026,Trishna,Gurung,Uniform Allowance,1.00
+18/11/2026,Trishna,Gurung,Uniform Allowance,1.00
+19/11/2026,Trishna,Gurung,Uniform Allowance,0.00
+20/11/2026,Trishna,Gurung,Uniform Allowance,1.00
+21/11/2026,Trishna,Gurung,Uniform Allowance,0.00
+22/11/2026,Trishna,Gurung,Uniform Allowance,0.00
+16/11/2026,Tushar,Shrestha,Base Hourly,8.00
+17/11/2026,Tushar,Shrestha,Base Hourly,8.00
+18/11/2026,Tushar,Shrestha,Base Hourly,0
+19/11/2026,Tushar,Shrestha,Base Hourly,0
+20/11/2026,Tushar,Shrestha,Base Hourly,0
+21/11/2026,Tushar,Shrestha,Level 1 Weekends,4.82
+22/11/2026,Tushar,Shrestha,Level 1 Weekends,0
+16/11/2026,Tushar,Shrestha,Uniform Allowance,1.00
+17/11/2026,Tushar,Shrestha,Uniform Allowance,1.00
+18/11/2026,Tushar,Shrestha,Uniform Allowance,0.00
+19/11/2026,Tushar,Shrestha,Uniform Allowance,0.00
+20/11/2026,Tushar,Shrestha,Uniform Allowance,0.00
+21/11/2026,Tushar,Shrestha,Uniform Allowance,1.00
+22/11/2026,Tushar,Shrestha,Uniform Allowance,0.00
+16/11/2026,Yi Yang,Huang,Base Hourly,7.50
+17/11/2026,Yi Yang,Huang,Base Hourly,8.08
+18/11/2026,Yi Yang,Huang,Base Hourly,6.68
+19/11/2026,Yi Yang,Huang,Base Hourly,8.23
+20/11/2026,Yi Yang,Huang,Base Hourly,0
+21/11/2026,Yi Yang,Huang,Intro Weekend,0
+22/11/2026,Yi Yang,Huang,Intro Weekend,0
+16/11/2026,Yi Yang,Huang,Uniform Allowance,1.00
+17/11/2026,Yi Yang,Huang,Uniform Allowance,1.00
+18/11/2026,Yi Yang,Huang,Uniform Allowance,1.00
+19/11/2026,Yi Yang,Huang,Uniform Allowance,1.00
+20/11/2026,Yi Yang,Huang,Uniform Allowance,0.00
+21/11/2026,Yi Yang,Huang,Uniform Allowance,0.00
+22/11/2026,Yi Yang,Huang,Uniform Allowance,0.00
+16/11/2026,Yunisha,Shrestha,Base Hourly,9.20
+17/11/2026,Yunisha,Shrestha,Base Hourly,0
+18/11/2026,Yunisha,Shrestha,Base Hourly,0
+19/11/2026,Yunisha,Shrestha,Base Hourly,0
+20/11/2026,Yunisha,Shrestha,Base Hourly,7.28
+21/11/2026,Yunisha,Shrestha,Base Hourly,0
+22/11/2026,Yunisha,Shrestha,Base Hourly,0
+16/11/2026,Yunisha,Shrestha,Uniform Allowance,1.00
+17/11/2026,Yunisha,Shrestha,Uniform Allowance,0.00
+18/11/2026,Yunisha,Shrestha,Uniform Allowance,0.00
+19/11/2026,Yunisha,Shrestha,Uniform Allowance,0.00
+20/11/2026,Yunisha,Shrestha,Uniform Allowance,1.00
+21/11/2026,Yunisha,Shrestha,Uniform Allowance,0.00
+22/11/2026,Yunisha,Shrestha,Uniform Allowance,0.00
